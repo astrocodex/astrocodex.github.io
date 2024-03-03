@@ -219,14 +219,20 @@ vertical-align: middle; /* Adjust vertical alignment as needed */
 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 812px) {
   .container {
     padding-top:5%;
     padding-left:5%;
     padding-right:5%;
     padding-bottom:5%;
+    margin-left:0;
+    margin-right:0;
     font-family: 'Aileron', sans-serif;
     background-color: rgba(206, 206, 206, 0.3);
     border-radius: 20px; 
+    }
+    .container p {
+      font-size: 2.0vw;
+      font-weight:500;
     }
 }
