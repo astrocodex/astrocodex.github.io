@@ -232,11 +232,11 @@ vertical-align: middle; /* Adjust vertical alignment as needed */
     border-radius: 20px; 
     }
     .container p {
-      font-size: 2.4vw;
+      font-size: 2.9vw;
       font-weight:500;
     }
     .container p.secc {
-      font-size: 2.0vw;
+      font-size: 2.6vw;
       font-weight:400;
     }
     
@@ -251,7 +251,23 @@ vertical-align: middle; /* Adjust vertical alignment as needed */
     }
     
     .container ul,ol {
-      font-size: 2.4vw;
+      font-size: 2.6vw;
       font-weight: 500;
+    }
+    .button {
+      padding: 10px 20px;
+      background-color: rgb(54, 3, 92); /* White button background */
+      color: #f3f3f3; /* Dark text for contrast */
+      border: 2px solid #333; /* Optional: Adds a border for more definition */
+      border-radius: 5px; /* Rounded corners for a modern look */
+      text-transform: uppercase; /* Optional: Makes the text uppercase for more prominence */
+      font-weight: bold; /* Bold text for better visibility */
+      text-align: center;
+      font-size:2.5vw;
+      display: inline-block;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      text-decoration: none;
+      width:15vw;
     }
 }
