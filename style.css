@@ -232,7 +232,26 @@ vertical-align: middle; /* Adjust vertical alignment as needed */
     border-radius: 20px; 
     }
     .container p {
-      font-size: 2.0vw;
+      font-size: 2.4vw;
       font-weight:500;
+    }
+    .container p.secc {
+      font-size: 2.0vw;
+      font-weight:400;
+    }
+    
+    .container h1 {
+        font-size: 6vw;
+        justify-content: center;
+        margin-bottom:0;
+    }
+    .container h2 {
+        margin-top:1%;
+        font-size: 4vw;
+    }
+    
+    .container ul,ol {
+      font-size: 2.4vw;
+      font-weight: 500;
     }
 }
