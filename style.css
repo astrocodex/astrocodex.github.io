@@ -218,3 +218,15 @@ vertical-align: middle; /* Adjust vertical alignment as needed */
   padding-top:2%;
 
 }
+
+@media (max-width: 600px) {
+  .container {
+    padding-top:5%;
+    padding-left:5%;
+    padding-right:5%;
+    padding-bottom:5%;
+    font-family: 'Aileron', sans-serif;
+    background-color: rgba(206, 206, 206, 0.3);
+    border-radius: 20px; 
+    }
+}
