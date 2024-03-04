@@ -219,6 +219,50 @@ vertical-align: middle; /* Adjust vertical alignment as needed */
 
 }
 
+.profile-card {
+  text-align: center; /* Centers the content */
+  width: 25%; /* Adjust based on your needs */
+  margin: 3%; /* Centers the div in the parent element */
+  padding:0;
+  flex: 1 1 auto; /* Adjusts the flex basis */
+  max-width: 25%; /* Adjust the calculation based on your gap */
+
+}
+
+.profile-picture {
+  width: 90%; /* Adjust the size of the picture */
+  height: auto; /* Keeps the aspect ratio of the picture */
+  border-radius: 50%; /* Makes the picture round, remove if not needed */
+  margin-top: 10px; /* Spacing from the top of the div */
+}
+
+.profile-info {
+  margin-top: 10px; /* Spacing between the picture and the text */
+}
+
+.name {
+  font-weight: bold; /* Makes the name bold */
+  margin: 0; /* Removes default margin for p */
+  font-size: 2.5vw;
+}
+
+.affiliation {
+  font-style: italic; /* Makes the affiliation italic */
+  margin: 0; /* Removes default margin for p */
+  font-size: 1.5vw;
+}
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch; /* Optional, if you want all cards to have the same height */
+  gap: 20px; /* Adjust gap as needed */
+  justify-content: center;
+}
+.profile-info .name,
+.profile-info .affiliation {
+  font-size: max(1vw, 17px); 
+}
+
 @media (max-width: 812px) {
   .container {
     padding-top:5%;
@@ -269,5 +313,20 @@ vertical-align: middle; /* Adjust vertical alignment as needed */
       transition: all 0.3s ease-in-out;
       text-decoration: none;
       width:15vw;
+    }
+    .cards-container {
+      flex-direction: column; /* Stacks the flex items vertically */
+      gap: 10px; /* Optional: adjust the gap for mobile layout */
+    }
+  
+    .profile-card {
+      min-width: 100%; /* Takes the full width of the container */
+      max-width: 100%; /* Ensures card does not exceed the container width */
+      /* Resetting or adjusting other properties as needed for mobile layout */
+    }
+    .profile-picture {
+      width: 50%; /* Adjust the size of the picture */
+      height: auto; /* Keeps the aspect ratio of the picture */
+      border-radius: 50%; /* Makes the picture round, remove if not needed */
     }
 }
