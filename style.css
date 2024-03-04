@@ -177,7 +177,7 @@ vertical-align: middle; /* Adjust vertical alignment as needed */
 
 .rounded-image {
   border-radius: 10px; /* Adjust this value to increase or decrease the roundness */
-  opacity:50%;
+  opacity:80%;
 }
 
 .button {
