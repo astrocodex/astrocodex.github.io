@@ -164,6 +164,9 @@ width: calc(10vw * 0.5); /* Example: Make the image width 90% of the h1 font siz
 vertical-align: middle; /* Adjust vertical alignment as needed */
 }
 
+.rounded-image {
+  border-radius: 10px; /* Adjust this value to increase or decrease the roundness */
+}
 
 .button {
   padding: 10px 20px;
@@ -221,11 +224,11 @@ vertical-align: middle; /* Adjust vertical alignment as needed */
 
 .profile-card {
   text-align: center; /* Centers the content */
-  width: 25%; /* Adjust based on your needs */
+  width: 22%; /* Adjust based on your needs */
   margin: 3%; /* Centers the div in the parent element */
   padding:0;
   flex: 1 1 auto; /* Adjusts the flex basis */
-  max-width: 25%; /* Adjust the calculation based on your gap */
+  max-width: 22%; /* Adjust the calculation based on your gap */
 
 }
 
