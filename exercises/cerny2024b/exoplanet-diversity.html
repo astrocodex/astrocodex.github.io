@@ -1,0 +1,623 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Exploring the Diversity of Known Exoplanets &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8fb1fe15" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/cerny2024b/exoplanet-diversity';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Visualizing Astronomical Images" href="../pasha2024a/astronomical-images.html" />
+    <link rel="prev" title="Stellar Luminosities from the Stefan-Boltzmann Equation" href="../cerny2024a/stefan-boltzmann.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Python Exercises Gallery</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Level I</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cerny2024a/stefan-boltzmann.html">Stellar Luminosities from the Stefan-Boltzmann Equation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exploring the Diversity of Known Exoplanets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pasha2024a/astronomical-images.html">Visualizing Astronomical Images</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Level II</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../lester2024a/stellar_spectrum.html">Stellar Temperatures from Spectra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Gaia Star Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">The Sizes of HII Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sunseri2024a/Data_Parallelism_Part_1.html">Introduction to Data Parallelism</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Level III</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../yadavalli2024a/SN_Habitability.html">Rouge Planet Habitability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bellinger2024a/trig-regression.html">Trigonometric Regression</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides and Walkthroughs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../guides/Debugging_Guide.html">Debugging Strategies Resource</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexercises/cerny2024b/exoplanet-diversity.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/exercises/cerny2024b/exoplanet-diversity.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exploring the Diversity of Known Exoplanets</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mass-separation-plot">The Mass-Separation Plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recreating-another-classic-plot-period-radius-diagram">Recreating Another Classic Plot: Period-Radius Diagram</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="exploring-the-diversity-of-known-exoplanets">
+<h1>Exploring the Diversity of Known Exoplanets<a class="headerlink" href="#exploring-the-diversity-of-known-exoplanets" title="Link to this heading">#</a></h1>
+<div class="author admonition">
+<p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0003-1697-7062">William Cerny</a>, <a class="reference external" href="https://orcid.org/0000-0002-7075-9931">Imad Pasha</a>, <a class="reference external" href="https://orcid.org/0000-0002-8320-2198">Yasmeen Asali</a>, <a class="reference external" href="https://orcid.org/0000-0002-9986-4604">Sebastian Monzon</a> (Yale University)</p>
+<p><em>Description</em>: Using the Stefan-Bolztmann law to infer the properties of stars; practice with basic python and data types.</p>
+<p><em>Intended Audience</em>: Early Undergraduate</p>
+<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">exoplanets</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p>
+<p><em>Requirements</em>: <a class="reference download internal" download="" href="../../_downloads/57ef5323576b2ebe401dabcf2c9b3272/requirements.txt"><span class="xref download myst">requirements.txt</span></a></p>
+<p><em>Last Updated: August 9, 2024</em></p>
+</div>
+<div class="learningobjective admonition">
+<p class="admonition-title">Learning Objectives</p>
+<ol class="arabic simple">
+<li><p>Understand the difference between various exoplanet detection methods</p></li>
+<li><p>Be able to download and open a data file from the NASA Exoplanet Archive into a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dataframe.</p></li>
+<li><p>Filter the table to plot famous exoplanet diagrams, colored by detection technique.</p></li>
+</ol>
+</div>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>When we detect exoplanets (planets orbiting other stars), we most often have several of three direct measurables about those plants:</p>
+<ol class="arabic simple">
+<li><p>Their radius (formally, their radius relative to their host star),</p></li>
+<li><p>Their mass, and/or</p></li>
+<li><p>Their orbital separation (aka radius, for circular orbits, or semi-major axis, for elliptical orbits).</p></li>
+</ol>
+<p>The reason for this comes down to the <strong>detection methods</strong> used to find and characterize these systems.</p>
+<ol class="arabic simple">
+<li><p><strong>Transit Method</strong>: In this technique, exoplanets are detected by observing the periodic dimming of a star’s light as a planet passes in front of it (transits) from our line of sight. By measuring the decrease in brightness during transit events, astronomers can infer the presence and characteristics of orbiting planets. This method provides relative radius (from the depth of the dip) and orbital separation (inferred from the length of an orbit, i.e., how long between transits).</p></li>
+<li><p><strong>Radial Velocity Method</strong>: This method detects exoplanets by measuring the small periodic shifts in the star’s radial velocity caused by the gravitational pull of an orbiting planet. As the planet orbits the star, it causes the star to wobble slightly, which can be detected through Doppler spectroscopy. This provides an estimate of the mass (from Newton’s laws) and orbital separation (from the perio of the wobbles).</p></li>
+<li><p><strong>Microlensing</strong>: Exoplanets can be detected through gravitational microlensing, where the gravitational field of a foreground star bends and magnifies the light of a background star as well as any orbiting planets. The presence of an exoplanet around the foreground star can be inferred from the temporary increase in brightness observed during the microlensing event.</p></li>
+<li><p><strong>Transit Timing Variations (TTV)</strong>: TTV detects exoplanets by measuring the variations in the timing of transit events caused by gravitational interactions between multiple planets within a system. These deviations from the expected transit times provide information about the masses and orbits of the interacting planets.</p></li>
+</ol>
+<p>In addition to these four, there are a number of other methods of detecting planets (such as direct imaging)!</p>
+<p>It is common to plot detected exoplanets in the space of Mass vs. Orbital Separation. Here, we show one such plot, colored by the detection technique used to find the planet (follow-up observations may have been needed to compute mass or separation).</p>
+<p><img alt="" src="../../_images/Mass-separation-plot-for-known-exoplanets-color-coded-according-to-their-detection.png" /></p>
+<p>The x-axis of this figure shows the mass of the planet on a log scale, typically measured in Jupiter masses (where 1 Jupiter mass equals approximately <span class="math notranslate nohighlight">\(1.898 \times 10^{27}\)</span> kg). The y-axis, also on a log scale, represents the planet-star separation distance, often expressed in astronomical units (AU), with 1 AU equivalent to the average distance between the Earth and the Sun (approximately 149.6 million kilometers). Each data point plotted signifies an individual exoplanet.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Checkpoint: Why might the blue (transit) points be clustered toward small separation/high mass?</p>
+<ol class="arabic simple">
+<li><p>Because the dip in light is larger when a large (and thus usually more massive) planet passes in front of the star, larger planets produce more detectable transit signals.</p></li>
+<li><p>Because the transit method requires the planet to be coplanar with the star and earth, closer in orbits have a higher chance of passing in front of the star.</p></li>
+<li><p>To 100% confirm an exoplanet, you (typically) must detect the transit 2-3 times at a regular interval. Most transit-detecting satellites have not observed for more than a year or two, meaning planets with progressively longer years (larger orbital separation) take longer to confirm.</p></li>
+</ol>
+</div>
+</section>
+<section id="the-mass-separation-plot">
+<h2>The Mass-Separation Plot<a class="headerlink" href="#the-mass-separation-plot" title="Link to this heading">#</a></h2>
+<p>In this exercise, we will recreate the above figure using data available in the NASA exoplanet archive.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 1</p>
+<div class="docutils container">
+<ol class="arabic simple">
+<li><p>Download the full catalog of known exoplanet properties from the NASA Exoplanet Archive. Navigate to the Data Page of <a class="reference external" href="https://exoplanetarchive.ipac.caltech.edu/">https://exoplanetarchive.ipac.caltech.edu/</a> , then to the <code class="docutils literal notranslate"><span class="pre">Planetary</span> <span class="pre">Systems</span> <span class="pre">Composite</span> <span class="pre">Data</span></code> link. Hit Download Table –&gt; download as csv.</p></li>
+<li><p>Within a Jupyter notebook, load the table you just downloaded into a Pandas dataframe.</p></li>
+</ol>
+</div>
+</div>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 2</p>
+<div class="docutils container">
+<ol class="arabic simple">
+<li><p>Using the “np.unique” function in numpy applied to your dataframe, figure out all the possible exoplanet discovery methods report in this table (note: as mentioned above the four methods shown in the provided figure are not the only possible methods)!</p></li>
+<li><p>Try to recreate the figure shown above using the same units, axis scaling (logarithmic scale), and labels/legend! To do this, filter your pandas dataframe by each discovery method and use different calls to plt.scatter() to plot them in stylistically distinct ways.</p></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="recreating-another-classic-plot-period-radius-diagram">
+<h2>Recreating Another Classic Plot: Period-Radius Diagram<a class="headerlink" href="#recreating-another-classic-plot-period-radius-diagram" title="Link to this heading">#</a></h2>
+<p>Another classic figure shows the period of detected exoplanets against their planet radius. In this exercise, we’ll create that figure.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 3</p>
+<div class="docutils container">
+<ol class="arabic simple">
+<li><p>Using the same full exoplanet dataframe you downloaded and opened for exercise 1, trying plotting the exoplanet period-radius diagram. This is another classic exoplanet figure! The x-axis typically represents the logarithm of the orbital period of exoplanets, measured in days. The y-axis represents the logarithm of the radius of exoplanets, usually measured in terms of Earth radii.</p></li>
+</ol>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./exercises/cerny2024b"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../cerny2024a/stefan-boltzmann.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Stellar Luminosities from the Stefan-Boltzmann Equation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../pasha2024a/astronomical-images.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Visualizing Astronomical Images</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mass-separation-plot">The Mass-Separation Plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recreating-another-classic-plot-period-radius-diagram">Recreating Another Classic Plot: Period-Radius Diagram</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The AstroCodEx Collaboration
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

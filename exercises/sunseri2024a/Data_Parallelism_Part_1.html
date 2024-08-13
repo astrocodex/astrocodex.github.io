@@ -1,0 +1,771 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introduction to Data Parallelism &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8fb1fe15" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/sunseri2024a/Data_Parallelism_Part_1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Rouge Planet Habitability" href="../yadavalli2024a/SN_Habitability.html" />
+    <link rel="prev" title="The Sizes of HII Regions" href="../pasha2024b/hii-regions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Python Exercises Gallery</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Level I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cerny2024a/stefan-boltzmann.html">Stellar Luminosities from the Stefan-Boltzmann Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerny2024b/exoplanet-diversity.html">Exploring the Diversity of Known Exoplanets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pasha2024a/astronomical-images.html">Visualizing Astronomical Images</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Level II</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../lester2024a/stellar_spectrum.html">Stellar Temperatures from Spectra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Gaia Star Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">The Sizes of HII Regions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to Data Parallelism</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Level III</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../yadavalli2024a/SN_Habitability.html">Rouge Planet Habitability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bellinger2024a/trig-regression.html">Trigonometric Regression</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides and Walkthroughs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../guides/Debugging_Guide.html">Debugging Strategies Resource</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexercises/sunseri2024a/Data_Parallelism_Part_1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/exercises/sunseri2024a/Data_Parallelism_Part_1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction to Data Parallelism</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-goals">Motivation &amp; Goals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-description">Problem Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-data-parallelism">
+<h1>Introduction to Data Parallelism<a class="headerlink" href="#introduction-to-data-parallelism" title="Link to this heading">#</a></h1>
+<div class="author admonition">
+<p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0003-4274-2662">James Sunseri</a>, <a class="reference external" href="https://orcid.org/0000-0002-1327-1921">Josh Borrow</a>, <a class="reference external" href="https://orcid.org/0000-0002-3839-0230">Kai-Feng Chen</a></p>
+<p><em>Description</em>: A short walkthrough on using parallelization in python</p>
+<p><em>Intended Audience</em>: Intermediate Undergraduate</p>
+<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">libraries:numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code>, <code class="docutils literal notranslate"><span class="pre">parallelization</span></code>,<code class="docutils literal notranslate"><span class="pre">parallel-programming</span></code></p>
+<p><em>Last Updated: July 23, 2024</em></p>
+</div>
+<div class="learningobjective admonition">
+<p class="admonition-title">Learning Objectives</p>
+<ol class="arabic simple">
+<li><p>Understand how parallelization can improve code runtime</p></li>
+<li><p>Implement basic parallization in Python</p></li>
+</ol>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">concurrent.futures</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This notebook is intended for students who are familiar with the basic principles of scientific programming and are looking to branch into intermediate topics that could be useful for research applications.</p>
+</div>
+<section id="motivation-goals">
+<h2>Motivation &amp; Goals<a class="headerlink" href="#motivation-goals" title="Link to this heading">#</a></h2>
+<p>Often in astronomy, we are working with many pieces of data that are similar in format (i.e. photometric images, spectra, simulation snapshots, etc…) and we want to perform operations across all of these data. Those operations could be simply loading in the data into memory from storage, or they could be as complicated as running a full scale photometric reduction pipeline. In this notebook we start addressing various techniques to speed up working with large amounts of data through parallelism schemes.</p>
+<p>The goal of this resource is to show someone how to simply parallelize a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop in the context of working with data. This resource uses <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code>.</p>
+<p>We will be using images of galaxies from <a class="reference external" href="https://zenodo.org/records/3565489#.Y3vFKS-l0eY">Galaxy Zoo</a> for this exercise.</p>
+<p align="center"> 
+    <img src="https://thumbnails.zooniverse.org/600x/panoptes-uploads.zooniverse.org/subject_location/520aa31c-6dbe-48de-a281-47ccfbc8f944.jpeg" width="60%" /> 
+</p></section>
+<section id="problem-description">
+<h2>Problem Description<a class="headerlink" href="#problem-description" title="Link to this heading">#</a></h2>
+<p>We need to load in 1000 2D photometric images from storage into memory using a simple for loop. We can imagine that the time to load in each image takes ~0.01 seconds. The images are stored in the <code class="docutils literal notranslate"><span class="pre">./images/</span></code> directory and have a <code class="docutils literal notranslate"><span class="pre">.npy</span></code> file format. Each image has shape <code class="docutils literal notranslate"><span class="pre">(424,424)</span></code>. We time how long this takes for reference.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">images</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">image_i</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;./images/</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">.jpg&#39;</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+    <span class="n">images</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">image_i</span><span class="p">)</span>
+<span class="n">stop</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loading in the data took ~</span><span class="si">{</span><span class="n">stop</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="si">:</span><span class="s2">0.2f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading in the data took ~20.38 seconds
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is very slow because it is being done sequentially with only a single process. Since the 2010’s, it has become common place that laptops used for school, research, and everyday use have several cores (4+) at their disposal. A simple use case of parallelism would be to distribute the above <code class="docutils literal notranslate"><span class="pre">for</span></code> loop task across multiple cores to speed up the total time. In the case of ~10 seconds total this is not super useful, but for exceedingly large files or for systems with slow File I/O speeds, this can save minutes to hours of time.</p>
+<p>For this resource, we will show one of the simplest methods for parallelization of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop: <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code></p>
+<p>To use simple parallelization with <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code>, it is important to first understand the concept of the <code class="docutils literal notranslate"><span class="pre">map()</span></code> function. The <code class="docutils literal notranslate"><span class="pre">map()</span></code> function returns a map object of the results after applying the given function to each item of a given iterable (i.e. list, tuple, array, etc…). To use the <code class="docutils literal notranslate"><span class="pre">map()</span></code> function we must first rewrite the operations done in the above <code class="docutils literal notranslate"><span class="pre">for</span></code> loop as a mappable function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    a mappable function to load in the ith image.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">    i - int - index</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    image_i - np.ndarray - a (424,424) image array corresponding to index i.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span> <span class="c1">#artificial sleep to mimick the scenario</span>
+    <span class="n">image_i</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;./images/</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">.jpg&#39;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">image_i</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>From here we can perform the same task as the initial <code class="docutils literal notranslate"><span class="pre">for</span></code> loop with our mappable function by calling the <code class="docutils literal notranslate"><span class="pre">map()</span></code> function, giving the mappable function and the iteratable we wish to map the function onto. In this case our mappable function is <code class="docutils literal notranslate"><span class="pre">load_data()</span></code> and our iteratable is the same iterable we were going to use in our <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">images</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">load_data</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)))</span>
+<span class="n">stop</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loading in the data took ~</span><span class="si">{</span><span class="n">stop</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="si">:</span><span class="s2">0.2f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading in the data took ~20.77 seconds
+</pre></div>
+</div>
+</div>
+</div>
+<div class="attention admonition">
+<p class="admonition-title">Question</p>
+<p>We note that if the outer most function call <code class="docutils literal notranslate"><span class="pre">list()</span></code> is not present the code runs nearly instantly, why would it not take ~10 seconds like before?</p>
+</div>
+<p>We don’t yet see any speed up, but this is just because we haven’t started using multiple cores yet. This is all done on a single core. Any <code class="docutils literal notranslate"><span class="pre">for</span></code> loop can be recast as a mapping. In some cases a mapping can actually be a little faster than a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. We will now dive into using a pool of processors to perform the mapping in parallel.</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code> is quite simple and only requires a few lines of new code. Often times <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> environments can clash with the mechanics going on under the hood, to avoid dealing with these issues we simply use a <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> magic command to write the contents of the cell below to a python script file which we will run in the cell below using another magic command (this is equivalent to just running a <code class="docutils literal notranslate"><span class="pre">.py</span></code> file instead of using your notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> map_parallel.py
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">concurrent.futures</span>
+
+<span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    a mappable function to load in the ith image.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">    i - int - index</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    image_i - np.ndarray - a (256,256) image array corresponding to index i.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span> <span class="c1">#artificial sleep to mimick the scenario</span>
+    <span class="n">image_i</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;./images/</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">.jpg&#39;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">image_i</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+
+    <span class="n">max_workers</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1">#this should be however many cores you are able to use</span>
+
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="k">with</span> <span class="n">concurrent</span><span class="o">.</span><span class="n">futures</span><span class="o">.</span><span class="n">ProcessPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="n">max_workers</span><span class="p">)</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+        <span class="n">images</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">executor</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">load_data</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)))</span>
+        <span class="n">executor</span><span class="o">.</span><span class="n">shutdown</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">stop</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loading in the data took ~</span><span class="si">{</span><span class="n">stop</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="si">:</span><span class="s2">0.2f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">images</span>
+        
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">images</span> <span class="o">=</span> <span class="n">main</span><span class="p">()</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    from here the list of images can be used as one </span>
+<span class="sd">    pleases. It can be fed into other functions for </span>
+<span class="sd">    analysis for example. For this example, we</span>
+<span class="sd">    will just save them all into large numpy array </span>
+<span class="sd">    and save that array to local storage.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">images</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;images.npy&#39;</span><span class="p">,</span> <span class="n">images</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting map_parallel.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>python<span class="w"> </span>map_parallel.py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading in the data took ~5.03 seconds
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">we load the images back in, in practice one would perform the analysis</span>
+<span class="sd">in the python script and store the results of the analysis in storage.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">images</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;images.npy&#39;</span><span class="p">)</span>
+<span class="n">images</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1000, 424, 424, 3)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that when using 4 cores the time taken to load in the data is ~3-4x faster! The reason it is not exactly 4x faster is because one of the processors used in the pool is used to manage the process pool. One can use as many workers in the process pool as they have processors available in their hardware.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ProcessPoolExecutor</span></code> is an abstract object in the <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code> module that uses a pool of processes to execute function calls asynchronously. <code class="docutils literal notranslate"><span class="pre">ProcessPoolExecutor</span></code> uses the <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> module, which allows it to side-step the Global Interpreter Lock that makes parallelization in python frustratingly overcomplicated but also means that only picklable objects can be executed and returned. It is also possible to use <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code> to do multithreading related tasks with a <code class="docutils literal notranslate"><span class="pre">ThreadPoolExecutor</span></code>, for a review on the difference between these two topics we refer to this article on <a class="reference external" href="https://www.geeksforgeeks.org/difference-between-multithreading-vs-multiprocessing-in-python/">multiprocessing vs. multithreading</a>.</p>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 1</p>
+<div class="docutils container">
+<p>Write your own python script which uses <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code> to run a mock “analysis” pipeline on all 1000 images using the <code class="docutils literal notranslate"><span class="pre">pipeline()</span></code> function written below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pipeline</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    a mock pipeline analysis function which we wish </span>
+<span class="sd">    to apply to each image in our stack.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">size</span>
+    
+    <span class="n">weighted_sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nx</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ny</span><span class="p">):</span>
+            <span class="n">weighted_sum</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span>
+    
+    <span class="k">return</span> <span class="n">weighted_sum</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 2</p>
+<div class="docutils container">
+<p>Use your own <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code> analysis pipeline framework code from the first exercise to make a new analysis pipeline where you compute the median brightness in each color filter. Make a histogram of the median brightness for each filter (R,G,B) across all 1000 images. What do you see in the distributions?</p>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./exercises/sunseri2024a"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../pasha2024b/hii-regions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Sizes of HII Regions</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../yadavalli2024a/SN_Habitability.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Rouge Planet Habitability</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-goals">Motivation &amp; Goals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-description">Problem Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The AstroCodEx Collaboration
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

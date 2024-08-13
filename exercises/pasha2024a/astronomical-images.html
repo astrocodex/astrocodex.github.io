@@ -1,0 +1,698 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Visualizing Astronomical Images &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8fb1fe15" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/pasha2024a/astronomical-images';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Stellar Temperatures from Spectra" href="../lester2024a/stellar_spectrum.html" />
+    <link rel="prev" title="Exploring the Diversity of Known Exoplanets" href="../cerny2024b/exoplanet-diversity.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Python Exercises Gallery</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Level I</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cerny2024a/stefan-boltzmann.html">Stellar Luminosities from the Stefan-Boltzmann Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerny2024b/exoplanet-diversity.html">Exploring the Diversity of Known Exoplanets</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Visualizing Astronomical Images</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Level II</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../lester2024a/stellar_spectrum.html">Stellar Temperatures from Spectra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Gaia Star Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">The Sizes of HII Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sunseri2024a/Data_Parallelism_Part_1.html">Introduction to Data Parallelism</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Level III</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../yadavalli2024a/SN_Habitability.html">Rouge Planet Habitability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bellinger2024a/trig-regression.html">Trigonometric Regression</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides and Walkthroughs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../guides/Debugging_Guide.html">Debugging Strategies Resource</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexercises/pasha2024a/astronomical-images.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/exercises/pasha2024a/astronomical-images.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Visualizing Astronomical Images</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-a-fits-file">Opening a Fits File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-an-image-opening-function">Writing an Image Opening Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-image">Visualizing the Image</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-function-for-image-viewing">A function for Image Viewing</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="visualizing-astronomical-images">
+<h1>Visualizing Astronomical Images<a class="headerlink" href="#visualizing-astronomical-images" title="Link to this heading">#</a></h1>
+<div class="author admonition">
+<p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0002-7075-9931">Imad Pasha</a>, <a class="reference external" href="https://orcid.org/0000-0002-8320-2198">Yasmeen Asali</a>, <a class="reference external" href="https://orcid.org/0000-0003-1697-7062">William Cerny</a>, <a class="reference external" href="https://orcid.org/0000-0002-9986-4604">Sebastian Monzon</a> (Yale University)</p>
+<p><em>Description</em>: Practice writing Python functions + visualization of astronomical imaging</p>
+<p><em>Intended Audience</em>: Beginner to Intermediate Undergraduate</p>
+<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">library:matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">control-flow:functions</span></code>, <code class="docutils literal notranslate"><span class="pre">visualization</span></code>, <code class="docutils literal notranslate"><span class="pre">astronomical-images</span></code></p>
+<p><em>Requirements</em>: <a class="reference download internal" download="" href="../../_downloads/680277407d6b14f5f415a6f8c2610ce0/requirements.txt"><span class="xref download myst">requirements.txt</span></a></p>
+<p><em>Last Updated: July 23, 2024</em></p>
+</div>
+<div class="learningobjective admonition">
+<p class="admonition-title">Learning Objectives</p>
+<ul class="simple">
+<li><p>Write basic functions in Python</p></li>
+<li><p>Be able to appropriately scale and view <code class="docutils literal notranslate"><span class="pre">FITS</span></code> images</p></li>
+</ul>
+</div>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Images taken by telescopes (both in space and on the ground) are a crucial element of astronomical research, providing a spatially resolved view of a region (generally at a particular wavelength). These images are predominantly stored in an astronomy-specific file type known as <code class="docutils literal notranslate"><span class="pre">fits</span></code> — flexible image transport system (though tables can also be stored in <code class="docutils literal notranslate"><span class="pre">fits</span></code> files)</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">astropy.io</span></code> module has a useful submodule for working with <code class="docutils literal notranslate"><span class="pre">fits</span></code> files, which can be imported as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
+</pre></div>
+</div>
+<p>Within a <code class="docutils literal notranslate"><span class="pre">fits</span></code> file, information is stored in what are called <em>extensions</em>. These are like separate buckets/folders, and thus allow one to store multiple images, or an image + table, or multiple tables, within 1 file. But often, we have a simple file with 1 image in the 0th extension. Every extension present in a <code class="docutils literal notranslate"><span class="pre">fits</span></code> file has two <code class="docutils literal notranslate"><span class="pre">attributes</span></code>: a <code class="docutils literal notranslate"><span class="pre">.header</span></code> attribute, and a <code class="docutils literal notranslate"><span class="pre">.data</span></code> attribute. The header is like a dictionary, storing ancillary information in key-value pairs, while the data attribute stores the image, table, etc.</p>
+<p>When we load a <code class="docutils literal notranslate"><span class="pre">fits</span></code> file, we usually also want to know something about the coordinates (on the sky, so RA and DEC) of the objects in our image. To do this, we need to know the <code class="docutils literal notranslate"><span class="pre">WCS</span></code> (world coordinate system) information for the image, which provides a translation between position in pixel (image) coordinates and sky coordinates. For many astronomical images you will work with, this information has been added to the <code class="docutils literal notranslate"><span class="pre">.header</span></code> attribute for the extension of the image. The <code class="docutils literal notranslate"><span class="pre">astropy.wcs.WCS</span></code> class can be given such a header, and compute a <code class="docutils literal notranslate"><span class="pre">wcs</span></code> object that will be useful when we go to plot or determine locations in our image. We can import it via</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.wcs</span> <span class="kn">import</span> <span class="n">WCS</span>
+</pre></div>
+</div>
+<p>So how do we actually open a <code class="docutils literal notranslate"><span class="pre">fits</span></code> file and retrieve the image and header? We’ll use a pythonic structure known as a <a class="reference external" href="https://realpython.com/python-with-statement/">context manager</a>. The details of context managers aren’t super important right now, but the key point is this: <strong>context managers let us open contexts and close them automatically</strong>. For files, this means we can open a <code class="docutils literal notranslate"><span class="pre">fits</span></code> file, extract what we need, and close the file automatically.</p>
+</section>
+<section id="opening-a-fits-file">
+<h2>Opening a Fits File<a class="headerlink" href="#opening-a-fits-file" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">fits</span></code> file we will be using here is an image of M33 taken by the Dragonfly Spectral Line Mapper.</p>
+<p>You can download it <a class="reference download internal" download="" href="../../_downloads/c6711590debf7c5baae79bb52defcd4d/M33_halpha.fits"><span class="xref download myst">here</span></a> (right click and save as a <code class="docutils literal notranslate"><span class="pre">.fits</span></code> file).</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 1</p>
+<div class="docutils container">
+<p>To open a simple image <code class="docutils literal notranslate"><span class="pre">fits</span></code> file using a context manager, we do something like the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span> 
+<span class="kn">from</span> <span class="nn">astropy.wcs</span> <span class="kn">import</span> <span class="n">WCS</span> 
+
+<span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;./M33_halpha.fits&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdu</span><span class="p">:</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">hdu</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span> 
+    <span class="n">wcs</span> <span class="o">=</span> <span class="n">WCS</span><span class="p">(</span><span class="n">hdu</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Using the <code class="docutils literal notranslate"><span class="pre">M33_halpha.fits</span></code> file provided, use the above snippet in your own code to open the image.</p></li>
+</ol>
+<p>What happened in the snippet?</p>
+<ul class="simple">
+<li><p>First, we said “with fits.open()” to establish it as a context manager, provided the file path, and gave the overall object the name <code class="docutils literal notranslate"><span class="pre">hdu</span></code></p></li>
+<li><p>Next, within the block, we set <code class="docutils literal notranslate"><span class="pre">im</span></code> to be the <code class="docutils literal notranslate"><span class="pre">hdu</span></code> indexed at 0 (0th extension) and used dot-notation to extract the <code class="docutils literal notranslate"><span class="pre">.data</span></code> attribute</p></li>
+<li><p>Finally, we set a <code class="docutils literal notranslate"><span class="pre">wcs</span></code> variable to be the <code class="docutils literal notranslate"><span class="pre">astropy</span></code> <code class="docutils literal notranslate"><span class="pre">WCS</span></code> class, given the same extension but the <code class="docutils literal notranslate"><span class="pre">.header</span></code> attribute.</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="writing-an-image-opening-function">
+<h2>Writing an Image Opening Function<a class="headerlink" href="#writing-an-image-opening-function" title="Link to this heading">#</a></h2>
+<p>We can, if we wish, encapsulate this operation into a function. It’s short enough that it’s not <em>overly</em> onerous to write out each time. But we can make these three lines into one, which might make our code easier to read when loading many different <code class="docutils literal notranslate"><span class="pre">fits</span></code> files throughout a script.</p>
+<p>Recall that a <code class="docutils literal notranslate"><span class="pre">function</span></code> in Python is, like a mathematical function, designed to take input <em>arguments</em> (when needed) and <em>return</em> values back. So <span class="math notranslate nohighlight">\(y = sin(x)\)</span> is a function which takes <span class="math notranslate nohighlight">\(x\)</span> as an argument and returns something, which has been named <span class="math notranslate nohighlight">\(y\)</span> here. The default structure of a simple python function is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">arg1_name</span><span class="p">,</span><span class="n">arg2_name</span><span class="p">):</span>
+    <span class="n">computation</span> <span class="o">=</span> <span class="n">arg1_name</span> <span class="o">*</span> <span class="n">arg2_name</span> 
+    <span class="k">return</span> <span class="n">computation</span>
+</pre></div>
+</div>
+<p>Here we use <code class="docutils literal notranslate"><span class="pre">def</span></code> to define a function (lines within the function are indented), and within the function, we assign inputs names to use when computing things, before returning some final value(s) if required.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 2</p>
+<div class="docutils container">
+<ol class="arabic simple">
+<li><p>Start by defining a function <code class="docutils literal notranslate"><span class="pre">load_fits</span></code> which has arguments <code class="docutils literal notranslate"><span class="pre">fname</span></code> (<code class="docutils literal notranslate"><span class="pre">str</span></code>), and <code class="docutils literal notranslate"><span class="pre">extension</span></code> (<code class="docutils literal notranslate"><span class="pre">int</span></code>). These are the pieces of information we needed above.</p></li>
+<li><p>Then add these lines above into the function trading out the hard coded elements for the function arguments.</p></li>
+<li><p>Finally, <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">im,</span> <span class="pre">wcs</span></code>. As the majority of <code class="docutils literal notranslate"><span class="pre">fits</span></code> image store the image in the 0th extension, you can set the default for that argument to 0.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Remember!
+Don’t forget to document your function!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="visualizing-the-image">
+<h2>Visualizing the Image<a class="headerlink" href="#visualizing-the-image" title="Link to this heading">#</a></h2>
+<p>Let’s visualize the image we have loaded.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 3</p>
+<div class="docutils container">
+<ol class="arabic simple">
+<li><p>Use the matplotlib <code class="docutils literal notranslate"><span class="pre">imshow</span></code> command to plot the M33 image. To see anything useful, you will need to set the <code class="docutils literal notranslate"><span class="pre">vmin</span></code> and <code class="docutils literal notranslate"><span class="pre">vmax</span></code> arguments — a convenient choice is to compute the <code class="docutils literal notranslate"><span class="pre">np.percentile</span></code> of the data at <code class="docutils literal notranslate"><span class="pre">[1,99]</span></code> and to set those as the min and max scalings.</p></li>
+<li><p>Additionally set <code class="docutils literal notranslate"><span class="pre">origin='lower'</span></code> and <code class="docutils literal notranslate"><span class="pre">cmap='viridis'</span></code> in your imshow call.</p></li>
+</ol>
+<p>I suggest a figure size of 10 by 10 inches. Remember we can call <code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">ax</span> <span class="pre">=</span> <span class="pre">plt.subplots()</span></code> to make our figure and axes objects (so here, <code class="docutils literal notranslate"><span class="pre">fig,ax=plt.subplots(figsize=(10,10))</span></code>). We then use <code class="docutils literal notranslate"><span class="pre">ax.imshow(...)</span></code> to add images to the axes.</p>
+<p>With the right scaling, it might look something like this:</p>
+<p><img alt="" src="../../_images/m33.png" /></p>
+</div>
+</div>
+</section>
+<section id="a-function-for-image-viewing">
+<h2>A function for Image Viewing<a class="headerlink" href="#a-function-for-image-viewing" title="Link to this heading">#</a></h2>
+<p>The code to visualize the image above is already a few lines of code, and we <em>often</em> need to plot astronomical images. Let’s now make a function that can streamline some of these lines of code above for us.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 4</p>
+<div class="docutils container">
+<ol class="arabic simple">
+<li><p>First define a function <code class="docutils literal notranslate"><span class="pre">implot</span></code>. The first argument should be a variable <code class="docutils literal notranslate"><span class="pre">path_or_pixels</span></code>. We’re going to allow users to either provide a file name to a <code class="docutils literal notranslate"><span class="pre">fits</span></code> file directly, or provide an image array (as we did above). To handle this, write some logic using the <code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> python function to check whether the input is an array or a string, and if it is a string, use the <code class="docutils literal notranslate"><span class="pre">load_fits</span></code> function we wrote in Exercise 1 to load the image. (Otherwise, we’ll just set our image to be the <code class="docutils literal notranslate"><span class="pre">path_or_pixels</span></code> input, assuming it is an array. You could use <code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> again to check if it is a numpy array and raise an exception if not, optionally.)</p></li>
+<li><p>Include as arguments the following:</p></li>
+</ol>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">percentiles</span></code> (<code class="docutils literal notranslate"><span class="pre">list</span></code>) (which will let users scale <code class="docutils literal notranslate"><span class="pre">vmin</span></code> and <code class="docutils literal notranslate"><span class="pre">vmax</span></code>, set to a default of <code class="docutils literal notranslate"><span class="pre">[1,99.5]</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">figsize</span></code> (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>): an optional argument with a default set to something like (8,8).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cmap</span></code> (<code class="docutils literal notranslate"><span class="pre">str</span></code>): argument with a default of <code class="docutils literal notranslate"><span class="pre">'gray_r'</span></code>, passed along the <code class="docutils literal notranslate"><span class="pre">imshow</span></code> command, giving us control over the plotting color mapping.</p></li>
+</ul>
+<p>Your function should <code class="docutils literal notranslate"><span class="pre">return</span></code> the <code class="docutils literal notranslate"><span class="pre">fig</span></code> and <code class="docutils literal notranslate"><span class="pre">ax</span></code> objects it created.</p>
+<div class="dropdown admonition">
+<p class="admonition-title"><em>Hint: isinstance()</em></p>
+<p>If you haven’t used <code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> yet, here’s a primer.</p>
+<p>When we want to check the <code class="docutils literal notranslate"><span class="pre">type</span></code> of a variable, we can use <code class="docutils literal notranslate"><span class="pre">type(var_name)</span></code> to see its typename. When we want to check or ensure that a variable’s type matches some desired type, we can use <code class="docutils literal notranslate"><span class="pre">isinstance(variable,type)</span></code> to return <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">isinstance('test',str)</span></code> would return true, because the input <code class="docutils literal notranslate"><span class="pre">'test'</span></code> is a string. The names for the built-in types are <code class="docutils literal notranslate"><span class="pre">str</span></code>,<code class="docutils literal notranslate"><span class="pre">bool</span></code>,<code class="docutils literal notranslate"><span class="pre">list</span></code>,<code class="docutils literal notranslate"><span class="pre">dict</span></code>,<code class="docutils literal notranslate"><span class="pre">tuple</span></code>,<code class="docutils literal notranslate"><span class="pre">float</span></code>,<code class="docutils literal notranslate"><span class="pre">int</span></code>, etc. For a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array, its “type” is <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code>.</p>
+<ol class="arabic simple" start="3">
+<li><p>Try out your function to make sure it is working as expected — try inputting both our image array from above, as well as the file name. Try changing the percentiles and figsize and make sure the function responds accordingly.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<p>Next we want to incorporate the <code class="docutils literal notranslate"><span class="pre">wcs</span></code> into the mix, allowing us to easily view an image with axes either in pixels or in astronomical coordinates.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 5</p>
+<div class="docutils container">
+<ol class="arabic simple">
+<li><p>Currently, a <code class="docutils literal notranslate"><span class="pre">wcs</span></code> will be accessible if the user provides the path to a file that has one. Now, add an optional argument to your function <code class="docutils literal notranslate"><span class="pre">wcs</span></code> with a default of <code class="docutils literal notranslate"><span class="pre">None</span></code> — this way, if a user has read in an image themselves (as we did above) they can provide both the array an the wcs. Add logic so that if the <code class="docutils literal notranslate"><span class="pre">wcs</span></code> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> (either from loading an image, or after the function input), we add the following to our subplots command:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span><span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;projection&#39;</span><span class="p">:</span><span class="n">wcs</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>What this does is turn our regular axis into a <code class="docutils literal notranslate"><span class="pre">WCSAxis</span></code>, which can handle plotting astronomical units along the axes of our image.</p>
+<ol class="arabic simple" start="2">
+<li><p>Try your function again, but this time add the <code class="docutils literal notranslate"><span class="pre">wcs</span></code> we created when loading the image. How do your plot axes change?</p></li>
+<li><p>At the moment, the user <em>chooses</em> whether to provide a wcs for the pixels case, but we <em>force</em> a wcs plotting if a path to a fits file that contains a wcs is provided. This should be the default case, but it might be nice to give the option to turn that off. The easiest way to accomplish this is to add an <code class="docutils literal notranslate"><span class="pre">ignore_wcs</span></code> optional argument to your function which has a default of <code class="docutils literal notranslate"><span class="pre">False</span></code>. Thus, given an image file path, we can plot using coordinates by default, or the raw pixels by ignoring any wcs present. This works too if we provide a wcs but want to easily toggle it on and off.</p></li>
+<li><p>Try out your function again, using both the fits file string and the array, but now try all your toggles — i.e., fits file string, fits file string plus ‘ignore_wcs’ if you added that feature, array input, array input + wcs object input. Do you get the proper behavior? Below is an example of what the output should look like for default loading of the image.</p></li>
+</ol>
+</div>
+</div>
+<p>There are now a decent number of lines of logic and checking in our function, and hopefully it is becoming clear why making such a function is so useful — we can now very quickly and easily load and plot any fits file, or any array we have on hand, with <code class="docutils literal notranslate"><span class="pre">wcs</span></code> on or off, with limits setting, all in one line.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is a good idea to <code class="docutils literal notranslate"><span class="pre">return</span></code> the <code class="docutils literal notranslate"><span class="pre">fig</span></code> and <code class="docutils literal notranslate"><span class="pre">ax</span></code> objects at the end of our function. This is useful because if we want to add to our plot (say, add a circle somewhere, or text), or <em>change</em> our plot (adjust the limits, etc.) we need to be able to access those objects. As we learned when we discussed <strong>scope</strong>, anything from inside a function that we want access to after the function has been run must be <code class="docutils literal notranslate"><span class="pre">returned</span></code> back to the larger scope of the python script we are working in.</p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./exercises/pasha2024a"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../cerny2024b/exoplanet-diversity.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exploring the Diversity of Known Exoplanets</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../lester2024a/stellar_spectrum.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Stellar Temperatures from Spectra</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-a-fits-file">Opening a Fits File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-an-image-opening-function">Writing an Image Opening Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-image">Visualizing the Image</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-function-for-image-viewing">A function for Image Viewing</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The AstroCodEx Collaboration
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

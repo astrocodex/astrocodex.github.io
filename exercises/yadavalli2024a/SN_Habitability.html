@@ -1,0 +1,729 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Rouge Planet Habitability &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8fb1fe15" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/yadavalli2024a/SN_Habitability';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Trigonometric Regression" href="../bellinger2024a/trig-regression.html" />
+    <link rel="prev" title="Introduction to Data Parallelism" href="../sunseri2024a/Data_Parallelism_Part_1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Python Exercises Gallery</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Level I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cerny2024a/stefan-boltzmann.html">Stellar Luminosities from the Stefan-Boltzmann Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerny2024b/exoplanet-diversity.html">Exploring the Diversity of Known Exoplanets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pasha2024a/astronomical-images.html">Visualizing Astronomical Images</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Level II</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../lester2024a/stellar_spectrum.html">Stellar Temperatures from Spectra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Gaia Star Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">The Sizes of HII Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sunseri2024a/Data_Parallelism_Part_1.html">Introduction to Data Parallelism</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Level III</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Rouge Planet Habitability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bellinger2024a/trig-regression.html">Trigonometric Regression</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides and Walkthroughs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../guides/Debugging_Guide.html">Debugging Strategies Resource</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexercises/yadavalli2024a/SN_Habitability.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/exercises/yadavalli2024a/SN_Habitability.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Rouge Planet Habitability</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-helper-functions">Part 1: Helper Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-main-function">Part 2: Main Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-fraction-of-habitable-planets">Part 3: Fraction of Habitable Planets</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="rouge-planet-habitability">
+<h1>Rouge Planet Habitability<a class="headerlink" href="#rouge-planet-habitability" title="Link to this heading">#</a></h1>
+<div class="author admonition">
+<p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0002-0840-6940">S. Karthik Yadavalli</a> (Harvard University)</p>
+<p><em>Description</em>: An investigation into whether a rogue planet could receive habitable levels of energy flux from galactic supernovae.</p>
+<p><em>Intended Audience</em>: Intermediate to Advanced Undergraduate</p>
+<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">libraries:numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">sampling-positions</span></code>, <code class="docutils literal notranslate"><span class="pre">supernovae</span></code>, <code class="docutils literal notranslate"><span class="pre">habitability</span></code>, <code class="docutils literal notranslate"><span class="pre">planets</span></code></p>
+<p><em>Requirements</em>: <a class="reference download internal" download="" href="../../_downloads/58ef06171353b9fd24a16722c0a7a614/requirements.txt"><span class="xref download myst">requirements.txt</span></a></p>
+<p><em>Last Updated: July 23, 2024</em></p>
+</div>
+<div class="learningobjective admonition">
+<p class="admonition-title">Learning Objectives</p>
+<ol class="arabic simple">
+<li><p>Learn how to uniformly sample coordinate locations from a cylindrical coordinate space.</p></li>
+<li><p>Successfully calculate distances in cylindrical coordinates.</p></li>
+<li><p>Be able to calculate flux from luminosity and use it to determine the habitability of a given coordinate, assuming a uniform distribution of SNe explosions.</p></li>
+</ol>
+</div>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>How many supernovae need to be continuously going off in a region of space for most of that space to be habitable? Imagine you have a rogue planet: one that has been ejected from its host star and is floating around its host galaxy in interstellar space. Imagine it is far enough away from its host star and from all other stars that the flux it receives from stars is negligible. As it floats around in its galaxy, is it possible that the planet can remain habitable just from the light and heat emitted by supernovae going off in the galaxy? How many supernovae would need to be going off in this galaxy so that such a rogue planet could actually be habitable?</p>
+<p>In these exercises, you’ll create a region of space shaped like a disk (approximating a spiral galaxy) and randomly sample locations in that space where there are planets and where there are supernovae going off. Then, you’ll calculate how much energy each planet receives from all the supernovae going off. Finally, you’ll calculate how many of those planets are habitable.</p>
+<div class="note admonition">
+<p class="admonition-title">On Habitability</p>
+<p>In this exercise, we only briefly explore planet habitability. We assume a planet will be habitable if the flux it receives is larger than the flux Mars receives from the Sun and smaller than the flux received by Venus from the Sun. However, habitability is far more complex than this, and depends on more factors, including the atmosphere of the planet and how regularly the flux received by the planet changes.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">On Units</p>
+<p>Note that all luminosities in this notebook will be in <code class="docutils literal notranslate"><span class="pre">cgs</span></code> units. Therefore, luminosity will need to be calculated in <span class="math notranslate nohighlight">\(\rm{ergs}/\rm{s}\)</span>, and fluxes in <span class="math notranslate nohighlight">\(\rm{erg}/\rm{s}/\rm{cm^2}\)</span>. We will use <span class="math notranslate nohighlight">\(\rm{kpc}\)</span> to represent distances within the galaxy, but make sure to convert those distances to <span class="math notranslate nohighlight">\(\rm{cm}\)</span> for the sake of calculating fluxes.</p>
+</div>
+</section>
+<section id="part-1-helper-functions">
+<h2>Part 1: Helper Functions<a class="headerlink" href="#part-1-helper-functions" title="Link to this heading">#</a></h2>
+<p>We’ll stary by importing some packages we will need.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>First, we need a function that will allow us to retrieve “N” random locations within our cylindrical disk space.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 1</p>
+<div class="docutils container">
+<p>A scaffold for this function is provided below — we provide the radius and height of the disk we want to sample from, with <code class="docutils literal notranslate"><span class="pre">N</span></code> defaulting to 10000 locations.</p>
+<ol class="arabic simple">
+<li><p>Modify the function below such that it samples randomly radii and heights in the disk, which when paired with the theta’s being sampled around will produce many random locations.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_random_locs</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span> <span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">10000</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    This should return a 2d array, where the shape is (N, 3). As in,</span>
+<span class="sd">    there should be N rows, with each row showing one random location. Each row should have 3 columns showing the r, theta, and z value</span>
+<span class="sd">    of that location. These locations should be within the radius, heigh, and theta ranges passed in as input</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="n">rs</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="n">zs</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="n">thetas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">*</span> <span class="p">(</span><span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="n">coordinates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">rs</span><span class="p">,</span> <span class="n">zs</span><span class="p">,</span> <span class="n">thetas</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">coordinates</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will also need a function to compute the distance between any two points within our disk.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 2</p>
+<div class="docutils container">
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">calc_distance(coord1,coord2)</span></code> which takes in two coordinates in cylindrical coordinates and returns the distance between them.</p>
+<p><em>Hint: It might be easier to convert the coordinates to cartesian first to more easily compute the distance</em>.</p>
+</div>
+</div>
+<p>Additionally, we need to be able to compute the flux received at a specific distance from a supernova, given its luminosity.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 3</p>
+<div class="docutils container">
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">calc_flux(luminosity,distance_kpc)</span></code> that takes in a luminosity and distance in kpc, and computes the flux in erg/s/cm<span class="math notranslate nohighlight">\(^2\)</span> at that location.</p>
+<p><em>Hint: Recall that <span class="math notranslate nohighlight">\(F=L/(4\pi D^2)\)</span>, and remember to convert kpc to cm along the way</em>.</p>
+</div>
+</div>
+<p>Finally, we need a helper function which returns whether a value of flux corresponds to a below-habitable (0), habitable (1) or above-habitable (2) level.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 4</p>
+<div class="docutils container">
+<p>Define a function <code class="docutils literal notranslate"><span class="pre">habitable(flux)</span></code> which given a flux returns 0, 1, or 2 depending on whether the flux is below a minimum of 586200 erg/s/cm<span class="math notranslate nohighlight">\(^2\)</span>, between that and a maximum of 2601300 erg/s/cm<span class="math notranslate nohighlight">\(^2\)</span>, or above that maximum, respectively.</p>
+</div>
+</div>
+</section>
+<section id="part-2-main-function">
+<h2>Part 2: Main Function<a class="headerlink" href="#part-2-main-function" title="Link to this heading">#</a></h2>
+<p>This next cell is the workhorse of our calculation. In this function, we will create the galaxy, generate locations in it for both supernovae and planets, and calculate how many of those planets will be habitable.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 5</p>
+<div class="docutils container">
+<ol class="arabic simple">
+<li><p>Define a “supernova density”: <code class="docutils literal notranslate"><span class="pre">n_sne_kpc3</span></code>, which defines how many supernovae are going off in the galaxy at any given time. This is the first simplification we will make in this calculation. For there to be enough flux in the galaxy that even rogue planets are habitable, there need to be so many supernovae going off in the galaxy continuously that we will not even consider how the light emitted by a single supernova changes over time. We will simply assume that at any point in time, a constant number of supernovae are currently active, and that each one is emitting an equal amount of total luminosity. Therefore, we will define a “supernova density”-how many are going off at a given time per cubic kiloparsec.</p></li>
+<li><p>Define the dimensions of the galaxy: <code class="docutils literal notranslate"><span class="pre">r_kpc</span></code> and <code class="docutils literal notranslate"><span class="pre">h_kpc</span></code>. We will assume the galaxy is a cylinder, with a radius and height in kiloparsecs</p></li>
+<li><p>Using the dimensions of the galaxy, calculate the volume and total number of supernovae going off continuously by multplying the supernova density by the volume of the galaxy</p></li>
+<li><p>Define a pixel count: <code class="docutils literal notranslate"><span class="pre">n_pixels</span></code>. We need to decide how many pixels we want to use to describe our galaxy. How many different coordinate locations do we want to generate, from which we will randomly pick planet locations and supernova locations? Then, we need to generate <code class="docutils literal notranslate"><span class="pre">n_pixels</span></code> number of random coordinate locations in the galaxy: <code class="docutils literal notranslate"><span class="pre">galaxy_locs</span></code>. We will do this in our first helper function: <code class="docutils literal notranslate"><span class="pre">get_random_locs()</span></code>.</p></li>
+<li><p>Define the number of planets: <code class="docutils literal notranslate"><span class="pre">n_planets</span></code>. Then, generate <code class="docutils literal notranslate"><span class="pre">n_planets</span></code> number of random coordinates: <code class="docutils literal notranslate"><span class="pre">planet_coordinates</span></code> by randomly choosing coordinates from <code class="docutils literal notranslate"><span class="pre">galaxy_locs</span></code></p></li>
+<li><p>Generate <code class="docutils literal notranslate"><span class="pre">n_sne</span></code> number of random coordinates: sne_coordinates by randomly choosing coordinates from galaxy_locs. Note that I have set the <code class="docutils literal notranslate"><span class="pre">sne_lum</span></code> to <span class="math notranslate nohighlight">\(10^{44}~\frac{erg}{s}\)</span>. This is the peak luminosity of some of the brightest supernovae we’ve seen!</p></li>
+<li><p>Define an array that can keep track of how much flux is absorbed by each planet: <code class="docutils literal notranslate"><span class="pre">planet_fluxes</span></code>. Also, keep track of the number of planets that are habitable: <code class="docutils literal notranslate"><span class="pre">num_habitable</span></code>, the number of planets that don’t get enough flux to be habitable: <code class="docutils literal notranslate"><span class="pre">num_cold</span></code>, and the number of panets that get too much flux to be habitable: <code class="docutils literal notranslate"><span class="pre">num_hot</span></code>.</p></li>
+<li><p>Looping through the planets, for each planet, add up the amount of flux it received from each supernova (a double nested for loop, with one looping through the planets, and a nested one looping through the supernovae). Then, append the flux to the <code class="docutils literal notranslate"><span class="pre">planet_fluxes</span></code> list. Then calculate whether that planet, with the flux you just calculated, would be habitable, too hot, or too cold.</p></li>
+<li><p>Finally, return the variable <code class="docutils literal notranslate"><span class="pre">planet_fluxes</span></code> so we can make a histogram with how much flux each planet receives.</p></li>
+</ol>
+<p>A scaffold for this function is provided below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_galaxy</span><span class="p">():</span>
+    <span class="c1">#step 1</span>
+    <span class="n">n_sne_kpc3</span> <span class="o">=</span> <span class="o">...</span> <span class="c1">#The number of supernovae going off per cubic kiloparsec</span>
+    
+    <span class="c1">#step 2</span>
+    <span class="n">r_kpc</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="n">h_kpc</span> <span class="o">=</span> <span class="o">...</span>
+
+    <span class="c1">#step 3</span>
+    <span class="n">vol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r_kpc</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">h_kpc</span>
+    <span class="n">n_sne</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">n_sne_kpc3</span> <span class="o">*</span> <span class="n">vol</span><span class="p">)</span> <span class="c1">#The total number of supernovae going off in the galaxy (multiply n_sne_kpc3 by the volume of the galaxy)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;At &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n_sne_kpc3</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; SNe per cubic kpc, in this galaxy (Volume = &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">vol</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span><span class="o">+</span><span class="s2">&quot; kpc^3), we get &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n_sne</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; SNe going off continuously&quot;</span><span class="p">)</span>
+    
+    
+    <span class="c1">#step 4 | Use the get_random_locs() function from the previous cell </span>
+    <span class="n">n_pixels</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1.0E8</span><span class="p">)</span> <span class="c1">#Number of locations to generate throughout the galaxy. </span>
+    <span class="n">galaxy_locs</span> <span class="o">=</span> <span class="o">...</span>
+
+    <span class="c1">#step 5 randomly sample from those locations for N_planets</span>
+    <span class="n">n_planets</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1">#The number of planets evenly distributed throughout the galaxy</span>
+    <span class="n">planet_coordinates</span> <span class="o">=</span> <span class="o">...</span>
+    
+    
+    <span class="c1">#step 6 random locations for where supernovae could happen</span>
+    <span class="n">sne_coordinates</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="n">sn_lum</span> <span class="o">=</span> <span class="mf">1.0E44</span> 
+
+    <span class="c1">#step 7 keeping track of how many planets are habitable, and how many are too cold (not enough flux) or too hot (too much flux) to be habitable</span>
+    <span class="n">planet_fluxes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">num_habitable</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">num_cold</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">num_hot</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1">#step 8</span>
+    <span class="k">for</span> <span class="n">planet</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_planets</span><span class="p">):</span>
+        <span class="n">flux_planet</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sne_coordinates</span><span class="p">)):</span>
+            <span class="n">dist_kpc</span> <span class="o">=</span> <span class="o">....</span>
+            <span class="n">flux_sn_planet</span> <span class="o">=</span> <span class="o">...</span>
+            <span class="n">flux_planet</span> <span class="o">+=</span> <span class="n">flux_sn_planet</span>
+        <span class="n">planet_fluxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">flux_planet</span><span class="p">)</span>
+        <span class="n">habitability</span> <span class="o">=</span> <span class="n">habitable</span><span class="p">(</span><span class="n">flux_planet</span><span class="p">)</span>
+
+        
+        <span class="k">if</span> <span class="n">habitability</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">num_cold</span><span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">habitability</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">num_habitable</span><span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">habitability</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">num_hot</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">num_uninhabitable</span> <span class="o">=</span> <span class="n">num_hot</span> <span class="o">+</span> <span class="n">num_cold</span>
+        
+    
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;habitable: &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">num_habitable</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;too cold: &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">num_cold</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;too hot: &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">num_hot</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">planet_fluxes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="part-3-fraction-of-habitable-planets">
+<h2>Part 3: Fraction of Habitable Planets<a class="headerlink" href="#part-3-fraction-of-habitable-planets" title="Link to this heading">#</a></h2>
+<p>Finally we can investigate whether a typical rogue planet could survive in our hypothetical galaxy.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 6</p>
+<div class="docutils container">
+<p>Using your <code class="docutils literal notranslate"><span class="pre">create_galaxy()</span></code> function, compute the fluxes at the set of sampled planet locations, and create a histogram of the fluxes, comparing it to the minimum and maximum allowable fluxes for habitability. Are most the planets in habitable regions?</p>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./exercises/yadavalli2024a"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../sunseri2024a/Data_Parallelism_Part_1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to Data Parallelism</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../bellinger2024a/trig-regression.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Trigonometric Regression</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-helper-functions">Part 1: Helper Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-main-function">Part 2: Main Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-fraction-of-habitable-planets">Part 3: Fraction of Habitable Planets</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The AstroCodEx Collaboration
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
