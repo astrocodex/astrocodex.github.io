@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block meta %}
+<div class="page-metadata">
+    <p>Custom template is being used</p> <!-- Add this line to check -->
+
+    {% if title %}
+    <h1>{{ title }}</h1>
+    {% endif %}
+    {% if author %}
+    <p><strong>Author:</strong> {{ author }}</p>
+    {% endif %}
+    {% if orcid %}
+    <p><strong>ORCID:</strong> <a href="https://orcid.org/{{ orcid }}">{{ orcid }}</a></p>
+    {% endif %}
+    {% if affiliations %}
+    <p><strong>Affiliations:</strong> {{ affiliations }}</p>
+    {% endif %}
+</div>
+{% endblock %}

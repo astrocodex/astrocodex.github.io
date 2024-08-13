@@ -1,0 +1,56 @@
+[
+    {
+        "title": "Stefan-Boltzmann Law",
+        "tags": ["beginner undergraduate"],
+        "description": "Use basic python to apply the SB law to stars.",
+        "url": "./exercises/cerny2024a/stefan-boltzmann"
+        },
+    {
+            "title": "Exoplanet Properties",
+            "tags": ["beginner undergraduate"],
+            "description": "Explore the properties of exoplanets and detection techniques.",
+            "url": "./exercises/cerny2024b/exoplanet-diversity"
+    },
+    {
+        "title": "Astronomical Imaging",
+        "tags": ["beginner undergraduate"],
+        "description": "Learn how to read and (nicely) view a fits file.",
+        "url": "./exercises/pasha2024a/astronomical-images"
+},
+    {
+        "title": "HII Regions in M33",
+        "tags": ["intermediate undergraduate"],
+        "description": "Investigate HII regions in an image of M33 and determine their sizes and number of OB stars.",
+        "url": "./exercises/pasha2024b/hii-regions"
+},
+    {
+    "title": "Trigonometric Regression",
+    "tags": ["advanced undergraduate"],
+    "description": "Fit Cepheid star pulsations using trigonometric regression models.",
+    "url": "./exercises/bellinger2024a/trig-regression"
+    },
+    {
+        "title": "Stellar Temperatures from Spectra",
+        "tags": ["intermediate undergraduate"],
+        "description": "Work with stellar models to infer temperature",
+        "url": "./exercises/lester2024a/stellar_spectrum"
+    },
+    {
+        "title": "Gaia Star Clusters",
+        "tags": ["beginner undergraduate"],
+        "description": "Retrieve gaia data to visualize and identify star clusters",
+        "url": "./exercises/granucci2024a/gaia-clusters"
+    },
+    {
+        "title": "Rogue Planet Habitability",
+        "tags": ["intermediate undergraduate"],
+        "description": "Create a hypothetical galaxy and see if a rogue planet could survive via supernova emission.",
+        "url": "./exercises/yadavalli2024a/SN_Habitability"
+    },
+    {
+        "title": "Introduction to Data Parallelization",
+        "tags": ["intermediate undergraduate"],
+        "description": "Learn how to use simple parallization in Python to decrease runtimes.",
+        "url": "./exercises/sunseri2024a/Data_Parallelism_Part_1"
+    }
+]

@@ -1,0 +1,678 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Sizes of HII Regions &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8fb1fe15" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/pasha2024b/hii-regions';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Introduction to Data Parallelism" href="../sunseri2024a/Data_Parallelism_Part_1.html" />
+    <link rel="prev" title="Gaia Star Clusters" href="../granucci2024a/gaia-clusters.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Python Exercises Gallery</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Level I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cerny2024a/stefan-boltzmann.html">Stellar Luminosities from the Stefan-Boltzmann Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerny2024b/exoplanet-diversity.html">Exploring the Diversity of Known Exoplanets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pasha2024a/astronomical-images.html">Visualizing Astronomical Images</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Level II</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../lester2024a/stellar_spectrum.html">Stellar Temperatures from Spectra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Gaia Star Clusters</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Sizes of HII Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sunseri2024a/Data_Parallelism_Part_1.html">Introduction to Data Parallelism</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Level III</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../yadavalli2024a/SN_Habitability.html">Rouge Planet Habitability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bellinger2024a/trig-regression.html">Trigonometric Regression</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides and Walkthroughs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../guides/Debugging_Guide.html">Debugging Strategies Resource</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexercises/pasha2024b/hii-regions.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/exercises/pasha2024b/hii-regions.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Sizes of HII Regions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-a-region">Finding a Region</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#size-trigonometry">Size Trigonometry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-ob-stars">Number of OB Stars</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-sizes-of-hii-regions">
+<h1>The Sizes of HII Regions<a class="headerlink" href="#the-sizes-of-hii-regions" title="Link to this heading">#</a></h1>
+<div class="author admonition">
+<p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0002-7075-9931">Imad Pasha</a>, <a class="reference external" href="https://orcid.org/0000-0002-8320-2198">Yasmeen Asali</a>, <a class="reference external" href="https://orcid.org/0000-0003-1697-7062">William Cerny</a>, <a class="reference external" href="https://orcid.org/0000-0002-9986-4604">Sebastian Monzon</a> (Yale University)</p>
+<p><em>Description</em>: Investigate an <span class="math notranslate nohighlight">\(H\alpha\)</span> image of M33 to determine the size of HII regions in the galaxy.</p>
+<p><em>Intended Audience</em>: Beginner to Intermediate Undergraduate</p>
+<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">library:matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">control-flow:functions</span></code>, <code class="docutils literal notranslate"><span class="pre">visualization</span></code>, <code class="docutils literal notranslate"><span class="pre">astronomical-images</span></code></p>
+<p><em>Requirements</em>: <a class="reference download internal" download="" href="../../_downloads/e97e5a2ff15789313d6fff7218a42f90/requirements.txt"><span class="xref download myst">requirements.txt</span></a></p>
+<p><em>Last Updated: July 23, 2024</em></p>
+</div>
+<div class="learningobjective admonition">
+<p class="admonition-title">Learning Objectives</p>
+<ul class="simple">
+<li><p>Write basic functions in Python.</p></li>
+<li><p>Be able to appropriately scale and view <code class="docutils literal notranslate"><span class="pre">FITS</span></code> images.</p></li>
+<li><p>Write functions to carry out analyses on images.</p></li>
+</ul>
+</div>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Stars form of many different masses (from much smaller than the sun to <strong>much</strong> larger), with many more low mass stars forming than massive stars. While very few high mass (e.g., 3-10+ <span class="math notranslate nohighlight">\(M_{\odot}\)</span>) stars form at a time in a galaxy, they have an outsized effect, dominating the light of the low mass stars (though they live much shorter lives). They are also the only stars (dubbed O-type) who put out significant light in the ultraviolet part of the spectrum. We know that our own sun does emit <em>some</em> light in the UV (that’s the more high energy, dangerous light that can give us cancer, hence sunscreen), but these stars pump out <em>most</em> of their light in the UV.</p>
+<p>UV light has enough energy to <em>ionize</em> the atoms in gas (especially hydrogen gas), which means to knock the bound electron out of the atom and leave behind a proton and an electron. In some equilibrium, these electrons <em>recombine</em> with protons, and the electrons <em>cascade</em> through several energy levels as they fall toward the ground (most bound) state. For each gap they drop, the atom emits a photon with an equivalent energy to the difference between the levels traversed.</p>
+<p>This process of recombination produces light at specific wavelengths, so when you look at planetary nebulae, star forming regions, or supernova remnanta (see below), the colors are representitive of the different elements and energy levels being traversed.</p>
+<p><img alt="eagle nebula" src="../../_images/eagle.jpg" />
+<em>The Eagle Nebule, where we can see the hollow region being blown out by young stars (with the famous pillars of creation remaining), soon to be whittled down. Credit: ESO</em></p>
+<p>Bright, young stars actually put out enough radiation to “blow out” and push on the gas remaining from the clouds from which they formed. This carves our roughly spherical regions known as Strömgen spheres, the inner boundary of which is usually lit up in this ionized emission. The <em>size</em> of the sphere blown out depends on the total amount of flux coming from the bright stars, which in turn depends on how many of them there are.</p>
+<p>In this exercise, we will be using an image of M33 taken by the Dragonfly Spectral Line Mapper.</p>
+<p>You can download it <a class="reference download internal" download="" href="../../_downloads/c6711590debf7c5baae79bb52defcd4d/M33_halpha.fits"><span class="xref download myst">here</span></a> (right click and save as a <code class="docutils literal notranslate"><span class="pre">.fits</span></code> file).</p>
+<p>If you open it up in DS9, or in Python with the right settings, you should see something like the following:</p>
+<p><img alt="" src="../../_images/m33.png" /></p>
+<p>In our image of M33, we can see lots of these roughly spherical regions being highlighted by the narrow, H<span class="math notranslate nohighlight">\(\alpha\)</span> filter being used to observe the galaxy. By measuring their size in pixels and using our knowledge of the distance to M33, we can perform some simple trigonometry to determine their actual physical sizes. As a bonus, we can then roughly estimate the number of O-type stars responsible for the visible HII region. (note that Starforming region and HII region are roughly synonymous; HII is the chemical name for ionized hydrogen).</p>
+</section>
+<section id="finding-a-region">
+<h2>Finding a Region<a class="headerlink" href="#finding-a-region" title="Link to this heading">#</a></h2>
+<p>While we can see by eye lots of small HII regions scattered around M33 in our image, to do a more careful analysis of the sizes we will need a way to crop our images to just focus on one HII region at a time.</p>
+<p>There are fundamentally two ways to carry out this crop. We can work in units of image pixels, and use <em>array indexing</em> and <em>slicing</em> to select subarrays containing out HII regions. Or, we could use our <code class="docutils literal notranslate"><span class="pre">wcs</span></code> objects to pick central coordinates on the sky and a size (in sky angular units) to crop in on, and use an <code class="docutils literal notranslate"><span class="pre">astropy</span></code> tool to do the crop.</p>
+<p>In this exercise, we will work with the pixels, as it will be good practice for our array indexing and slicing.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 1</p>
+<div class="docutils container">
+<p>Our first step is actually determining the <em>pixel coordinates</em> of a given HII region. While there are more complex methods we could write, it is not so hard to do this by eye. That said, a simple <code class="docutils literal notranslate"><span class="pre">crosshairs</span></code> function would help us know that our chosen coordinates land right on an HII region.</p>
+<ol class="arabic simple">
+<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">crosshairs</span></code> which takes in <code class="docutils literal notranslate"><span class="pre">crosshairs(ax,x,y)</span></code>. It should then use <code class="docutils literal notranslate"><span class="pre">ax.axvline(x)</span></code> and similarly <code class="docutils literal notranslate"><span class="pre">ax.axhline(y)</span></code> for <code class="docutils literal notranslate"><span class="pre">y</span></code> to plot a crosshairs over our image at some coordinates. Return <code class="docutils literal notranslate"><span class="pre">ax</span></code> when done.</p></li>
+<li><p>Run you function for position (995,1445). Are you right on an HII region?</p></li>
+</ol>
+</div>
+</div>
+<p>Now that we have a set of starting coordinates, we want to crop our image down to a certain window around our coordinates which contain the HII region.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 2</p>
+<div class="docutils container">
+<ol class="arabic simple">
+<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">crop_image</span></code> which takes in the image array, (x,y) central coordinates, and a window size in pixels. Your function should compute the half-window size (integer division of input window by 2), then index the image from the central coordinates +/- the half-window size. It should return the new image.</p></li>
+<li><p>Use your <code class="docutils literal notranslate"><span class="pre">implot</span></code> function to show a new image output by your <code class="docutils literal notranslate"><span class="pre">crop_image</span></code> function using the above coordinates and a window size of 50 pixels.</p></li>
+</ol>
+<p><em>Hint: Remember that arrays are indexed by row first, then column! This means in our bracket indexing, “y-value” indexing comes first, then “x-value” indexing.</em></p>
+</div>
+</div>
+<p>You should hopefully now have a nice, circular feature filling most of your plotted image. This is our HII region!</p>
+<p>In order to estimate its radius in pixels, we’d like to place a circle down that lines up with the ridge of emission defining the circle (and adjust our center as needed, as our by-eye estimate from the full image was likely not perfect.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 3</p>
+<div class="docutils container">
+<ol class="arabic simple">
+<li><p>Recall that we can compute the x and y values of a circle with position <span class="math notranslate nohighlight">\((x_0,y_0)\)</span> and radius <span class="math notranslate nohighlight">\(R\)</span> via <span class="math notranslate nohighlight">\(x(\theta) = x_0 + R\cos(\theta)\)</span> and <span class="math notranslate nohighlight">\(y(\theta) = y_0 + R\sin(\theta)\)</span>. Write a function <code class="docutils literal notranslate"><span class="pre">add_circle(ax,x,y,r)</span></code> which takes in our image <code class="docutils literal notranslate"><span class="pre">ax</span></code>, creates an array of <code class="docutils literal notranslate"><span class="pre">theta</span></code> values from 0 to <span class="math notranslate nohighlight">\(2\pi\)</span> (Hint: <code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code> is good for this), computes the arrays for the x and y positions of the circle based on its center and radius, plots them using <code class="docutils literal notranslate"><span class="pre">ax.plot(x,y)</span></code> over the image, and returns the ax.</p></li>
+<li><p>Use your function to determine the new center and radius <span class="math notranslate nohighlight">\(R\)</span> of this HII region.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When you crop from the full image to the zoom image, you have a new array with a new shape. Our original coordinates no longer matter; your <span class="math notranslate nohighlight">\(x,y\)</span> center is the center of the <em>new</em> array, which should have a shape of 50x50.</p>
+<p>So starting with a center of 25,25 makes sense here. If you want to know what these coordinates refer to back in the original image, you’ll have to do a coordinate transformation to “uncrop” them — calculate the coordinates of the left and bottom edge of the crop region and add the new center in <span class="math notranslate nohighlight">\(x,y\)</span> to those.</p>
+<p>We don’t need to do that here, as we’re interested in <span class="math notranslate nohighlight">\(R\)</span> (which is preserved in the crop as the pixel scale has not changed), but not the precise <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span> in original image coordinates.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="size-trigonometry">
+<h2>Size Trigonometry<a class="headerlink" href="#size-trigonometry" title="Link to this heading">#</a></h2>
+<p>Now that we have a measurement of <span class="math notranslate nohighlight">\(R_{HII}\)</span> in pixels, we need to begin converting this to a physical scale. We can do this because we know the <em>pixel scale</em> of our detector, that is, how many angular degrees (here we’ll use the arcsecond) on sky does one pixel subtend. For example, if we have a pixel scale of 2.2, that means each pixel subtends 2.2 arcseconds on sky (roughly 0.0006 degrees).</p>
+<p>We can then make a triangle — the long edge is the distance in physical units to M33. The short edge is the length we want, the physical radius of the HII region, and <span class="math notranslate nohighlight">\(\theta\)</span> is our measured angular radius, obtained by multiplying the radius in pixels by the pixel scale.</p>
+<p><img alt="triangle of distance and radius" src="../../_images/distance_trigonometry.png" /></p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 4</p>
+<div class="docutils container">
+<p>To perform the actual trigonometric step, we need to compute <span class="math notranslate nohighlight">\(D\tan(\theta)\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">compute_size(distance,s_pix,pixel_scale)</span></code>. Using the pixel scale, it should convert the size <code class="docutils literal notranslate"><span class="pre">s_pix</span></code> to arcseconds, then onward to degrees (there are 3600 arcseconds in a degree), then onward to radians for the trig function (<code class="docutils literal notranslate"><span class="pre">np.deg2rad()</span></code> may be useful here). Then, using that, compute the size using the formula above and return it. The size output will have units equal to the length units that were assumed for <span class="math notranslate nohighlight">\(D\)</span>.</p></li>
+<li><p>M33 has a distance of 0.869 Mpc (Megaparsec). Using your function, compute the radius of the HII region in parsec by converting the M33 distance to pc, then using your compute size function. Assume a pixel scale of 2.2. How big is this HII region?</p></li>
+</ol>
+</div>
+</div>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 5</p>
+<div class="docutils container">
+<p>We can avoid the annoyance of unit conversions by using the <code class="docutils literal notranslate"><span class="pre">astropy.units</span></code> library. Look up how to create astropy unit quantities, and rewrite your <code class="docutils literal notranslate"><span class="pre">compute_size</span></code> function to allow distance to be input in any unit, as well as the pixel scale. Then easily convert your output to <code class="docutils literal notranslate"><span class="pre">pc</span></code> at the end and return it.</p>
+</div>
+</div>
+</section>
+<section id="number-of-ob-stars">
+<h2>Number of OB Stars<a class="headerlink" href="#number-of-ob-stars" title="Link to this heading">#</a></h2>
+<p>Now that we know the physical size of the HII region (not a trivial feat!) we can actually go further. In a back-of-the-envelope sense, the radius of the full HII region can be approximated as that of a Strömgren sphere around a “single” high energy star.</p>
+<p>The formula for this radius is</p>
+<div class="math notranslate nohighlight">
+\[
+r_S = \left(\frac{3N^*}{4\pi\alpha n^2}\right)^\frac{1}{3}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(N^*\)</span> is the ionizing photon rate from the OB star (typically <span class="math notranslate nohighlight">\(\sim 10^{49}\)</span> photon s<span class="math notranslate nohighlight">\(^{-1}\)</span>), <span class="math notranslate nohighlight">\(\alpha \sim 3\times10^{-13}\)</span> cm<span class="math notranslate nohighlight">\(^{3}\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span> is the recombination coefficient, and <span class="math notranslate nohighlight">\(n\sim 10\)</span> cm<span class="math notranslate nohighlight">\(^{-3}\)</span> is the number density.</p>
+<p>We <em>know</em> <span class="math notranslate nohighlight">\(r_S\)</span>.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 6</p>
+<div class="docutils container">
+<p>Solve the Strömgen sphere equation instead for <span class="math notranslate nohighlight">\(N^*\)</span>, writing a function that returns the value of</p>
+<div class="math notranslate nohighlight">
+\[
+\left(\frac{N^*}{10^{49}}\right)
+\]</div>
+<p>Having done so, you now have a function that, given a radius and assumptions about particle density and recombination coefficient, returns the “number” of OB stars driving the HII region! Technically, we have an answer that is units of the typical OB star’s photon flux, so the actual number of stars could be lower if each is more massive and brighter and vice versa — but this gives both the actual driving flux and an approximate order-of-magnitude estimate for the number of stars.</p>
+<p>Play with your function a bit, putting in values from 10 pc to 500 pc for the size, and see how the ionizing flux changes!</p>
+</div>
+</div>
+<p>Throughout the course of this lab, you have written several shorter (and longer) functions. For our <code class="docutils literal notranslate"><span class="pre">implot</span></code> function, it is hopefully clear why having that function around is handy — to set everything we included every time we wanted to quickly view some fits file or local array would be onerous; this function now makes it very easy to get a useful result in a simple one line call, with plenty of room to specify options if we desire.</p>
+<p>On the other hand, functions are most useful for <em>reusable</em> bits of code. Thus far, though, we only measured one HII region. In theory, all of the computations we did along the way could have been done directly in our script or notebook and it would not have been that disorganized of a file.</p>
+<p>Let’s now demonstrate why writing functions <em>was</em> useful, even for the small steps.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 7</p>
+<div class="docutils container">
+<ol class="arabic simple">
+<li><p>Using the original image, pick <strong>four more</strong> HII regions in the image of M33, and determine their physical sizes and number of OB stars.</p></li>
+</ol>
+<p>Tasked with this, hopefully you will be able to re-use your defined functions to make locating and measuring the size of each much easier! Create section headings in your solution with each one. While the solution won’t be fully automatic, since we still have some by-eye assesment happening, the final code block for doing this whole measurement will only be a few lines long, calling our pre-made functions.</p>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./exercises/pasha2024b"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../granucci2024a/gaia-clusters.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Gaia Star Clusters</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../sunseri2024a/Data_Parallelism_Part_1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction to Data Parallelism</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-a-region">Finding a Region</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#size-trigonometry">Size Trigonometry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-ob-stars">Number of OB Stars</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The AstroCodEx Collaboration
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

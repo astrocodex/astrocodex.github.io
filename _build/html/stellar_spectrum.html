@@ -1,0 +1,737 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Stellar Temperatures from Spectra &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="_static/_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8fb1fe15" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'stellar_spectrum';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Gaia Star Clusters" href="gaia-clusters.html" />
+    <link rel="prev" title="Python Exercises Gallery" href="gallery.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Python Exercises Gallery</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Intermediate Undergrad</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Stellar Temperatures from Spectra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gaia-clusters.html">Gaia Star Clusters</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Undergrad</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="trig-regression.html">Trigonometric Regression</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fstellar_spectrum.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/stellar_spectrum.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Stellar Temperatures from Spectra</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-model-spectra">Part 1 - Model spectra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-observed-spectra">Part 2 - observed spectra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-new-mystery-stars">Part 3 - New Mystery Stars</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concluding-thoughts">Concluding thoughts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-extra-credit-array-manipulation">Bonus/Extra Credit: Array Manipulation</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="stellar-temperatures-from-spectra">
+<h1>Stellar Temperatures from Spectra<a class="headerlink" href="#stellar-temperatures-from-spectra" title="Link to this heading">#</a></h1>
+<div class="author admonition">
+<p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0002-9903-9911">Katie Lester</a> (Mount Holyoke College)</p>
+<p><em>Description</em>: A series of exercises building the intuition and practice for model comparison with data with <span class="math notranslate nohighlight">\(\chi^2\)</span> minimization, using stellar models and several (real) stellar spectra.</p>
+<p><em>Intended Audience</em>: Beginner to Intermediate Undergraduate</p>
+<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">stellar-spectroscopy</span></code>,<code class="docutils literal notranslate"><span class="pre">model-fitting</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">for-loops</span></code></p>
+<p><em>Last Updated: July 23, 2024</em></p>
+</div>
+<div class="learningobjective admonition">
+<p class="admonition-title">Learning Objectives</p>
+<ul class="simple">
+<li><p>learn to read in tabular data to Python</p></li>
+<li><p>be able to calculate a chi-squared goodness of fit statistic</p></li>
+<li><p>practice for loops and indexing</p></li>
+<li><p>learn data visualization skills</p></li>
+<li><p>Understand how stellar spectra change with effective temperature &amp; how to quantify how well two datasets match.</p></li>
+</ul>
+</div>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>In this activity, we’re going to look at spectra of some real stars and of computer models, compare stars of different spectral types, and finding the temperatures of our mystery stars.</p>
+<p>The files for this activity contain the model spectra for different effective temperatures (“models.csv”) and the observed spectra (“Star#.csv”) for 3 real stars. The files have:</p>
+<ul class="simple">
+<li><p>Wavelength – units of nm</p></li>
+<li><p>Normalized Flux – the fluxes have been “continuum normalized”, meaning that the overall blackbody shape has been divided out. So the flux values vary from 0-1 in value, rather than normal erg/cm2/s/nm units.</p></li>
+</ul>
+</section>
+<section id="part-1-model-spectra">
+<h2>Part 1 - Model spectra<a class="headerlink" href="#part-1-model-spectra" title="Link to this heading">#</a></h2>
+<p>Start by importing the python packages we’ll need by running the cell below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># start by importing useful packages</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">ascii</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our model spectra correspond to effective temperatures of 4000, 6000, 8000 and 10,000 K. We will use the custom function below (“get_model”) to read in the model for a given temperature, then return the wavelength and flux of the model spectrum in datatable format (“model”).</p>
+<p>Run the cell below so we can use this function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_model</span><span class="p">(</span><span class="n">temperature</span><span class="p">):</span>
+    <span class="c1"># input = effective temperature</span>
+    <span class="n">templist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4000</span><span class="p">,</span> <span class="mi">6000</span><span class="p">,</span> <span class="mi">8000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">temperature</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">templist</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Please choose a new temperature:&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;   possible values =&#39;</span><span class="p">,</span> <span class="n">templist</span><span class="p">)</span>
+        <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">ascii</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;models.csv&quot;</span><span class="p">)</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Table</span><span class="p">([</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;wavelength&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;flux_&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">temperature</span><span class="p">)]])</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">rename_column</span><span class="p">(</span><span class="s2">&quot;flux_&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">temperature</span><span class="p">),</span> <span class="s1">&#39;flux&#39;</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 1</p>
+<div class="docutils container">
+<p>Let’s practice reading in a model spectrum! Choose a temperature in our model range and write it in the empty parentheses in the cell below. Then run the cell to print out the resulting <code class="docutils literal notranslate"><span class="pre">model</span></code> table values. An example scaffold is provided.</p>
+<blockquote>
+<div><p>model = get_model(  )</p>
+</div></blockquote>
+<blockquote>
+<div><p>print(model)</p>
+</div></blockquote>
+</div>
+</div>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 2</p>
+<div class="docutils container">
+<p>Write code to plot the model spectrum. You can pull columns from astropy tables (like <code class="docutils literal notranslate"><span class="pre">&quot;wavelength&quot;</span></code> above) by indexing the object with just the column name. Include reasonable axis labels and change the plot ranges as needed.</p>
+<p>Pro tip - Add minor ticks using after the plt.plot() command:</p>
+<blockquote>
+<div><p>plt.minorticks_on()</p>
+</div></blockquote>
+</div>
+</div>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 3</p>
+<div class="docutils container">
+<p>Let’s look at the data for the other models; to do this, we’re going to make a loop that runs over effective temperature to (1) read in each model and (2) plot the spectrum on our graph.</p>
+<ol class="arabic simple">
+<li><p>Make a “teff” numpy array that holds the effective temperature values of our models (4000-10000 in steps of 2000 K).</p></li>
+<li><p>Make a For-loop that iterates over the effective temperature. In each iteration, read in the model for this temperature, and then make a plot of the spectrum. Bonus - Add a title with the model’s temperature so we can tell them apart.</p></li>
+</ol>
+<p>As a reminder, a basic For Loop looks like:</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for i in range(0, 10):
+    print(&#39;iteration&#39;, i)
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 4</p>
+<div class="docutils container">
+<p>How does the spectrum change as the model’s effective temperature changes? Qualitatively describe your intuition from examining the model plots.</p>
+</div>
+</div>
+</section>
+<section id="part-2-observed-spectra">
+<h2>Part 2 - observed spectra<a class="headerlink" href="#part-2-observed-spectra" title="Link to this heading">#</a></h2>
+<p>Now, we’re going to compare the observed spectra of a real star to the models from Part I and determine this star’s spectral type (and surface temperature).</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 5</p>
+<div class="docutils container">
+<ol class="arabic simple">
+<li><p>Read in the spectrum for Star 1 using the <em>ascii.read()</em> package. (Like in Step 1).</p></li>
+<li><p>Plot the spectrum. What do you notice about the spectrum? Take some time to modify your plot boundaries/axes, labels, and aspect ratio to best see the relevant features in the spectrum</p></li>
+</ol>
+</div>
+</div>
+<p>One way to determine the spectral type of Star 1 would be “by eye”, where you visually choose which model looks most similar to Star 1. A better way would be comparing the spectra using a chi-squared (<span class="math notranslate nohighlight">\(\chi^2\)</span>) goodness-of-fit statistic:</p>
+<div class="math notranslate nohighlight">
+\[\chi^2 = \sum\frac{(data - model)^2}{model}\]</div>
+<p>This statistic quantifies how <em>different</em> (or similar) two data sets are, where the “best fitting” model is going to have the <em>lowest</em> <span class="math notranslate nohighlight">\(\chi^2\)</span> value. Notice that this metric is computed as the <em>sum</em> over the normalized difference between every equivalent point in the model to the data; individual points with very large discrepancies can thus drive the <span class="math notranslate nohighlight">\(\chi^2\)</span> metric up considerably.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 6</p>
+<div class="docutils container">
+<p>Calculate the <span class="math notranslate nohighlight">\(\chi^2\)</span> value for Star 1 compared to the 4000 K model, then print out the result. You should get a <span class="math notranslate nohighlight">\(\chi^2\)</span> value around 400, which isn’t very good. We want a low number, so let’s try other spectral types…</p>
+<p><em>Hint - You can use <code class="docutils literal notranslate"><span class="pre">np.sum()</span></code> to add up all the values in an array; this calculation does not require a for-loop</em></p>
+</div>
+</div>
+<p>We’re going to calculate <span class="math notranslate nohighlight">\(\chi^2\)</span> value for each of the temperatures, and save these values in an array called “chi2”. This array will have the same size as the effective temperature array you made earlier.</p>
+<p>First, we need to make an empty numpy array to store the <span class="math notranslate nohighlight">\(\chi^2\)</span> values. You can make a blank numpy array using:</p>
+<blockquote>
+<div><p>x = np.zeros(length)</p>
+</div></blockquote>
+<p>where “length” is the number of elements in the array.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 7</p>
+<div class="docutils container">
+<p>Write the code to make a “chi2” array with the same number of elements as your “teff” array.</p>
+<p><em>Hint – You can find the length of an array using “len(array)”.</em></p>
+<p>Next, create a <code class="docutils literal notranslate"><span class="pre">for-loop</span></code> that iterates over temperature (as in Part I), calculating the <span class="math notranslate nohighlight">\(\chi^2\)</span> for each model with Star 1, and store the output in the <code class="docutils literal notranslate"><span class="pre">chi2</span></code> array.</p>
+</div>
+</div>
+<p>Now we can find the minimum <span class="math notranslate nohighlight">\(\chi^2\)</span> value and find the best-fit temperature for Star 1.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 8</p>
+<div class="docutils container">
+<p>Make a plot of effective temperature versus chi2, including axis labels and whatever colors/symbols you like! Which model temperature best fits the data? Put another way, using our modeling, what is our best estimate for the temperature of Star 1?</p>
+</div>
+</div>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 9</p>
+<div class="docutils container">
+<p>Make a plot of Star 1’s spectrum with the best fitting model (determined from your <span class="math notranslate nohighlight">\(\chi^2\)</span> calculation) plotted on top to see how well they match.  (They should match pretty well!)</p>
+</div>
+</div>
+</section>
+<section id="part-3-new-mystery-stars">
+<h2>Part 3 - New Mystery Stars<a class="headerlink" href="#part-3-new-mystery-stars" title="Link to this heading">#</a></h2>
+<p>Now we’ll move on to the other stars, repeating the process from Part II.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 10</p>
+<div class="docutils container">
+<p>Repeat the process in Part 2 for the other mystery stars (Stars 2 &amp; 3) to find their spectral types. For each star,</p>
+<ol class="arabic simple">
+<li><p>Read in the mystery star’s spectrum.</p></li>
+<li><p>Calculate the <span class="math notranslate nohighlight">\(\chi^2\)</span> values for all of the model spectra. Make a chi2 vs temperature plot to find the best fitting spectral type.</p></li>
+<li><p>Plot the observed spectrum and the best-fit model spectrum to confirm that they match.</p></li>
+<li><p>Determine the effective temperature for the two stars.</p></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="concluding-thoughts">
+<h2>Concluding thoughts<a class="headerlink" href="#concluding-thoughts" title="Link to this heading">#</a></h2>
+<p><strong>Question:</strong>  How well did the model spectra fit the real stars’ spectra? Do you think our fitting code worked successfully?</p>
+<p><strong>Question:</strong>  What’s one situation where our code would NOT be able to find the temperature of the star? Is there a way we could update our code / analysis to solve the problem?</p>
+<p>Write out a discussion for these two questions</p>
+</section>
+<section id="bonus-extra-credit-array-manipulation">
+<h2>Bonus/Extra Credit: Array Manipulation<a class="headerlink" href="#bonus-extra-credit-array-manipulation" title="Link to this heading">#</a></h2>
+<p>In the exercises above, we used a <code class="docutils literal notranslate"><span class="pre">for-loop</span></code> to iterate over all the models in our library, comparing each to an individual stellar spectrum. Each model has the same length as the real spectrum (which is why the <code class="docutils literal notranslate"><span class="pre">model-data</span></code> array-wise subtraction worked). This means that it is in fact possible to compute our <code class="docutils literal notranslate"><span class="pre">chi2</span></code> array for all models and a given star in one step, <em>without</em> using a for-loop.</p>
+<p>You may have learned that to compute the point-wise, e.g., sum, multiplication, etc., between two arrays, they have to be the same <em>shape</em>. That’s not strictly true, however, due to the ability for <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays to be <em>broadcast</em>. You’ve probably used this technique before actually! When we compute</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="mi">2</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>the actual “array” subtraction is <code class="docutils literal notranslate"><span class="pre">array([1,2,3,4,5])</span> <span class="pre">-</span> <span class="pre">array([2,2,2,2,2])</span></code>. <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> is smart enough to <em>extend</em> our integer (2) to match the length of <code class="docutils literal notranslate"><span class="pre">a</span></code> to facilitate the subtraction. Sometimes, in more complex scenarios (like our spectra), we can be a bit more explicit and tell <code class="docutils literal notranslate"><span class="pre">numpy</span></code> how to broadcast our arrays to facilitate a single, vectorized computation.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 11</p>
+<div class="docutils container">
+<p>Doing some googling if neccessary, determine how to use array broadcasting to turn the computation of the <code class="docutils literal notranslate"><span class="pre">chi2</span></code> array for a star and all our models into a single line calculation using <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays.</p>
+<p>For an even trickier challenge, determine how to find <em>all</em> the <code class="docutils literal notranslate"><span class="pre">chi2</span></code> arrays for an arbitrary number of mystery stars with all the models in a single <code class="docutils literal notranslate"><span class="pre">numpy</span></code> operation. For this one, you’ll need to stack up the mystery stars into one array, and the models into another.</p>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="gallery.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Python Exercises Gallery</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="gaia-clusters.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Gaia Star Clusters</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-model-spectra">Part 1 - Model spectra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-observed-spectra">Part 2 - observed spectra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-new-mystery-stars">Part 3 - New Mystery Stars</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concluding-thoughts">Concluding thoughts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-extra-credit-array-manipulation">Bonus/Extra Credit: Array Manipulation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The AstroCodEx Collaboration
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

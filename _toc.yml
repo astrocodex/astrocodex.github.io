@@ -1,0 +1,28 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+
+parts:
+  - caption: Gallery
+    chapters:
+    - file: gallery
+  - caption: Level I
+    chapters:
+    - file: exercises/cerny2024a/stefan-boltzmann
+    - file: exercises/cerny2024b/exoplanet-diversity
+    - file: exercises/pasha2024a/astronomical-images
+  - caption: Level II 
+    chapters:
+    - file: exercises/lester2024a/stellar_spectrum
+    - file: exercises/granucci2024a/gaia-clusters
+    - file: exercises/pasha2024b/hii-regions
+    - file: exercises/sunseri2024a/Data_Parallelism_Part_1
+  - caption: Level III
+    chapters:
+    - file: exercises/yadavalli2024a/SN_Habitability
+    - file: exercises/bellinger2024a/trig-regression
+  - caption: Guides and Walkthroughs
+    chapters:
+    - file: guides/Debugging_Guide

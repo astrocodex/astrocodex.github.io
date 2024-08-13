@@ -1,0 +1,62 @@
+/* custom.css */
+div.exercise {
+    border-left-color:#2c7a3e;
+    border-left-width: 4px;
+    border-left-style: solid;
+}
+
+div.exercise .admonition-title {
+    background-color:  #bfe8c6;
+}
+
+
+div.exercise .admonition-title:after {
+    content: "\f044"; /* Unicode for the FontAwesome pencil icon */
+    font-family: 'Font Awesome 5 Free'; /* Ensure FontAwesome is loaded */
+    font-weight: 900; /* Ensure the solid style is used */
+    font-size: 1.2em; /* Adjust the size of the icon as needed */
+    color:rgb(7, 56, 11);
+}
+
+div.learningobjective {
+    border-left-color:#ecc800;
+    border-left-width: 4px;
+    border-left-style: solid;
+}
+
+div.learningobjective .admonition-title {
+    background-color:  #fbe965;
+}
+
+
+div.learningobjective .admonition-title:after {
+    content: "\f5d1"; /* Unicode for the FontAwesome pencil icon */
+    font-family: 'Font Awesome 5 Free'; /* Ensure FontAwesome is loaded */
+    font-weight: 900; /* Ensure the solid style is used */
+    font-size: 1.0em; /* Adjust the size of the icon as needed */
+    color:rgb(8, 8, 8);
+}
+
+
+
+
+div.author {
+    border-left-color:#ffffff;
+    border-left-width: 4px;
+    border-left-style: solid;
+}
+div.author .admonition-title {
+    background-color:  #ffffff;
+}
+div.author .admonition-title {
+    font-size: 1.2em;
+    font-weight:lighter;
+}
+div.author .admonition-title:after {
+    content: "\f305"; /* Unicode for the FontAwesome pencil icon */
+    font-family: 'Font Awesome 5 Free'; /* Ensure FontAwesome is loaded */
+    font-weight: 900; /* Ensure the solid style is used */
+    font-size: 1.05em; /* Adjust the size of the icon as needed */
+    color:rgb(218, 218, 218);
+
+}

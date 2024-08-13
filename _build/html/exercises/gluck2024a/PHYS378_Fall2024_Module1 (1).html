@@ -1,0 +1,1631 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PHYS 378 Module 1 &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8fb1fe15" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/gluck2024a/PHYS378_Fall2024_Module1 (1)';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Python Exercises Gallery</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Level I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cerny2024a/stefan-boltzmann.html">Stellar Luminosities from the Stefan-Boltzmann Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerny2024b/exoplanet-diversity.html">Exploring the Diversity of Known Exoplanets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pasha2024a/astronomical-images.html">Visualizing Astronomical Images</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Level II</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../lester2024a/stellar_spectrum.html">Stellar Temperatures from Spectra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Gaia Star Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">The Sizes of HII Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sunseri2024a/Data_Parallelism_Part_1.html">Introduction to Data Parallelism</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Level III</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../yadavalli2024a/SN_Habitability.html">Rouge Planet Habitability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bellinger2024a/trig-regression.html">Trigonometric Regression</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides and Walkthroughs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../guides/Debugging_Guide.html">Debugging Strategies Resource</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexercises/gluck2024a/PHYS378_Fall2024_Module1 (1).html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/exercises/gluck2024a/PHYS378_Fall2024_Module1 (1).ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>PHYS 378 Module 1</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-class-knowledge-base">Pre-Class Knowledge Base!</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#good-coding-practices">Good Coding Practices</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-1-outline-basic-programming-in-python">Module 1 Outline: Basic Programming in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modules-packages-functions">Modules, Packages, Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays-and-matrix-operations">Arrays and Matrix Operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-and-writing-files">Reading and Writing Files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#errors-and-exceptions">Errors and Exceptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphics-and-visualization">Graphics and Visualization</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-things-together">Putting things together</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-and-speed">Accuracy and Speed</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-context">Mathematical Context</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-implementation">Python implementation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key Takeaways:</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>Author: Naomi Gluck, 2024</p>
+<section class="tex2jax_ignore mathjax_ignore" id="phys-378-module-1">
+<h1>PHYS 378 Module 1<a class="headerlink" href="#phys-378-module-1" title="Link to this heading">#</a></h1>
+<p>Note for module-building (will be deleted): There will be two versions of this notebook: one with blank spaces for students and another with everything filled in for instructors (or as a solution manual). The instructor will perform live demos of any code that is currently written in this version of the notebook. Anything else that students in their groups have to fill in as in-class exercises can either:</p>
+<ol class="arabic simple">
+<li><p>Be gone over directly after the exercise during the lecture,</p></li>
+<li><p>Be gone over with the TFs after the lecture portion of the class,</p></li>
+<li><p>Be sent out after the lecture as a “solution manual”,</p></li>
+<li><p>Students send their notebook to TFs as a “participation grade” for the course.</p></li>
+</ol>
+<section id="pre-class-knowledge-base">
+<h2>Pre-Class Knowledge Base!<a class="headerlink" href="#pre-class-knowledge-base" title="Link to this heading">#</a></h2>
+<p><font color="lightgreen"> Please make sure that you feel comfortable with the above topics, as they are the building blocks for the rest of the course. </font></p>
+<ol class="arabic simple">
+<li><p>Python interpreter: you can open a notebook and write a small working script.</p></li>
+<li><p>Numbers, strings, variables: you can assign values or strings to variables to use as local or global components of a script.</p></li>
+<li><p>Lists and arrays</p></li>
+<li><p>Control structures: if/elseif/else, while, for loops</p></li>
+<li><p>Functions: built-in (np.cos, np.min, etc.), math packages (numpy, scipy, etc.), user-defined (writing your own function with a set of inputs and a return statement to be used later in your code)</p></li>
+<li><p>Dictionaries: for data organization</p></li>
+</ol>
+<p><font color="lightgreen"> Online Resources and Tutorials: </font></p>
+<ul class="simple">
+<li><p>If you have no prior programming experience, we highly suggest working through the <a class="reference external" href="https://developers.google.com/edu/python/">Google Python Class lectures</a>.</p></li>
+<li><p>To learn more about the basic concepts and features of the Python language, I recommend this online <a class="reference internal" href="#docs.python.org/2/tutorial/index.html"><span class="xref myst">Python Tutorial</span></a>.</p></li>
+<li><p>To learn more about Google Colab, I recommend to watch <a class="reference external" href="https://www.youtube.com/watch?v=i-HnvsehuSw">Get Started with Google Colab</a> and <a class="reference external" href="https://www.youtube.com/watch?v=vVe648dJOdI">Intro to Google Colab</a>.</p></li>
+<li><p>We will follow examples from “Computational Physics with Python” by Mark Newman (available online for Ch 1-5) for <a class="reference internal" href="#www-personal.umich.edu/~mejn/computational-physics/"><span class="xref myst">Modules 1-7</span></a>.</p></li>
+<li><p><a class="reference external" href="https://iopscience.iop.org/book/mono/978-0-7503-5147-8.pdf">Astronomical Python Book - Imad Pasha</a></p></li>
+</ul>
+<section id="good-coding-practices">
+<h3>Good Coding Practices<a class="headerlink" href="#good-coding-practices" title="Link to this heading">#</a></h3>
+<p>Include comments in your program, as necessary. Write as if you’ll either need to hand off your code to someone else, or future you will need to use this in a year from now. Make sure that your code is clean, legible, and that your comments make sense!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H0</span> <span class="o">=</span> <span class="mi">70</span> <span class="c1"># Hubble&#39;s constant (km/s/)Mpc &lt;- a comment!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lay our your programs clearly! A good structure for python programs within notebooks should follow:</p>
+<ol class="arabic simple">
+<li><p>Import statements</p></li>
+<li><p>Uploading data files</p></li>
+<li><p>User-defined functions</p></li>
+<li><p>Data analysis</p></li>
+<li><p>Plots/results</p></li>
+</ol>
+<blockquote>
+<div><p><font color="lightgreen"> <strong>Note:</strong> The structure for larger Python programs looks slightly differently to this. Instead of notebooks, scripts are written separately for any data cleaning, analysis, or plotting, and imported (in the same way as we use package import statements) wherever necessary. </font></p>
+</div></blockquote>
+<p>Use meaningful variable names (including names for constants)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">variable1</span> <span class="o">=</span> <span class="mi">500</span> <span class="c1"># I don&#39;t know what this is!</span>
+<span class="n">acceleration</span> <span class="o">=</span> <span class="mf">9.8</span> <span class="c1"># m/s^2 grav. acceleration (this name makes sense!)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use the right types of variables (lists, arrays, strings, logic, etc.) – see <a class="reference external" href="https://www.learnpython.org/en/Variables_and_Types">documentation</a> for more info!</p>
+<blockquote>
+<div><p><font color="skyblue"> <strong>Your task:</strong> Create a user-defined function for <span class="math notranslate nohighlight">\(y=2x^3\)</span> given a list of x-values [1,-2,3,-4,5]. Print out the inputs and outputs. </font></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">outputs</span><span class="p">(</span><span class="n">input_value</span><span class="p">):</span>
+
+  <span class="n">cubic_fn</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">input_value</span><span class="o">**</span><span class="mi">3</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;input_value:&#39;</span><span class="p">,</span> <span class="n">input_value</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">cubic_fn</span>
+
+<span class="n">output_cubic</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">inputs</span><span class="p">):</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="n">outputs</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+  <span class="n">output_cubic</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;outputs:&quot;</span><span class="p">,</span> <span class="n">output_cubic</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>input_value: 1
+input_value: -2
+input_value: 3
+input_value: -4
+input_value: 5
+outputs: [2, -16, 54, -128, 250]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="module-1-outline-basic-programming-in-python">
+<h2>Module 1 Outline: Basic Programming in Python<a class="headerlink" href="#module-1-outline-basic-programming-in-python" title="Link to this heading">#</a></h2>
+<p>These might be some skills you are already familiar with, and if this is the case, then that’s great! If you’re not familiar with these, then I want to make sure that everyone is on the same page.</p>
+<p>We’ll also explore some interesting ways that AI like ChatGPT can be used within these coding exercises so that once you understand the fundamentals, you can use AI to your advantage within larger projects to help you with small tasks.</p>
+<blockquote>
+<div><p><font color='lightgreen'>However, note that using ChatGPT or other similar resources without understanding what’s going on will only hurt you in the long run. We’ll use ChatGPT to help us better understand good coding practices and more efficient or alternative problem solving methods. It will not be used to solve problem sets, unless specifically requested.</font></p>
+</div></blockquote>
+<p>With that out of the way, here’s what we’ll cover in this first lecture!</p>
+<ol class="arabic simple">
+<li><p>Modules, packages, functions (build-in)</p></li>
+<li><p>Arrays &amp; matrix operations</p></li>
+<li><p>Input &amp; output (I/O)</p></li>
+<li><p>Errors &amp; exceptions</p></li>
+<li><p>Graphics &amp; visualizations</p></li>
+<li><p>Accuracy &amp; speed</p></li>
+</ol>
+<section id="modules-packages-functions">
+<h3>Modules, Packages, Functions<a class="headerlink" href="#modules-packages-functions" title="Link to this heading">#</a></h3>
+<p>Numpy is the fundamental package for scientific computing with Python. It contains among other things:</p>
+<ol class="arabic simple">
+<li><p>a powerful N-dimensional array object</p></li>
+<li><p>sophisticated (broadcasting) functions</p></li>
+<li><p>tools for integrating C/C++ and Fortran code</p></li>
+<li><p>linear algebra (<a class="reference external" href="https://www.khanacademy.org/math/linear-algebra">Khan Academy video</a>), Fourier transform (<a class="reference external" href="https://www.khanacademy.org/science/electrical-engineering/ee-signals/ee-fourier-series/v/ee-fourier-series-intro">Khan Academy video</a>), and random number capabilities (<a class="reference external" href="https://www.khanacademy.org/computing/computer-science/cryptography/crypt/v/random-vs-pseudorandom-number-generators">Khan Academy video</a>)</p></li>
+</ol>
+<p>The SciPy library (<a class="reference external" href="https://docs.scipy.org/doc/scipy/">https://docs.scipy.org/doc/scipy/</a>) provides many user-friendly and efficient numerical routines such as routines for numerical integration and optimization.</p>
+<p>matplotlib (<a class="reference external" href="https://matplotlib.org/stable/index.html">https://matplotlib.org/stable/index.html</a>) is a python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms.</p>
+<blockquote>
+<div><p><font color='lightgreen'><strong>A quick note:</strong> Python is a modular computer language, where only the basic functionality is built-in (this is different from MATLAB, Mathematica, and C/C++). All other modules must be imported/installed by the user, depending on the requirements. Installing modules is done with “pip install package_name”. Installing python packages is done with import statements. </font></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">exp</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="arrays-and-matrix-operations">
+<h3>Arrays and Matrix Operations<a class="headerlink" href="#arrays-and-matrix-operations" title="Link to this heading">#</a></h3>
+<p>Like lists, arrays are also ordered-set of values, but with the number of elements fixed. The elements of an array must all be the same type.</p>
+<p>Key functions for this section:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.google.com/url?q=https://numpy.org/doc/stable/reference/generated/numpy.array.html&amp;amp;sa=D&amp;amp;source=editors&amp;amp;ust=1717178381972724&amp;amp;usg=AOvVaw0oS7qBD60I_iMfOU94SDV1">np.array</a> to define an array-type variable</p></li>
+<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html">np.linspace</a> to define a list-like variable</p></li>
+<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.size.html">np.size</a> to check the size of an list</p></li>
+<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.shape.html">np.shape</a> to check the shape of an array</p></li>
+<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dot.html">np.dot</a> to take the dot product between two arrays</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nb">list</span><span class="p">),</span> <span class="nb">list</span><span class="p">)</span>
+
+<span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">array</span><span class="p">),</span> <span class="n">array</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;list&#39;&gt; [1, 2, 3, 4, 5]
+&lt;class &#39;numpy.ndarray&#39;&gt; [1. 2. 3. 4. 5.]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can define an array and print out certain elements:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># (start, end, no. of values)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># prints out the first element</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># prints out the last element</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.   1.25 1.5  1.75 2.  ]
+1.0
+2.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also create and iindex within 2D arrays:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># element in first row, first column</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># element in first row, second column</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 2]
+ [3 4]]
+1
+2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, we can print out entire rows and columns by slicing:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">,:])</span> <span class="c1"># printing out first row</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># printing out first column</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2]
+[1 3]
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are other matrix operations we can perform with arrays. We can modify elements in place:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># redefining value of specific element</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Adding a new constant value to all elements:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z_new</span> <span class="o">=</span> <span class="n">z</span><span class="o">+</span><span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z_new</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[2 1]
+ [4 5]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Adding two matrices together:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]])</span> <span class="c1"># first defining a second array</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="o">+</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 6  6]
+ [10 12]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Checking the size and shape of your matrices:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>        <span class="c1"># size of the array</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>        <span class="c1"># shape of the array</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+(2, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also perform linear-algebra based operations. For example, the dot product:</p>
+<div class="math notranslate nohighlight">
+\[a \cdot b = \sum_{i=0}^n a_i b_i\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a\)</span>	=	1st vector (array in python)</p></li>
+<li><p><span class="math notranslate nohighlight">\(b\)</span>	=	2nd vector (array in python)</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span>	=	dimension of the vector space</p></li>
+<li><p><span class="math notranslate nohighlight">\(a_i\)</span>	=	component of vector a</p></li>
+<li><p><span class="math notranslate nohighlight">\(b_i\)</span>	=	component of vector b</p></li>
+</ul>
+<blockquote>
+<div><p><font color='skyblue'><strong>Your task:</strong> Try writing your own dot-product function for two arrays, as in the formula above.</font></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p><font color='skyblue'><strong>Your task:</strong> Now use the np.dot() function and compare your results!</font></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="reading-and-writing-files">
+<h3>Reading and Writing Files<a class="headerlink" href="#reading-and-writing-files" title="Link to this heading">#</a></h3>
+<p>To learn mode about I/O: <a class="reference external" href="https://docs.python.org/2/library/io.html#module-io">https://docs.python.org/2/library/io.html#module-io</a></p>
+<p>Key functions for this section:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.w3schools.com/python/ref_func_open.asp">open()</a> to open an existing text file; returns a file object, and is most commonly used with two arguments: <span class="math notranslate nohighlight">\(\texttt{open(filename, mode)}\)</span>.</p></li>
+<li><p><a class="reference external" href="https://www.w3schools.com/python/python_file_write.asp">f.write()</a> to write to a text file.</p></li>
+<li><p><a class="reference external" href="https://www.w3schools.com/python/ref_file_close.asp">f.close()</a> to close the text file such that it doesn’t take up more memory than necessary.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;foo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="c1"># an arbitrary file with writing (w)</span>
+                         <span class="c1"># permission (this allows you to edit the file).</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;_io.TextIOWrapper name=&#39;foo.txt&#39; mode=&#39;w&#39; encoding=&#39;UTF-8&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Other modes for files:</p>
+<ul class="simple">
+<li><p>‘r’ (read only)</p></li>
+<li><p>‘w’ (write only; the existing file with the same name erased)</p></li>
+<li><p>‘r+’ (opens the file for both reading and writing)</p></li>
+<li><p>‘a’  (opens the file for appending; any data written to the file is automatically added to the end)</p></li>
+</ul>
+<p>The mode argument is optional; ‘r’ will be assumed if it’s omitted.
+Read or write a binary file with ‘rb’ and ‘wb’.</p>
+<hr class="docutils" />
+<p>If your data file is located on Google Drive, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Go to files on the left side-bar of Colab (folder icon).</p></li>
+<li><p>Click on the Google Drive folder icon (3rd from the left) to mount the drive. This may take a minute.</p></li>
+<li><p>Go to content &gt; drive &gt; MyDrive (your data should be somewhere here so the filepath from here will differ).</p></li>
+<li><p>Copy the pathname, and paste it into wherever you define your variable.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># syntax below:</span>
+<span class="c1">#f = open(&#39;/content/gdrive/My Drive/ Colab Notebooks/foo.txt&#39;,&#39;w&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><font color='lightgreen'> Once a file is opened and you have one file object, you can get various information related to that file. Here is a list of all attributes related to file object:</p>
+<ul class="simple">
+<li><p><strong>file.closed</strong> | Returns true if file is closed, false otherwise.</p></li>
+<li><p><strong>file.mode</strong> | Returns access model with which file was opened.</p></li>
+<li><p><strong><a class="reference external" href="http://file.name">file.name</a></strong> | Returns name of the file. </font></p></li>
+</ul>
+<p>A quick how-to on opening a file, writing to it, and then closing it. Always close files within the script after you have finished accessing its contents.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open a file</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;foo.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Name of the file: &quot;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Closed or not : &quot;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">closed</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Opening mode : &quot;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+
+<span class="c1"># Close opened file</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name of the file:  foo.txt
+Closed or not :  False
+Opening mode :  wb
+</pre></div>
+</div>
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{f.write(string)}\)</span> writes the contents of string to the file, returning <span class="math notranslate nohighlight">\(\texttt{None}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;foo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;This is a first line of the file</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Second line of the file </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To write something other than a string, it needs to be converted to a string first:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;foo2.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">value</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;the answer&#39;</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Reading Files: <span class="math notranslate nohighlight">\(\texttt{f.readline()}\)</span> reads a single line from the file; a newline character <span class="math notranslate nohighlight">\(\texttt{\n}\)</span> is left at the end of the string, and is only omitted on the last line of the file if the file doesn’t end in a newline.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;foo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;This is a first line of the file\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{f.read(size)}\)</span> reads some quantity of data and returns it as a string. size is an optional numeric argument. When size is omitted or negative, the entire contents of the file will be read and returned.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;foo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="c1">#&#39;This is the entire file.\n’</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># Close file to free up resources</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is good practice to use the <span class="math notranslate nohighlight">\(\texttt{with}\)</span> function when dealing with file objects. This has the advantage that the file is properly closed after its suite finishes, even if an exception is raised on the way.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;foo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+  <span class="n">read_data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">f</span><span class="o">.</span><span class="n">closed</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="c1">#&gt;&gt; Traceback (most recent call last):</span>
+<span class="c1">#&gt;&gt;   File &quot;&lt;stdin&gt;&quot;, line 1, in ?</span>
+<span class="c1">#&gt;&gt; ValueError: I/O operation on closed file</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#&gt;&gt; Traceback (most recent call last):</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">#&gt;&gt;   File &quot;&lt;stdin&gt;&quot;, line 1, in ?</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1">#&gt;&gt; ValueError: I/O operation on closed file</span>
+
+<span class="ne">ValueError</span>: I/O operation on closed file.
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p><font color='skyblue'> <strong>Your Task:</strong> Use ChatGPT to write a short code snippet that will create a new file and write a 10-column, 10 row dataset of random numbers. Specify that this code should be without comments. Make sure you:</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Provide comments within the ChatGPT-generated code for each action performed.</p></li>
+<li><p>Read in the file.</p></li>
+<li><p>Define one variable as the 4th column of data.</p></li>
+<li><p>Define a second variable as the 3rd row of data.</p></li>
+<li><p>Take the dot product and print out your result. </font></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work goes here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p><font color="skyblue"> <strong>Your Task:</strong> Ask ChatGPT to modify the code it made such that it will now be a python script that will be run through the terminal. It should:</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Take system arguments for the size of the dataset (no. columns, no. rows), and the column and row for which to use for the dot product calculation.</p></li>
+<li><p>Print out the pathname of the file, size of the dataset created, column/row used within the dot product calculation, and the result. </font></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work goes here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="errors-and-exceptions">
+<h3>Errors and Exceptions<a class="headerlink" href="#errors-and-exceptions" title="Link to this heading">#</a></h3>
+<p>There are (at least) two distinguishable kinds of errors: syntax errors and exceptions.</p>
+<ol class="arabic simple">
+<li><p>Syntax Errors (a.k.a. parsing errors) are the most common kind of complaint you get while you are still learning Python.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># uncomment line below to see error!</span>
+
+<span class="c1"># while True print(&#39;Hello world&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Exceptions: Errors detected during execution are called exceptions and are not unconditionally fatal.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># uncomment line below to see error!</span>
+
+<span class="c1"># 10 * (1/0)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below you’ll find a function that explores the types of errors you could encounter as you write various scripts.</p>
+<blockquote>
+<div><font color="skyblue">
+</div></blockquote>
+<p><strong>Your task:</strong> Determine values that will not cause an error, and find three sets of values that will return the errors within the function. </font></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">division</span><span class="p">(</span><span class="n">dividend</span><span class="p">,</span> <span class="n">divisor</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">dividend</span> <span class="o">/</span> <span class="n">divisor</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The result of </span><span class="si">{</span><span class="n">dividend</span><span class="si">}</span><span class="s2"> divided by </span><span class="si">{</span><span class="n">divisor</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ZeroDivisionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: Cannot divide by zero. (</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: Invalid input types. (</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;An unexpected error occurred: (</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># call function with values that do not result in an error</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># call function with values that result in ZeroDivisionError</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># call function with values that result in TypeError</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># call function with values that result in Exception</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below is a similar function to the one you’ve just used, but it now has some bugs.</p>
+<blockquote>
+<div><p><font color="skyblue"> Your task: identify all bugs and comment on the error messages you received. </font></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">division</span><span class="p">(</span><span class="n">dividend</span><span class="p">,</span> <span class="n">divisor</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">dividend</span> <span class="o">*</span> <span class="n">divisor</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The result of </span><span class="si">{</span><span class="n">dividend</span><span class="si">}</span><span class="s2"> divided by </span><span class="si">{</span><span class="n">divisor</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ZeroDivisionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: Cannot divide by zero. (</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: Invalid input types. (</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;An unexpected error occurred: (</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is another simple example, which opens a file and writes the content in the file and comes out gracefully because there is no problem at all:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+   <span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;testfile.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+   <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;This is my test file for exception handling!!&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: can</span><span class="se">\&#39;</span><span class="s2">t find file or read data&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Written content in the file successfully&quot;</span><span class="p">)</span>
+   <span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Written content in the file successfully
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can use a <span class="math notranslate nohighlight">\(\texttt{finally:}\)</span> block along with a try: block. The finally block is a place to put any code that must execute, whether the try-block raised an exception or not. The syntax of the try-finally statement is this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+   <span class="c1">#You do your operations here;</span>
+   <span class="c1">#......................</span>
+   <span class="c1">#Due to any exception, this may be skipped.</span>
+<span class="k">finally</span><span class="p">:</span>
+   <span class="c1">#This would always be executed.</span>
+   <span class="c1">#......................</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Note:</strong> you can provide except clause(s), or a finally clause, but not both. You can not use else clause as well along with a finally clause.</p>
+<blockquote>
+<div><p><font color="skyblue"> <strong>Your task:</strong> write a script to check that some file you want to read exists. If it does not exist, throw an error. </font></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p><font color="skyblue"> <strong>Your Task:</strong> Ask ChatGPT to write a function that does the same operation, without comments. Write a few statements on the differences between your code and the one generated by ChatGPT. </font></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comments go here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="graphics-and-visualization">
+<h3>Graphics and Visualization<a class="headerlink" href="#graphics-and-visualization" title="Link to this heading">#</a></h3>
+<p>Matplotlib or pylab are a popular package that contains many powerful, easy-to-use functions for generating graphs of many different types, some of which we’ll go through today.</p>
+<p><strong>Data visualization best practices:</strong></p>
+<ol class="arabic simple">
+<li><p>Label both axes, with units if applicable, and include a title. Please!</p></li>
+<li><p>Include a legend with helpful labels if there are multiple lines being plotted on the same set of axes. Also, please!</p></li>
+<li><p>If you are comparing multiple different panels that show the same two variables within one problem (for example, time on the x-axis and temperature of three different fluids on the y-axis, one panel for each different fluid), ensure the axis ranges across the panels are the same. This ensures that correct comparisons and conclusions can be formed.</p></li>
+<li><p>Not necessary, but generally plot ticks point inwards.</p></li>
+</ol>
+<p>Key functions for this section:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html">plt.plot()</a> to plot the relationship between independent (x) vs. dependent (y) variables with a line connecting datapoints.</p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html">plt.scatter()</a> to plot x vs. y with points instead of a connecting line.</p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.xlabel.html">plt.xlabel()</a> to set a label for the x-axis; similarly for the y-axis, just replace x with y in the function call.</p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.title.html">plt.title()</a> to set a title for your plot.</p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tick_params.html">plt.tick_params()</a> to set the tick parameters, including size, direction, etc. which can be applied to the major ticks and minor ticks separately, or both together.</p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html">plt.legend()</a> to set a legend for your plot, that outputs any assigned labels you set when using the plotting functions.</p></li>
+</ul>
+<hr class="docutils" />
+<blockquote>
+<div><p><font color="lightgreen"> <strong>Quick Note:</strong> Before we get started with graphing from datasets, take a moment to go to the course Canvas website, download the following datasets, and save them to a folder on your Google Drive:</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>sunspots.txt</p></li>
+<li><p>stars.txt</p></li>
+<li><p>circular.txt </font></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$x^2$&#39;</span><span class="p">)</span> <span class="c1"># to use LaTeX syntax: r&quot;$x^2$&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;x^3&#39;</span><span class="p">)</span> <span class="c1"># without LaTeX syntax</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x value&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y value&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;algebraic functions&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7c0dd4d8b340&gt;
+</pre></div>
+</div>
+<img alt="../../_images/403d8316ffe5d1a1632b622f64e2c8230ac6e281c589de62f22cc538fb9d4593.png" src="../../_images/403d8316ffe5d1a1632b622f64e2c8230ac6e281c589de62f22cc538fb9d4593.png" />
+</div>
+</div>
+<blockquote>
+<div><p><font color="skyblue"> <strong>Your Task:</strong> plot a sine function and a cosine function on the same axes, following <em>all</em> good graphing practices. </font></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p><font color="skyblue"> <strong>Your Task:</strong> see if you can turn this into a function with an argument that allows you to input a trig function and return the plot with all specifications, including axes labels, title, and legend. </font></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p><font color="skyblue"> <strong>Your Task:</strong> ask ChatGPT to create the same function, and see how you can streamline your coding style! </font></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="putting-things-together">
+<h4>Putting things together<a class="headerlink" href="#putting-things-together" title="Link to this heading">#</a></h4>
+<p>Now, we’ll read in values from a file using the <strong>loadtxt</strong> function from numpy, take slices of the dataset, and then plot accordingly.</p>
+<p>Data files are available from Files/Assignments/DataFiles on Canvas. We’ll use the <font color="lightgreen"><span class="math notranslate nohighlight">\(\texttt{sunspots.txt}\)</span></font> dataset here. Put the file in Google Drive.</p>
+<p><em>Make sure you know what’s in your dataset! Print out your dataset and header if available, and always plot your data!</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read in your datafile here</span>
+
+<span class="n">data_sunspots</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;/content/drive/MyDrive/PHYS 378/data/sunspots.txt&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p><font color="skyblue"> <strong>Your Task:</strong> With the data file uploaded, first separate the two columns of data via array slicing (0: date, and 1: number of sunspots). Create a plot of the data using best practices from above. </font></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Separate no. of sunspots and time via slicing.</span>
+
+<span class="n">date</span> <span class="o">=</span> <span class="n">data_sunspots</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">num_sunspots</span> <span class="o">=</span> <span class="n">data_sunspots</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Create your plot here with the best practices.</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">num_sunspots</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Date since Jan. 1749&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;No. of sunspots&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;No. sunspots since 01/1749&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/55b989067fe6e7c6f2ed15af936c41fa6e399dc6704f62c35d25fa78f28f2520.png" src="../../_images/55b989067fe6e7c6f2ed15af936c41fa6e399dc6704f62c35d25fa78f28f2520.png" />
+</div>
+</div>
+<p><strong>Scatter Plots</strong></p>
+<p>In an ordinary graph, there is only one dependent variable. But, in other cases, we measure or calculate two dependent variables. In astronomy, we can measure temperature and “magnitude” (apparent brightness) for each star in a given set. We would like some way of visualize how the two quantities are related.</p>
+<p>Download the <font color="lightgreen"><span class="math notranslate nohighlight">\(\texttt{stars.txt}\)</span></font> dataset from Canvas, as you’ve done with the previous file.</p>
+<p>Using matplotlib, we can create scatter plots with <span class="math notranslate nohighlight">\(\texttt{plt.scatter(x,y)}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># uploading the data file (downloaded from Canvas)</span>
+<span class="n">data_stars</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;/content/drive/MyDrive/PHYS 378/data/stars.txt&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p><font color="skyblue"> <strong>Your task:</strong> As before, separate your data into 0: temperature and 1: magnitude, and create a scatter plot using best practices. </font></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="n">data_stars</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">mag</span> <span class="o">=</span> <span class="n">data_stars</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">mag</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temperature&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">13000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Stellar Temperature and Magnitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/848562f509f10bb7eff82c22c8485ddb73e0d17584de1a7f6c49abd77cb846bb.png" src="../../_images/848562f509f10bb7eff82c22c8485ddb73e0d17584de1a7f6c49abd77cb846bb.png" />
+</div>
+</div>
+<p><strong>Density Plots</strong></p>
+<p>There are many times in sciences when we need to work with two-dimensional grids of data. Examples from physics include,</p>
+<ul class="simple">
+<li><p>Condensed Matter Physics: plot variations in charge, temperature, or atomic deposition on a solid surface</p></li>
+<li><p>Fluid Dynamics: plot the nights of waves in a ripple tank</p></li>
+<li><p>Particle Physics: plot the distribution of particles incident on an imaging detector.</p></li>
+</ul>
+<p>Let’s try plotting some data with this in mind. We’ll use the <font color="lightgreen"><span class="math notranslate nohighlight">\(\texttt{circular.txt}\)</span></font> file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_circular</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;/content/drive/MyDrive/PHYS 378/data/circular.txt&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data_circular</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/8d368b8df718a72b3f0b93708cc33a8f7bff7db1c1eb47e62c57cd44182811c9.png" src="../../_images/8d368b8df718a72b3f0b93708cc33a8f7bff7db1c1eb47e62c57cd44182811c9.png" />
+</div>
+</div>
+<p>We can flip the density plot top-to-bottom by putting the array element data[0,0] at the lower left corner by including the <code class="docutils literal notranslate"><span class="pre">origin</span></code> argument and setting it to <code class="docutils literal notranslate"><span class="pre">lower</span></code> as a string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data_circular</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/8044d3be66ed392e805f8fe439a39772422d8180fcc09410c4226854d067d381.png" src="../../_images/8044d3be66ed392e805f8fe439a39772422d8180fcc09410c4226854d067d381.png" />
+</div>
+</div>
+<p>We can also change the image to grayscale with the <code class="docutils literal notranslate"><span class="pre">cmap</span></code> argument,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data_circular</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/91ebd576fa50c474407696ce6d90126d3966d11ecd98c204ac164dcb48204176.png" src="../../_images/91ebd576fa50c474407696ce6d90126d3966d11ecd98c204ac164dcb48204176.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="accuracy-and-speed">
+<h3>Accuracy and Speed<a class="headerlink" href="#accuracy-and-speed" title="Link to this heading">#</a></h3>
+<p><em>Read Chapters 3 and 4 of “Computational Physics with Python” by Mark Newman (available online).</em></p>
+<p>To first understand why taking a look at accuracy and speed are important, let’s look at the value of pi that Python uses in its calculations and compare it to the actual value of pi:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \texttt{True value of pi:	3.1415926535897932384626…} \\
+\texttt{Value in Python:	3.1415926535897931} \\
+\texttt{Difference:		0.0000000000000001384626…} \end{split}\]</div>
+<p>There is a rounding error! Any number whose true value has more than 16 significant figures will get rounded off. Computers cannot be infinitely accurate, but this for the time being is good enough!</p>
+<p><strong>Things to Avoid:</strong></p>
+<p>You should never use an if statement to test the equality of two floats.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mf">3.0</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mf">3.3</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># this doesn&#39;t give any error even though it should!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It rarely occurs in physics calculations that you need to test the equality of floats, but if you do, then you should do something like this instead:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mf">3.3</span>
+<span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1e-12</span>
+<span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">3.3</span><span class="p">)</span><span class="o">&lt;</span><span class="n">epsilon</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.3
+</pre></div>
+</div>
+</div>
+</div>
+<section id="mathematical-context">
+<h4>Mathematical Context<a class="headerlink" href="#mathematical-context" title="Link to this heading">#</a></h4>
+<p>However, this might not do what you want it to do…</p>
+<p>An error of one part in <span class="math notranslate nohighlight">\(10^{16}\)</span> does not seem too bad. But what happens if we now add, subtract, or otherwise combine several different numbers, each with its own error?</p>
+<p>In general if x is accurate to a certain number of significant digits, say 16, then the rounding error will have a typical size of x/<span class="math notranslate nohighlight">\(10^{16}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[ c \approx 10^{16} \]</div>
+<p>It is usually a good assumption to consider the error to be a (uniformly distributed) random number with standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span> where</p>
+<div class="math notranslate nohighlight">
+\[ \sigma = cx \]</div>
+<ol class="arabic simple">
+<li><p>Addition/Subtraction: If we add or subtract two numbers <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> with standard deviations <span class="math notranslate nohighlight">\(\sigma_1\)</span> and <span class="math notranslate nohighlight">\(\sigma_2\)</span>, then the error on the sum or difference <span class="math notranslate nohighlight">\(x=x_1 \pm x_2\)</span> is given by the <strong>Central Limit Theorem</strong>:</p></li>
+</ol>
+<blockquote>
+<div><p>The variance of <span class="math notranslate nohighlight">\(\sigma^2\)</span> of the sum or difference is equal to the sum of the individual variances:
+$<span class="math notranslate nohighlight">\( \sigma^2 = \sigma_1^2 + \sigma_2^2\)</span><span class="math notranslate nohighlight">\(
+Hence, the standard deviation of the sum or difference is,
+\)</span><span class="math notranslate nohighlight">\(\sigma = \sqrt{\sigma_1^2 + \sigma_2^2}\)</span><span class="math notranslate nohighlight">\(
+So the error if we add or subtract two numbers (\)</span>x_1<span class="math notranslate nohighlight">\( and \)</span>x_2<span class="math notranslate nohighlight">\(), their total standard deviation becomes,
+\)</span><span class="math notranslate nohighlight">\(\sigma = c\sqrt{\sigma_1^2 + \sigma_2^2}\)</span>$</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Similarly if we multiply or divide two numbers then the variance of the result x obeys:
+$<span class="math notranslate nohighlight">\(\frac{\sigma^2}{x^2} = \frac{\sigma_1^2}{x_1^2} + \frac{\sigma_2^2}{x_2^2}\)</span><span class="math notranslate nohighlight">\(
+Such that we obtain \)</span>\sigma = \sqrt{2}cx$.</p></li>
+</ol>
+<p>The value of <span class="math notranslate nohighlight">\(\sigma\)</span> increases in size as the more numbers we combine, N, increases, including the larger the error on the results. Although the increase is a relatively slow one, proportional to the square root of N.</p>
+<p>We can also ask about the fractional error on <span class="math notranslate nohighlight">\(\Sigma_i x_i\)</span>, i.e., the total error divided by the value of the sum. The size of the fractional error is given by,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\sigma}{\Sigma_i x_i} = \frac{c\sqrt{N \bar{x^2}}}{Nx} = \frac{c\sqrt{\bar{x^2}}}{x\sqrt{N}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar{x}\)</span> is the mean value of x. <strong>The fractional error in the sum actually goes down as we add more numbers.</strong></p>
+<p>At the first glance, this appears to be pretty good. So, what’s the problem? Actually, there are a couple of them:</p>
+<ol class="arabic simple">
+<li><p>When the size of the numbers you’re adding vary wildly, then the smaller numbers may get lost.</p></li>
+<li><p>The most severe problems arise when you are not adding but subtracting numbers!</p></li>
+</ol>
+<p>The difference of two numbers: Let x=1 and y=<span class="math notranslate nohighlight">\(1+10^{-14}\sqrt{2}\)</span>. Trivially we see that:</p>
+<div class="math notranslate nohighlight">
+\[10^{14}(y-x) = \sqrt{2}\]</div>
+</section>
+<section id="python-implementation">
+<h4>Python implementation<a class="headerlink" href="#python-implementation" title="Link to this heading">#</a></h4>
+<p>But when checking the accuracy in Python,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1e-14</span><span class="p">)</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">((</span><span class="mf">1e14</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4210854715202004
+1.4142135623730951
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>The calculation is only accurate to the first decimal place.</em></p>
+<ul class="simple">
+<li><p><font color="lightgreen"><strong>Computers cannot be infintely accurate.</strong> </font></p></li>
+</ul>
+<blockquote>
+<div><p>This issue of large errors in calculations that involve the subtraction of numbers that are nearly equal, arises frequently in physics calculations.
+It is perhaps the most common cause of significant numerical error in computations and you need to be aware of it at all times when writing programs.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><font color="lightgreen"><strong>Computers cannot be infinitely fast either.</strong> </font></p></li>
+</ul>
+<blockquote>
+<div><p>Performing a million operations is no big problem for a computer - it usually takes less than a second.
+Performing a billion operations could take minutes or hours.
+Performing a trillion operations will basically take forever.</p>
+</div></blockquote>
+<p><strong>Exercise:</strong> Quantum harmonic oscillators at a finite temperature (ignore the complex terminology for now, just take a look at the equations!)</p>
+<p>We can describe the energy levels of a quantum harmonic oscillator by,</p>
+<div class="math notranslate nohighlight">
+\[E_n = \hbar \omega \left( n + \frac{1}{2}\right)\]</div>
+<p>where n=0,1,2,…</p>
+<p>We can describe the average energy of this oscillator at some temperature, T, by</p>
+<div class="math notranslate nohighlight">
+\[\langle E \rangle = \frac{1}{Z} \sum_{n=0}^{\infty} E_n e^{-\beta E_n}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta = 1/(k_B T)\)</span>, with <span class="math notranslate nohighlight">\(k_B\)</span> as the Boltzmann constant and</p>
+<p>$<span class="math notranslate nohighlight">\(Z = \sum_{n=0}^{\infty} e^{-\beta E_n}\)</span>$.</p>
+<blockquote>
+<div><p><font color="skyblue"> <strong>Your task:</strong> Find <span class="math notranslate nohighlight">\(\langle E \rangle\)</span> at <span class="math notranslate nohighlight">\(k_B T=100\)</span>. Use <span class="math notranslate nohighlight">\(\hbar=\omega=1\)</span> for this calculation. <em>Notice that the terms in the sum for</em> <span class="math notranslate nohighlight">\(\langle E \rangle\)</span> <em>and</em> <span class="math notranslate nohighlight">\(Z\)</span> <em>decrease as n increases. Therefore, we can approximate these infinite sums by taking the first 1000 terms.</em> </font></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terms</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="mi">100</span>
+<span class="n">S</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">terms</span><span class="p">):</span>
+	<span class="n">E</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mf">0.5</span>
+	<span class="n">weight</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="o">*</span><span class="n">E</span><span class="p">)</span>
+	<span class="n">S</span> <span class="o">+=</span> <span class="n">weight</span><span class="o">*</span><span class="n">E</span>
+	<span class="n">Z</span> <span class="o">+=</span> <span class="n">weight</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="o">/</span><span class="n">Z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>99.95543134093475
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p><font color="skyblue"> <strong>Additional Tasks:</strong> Now, perform some additional tests with your code:</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Run the script by including “%%time” at the start of your notebook cell — write the wall times in <span class="math notranslate nohighlight">\(\mu s/ms/s\)</span>.</p></li>
+<li><p>Increase the number of terms to 1,000,000 (one million). Try again.</p></li>
+<li><p>Increase the number of terms to 100,000,000 (one tenth of a billion). Try again.</p></li>
+<li><p>What happens if we increase it by another factor of 10 (one billion)? Estimate time.</p></li>
+<li><p>What happens if we try one trillion? Estimate time.</font></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="key-takeaways">
+<h3>Key Takeaways:<a class="headerlink" href="#key-takeaways" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>You can do a billion operations, but you must consider if they can be done in a reasonable amount of time.</p></li>
+<li><p>There is a balance between time spent and accuracy. If the highest level of accuracy is not necessary, then calculations can be quick.</p></li>
+<li><p>Before performing any calculations, always do a quick time estimate to gauge task feasibility.</p></li>
+</ol>
+<p><em>These are all important aspects of future lessons in how we build numerical simulations, so stay tuned!</em></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./exercises/gluck2024a"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-class-knowledge-base">Pre-Class Knowledge Base!</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#good-coding-practices">Good Coding Practices</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-1-outline-basic-programming-in-python">Module 1 Outline: Basic Programming in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modules-packages-functions">Modules, Packages, Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays-and-matrix-operations">Arrays and Matrix Operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-and-writing-files">Reading and Writing Files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#errors-and-exceptions">Errors and Exceptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphics-and-visualization">Graphics and Visualization</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-things-together">Putting things together</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-and-speed">Accuracy and Speed</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-context">Mathematical Context</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-implementation">Python implementation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key Takeaways:</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The AstroCodEx Collaboration
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
