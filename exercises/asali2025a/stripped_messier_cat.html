@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Opening the Dataset &#8212; My sample book</title>
+    <title>Analyze the Messier Catalog &#8212; My sample book</title>
   
   
   
@@ -59,11 +59,9 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/asali2025a/messier_cat';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/asali2025a/stripped_messier_cat';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Stellar Temperatures from Spectra" href="../lester2024a/stellar_spectrum.html" />
-    <link rel="prev" title="Exploring Cosmological Parameters with Functions" href="../cerny2025a/cosmological-parameters.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -126,6 +124,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -186,12 +186,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Python Exercises Gallery</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level I</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../cerny2024a/stefan-boltzmann.html">Stellar Luminosities from the Stefan-Boltzmann Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cerny2024b/exoplanet-diversity.html">Exploring the Diversity of Known Exoplanets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pasha2024a/astronomical-images.html">Visualizing Astronomical Images</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cerny2025a/cosmological-parameters.html">Exploring Cosmological Parameters with Functions</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Opening the Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messier_cat.html">Opening the Dataset</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level II</span></p>
 <ul class="nav bd-sidenav">
@@ -280,7 +280,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexercises/asali2025a/messier_cat.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexercises/asali2025a/stripped_messier_cat.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -310,7 +310,7 @@
       
       
       
-      <li><a href="../../_sources/exercises/asali2025a/messier_cat.ipynb" target="_blank"
+      <li><a href="../../_sources/exercises/asali2025a/stripped_messier_cat.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -320,7 +320,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -381,7 +381,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -392,11 +394,25 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Opening the Dataset</h1>
+    <h1>Analyze the Messier Catalog</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Analyze the Messier Catalog</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-the-dataset">Opening the Dataset</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-one-overview-analysis-of-the-messier-catalog">Exercise One: Overview Analysis of the Messier Catalog</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-two-getting-more-practice">Exercise Two: Getting More Practice</a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -406,37 +422,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p>Analyze the Messier Catalog</p>
-<div class="author admonition">
-<p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0002-8320-2198">Yasmeen Asali</a>, <a class="reference external" href="https://orcid.org/0000-0003-1697-7062">William Cerny</a>, <a class="reference external" href="https://orcid.org/0000-0003-0965-605X">Pratik Gandhi</a> (Yale University)</p>
-<p><em>Description</em>: Students use the Messier catalog to practice using for loops and and logic</p>
-<p><em>Intended Audience</em>: Beginner Undergraduate</p>
-<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">libraries:numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">loops</span></code>, <code class="docutils literal notranslate"><span class="pre">program-flow</span></code>, <code class="docutils literal notranslate"><span class="pre">logic</span></code></p>
-<p><em>Requirements</em>: <a class="reference download internal" download="" href="../../_downloads/3b937131d51a8e081064e8f6c691da65/requirements.txt"><span class="xref download myst">requirements.txt</span></a></p>
-<p><em>Last Updated: May 9, 2025</em></p>
-</div>
-<div class="learningobjective admonition">
-<p class="admonition-title">Learning Objectives</p>
-<ol class="arabic simple">
-<li><p>Understand the structure of 2D arrays and how to access data</p></li>
-<li><p>Practice using logic to downselect rows from an array and practice using for loops to iterate through objects</p></li>
-</ol>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="analyze-the-messier-catalog">
+<h1>Analyze the Messier Catalog<a class="headerlink" href="#analyze-the-messier-catalog" title="Link to this heading">#</a></h1>
 <p>In this assignment, you will practice using logic and loops using a dataset of objects from the <a class="reference external" href="https://en.wikipedia.org/wiki/Messier_object">Messier Catalog</a>. The dataset includes basic information about each object, like it’s type, magnitude, distance, constellation, and the best viewing season. Your tasks will involve reading the data, analyzing it, and using <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, logic, and loops to answer questions about it!</p>
 <section id="opening-the-dataset">
-<h1>Opening the Dataset<a class="headerlink" href="#opening-the-dataset" title="Link to this heading">#</a></h1>
+<h2>Opening the Dataset<a class="headerlink" href="#opening-the-dataset" title="Link to this heading">#</a></h2>
 <p>The data is stored in a <code class="docutils literal notranslate"><span class="pre">.npy</span></code> file, which you can load with <code class="docutils literal notranslate"><span class="pre">np.load()</span></code>. You can download it <a class="reference download internal" download="" href="../../_downloads/212db617785a437ed3773b2ad5ed2ed3/messier_data.npy"><span class="xref download myst">here</span></a> (right click and save as a <code class="docutils literal notranslate"><span class="pre">.npy</span></code> file). You can use the following line of code to open up the file in your code and store it’s contents in a variable called <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/Users/username/Downloads/messier_data.npy&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>Will the above line run on your computer? No! Do you remember what you need to change about it?</p>
-<div class="dropdown admonition hint">
-<p class="admonition-title">Hint</p>
-<p>You need to update the PATH to match where the data lives on your computer! You can put the data anywhere on your computer, and specify the absolute PATH in your code like the example above. Alternately, if you put the data in the <strong>same directory</strong> (folder) as the python script you are writing, you can open it like this: <code class="docutils literal notranslate"><span class="pre">np.load(messier_data.npy)</span></code>.</p>
-</div>
-</div>
+<p>Will the above line run on your computer? No! You need to update the PATH to match where the data lives on your computer! You can put the data anywhere on your computer, and specify the absolute PATH in your code like the example above. Alternately, if you put the data in the <strong>same directory</strong> (folder) as the python script you are writing, you can open it like this: <code class="docutils literal notranslate"><span class="pre">np.load(messier_data.npy)</span></code>.</p>
 <p>Each row in the dataset corresponds to a single Messier object, with the following fields:</p>
 <ul class="simple">
 <li><p><strong>Messier</strong>: Name of the Messier object as a string (e.g., <code class="docutils literal notranslate"><span class="pre">'M107'</span></code>, <code class="docutils literal notranslate"><span class="pre">'M108'</span></code>)</p></li>
@@ -452,8 +447,10 @@ document.write(`
 <li><p>You can access each row of the dataset using <strong>indexing</strong>. For instance, <code class="docutils literal notranslate"><span class="pre">data[0]</span></code> will return the first row of the array (aka all of the above column values for a single Messier object).</p></li>
 <li><p>You can access each column of the dataset using <code class="docutils literal notranslate"><span class="pre">data['Messier']</span></code> for example, where now rather than indexing by an integer we are indexing by a column <strong>key</strong> (a column name). This will return a numpy array of all the Messier numbers for all of the objects.</p></li>
 </ol>
-<div class="tip admonition">
-<p class="admonition-title">Exercise One: Overview Analysis of the Messier Catalog</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercise-one-overview-analysis-of-the-messier-catalog">
+<h1>Exercise One: Overview Analysis of the Messier Catalog<a class="headerlink" href="#exercise-one-overview-analysis-of-the-messier-catalog" title="Link to this heading">#</a></h1>
 <ol class="arabic simple">
 <li><p><strong>How many objects are in the dataset?</strong> You can either write a loop to count the number of objects or use a built-in python function.</p></li>
 <li><p><strong>Investigate the brightness of Messier objects:</strong> Recall that magnitude is a measure of brightness, and brighter objects have lower magnitude values!</p>
@@ -465,41 +462,19 @@ document.write(`
 </li>
 <li><p><strong>How many objects are there in each viewing season</strong> (spring, summer, autumn, winter)? Before looking at the hint, see if you can approach this problem on your own!</p></li>
 </ol>
-<div class="dropdown admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Hint for Problem 3
-You may want to define some variables as “counters” for the number of objects in each season, and then loop through every row of the dataset and add 1 to the corresponding counter if an object is in that season. Recall, you can use the sugar syntax <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+=</span> <span class="pre">1</span></code> to add 1 to an exisiting variable (equivalent to <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">1</span></code>).</p>
-</div>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">Exercise Two: Getting More Practice</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercise-two-getting-more-practice">
+<h1>Exercise Two: Getting More Practice<a class="headerlink" href="#exercise-two-getting-more-practice" title="Link to this heading">#</a></h1>
 <ol class="arabic simple">
 <li><p>Calculate the <strong>average distance</strong> of <strong>spiral galaxies</strong> (Type: <code class="docutils literal notranslate"><span class="pre">'Sp'</span></code>), <strong>globular clusters</strong> (Type: <code class="docutils literal notranslate"><span class="pre">'Gc'</span></code>), and <strong>open clusters</strong> (Type: <code class="docutils literal notranslate"><span class="pre">'Oc'</span></code>). Which type of object is typically farther away? Does this make sense?</p></li>
-</ol>
-<div class="dropdown admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Hint for Problem 1
-You can do this (at least) two ways! First, try using a <strong>condition</strong> to <strong>index</strong> the array. Your condition would be something that is checking the object types, and you can use that condition directly as the index to select only rows in the array where that condition is <code class="docutils literal notranslate"><span class="pre">True</span></code>. Once you have the subset of the array that meets your condition, you can compute the average (as in exercise 1 problem 2).</p>
-<p>Another way you could approach this problem is by using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to iterate over every row, and then using <code class="docutils literal notranslate"><span class="pre">if</span></code> statements to select based on type. How would you compute the average? Try to think creatively about how you can perform math on values (recall exercise 1 problem 3) iteratively in a loop. Maybe you will need to define two variables that you operate on each iteration of the loop, then do something to the two variables at the end after the loop finishes…</p>
-</div>
-<ol class="arabic simple" start="2">
 <li><p><strong>How many constellations are there in the dataset</strong>, and <strong>how many objects belong to each constellation?</strong></p>
 <ul class="simple">
 <li><p>First, you need to find how many unique constellations exist in the dataset.</p></li>
 <li><p>Then, count how many Messier objects belong to each constellation.</p></li>
 </ul>
 </li>
-</ol>
-<div class="dropdown admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Hint for Problem 2
-You can try using a <code class="docutils literal notranslate"><span class="pre">set</span></code> to help find the unique constellations in the dataset. A <code class="docutils literal notranslate"><span class="pre">set</span></code> is a data structure that automatically removes duplicates, so it could be useful for counting how many distinct constellations there are.</p>
-<p>If you feel comfortable, try using a <code class="docutils literal notranslate"><span class="pre">set</span></code> to collect the constellations and a <code class="docutils literal notranslate"><span class="pre">dict</span></code> (dictionary) to count the number of objects in each one (recall exercise 1 problem 3 for counting in loops). Remember, if you’re unsure about how to create or use a set, think about how a list works—sets work similarly but don’t allow duplicate values!</p>
-</div>
-<ol class="arabic simple" start="3">
 <li><p><strong>How many Messier objects are in the northern vs. southern sky?</strong> You could try to do this using the constellation information from the previous problem, but the hemisphere can more easily be determined by the <strong>declination</strong>.</p></li>
 </ol>
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -532,30 +507,33 @@ You can try using a <code class="docutils literal notranslate"><span class="pre"
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../cerny2025a/cosmological-parameters.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Exploring Cosmological Parameters with Functions</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../lester2024a/stellar_spectrum.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Stellar Temperatures from Spectra</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Analyze the Messier Catalog</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-the-dataset">Opening the Dataset</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-one-overview-analysis-of-the-messier-catalog">Exercise One: Overview Analysis of the Messier Catalog</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-two-getting-more-practice">Exercise Two: Getting More Practice</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
