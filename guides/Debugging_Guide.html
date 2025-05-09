@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/_static/custom.css" />
@@ -44,7 +44,7 @@
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -493,31 +493,26 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">37</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span>     <span class="k">return</span> <span class="n">pi_approx</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span> <span class="c1">#-------------------------------------------------------</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="c1">#                 Executing the Code</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="c1">#-------------------------------------------------------</span>
-<span class="ne">---&gt; </span><span class="mi">37</span> <span class="n">estimate_pi</span><span class="p">(</span><span class="mi">200000</span><span class="p">)</span>
+<span class="nn">&lt;ipython-input-77-b32a4d3d809e&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="c1">#-------------------------------------------------------</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span> 
+<span class="ne">---&gt; </span><span class="mi">32</span> <span class="n">estimate_pi</span><span class="p">(</span><span class="mi">200000</span><span class="p">)</span>
 
-<span class="nn">Cell In[1], line 27,</span> in <span class="ni">estimate_pi</span><span class="nt">(number_of_darts)</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="n">number_of_darts_in_circle</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="k">for</span> <span class="n">throw</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_darts</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">27</span>     <span class="n">number_of_darts_in_circle</span> <span class="o">+=</span> <span class="n">throw_dart</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="n">pi_approx</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">number_of_darts_in_circle</span> <span class="o">/</span> <span class="n">number_of_darts</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="k">return</span> <span class="n">pi_approx</span>
+<span class="nn">&lt;ipython-input-77-b32a4d3d809e&gt;</span> in <span class="ni">estimate_pi</span><span class="nt">(number_of_darts)</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> 
+<span class="g g-Whitespace">     </span><span class="mi">22</span>     <span class="k">for</span> <span class="n">throw</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_darts</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">23</span>       <span class="n">number_of_darts_in_circle</span> <span class="o">+=</span> <span class="n">throw_dart</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> 
+<span class="g g-Whitespace">     </span><span class="mi">25</span>     <span class="n">pi_approx</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">number_of_darts_in_circle</span> <span class="o">/</span> <span class="n">number_of_darts</span><span class="p">)</span>
 
-<span class="nn">Cell In[1], line 13,</span> in <span class="ni">throw_dart</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span><span class="sd"> A function that effectively throws a dart, if it lands in</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span><span class="sd"> the quarter circle we return 1, if not we return 0.</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">#giving each dart a random x,y position between 0 and 1</span>
-<span class="ne">---&gt; </span><span class="mi">13</span> <span class="k">if</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mf">0.5</span><span class="p">:</span> <span class="c1">#check to see if its in the circle</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="k">return</span> <span class="mi">1</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="k">else</span><span class="p">:</span>
+<span class="nn">&lt;ipython-input-77-b32a4d3d809e&gt;</span> in <span class="ni">throw_dart</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2">     x, y = np.random.uniform(0,1, 2), np.random.uniform(0,1, 2) #giving each dart a random x,y position between 0 and 1</span>
+<span class="ne">----&gt; </span><span class="mi">9</span><span class="s2">     if sqrt((x - 0.5)**2 + (y - 0.5)**2) &lt;= 0.5: #check to see if its in the circle</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span><span class="s2">         return 1</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span><span class="s2">     else:</span>
 
-<span class="ne">TypeError</span>: only length-1 arrays can be converted to Python scalars
+<span class="ne">TypeError</span>: only size-1 arrays can be converted to Python scalars
 </pre></div>
 </div>
 </div>

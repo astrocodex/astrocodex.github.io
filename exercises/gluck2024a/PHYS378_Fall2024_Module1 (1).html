@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/_static/custom.css" />
@@ -44,7 +44,7 @@
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -470,7 +470,7 @@ document.write(`
 <p>Include comments in your program, as necessary. Write as if you’ll either need to hand off your code to someone else, or future you will need to use this in a year from now. Make sure that your code is clean, legible, and that your comments make sense!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H0</span> <span class="o">=</span> <span class="mi">70</span> <span class="c1"># Hubble&#39;s constant (km/s/)Mpc &lt;- a comment!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">H0</span> <span class="o">=</span> <span class="mi">70</span> <span class="c1"># Hubble&#39;s constant (km/s/)Mpc &lt;- a comment!</span>
 </pre></div>
 </div>
 </div>
@@ -489,7 +489,7 @@ document.write(`
 <p>Use meaningful variable names (including names for constants)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">variable1</span> <span class="o">=</span> <span class="mi">500</span> <span class="c1"># I don&#39;t know what this is!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">variable1</span> <span class="o">=</span> <span class="mi">500</span> <span class="c1"># I don&#39;t know what this is!</span>
 <span class="n">acceleration</span> <span class="o">=</span> <span class="mf">9.8</span> <span class="c1"># m/s^2 grav. acceleration (this name makes sense!)</span>
 </pre></div>
 </div>
@@ -501,14 +501,14 @@ document.write(`
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here!</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">outputs</span><span class="p">(</span><span class="n">input_value</span><span class="p">):</span>
 
@@ -571,7 +571,7 @@ outputs: [2, -16, 54, -128, 250]
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">exp</span>
 <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
@@ -593,7 +593,7 @@ outputs: [2, -16, 54, -128, 250]
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nb">list</span><span class="p">),</span> <span class="nb">list</span><span class="p">)</span>
 
 <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
@@ -611,7 +611,7 @@ outputs: [2, -16, 54, -128, 250]
 <p>We can define an array and print out certain elements:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># (start, end, no. of values)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># (start, end, no. of values)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># prints out the first element</span>
@@ -631,7 +631,7 @@ outputs: [2, -16, 54, -128, 250]
 <p>We can also create and iindex within 2D arrays:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># element in first row, first column</span>
@@ -652,7 +652,7 @@ outputs: [2, -16, 54, -128, 250]
 <p>Finally, we can print out entire rows and columns by slicing:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">,:])</span> <span class="c1"># printing out first row</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">,:])</span> <span class="c1"># printing out first row</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># printing out first column</span>
 </pre></div>
@@ -668,7 +668,7 @@ outputs: [2, -16, 54, -128, 250]
 <p>There are other matrix operations we can perform with arrays. We can modify elements in place:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># redefining value of specific element</span>
@@ -686,7 +686,7 @@ outputs: [2, -16, 54, -128, 250]
 <p>Adding a new constant value to all elements:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z_new</span> <span class="o">=</span> <span class="n">z</span><span class="o">+</span><span class="mi">1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z_new</span> <span class="o">=</span> <span class="n">z</span><span class="o">+</span><span class="mi">1</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">z_new</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -701,7 +701,7 @@ outputs: [2, -16, 54, -128, 250]
 <p>Adding two matrices together:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]])</span> <span class="c1"># first defining a second array</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]])</span> <span class="c1"># first defining a second array</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="o">+</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -716,7 +716,7 @@ outputs: [2, -16, 54, -128, 250]
 <p>Checking the size and shape of your matrices:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>        <span class="c1"># size of the array</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>        <span class="c1"># size of the array</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>        <span class="c1"># shape of the array</span>
 </pre></div>
 </div>
@@ -744,7 +744,7 @@ outputs: [2, -16, 54, -128, 250]
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
 </pre></div>
 </div>
 </div>
@@ -754,7 +754,7 @@ outputs: [2, -16, 54, -128, 250]
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
 </pre></div>
 </div>
 </div>
@@ -771,7 +771,7 @@ outputs: [2, -16, 54, -128, 250]
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;foo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="c1"># an arbitrary file with writing (w)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;foo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="c1"># an arbitrary file with writing (w)</span>
                          <span class="c1"># permission (this allows you to edit the file).</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
@@ -803,7 +803,7 @@ Read or write a binary file with ‘rb’ and ‘wb’.</p>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># syntax below:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># syntax below:</span>
 <span class="c1">#f = open(&#39;/content/gdrive/My Drive/ Colab Notebooks/foo.txt&#39;,&#39;w&#39;)</span>
 </pre></div>
 </div>
@@ -818,7 +818,7 @@ Read or write a binary file with ‘rb’ and ‘wb’.</p>
 <p>A quick how-to on opening a file, writing to it, and then closing it. Always close files within the script after you have finished accessing its contents.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open a file</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open a file</span>
 <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;foo.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Name of the file: &quot;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Closed or not : &quot;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">closed</span><span class="p">)</span>
@@ -840,7 +840,7 @@ Opening mode :  wb
 <p><span class="math notranslate nohighlight">\(\texttt{f.write(string)}\)</span> writes the contents of string to the file, returning <span class="math notranslate nohighlight">\(\texttt{None}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;foo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;foo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;This is a first line of the file</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Second line of the file </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
@@ -851,7 +851,7 @@ Opening mode :  wb
 <p>To write something other than a string, it needs to be converted to a string first:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;foo2.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;foo2.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
 <span class="n">value</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;the answer&#39;</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
 <span class="n">s</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
@@ -863,7 +863,7 @@ Opening mode :  wb
 <p>Reading Files: <span class="math notranslate nohighlight">\(\texttt{f.readline()}\)</span> reads a single line from the file; a newline character <span class="math notranslate nohighlight">\(\texttt{\n}\)</span> is left at the end of the string, and is only omitted on the last line of the file if the file doesn’t end in a newline.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;foo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;foo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -877,7 +877,7 @@ Opening mode :  wb
 <p><span class="math notranslate nohighlight">\(\texttt{f.read(size)}\)</span> reads some quantity of data and returns it as a string. size is an optional numeric argument. When size is omitted or negative, the entire contents of the file will be read and returned.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;foo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;foo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="c1">#&#39;This is the entire file.\n’</span>
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># Close file to free up resources</span>
@@ -888,7 +888,7 @@ Opening mode :  wb
 <p>It is good practice to use the <span class="math notranslate nohighlight">\(\texttt{with}\)</span> function when dealing with file objects. This has the advantage that the file is properly closed after its suite finishes, even if an exception is raised on the way.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;foo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;foo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
   <span class="n">read_data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="n">f</span><span class="o">.</span><span class="n">closed</span>
@@ -903,7 +903,7 @@ Opening mode :  wb
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="c1">#&gt;&gt; Traceback (most recent call last):</span>
 <span class="c1">#&gt;&gt;   File &quot;&lt;stdin&gt;&quot;, line 1, in ?</span>
 <span class="c1">#&gt;&gt; ValueError: I/O operation on closed file</span>
@@ -913,8 +913,11 @@ Opening mode :  wb
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="nn">&lt;ipython-input-44-094b728c8e53&gt;</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#&gt;&gt; Traceback (most recent call last):</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">#&gt;&gt;   File &quot;&lt;stdin&gt;&quot;, line 1, in ?</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1">#&gt;&gt; ValueError: I/O operation on closed file</span>
 
 <span class="ne">ValueError</span>: I/O operation on closed file.
 </pre></div>
@@ -933,7 +936,7 @@ Opening mode :  wb
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work goes here!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work goes here!</span>
 </pre></div>
 </div>
 </div>
@@ -947,7 +950,7 @@ Opening mode :  wb
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work goes here!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work goes here!</span>
 </pre></div>
 </div>
 </div>
@@ -961,7 +964,7 @@ Opening mode :  wb
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># uncomment line below to see error!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># uncomment line below to see error!</span>
 
 <span class="c1"># while True print(&#39;Hello world&#39;)</span>
 </pre></div>
@@ -973,7 +976,7 @@ Opening mode :  wb
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># uncomment line below to see error!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># uncomment line below to see error!</span>
 
 <span class="c1"># 10 * (1/0)</span>
 </pre></div>
@@ -987,7 +990,7 @@ Opening mode :  wb
 <p><strong>Your task:</strong> Determine values that will not cause an error, and find three sets of values that will return the errors within the function. </font></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">division</span><span class="p">(</span><span class="n">dividend</span><span class="p">,</span> <span class="n">divisor</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">division</span><span class="p">(</span><span class="n">dividend</span><span class="p">,</span> <span class="n">divisor</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">dividend</span> <span class="o">/</span> <span class="n">divisor</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The result of </span><span class="si">{</span><span class="n">dividend</span><span class="si">}</span><span class="s2"> divided by </span><span class="si">{</span><span class="n">divisor</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
@@ -1003,28 +1006,28 @@ Opening mode :  wb
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># call function with values that do not result in an error</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># call function with values that do not result in an error</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># call function with values that result in ZeroDivisionError</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># call function with values that result in ZeroDivisionError</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># call function with values that result in TypeError</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># call function with values that result in TypeError</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># call function with values that result in Exception</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># call function with values that result in Exception</span>
 </pre></div>
 </div>
 </div>
@@ -1035,7 +1038,7 @@ Opening mode :  wb
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">division</span><span class="p">(</span><span class="n">dividend</span><span class="p">,</span> <span class="n">divisor</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">division</span><span class="p">(</span><span class="n">dividend</span><span class="p">,</span> <span class="n">divisor</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">dividend</span> <span class="o">*</span> <span class="n">divisor</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The result of </span><span class="si">{</span><span class="n">dividend</span><span class="si">}</span><span class="s2"> divided by </span><span class="si">{</span><span class="n">divisor</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
@@ -1051,7 +1054,7 @@ Opening mode :  wb
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
 </pre></div>
 </div>
 </div>
@@ -1059,7 +1062,7 @@ Opening mode :  wb
 <p>Here is another simple example, which opens a file and writes the content in the file and comes out gracefully because there is no problem at all:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
    <span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;testfile.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
    <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;This is my test file for exception handling!!&quot;</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
@@ -1079,7 +1082,7 @@ Opening mode :  wb
 <p>You can use a <span class="math notranslate nohighlight">\(\texttt{finally:}\)</span> block along with a try: block. The finally block is a place to put any code that must execute, whether the try-block raised an exception or not. The syntax of the try-finally statement is this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
    <span class="c1">#You do your operations here;</span>
    <span class="c1">#......................</span>
    <span class="c1">#Due to any exception, this may be skipped.</span>
@@ -1096,7 +1099,7 @@ Opening mode :  wb
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
 </pre></div>
 </div>
 </div>
@@ -1106,7 +1109,7 @@ Opening mode :  wb
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comments go here!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comments go here!</span>
 </pre></div>
 </div>
 </div>
@@ -1142,7 +1145,7 @@ Opening mode :  wb
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$x^2$&#39;</span><span class="p">)</span> <span class="c1"># to use LaTeX syntax: r&quot;$x^2$&quot;</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;x^3&#39;</span><span class="p">)</span> <span class="c1"># without LaTeX syntax</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x value&#39;</span><span class="p">)</span>
@@ -1165,7 +1168,7 @@ Opening mode :  wb
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
 </pre></div>
 </div>
 </div>
@@ -1175,7 +1178,7 @@ Opening mode :  wb
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
 </pre></div>
 </div>
 </div>
@@ -1185,7 +1188,7 @@ Opening mode :  wb
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
 </pre></div>
 </div>
 </div>
@@ -1197,7 +1200,7 @@ Opening mode :  wb
 <p><em>Make sure you know what’s in your dataset! Print out your dataset and header if available, and always plot your data!</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read in your datafile here</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read in your datafile here</span>
 
 <span class="n">data_sunspots</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;/content/drive/MyDrive/PHYS 378/data/sunspots.txt&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
 </pre></div>
@@ -1209,7 +1212,7 @@ Opening mode :  wb
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Separate no. of sunspots and time via slicing.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Separate no. of sunspots and time via slicing.</span>
 
 <span class="n">date</span> <span class="o">=</span> <span class="n">data_sunspots</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">num_sunspots</span> <span class="o">=</span> <span class="n">data_sunspots</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
@@ -1235,7 +1238,7 @@ Opening mode :  wb
 <p>Using matplotlib, we can create scatter plots with <span class="math notranslate nohighlight">\(\texttt{plt.scatter(x,y)}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># uploading the data file (downloaded from Canvas)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># uploading the data file (downloaded from Canvas)</span>
 <span class="n">data_stars</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;/content/drive/MyDrive/PHYS 378/data/stars.txt&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1246,7 +1249,7 @@ Opening mode :  wb
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="n">data_stars</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="n">data_stars</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">mag</span> <span class="o">=</span> <span class="n">data_stars</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -1254,7 +1257,7 @@ Opening mode :  wb
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">mag</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">mag</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temperature&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">13000</span><span class="p">)</span>
@@ -1279,14 +1282,14 @@ Opening mode :  wb
 <p>Let’s try plotting some data with this in mind. We’ll use the <font color="lightgreen"><span class="math notranslate nohighlight">\(\texttt{circular.txt}\)</span></font> file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_circular</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;/content/drive/MyDrive/PHYS 378/data/circular.txt&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data_circular</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;/content/drive/MyDrive/PHYS 378/data/circular.txt&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data_circular</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data_circular</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1298,7 +1301,7 @@ Opening mode :  wb
 <p>We can flip the density plot top-to-bottom by putting the array element data[0,0] at the lower left corner by including the <code class="docutils literal notranslate"><span class="pre">origin</span></code> argument and setting it to <code class="docutils literal notranslate"><span class="pre">lower</span></code> as a string.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data_circular</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data_circular</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1310,7 +1313,7 @@ Opening mode :  wb
 <p>We can also change the image to grayscale with the <code class="docutils literal notranslate"><span class="pre">cmap</span></code> argument,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data_circular</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data_circular</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1334,7 +1337,7 @@ Opening mode :  wb
 <p>You should never use an if statement to test the equality of two floats.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mf">3.0</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mf">3.0</span>
 <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mf">3.3</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># this doesn&#39;t give any error even though it should!</span>
 </pre></div>
@@ -1344,7 +1347,7 @@ Opening mode :  wb
 <p>It rarely occurs in physics calculations that you need to test the equality of floats, but if you do, then you should do something like this instead:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mf">3.3</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mf">3.3</span>
 <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1e-12</span>
 <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">3.3</span><span class="p">)</span><span class="o">&lt;</span><span class="n">epsilon</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -1402,7 +1405,7 @@ Such that we obtain \)</span>\sigma = \sqrt{2}cx$.</p></li>
 <p>But when checking the accuracy in Python,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1.0</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1.0</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1e-14</span><span class="p">)</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">((</span><span class="mf">1e14</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
@@ -1447,14 +1450,14 @@ Performing a trillion operations will basically take forever.</p>
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terms</span> <span class="o">=</span> <span class="mi">1000</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">terms</span> <span class="o">=</span> <span class="mi">1000</span>
 <span class="n">beta</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="mi">100</span>
 <span class="n">S</span> <span class="o">=</span> <span class="mf">0.0</span>
 <span class="n">Z</span> <span class="o">=</span> <span class="mf">0.0</span>
@@ -1486,7 +1489,7 @@ Performing a trillion operations will basically take forever.</p>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your work here!</span>
 </pre></div>
 </div>
 </div>
