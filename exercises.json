@@ -14,13 +14,13 @@
     {
         "title": "Astronomical Imaging",
         "tags": ["beginner undergraduate"],
-        "description": "Learn how to read and (nicely) view a fits file.",
+        "description": "Learn how to read in and visualize the contents of a fits file.",
         "url": "./exercises/pasha2024a/astronomical-images"
 },
     {
         "title": "HII Regions in M33",
         "tags": ["intermediate undergraduate"],
-        "description": "Investigate HII regions in an image of M33 and determine their sizes and number of OB stars.",
+        "description": "Investigate HII regions in an image of M33; determine their sizes and number of OB stars.",
         "url": "./exercises/pasha2024b/hii-regions"
 },
     {
@@ -32,25 +32,25 @@
     {
         "title": "Stellar Temperatures from Spectra",
         "tags": ["intermediate undergraduate"],
-        "description": "Work with stellar models to infer temperature",
+        "description": "Apply stellar models to infer temperature.",
         "url": "./exercises/lester2024a/stellar_spectrum"
     },
     {
         "title": "Gaia Star Clusters",
         "tags": ["beginner undergraduate"],
-        "description": "Retrieve gaia data to visualize and identify star clusters",
+        "description": "Retrieve Gaia data to visualize and identify star clusters.",
         "url": "./exercises/granucci2024a/gaia-clusters"
     },
     {
         "title": "Rogue Planet Habitability",
         "tags": ["intermediate undergraduate"],
-        "description": "Create a hypothetical galaxy and see if a rogue planet could survive via supernova emission.",
+        "description": "Create a hypothetical galaxy and check whether a rogue planet could remain habitable via flux from nearby supernovae.",
         "url": "./exercises/yadavalli2024a/SN_Habitability"
     },
     {
         "title": "Introduction to Data Parallelization",
         "tags": ["intermediate undergraduate"],
-        "description": "Learn how to use simple parallization in Python to decrease runtimes.",
+        "description": "Use simple parallelization in Python to decrease runtimes.",
         "url": "./exercises/sunseri2024a/Data_Parallelism_Part_1"
     }
 ]
