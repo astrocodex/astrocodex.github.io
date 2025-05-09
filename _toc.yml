@@ -13,6 +13,7 @@ parts:
     - file: exercises/cerny2024a/stefan-boltzmann
     - file: exercises/cerny2024b/exoplanet-diversity
     - file: exercises/pasha2024a/astronomical-images
+    - file: exercises/cerny2025a/cosmological-parameters
   - caption: Level II 
     chapters:
     - file: exercises/lester2024a/stellar_spectrum
