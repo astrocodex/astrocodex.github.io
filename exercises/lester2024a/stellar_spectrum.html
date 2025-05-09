@@ -28,13 +28,13 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8fb1fe15" />
   
@@ -404,10 +404,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-model-spectra">Part 1 - Model spectra</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-observed-spectra">Part 2 - observed spectra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-model-spectra">Part 1 - Model Spectra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-observed-spectra">Part 2 - Observed Spectra</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-new-mystery-stars">Part 3 - New Mystery Stars</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concluding-thoughts">Concluding thoughts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concluding-thoughts">Concluding Thoughts</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-extra-credit-array-manipulation">Bonus/Extra Credit: Array Manipulation</a></li>
 </ul>
             </nav>
@@ -455,7 +455,7 @@ document.write(`
 </div>
 </section>
 <section id="part-1-model-spectra">
-<h2>Part 1 - Model spectra<a class="headerlink" href="#part-1-model-spectra" title="Link to this heading">#</a></h2>
+<h2>Part 1 - Model Spectra<a class="headerlink" href="#part-1-model-spectra" title="Link to this heading">#</a></h2>
 <p>Start by importing the python packages we’ll need by running the cell below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -536,13 +536,13 @@ document.write(`
 </div>
 </section>
 <section id="part-2-observed-spectra">
-<h2>Part 2 - observed spectra<a class="headerlink" href="#part-2-observed-spectra" title="Link to this heading">#</a></h2>
-<p>Now, we’re going to compare the observed spectra of a real star to the models from Part I and determine this star’s spectral type (and surface temperature).</p>
+<h2>Part 2 - Observed Spectra<a class="headerlink" href="#part-2-observed-spectra" title="Link to this heading">#</a></h2>
+<p>Now we’re going to compare the observed spectra of a real star to the models from Part I and determine this star’s spectral type (and surface temperature).</p>
 <div class="dropdown exercise admonition">
 <p class="admonition-title">Exercise 5</p>
 <div class="docutils container">
 <ol class="arabic simple">
-<li><p>Read in the spectrum for Star 1 using the <em>ascii.read()</em> package. (Like in Step 1).</p></li>
+<li><p>Read in the spectrum for Star 1 using the <em>ascii.read()</em> package (Like in Step 1).</p></li>
 <li><p>Plot the spectrum. What do you notice about the spectrum? Take some time to modify your plot boundaries/axes, labels, and aspect ratio to best see the relevant features in the spectrum</p></li>
 </ol>
 </div>
@@ -603,10 +603,10 @@ document.write(`
 </div>
 </section>
 <section id="concluding-thoughts">
-<h2>Concluding thoughts<a class="headerlink" href="#concluding-thoughts" title="Link to this heading">#</a></h2>
+<h2>Concluding Thoughts<a class="headerlink" href="#concluding-thoughts" title="Link to this heading">#</a></h2>
 <p><strong>Question:</strong>  How well did the model spectra fit the real stars’ spectra? Do you think our fitting code worked successfully?</p>
 <p><strong>Question:</strong>  What’s one situation where our code would NOT be able to find the temperature of the star? Is there a way we could update our code / analysis to solve the problem?</p>
-<p>Write out a discussion for these two questions</p>
+<p>Write out a discussion for these two questions.</p>
 </section>
 <section id="bonus-extra-credit-array-manipulation">
 <h2>Bonus/Extra Credit: Array Manipulation<a class="headerlink" href="#bonus-extra-credit-array-manipulation" title="Link to this heading">#</a></h2>
@@ -695,10 +695,10 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-model-spectra">Part 1 - Model spectra</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-observed-spectra">Part 2 - observed spectra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-model-spectra">Part 1 - Model Spectra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-observed-spectra">Part 2 - Observed Spectra</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-new-mystery-stars">Part 3 - New Mystery Stars</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concluding-thoughts">Concluding thoughts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concluding-thoughts">Concluding Thoughts</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-extra-credit-array-manipulation">Bonus/Extra Credit: Array Manipulation</a></li>
 </ul>
   </nav></div>

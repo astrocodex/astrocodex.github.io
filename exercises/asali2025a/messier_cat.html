@@ -1,0 +1,626 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Opening the Dataset &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8fb1fe15" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/asali2025a/messier_cat';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Python Exercises Gallery</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Level I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cerny2024a/stefan-boltzmann.html">Stellar Luminosities from the Stefan-Boltzmann Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerny2024b/exoplanet-diversity.html">Exploring the Diversity of Known Exoplanets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pasha2024a/astronomical-images.html">Visualizing Astronomical Images</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Level II</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../lester2024a/stellar_spectrum.html">Stellar Temperatures from Spectra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Gaia Star Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">The Sizes of HII Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sunseri2024a/Data_Parallelism_Part_1.html">Introduction to Data Parallelism</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Level III</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../yadavalli2024a/SN_Habitability.html">Rogue Planet Habitability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bellinger2024a/trig-regression.html">Trigonometric Regression</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides and Walkthroughs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../guides/Debugging_Guide.html">Debugging Strategies Resource</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexercises/asali2025a/messier_cat.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/exercises/asali2025a/messier_cat.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Opening the Dataset</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Opening the Dataset</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-requirements">Submission Requirements:</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>Analyze the Messier Catalog</p>
+<div class="author admonition">
+<p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0002-8320-2198">Yasmeen Asali</a>, <a class="reference external" href="https://orcid.org/0000-0003-1697-7062">William Cerny</a>, <a class="reference external" href="https://orcid.org/0000-0003-0965-605X">Pratik Gandhi</a> (Yale University)</p>
+<p><em>Description</em>: Students use the Messier catalog to practice using for loops and and logic</p>
+<p><em>Intended Audience</em>: Beginner Undergraduate</p>
+<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">libraries:numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">loops</span></code>, <code class="docutils literal notranslate"><span class="pre">program-flow</span></code>, <code class="docutils literal notranslate"><span class="pre">logic</span></code></p>
+<p><em>Requirements</em>: <a class="reference download internal" download="" href="../../_downloads/3b937131d51a8e081064e8f6c691da65/requirements.txt"><span class="xref download myst">requirements.txt</span></a></p>
+<p><em>Last Updated: May 9, 2025</em></p>
+</div>
+<div class="learningobjective admonition">
+<p class="admonition-title">Learning Objectives</p>
+<ol class="arabic simple">
+<li><p>Understand the structure of 2D arrays and how to access data</p></li>
+<li><p>Practice using logic to downselect rows from an array and practice using for loops to iterate through objects</p></li>
+</ol>
+</div>
+<p>In this assignment, you will practice using logic and loops using a dataset of objects from the <a class="reference external" href="https://en.wikipedia.org/wiki/Messier_object">Messier Catalog</a>. The dataset includes basic information about each object, like it’s type, magnitude, distance, constellation, and the best viewing season. Your tasks will involve reading the data, analyzing it, and using <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, logic, and loops to answer questions about it!</p>
+<section id="opening-the-dataset">
+<h1>Opening the Dataset<a class="headerlink" href="#opening-the-dataset" title="Link to this heading">#</a></h1>
+<p>The data is stored in a <code class="docutils literal notranslate"><span class="pre">.npy</span></code> file, which you can load with <code class="docutils literal notranslate"><span class="pre">np.load()</span></code>. We will provide this <code class="docutils literal notranslate"><span class="pre">.npy</span></code> file via slack, and you can use the following line of code to open up the file in your code and store it’s contents in a variable called <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/Users/yasmeenasali/Downloads/messier_data.npy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Will the above line run on your computer? No! Do you remember what you need to change about it?</p>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Recall from Week 0, you need to update the PATH to match where the data lives on your computer! You can put the data anywhere on your computer, and specify the absolute PATH in your code like the example I have above. Alternately, if you put the data in the <strong>same directory</strong> (folder) as the python script you are writing, you can open it like this: <code class="docutils literal notranslate"><span class="pre">np.load(messier_data.npy)</span></code>.</p>
+</div>
+</div>
+<p>Each row in the dataset corresponds to a single Messier object, with the following fields:</p>
+<ul class="simple">
+<li><p><strong>Messier</strong>: Name of the Messier object as a string (e.g., <code class="docutils literal notranslate"><span class="pre">'M107'</span></code>, <code class="docutils literal notranslate"><span class="pre">'M108'</span></code>)</p></li>
+<li><p><strong>RA</strong> and <strong>DEC</strong>: the Right Ascension and Declination of the object (coordinates in the sky).</p></li>
+<li><p><strong>Type</strong>: Type of object (e.g., <code class="docutils literal notranslate"><span class="pre">'Gc'</span></code> for Globular Cluster, <code class="docutils literal notranslate"><span class="pre">'Sp'</span></code> for Spiral, <code class="docutils literal notranslate"><span class="pre">'Ba'</span></code> for Barred Spiral)</p></li>
+<li><p><strong>Mag</strong>: Magnitude (brightness) of the object. Magnitudes are a unit-less system, and lower numbers mean brighter objects!</p></li>
+<li><p><strong>Distance</strong>: Distance from Earth in units of light-years</p></li>
+<li><p><strong>Constellation</strong>: The constellation in which the object resides</p></li>
+<li><p><strong>Season</strong>: The best viewing season (spring, summer, autumn, winter)</p></li>
+</ul>
+<p>Since we have not practiced with large 2D datasets a lot, here are some tips and reminders.</p>
+<ol class="arabic simple">
+<li><p>You can access each row of the dataset using <strong>indexing</strong>. For instance, <code class="docutils literal notranslate"><span class="pre">data[0]</span></code> will return the first row of the array (aka all of the above column values for a single Messier object).</p></li>
+<li><p>You can access each column of the dataset using <code class="docutils literal notranslate"><span class="pre">data['Messier']</span></code> for example, where now rather than indexing by an integer we are indexing by a column <strong>key</strong> (a column name). This will return a numpy array of all the Messier numbers for all of the objects.</p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Exercise One: Overview Analysis of the Messier Catalog</p>
+<p>These problems are reviewing skills from last week and from this week’s lecture! Hopefully, they are on the easier side!</p>
+<ol class="arabic simple">
+<li><p><strong>How many objects are in the dataset?</strong> You can either write a loop to count the number of objects or use a built-in python function.</p></li>
+<li><p><strong>Investigate the brightness of Messier objects:</strong> Recall that magnitude is a measure of brightness, and brighter objects have lower magnitude values!</p>
+<ul class="simple">
+<li><p>Calculate the average magnitude of all the Messier objects.</p></li>
+<li><p>What magnitude is the brightest object in the catalog, and what magnitude is the dimmest?</p></li>
+<li><p>Once you have that, calculate the difference in magnitude between the brightest and the dimmest object.</p></li>
+</ul>
+</li>
+<li><p><strong>How many objects are there in each viewing season</strong> (spring, summer, autumn, winter)? Before looking at the hint, see if you can approach this problem on your own!</p></li>
+</ol>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Hint for Problem 3
+You may want to define some variables as “counters” for the number of objects in each season, and then loop through every row of the dataset and add 1 to the corresponding counter if an object is in that season. Recall, you can use the sugar syntax <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+=</span> <span class="pre">1</span></code> to add 1 to an exisiting variable (equivalent to <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">1</span></code>).</p>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Exercise Two: Getting More Practice</p>
+<p>These problems are slightly more complicated, but you will be able to figure them out! Please join office hours or post in Slack if you have questions!</p>
+<ol class="arabic simple">
+<li><p>Calculate the <strong>average distance</strong> of <strong>spiral galaxies</strong> (Type: <code class="docutils literal notranslate"><span class="pre">'Sp'</span></code>), <strong>globular clusters</strong> (Type: <code class="docutils literal notranslate"><span class="pre">'Gc'</span></code>), and <strong>open clusters</strong> (Type: <code class="docutils literal notranslate"><span class="pre">'Oc'</span></code>). Which type of object is typically farther away? Does this make sense?</p></li>
+</ol>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Hint for Problem 1
+You can do this (at least) two ways! First, try using a <strong>condition</strong> to <strong>index</strong> the array. Your condition would be something that is checking the object types, and you can use that condition directly as the index to select only rows in the array where that condition is <code class="docutils literal notranslate"><span class="pre">True</span></code>. I think we have not technically gone over this yet, but see if you can try it out! Once you have the subset of the array that meets your condition, you can compute the average how we covered in lecture (as in exercise 1 problem 2).</p>
+<p>Another way you could approach this problem (which you should be able to do with what we’ve covered in lecture) is by using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to iterate over every row, and then using <code class="docutils literal notranslate"><span class="pre">if</span></code> statements to select based on type. How would you compute the average? Try to think creatively about how you can perform math on values (recall exercise 1 problem 3) iteratively in a loop. Maybe you will need to define two variables that you operate on each iteration of the loop, then do something to the two variables at the end after the loop finishes….</p>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>How many constellations are there in the dataset</strong>, and <strong>how many objects belong to each constellation?</strong></p>
+<ul class="simple">
+<li><p>First, you need to find how many unique constellations exist in the dataset.</p></li>
+<li><p>Then, count how many Messier objects belong to each constellation.</p></li>
+</ul>
+</li>
+</ol>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Hint for Problem 2
+You can try using a <code class="docutils literal notranslate"><span class="pre">set</span></code> to help find the unique constellations in the dataset. A <code class="docutils literal notranslate"><span class="pre">set</span></code> is a data structure that automatically removes duplicates, so it could be useful for counting how many distinct constellations there are. Most astronomers don’t often use <code class="docutils literal notranslate"><span class="pre">set</span></code> as a data structure, but it’s a very useful way to quickly get unique elements in a list or array!</p>
+<p>If you feel comfortable, try using a <code class="docutils literal notranslate"><span class="pre">set</span></code> to collect the constellations and a <code class="docutils literal notranslate"><span class="pre">dict</span></code> (dictionary) to count the number of objects in each one (recall exercise 1 problem 3 for counting in loops). Remember, if you’re unsure about how to create or use a set, think about how a list works—sets work similarly but don’t allow duplicate values!</p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>How many Messier objects are in the northern vs. southern sky?</strong> You could try to do this using the constellation information from the previous problem, but the hemisphere can more easily be determined by the <strong>declination</strong>. You may need to investigate and Google around to figure out how to tell if something is in the north or the south based on declination!</p></li>
+</ol>
+</div>
+</section>
+<section id="submission-requirements">
+<h1>Submission Requirements:<a class="headerlink" href="#submission-requirements" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Submit your code as a <code class="docutils literal notranslate"><span class="pre">.py</span></code> file.</p></li>
+<li><p>Include comments in your code explaining what each part does!!</p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./exercises/asali2025a"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Opening the Dataset</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-requirements">Submission Requirements:</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The AstroCodEx Collaboration
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
