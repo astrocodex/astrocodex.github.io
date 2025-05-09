@@ -202,7 +202,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level III</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../yadavalli2024a/SN_Habitability.html">Rouge Planet Habitability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../yadavalli2024a/SN_Habitability.html">Rogue Planet Habitability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bellinger2024a/trig-regression.html">Trigonometric Regression</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides and Walkthroughs</span></p>
@@ -751,51 +751,6 @@ def interactive_display_astropy_table(astropy_table):
 <li><p>Implement the code to ultimately add a <code class="docutils literal notranslate"><span class="pre">Teff</span></code> and <code class="docutils literal notranslate"><span class="pre">Luminosity</span></code> column to your cluster table. Plot these quantities in order to create a true HR diagram. (Don’t forget about the fact that temperature increases to the left in an HR Diagram, so you may need to reverse your axis.)</p></li>
 </ol>
 </div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate the median parallax</span>
-<span class="n">median_parallax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">cluster_table</span><span class="p">[</span><span class="s1">&#39;parallax&#39;</span><span class="p">])</span>
-
-<span class="c1"># Parallax to distance in parsecs</span>
-<span class="n">distance_pc</span> <span class="o">=</span> <span class="mi">1000</span> <span class="o">/</span> <span class="n">median_parallax</span>
-
-<span class="c1"># Constants</span>
-<span class="n">M_sun</span> <span class="o">=</span> <span class="mf">4.83</span>  <span class="c1"># Absolute magnitude of the Sun</span>
-<span class="n">A_V</span> <span class="o">=</span> <span class="mf">0.3</span>     <span class="c1"># Average extinction value, adjust as necessary</span>
-
-<span class="c1"># Convert BP-RP to B-V using a known transformation</span>
-<span class="k">def</span> <span class="nf">bp_rp_to_b_v</span><span class="p">(</span><span class="n">bp_rp</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mf">0.98</span> <span class="o">*</span> <span class="n">bp_rp</span> <span class="o">+</span> <span class="mf">0.22</span>
-
-<span class="n">cluster_table</span><span class="p">[</span><span class="s1">&#39;B-V&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bp_rp_to_b_v</span><span class="p">(</span><span class="n">cluster_table</span><span class="p">[</span><span class="s1">&#39;phot_bp_mean_mag&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">cluster_table</span><span class="p">[</span><span class="s1">&#39;phot_rp_mean_mag&#39;</span><span class="p">])</span>
-
-<span class="c1"># Calculate absolute magnitude M_G from apparent magnitude G and distance</span>
-<span class="n">cluster_table</span><span class="p">[</span><span class="s1">&#39;M_G&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cluster_table</span><span class="p">[</span><span class="s1">&#39;phot_g_mean_mag&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">distance_pc</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">-</span> <span class="n">A_V</span>
-
-<span class="c1"># Apply extinction correction to B-V</span>
-<span class="n">R_V</span> <span class="o">=</span> <span class="mf">3.1</span>
-<span class="n">E_B_V</span> <span class="o">=</span> <span class="n">A_V</span> <span class="o">/</span> <span class="n">R_V</span>
-<span class="n">cluster_table</span><span class="p">[</span><span class="s1">&#39;B-V_corrected&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cluster_table</span><span class="p">[</span><span class="s1">&#39;B-V&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">E_B_V</span>
-
-<span class="c1"># Calculate effective temperature using Flower (1996)</span>
-<span class="k">def</span> <span class="nf">flower_b_v_to_temp</span><span class="p">(</span><span class="n">b_v</span><span class="p">):</span>
-    <span class="c1"># Polynomial coefficients for different temperature ranges</span>
-    <span class="k">if</span> <span class="n">b_v</span> <span class="o">&lt;</span> <span class="mf">0.4</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mf">3.9791451067</span> <span class="o">-</span> <span class="mf">0.6544992</span><span class="o">*</span><span class="n">b_v</span> <span class="o">+</span> <span class="mf">1.7406900</span><span class="o">*</span><span class="n">b_v</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mf">4.6088153</span><span class="o">*</span><span class="n">b_v</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mf">6.7925993</span><span class="o">*</span><span class="n">b_v</span><span class="o">**</span><span class="mi">4</span> <span class="o">-</span> <span class="mf">5.3969097</span><span class="o">*</span><span class="n">b_v</span><span class="o">**</span><span class="mi">5</span> <span class="o">+</span> <span class="mf">2.1929704</span><span class="o">*</span><span class="n">b_v</span><span class="o">**</span><span class="mi">6</span> <span class="o">-</span> <span class="mf">0.3594954</span><span class="o">*</span><span class="n">b_v</span><span class="o">**</span><span class="mi">7</span>
-    <span class="k">elif</span> <span class="mf">0.4</span> <span class="o">&lt;=</span> <span class="n">b_v</span> <span class="o">&lt;</span> <span class="mf">1.6</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mf">3.9791451067</span> <span class="o">-</span> <span class="mf">0.6544992</span><span class="o">*</span><span class="n">b_v</span> <span class="o">+</span> <span class="mf">1.7406900</span><span class="o">*</span><span class="n">b_v</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mf">4.6088153</span><span class="o">*</span><span class="n">b_v</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mf">6.7925993</span><span class="o">*</span><span class="n">b_v</span><span class="o">**</span><span class="mi">4</span> <span class="o">-</span> <span class="mf">5.3969097</span><span class="o">*</span><span class="n">b_v</span><span class="o">**</span><span class="mi">5</span> <span class="o">+</span> <span class="mf">2.1929704</span><span class="o">*</span><span class="n">b_v</span><span class="o">**</span><span class="mi">6</span> <span class="o">-</span> <span class="mf">0.3594954</span><span class="o">*</span><span class="n">b_v</span><span class="o">**</span><span class="mi">7</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mf">3.9791451067</span> <span class="o">-</span> <span class="mf">0.6544992</span><span class="o">*</span><span class="n">b_v</span> <span class="o">+</span> <span class="mf">1.7406900</span><span class="o">*</span><span class="n">b_v</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mf">4.6088153</span><span class="o">*</span><span class="n">b_v</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mf">6.7925993</span><span class="o">*</span><span class="n">b_v</span><span class="o">**</span><span class="mi">4</span> <span class="o">-</span> <span class="mf">5.3969097</span><span class="o">*</span><span class="n">b_v</span><span class="o">**</span><span class="mi">5</span> <span class="o">+</span> <span class="mf">2.1929704</span><span class="o">*</span><span class="n">b_v</span><span class="o">**</span><span class="mi">6</span> <span class="o">-</span> <span class="mf">0.3594954</span><span class="o">*</span><span class="n">b_v</span><span class="o">**</span><span class="mi">7</span>
-
-<span class="c1"># Apply the function to each value in the &#39;B-V_corrected&#39; column</span>
-<span class="n">b_v_corrected_values</span> <span class="o">=</span> <span class="n">cluster_table</span><span class="p">[</span><span class="s1">&#39;B-V_corrected&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
-<span class="n">teff_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">flower_b_v_to_temp</span><span class="p">(</span><span class="n">b_v</span><span class="p">)</span> <span class="k">for</span> <span class="n">b_v</span> <span class="ow">in</span> <span class="n">b_v_corrected_values</span><span class="p">])</span>
-
-<span class="c1"># Add the calculated temperatures to the table</span>
-<span class="n">cluster_table</span><span class="p">[</span><span class="s1">&#39;Teff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">teff_values</span>
-
-<span class="c1"># Calculate luminosity using the absolute magnitude M_G</span>
-<span class="n">cluster_table</span><span class="p">[</span><span class="s1">&#39;Luminosity&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="p">((</span><span class="n">M_sun</span> <span class="o">-</span> <span class="n">cluster_table</span><span class="p">[</span><span class="s1">&#39;M_G&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="mf">2.5</span><span class="p">)</span>
-</pre></div>
 </div>
 </section>
 </section>
