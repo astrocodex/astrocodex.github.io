@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/_static/custom.css" />
@@ -192,6 +192,7 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Stellar Luminosities from the Stefan-Boltzmann Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cerny2024b/exoplanet-diversity.html">Exploring the Diversity of Known Exoplanets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pasha2024a/astronomical-images.html">Visualizing Astronomical Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerny2025a/cosmological-parameters.html">Exploring Cosmological Parameters with Functions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level II</span></p>
 <ul class="nav bd-sidenav">
@@ -440,22 +441,21 @@ document.write(`
 </div>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>Stars, to zeroth order, can be considered spherically-symmetric blackbodies. Under those conditions, their luminosities can be computed via the Stefan-Boltzmann law,</p>
-<div class="math notranslate nohighlight">
-\[ L = 4\pi R^2 \sigma T^4\]</div>
-<p>where <span class="math notranslate nohighlight">\(R\)</span> is the radius, <span class="math notranslate nohighlight">\(T\)</span> is the effective temperature of the Star, and <span class="math notranslate nohighlight">\(\sigma\)</span> is the Stefan-Boltzmann constant, <span class="math notranslate nohighlight">\(\sigma = 5.67 * 10^{-8} \rm \ W/m^{2}/K^{4}\)</span>.</p>
-<p>The goal of this exercise is to implement this in Python, i.e., write a code to calculate the Luminosity (<span class="math notranslate nohighlight">\(L\)</span>) of a star according to the formula described above.</p>
+<p>Stars, to zeroth order, can be considered spherically-symmetric blackbodies. Under those conditions, their luminosities can be computed via the Stefan-Boltzmann law</p>
+<p>$<span class="math notranslate nohighlight">\( L = 4\pi R^2 \sigma T^4\)</span>$,</p>
+<p>where <span class="math notranslate nohighlight">\(R\)</span> is the radius, <span class="math notranslate nohighlight">\(T\)</span> is the effective temperature of the star, and <span class="math notranslate nohighlight">\(\sigma\)</span> is the Stefan-Boltzmann constant, <span class="math notranslate nohighlight">\(\sigma = 5.67 * 10^{-8} \rm \ W/m^{2}/K^{4}\)</span>.</p>
+<p>The goal of this exercise is to implement this in Python, i.e., write a code to calculate the luminosity (<span class="math notranslate nohighlight">\(L\)</span>) of a star according to the formula described above.</p>
 </section>
 <section id="basic-scripting">
 <h2>Basic Scripting<a class="headerlink" href="#basic-scripting" title="Link to this heading">#</a></h2>
-<p>Here we will create a barebones script to hold our calculation, using several <code class="docutils literal notranslate"><span class="pre">variables</span></code> to aid in our computation.</p>
+<p>Here we will create a simple script to hold our calculation, using several <code class="docutils literal notranslate"><span class="pre">variables</span></code> to aid in our computation.</p>
 <div class="dropdown exercise admonition">
 <p class="admonition-title">Exercise 1</p>
 <div class="docutils container">
 <ol class="arabic simple">
 <li><p>Create a new python script, e.g., <code class="docutils literal notranslate"><span class="pre">SB.py</span></code> and open it in an editor.</p></li>
 <li><p>Within <a class="reference external" href="http://SB.py">SB.py</a>, define a unique variable for each of <span class="math notranslate nohighlight">\(\pi\)</span>, <span class="math notranslate nohighlight">\(\sigma\)</span>, <span class="math notranslate nohighlight">\(R\)</span>, and <span class="math notranslate nohighlight">\(T\)</span>. For now, assume <span class="math notranslate nohighlight">\(\pi = 3.14\)</span>, <span class="math notranslate nohighlight">\(R = 7 * 10^8\)</span> meters and <span class="math notranslate nohighlight">\(T = 5776\)</span> K.  You can assume the units work out (and therefore you can ignore them in Python).</p></li>
-<li><p>Using basic mathematical operations, compute the value of <span class="math notranslate nohighlight">\(L\)</span> according to the formula above using the variables you just defined. Store the result in a new variable.</p></li>
+<li><p>Using basic mathematical operations, compute the value of <span class="math notranslate nohighlight">\(L\)</span> according to the formula above and using the variables you just defined. Store the result in a new variable.</p></li>
 </ol>
 <p><em>Hint: powers in python are implemented via the <code class="docutils literal notranslate"><span class="pre">**</span></code> operator, e.g., <code class="docutils literal notranslate"><span class="pre">6**2</span> <span class="pre">=</span> <span class="pre">36</span></code></em></p>
 </div>
@@ -463,38 +463,38 @@ document.write(`
 <div class="dropdown exercise admonition">
 <p class="admonition-title">Exercise 2</p>
 <div class="docutils container">
-<p>Now that we have some code that uses the variables we’ve created to compute the new value, let’s create a nice <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">statement</span></code> of the result and run our script.</p>
+<p>Now that we have some code that uses the variables we’ve created to compute luminosity, let’s create a <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">statement</span></code> of the result and run our script.</p>
 <ol class="arabic simple">
-<li><p>Using <a class="reference external" href="https://realpython.com/python-f-strings/">f-strings</a>, print the result in a sentence that looks like:
-<strong>The Luminosity of a star with effective temperature [value of T] and radius [value of R] is [value of L].</strong></p></li>
+<li><p>Using <a class="reference external" href="https://realpython.com/python-f-strings/">f-strings</a>, print the result in a sentence that reads as:
+<strong>The luminosity of a star with effective temperature [value of T] and radius [value of R] is [value of L].</strong></p></li>
 </ol>
-<p>Bonus: Can you format your f-strings such that the rounding looks nice?</p>
+<p>Bonus: Can you format your f-strings to the correct number of significant figures?</p>
 <ol class="arabic simple" start="2">
-<li><p>Test the script by running it from the terminal. Is your value greater, less than, or equal to the Solar luminosity of <span class="math notranslate nohighlight">\(3.8 * 10^{26}\)</span> Watts?</p></li>
+<li><p>Test the script by running it from the terminal. Is your value greater than, less than, or equal to the solar luminosity of <span class="math notranslate nohighlight">\(3.8 * 10^{26}\)</span> Watts?</p></li>
 </ol>
 </div>
 </div>
 </section>
 <section id="dynamic-scripting">
 <h2>Dynamic Scripting<a class="headerlink" href="#dynamic-scripting" title="Link to this heading">#</a></h2>
-<p>Let’s now improve the usability of our code. Instead of hardcoding (i.e., setting) the values of <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(R\)</span> within the script, we will have the script <em>ask</em> for these values from the user when the script is run.</p>
+<p>Let’s now improve the usability of our code. Instead of hard-coding (i.e., setting) the values of <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(R\)</span> within the script, we will have the script <em>ask</em> for these values from the user when the script is run.</p>
 <div class="dropdown exercise admonition">
 <p class="admonition-title">Exercise 3</p>
 <div class="docutils container">
 <ol class="arabic simple">
-<li><p>Use the python builtin <code class="docutils literal notranslate"><span class="pre">input()</span></code> function to allow users (i.e., you) to provide the values in the terminal at runtime. This function will parse the input as the <code class="docutils literal notranslate"><span class="pre">string</span></code> datatype, so you will need to use the <code class="docutils literal notranslate"><span class="pre">int()</span></code> or <code class="docutils literal notranslate"><span class="pre">float()</span></code> functions to turn the inputs into “numbers” that can be plugged into your formula.</p></li>
-<li><p>Implement a comparison to the Solar Luminosity within your code and store the result a new <code class="docutils literal notranslate"><span class="pre">boolean</span></code> (True/False) variable called <code class="docutils literal notranslate"><span class="pre">is_supersolar</span></code>. Then extend your <code class="docutils literal notranslate"><span class="pre">f-string</span></code> above to print whether the star is (or is not) more luminous than the Sun. The output should look like: <strong>The Luminosity of a star with effective temperature [value of T] and radius [value of R] is [value of L]. It is [value of supersolar] that this is more luminous than the Sun.</strong></p></li>
+<li><p>Use the python built-in <code class="docutils literal notranslate"><span class="pre">input()</span></code> function to allow users (i.e., you) to provide the values in the terminal at runtime. This function will parse the input as the <code class="docutils literal notranslate"><span class="pre">string</span></code> datatype, so you will need to use the <code class="docutils literal notranslate"><span class="pre">int()</span></code> or <code class="docutils literal notranslate"><span class="pre">float()</span></code> functions to turn the inputs into “numbers” that can be plugged into your formula.</p></li>
+<li><p>Implement a comparison to the solar luminosity within your code and store the result a new <code class="docutils literal notranslate"><span class="pre">boolean</span></code> (True/False) variable called <code class="docutils literal notranslate"><span class="pre">is_supersolar</span></code>. Then extend your <code class="docutils literal notranslate"><span class="pre">f-string</span></code> above to print whether the star is (or is not) more luminous than the Sun. The output should look like: <strong>The luminosity of a star with effective temperature [value of T] and radius [value of R] is [value of L]. It is [value of supersolar] that this is more luminous than the Sun.</strong></p></li>
 </ol>
 <p>Bonus: If you know how to use an <code class="docutils literal notranslate"><span class="pre">if-statement</span></code>, you could use one to simply adjust the second line of text to something more natural in either case.</p>
 <ol class="arabic simple" start="3">
-<li><p>Run your script, entering the values we used above, and make sure your code works. Try out different input values for <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(R\)</span> to see how the luminosity is affected.</p></li>
-<li><p>For the chosen input temperature <span class="math notranslate nohighlight">\(T\)</span>, what radius <span class="math notranslate nohighlight">\(R\)</span> would be needed to end up with a luminosity <span class="math notranslate nohighlight">\(10x\)</span> greater than that of the sun? You can find this with some trial and error.</p></li>
+<li><p>Run your script, entering the values we used above, and make sure your code works. Try out different input values for <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(R\)</span> to show how the luminosity is affected.</p></li>
+<li><p>For the chosen input temperature <span class="math notranslate nohighlight">\(T\)</span>, what radius <span class="math notranslate nohighlight">\(R\)</span> would be needed to end up with a luminosity <span class="math notranslate nohighlight">\(10	imes\)</span> greater than that of the sun? You can find this with some trial and error.</p></li>
 </ol>
 </div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Having users input values at runtime is not the <em>most</em> common way to take dynamic inputs to code, but is very useful for highly “interactive” programs like this</p>
+<p>Having users input values at runtime is not the <em>most</em> common way to take dynamic inputs to code. However, it is very useful for highly “interactive” programs like this one.</p>
 </div>
 </section>
 <section id="fun-with-units-bonus">
@@ -503,11 +503,11 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span> 
 </pre></div>
 </div>
-<p>is very useful for handling unit conversions and checks for us. Meanwhile, the <code class="docutils literal notranslate"><span class="pre">astropy.constants</span></code> library, e.g.,</p>
+<p>is very useful for handling unit conversions. Meanwhile, the <code class="docutils literal notranslate"><span class="pre">astropy.constants</span></code> library, e.g.,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">astropy.constants</span> <span class="k">as</span> <span class="nn">ac</span> 
 </pre></div>
 </div>
-<p>provides pretty much all the constants we use in physics and astronomy. You can attach units to a value by multiplying:</p>
+<p>provides most constants used in physics and astronomy. You can attach units to a value by multiplying:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">some_temperature</span> <span class="o">=</span> <span class="mi">5000</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">K</span> <span class="c1"># Kelvin </span>
 </pre></div>
 </div>
@@ -516,7 +516,7 @@ document.write(`
 <p class="admonition-title">Exercise 4</p>
 <div class="docutils container">
 <ol class="arabic simple">
-<li><p>Simplify your script by using the astropy-provided Stefan-Boltzmann constant, and attaching units of Kelvin and Meters to the input, before performing the calculation. Use the <code class="docutils literal notranslate"><span class="pre">.to()</span></code> method of a unit-carrying variable to print the final result in <code class="docutils literal notranslate"><span class="pre">u.Lsun</span></code> (solar luminosities).</p></li>
+<li><p>Simplify your script by using the astropy-provided Stefan-Boltzmann constant and attaching units of Kelvin and meters to the input before performing the calculation. Use the <code class="docutils literal notranslate"><span class="pre">.to()</span></code> method of a unit-carrying variable to print the final result in <code class="docutils literal notranslate"><span class="pre">u.Lsun</span></code> (solar luminosities).</p></li>
 <li><p>For an added challenge, allow the user input to feature units (e.g., input <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">Lsun</span></code>). You’ll need to <code class="docutils literal notranslate"><span class="pre">split</span></code> your input string on the space character (<code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code>) to separate the part which needs to be turned into a float and the part which needs to be a unit. You can assume the string for the unit is one <code class="docutils literal notranslate"><span class="pre">astropy</span></code> recognizes, but rather than multiplying by <code class="docutils literal notranslate"><span class="pre">u.THING</span></code>, you’ll need to multiply by <code class="docutils literal notranslate"><span class="pre">u.Quantity('string')</span></code> in order to use the input unit.</p></li>
 </ol>
 </div>
@@ -538,16 +538,16 @@ document.write(`
 <div class="docutils container">
 <ol class="arabic simple">
 <li><p>Create a new script called star_calcs.py.</p></li>
-<li><p>Using indexing, figure out: what the name of the tenth star in this list? Then, store the <em>index</em> in a variable.</p></li>
-<li><p>Now, using the stored index, isolate the temperature of the star by accessing the appropriate element of the second list.</p></li>
+<li><p>Using indexing, figure out: what is the name of the tenth star in this list? Store the <em>index</em> in a variable.</p></li>
+<li><p>Using the stored index, isolate the temperature of the star by accessing the appropriate element of the second list.</p></li>
 <li><p>Repeat step 2 for the radius.</p></li>
-<li><p>By copy-pasting your formula implementation from exercise 1 into your new script, compute the luminosity of the star of the tenth star.</p></li>
+<li><p>By copy-pasting your formula implementation from exercise 1 into your new script, compute the luminosity of the tenth star.</p></li>
 </ol>
 <p>Now that we’ve finished with star 10, let’s try to make it our code more generally applicable.</p>
 <ol class="arabic simple" start="6">
-<li><p>Have your program take an index in via input() and run the calculation for the star corresponding to that index.</p></li>
-<li><p>(BONUS): Create a dictionary for each of the two properties for the first 5 stars above (that is, a dictionary for radius and a dictionary for temperature). The keys should be the star names.</p></li>
-<li><p>(BONUS part 2): Now have your program take the star name as an input and print the name, temperature, radius, and computed luminosity in a nicely formatted sentence.</p></li>
+<li><p>Have your program accept an index via the input() function and run the calculation for the star corresponding to that index.</p></li>
+<li><p>(BONUS): Create a dictionary for each of the two properties of the first 5 stars above (that is, a dictionary for radius and a dictionary for temperature). The keys should be the star names.</p></li>
+<li><p>(BONUS part 2): Now have your program take the star name as an input. Print the name, temperature, radius, and computed luminosity of the star in a nicely formatted sentence.</p></li>
 </ol>
 </div>
 </div>

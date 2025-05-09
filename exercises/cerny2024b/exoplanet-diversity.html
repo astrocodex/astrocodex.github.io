@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/_static/custom.css" />
@@ -192,6 +192,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../cerny2024a/stefan-boltzmann.html">Stellar Luminosities from the Stefan-Boltzmann Equation</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Exploring the Diversity of Known Exoplanets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pasha2024a/astronomical-images.html">Visualizing Astronomical Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerny2025a/cosmological-parameters.html">Exploring Cosmological Parameters with Functions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level II</span></p>
 <ul class="nav bd-sidenav">
@@ -421,7 +422,7 @@ document.write(`
 <h1>Exploring the Diversity of Known Exoplanets<a class="headerlink" href="#exploring-the-diversity-of-known-exoplanets" title="Link to this heading">#</a></h1>
 <div class="author admonition">
 <p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0003-1697-7062">William Cerny</a>, <a class="reference external" href="https://orcid.org/0000-0002-7075-9931">Imad Pasha</a>, <a class="reference external" href="https://orcid.org/0000-0002-8320-2198">Yasmeen Asali</a>, <a class="reference external" href="https://orcid.org/0000-0002-9986-4604">Sebastian Monzon</a> (Yale University)</p>
-<p><em>Description</em>: Using the Stefan-Bolztmann law to infer the properties of stars; practice with basic python and data types.</p>
+<p><em>Description</em>: Using the Stefan-Boltzmann law to infer the properties of stars; practice with basic python and data types.</p>
 <p><em>Intended Audience</em>: Early Undergraduate</p>
 <p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">exoplanets</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p>
 <p><em>Requirements</em>: <a class="reference download internal" download="" href="../../_downloads/57ef5323576b2ebe401dabcf2c9b3272/requirements.txt"><span class="xref download myst">requirements.txt</span></a></p>
@@ -430,35 +431,35 @@ document.write(`
 <div class="learningobjective admonition">
 <p class="admonition-title">Learning Objectives</p>
 <ol class="arabic simple">
-<li><p>Understand the difference between various exoplanet detection methods</p></li>
+<li><p>Understand the difference between various exoplanet detection methods.</p></li>
 <li><p>Be able to download and open a data file from the NASA Exoplanet Archive into a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dataframe.</p></li>
-<li><p>Filter the table to plot famous exoplanet diagrams, colored by detection technique.</p></li>
+<li><p>Filter the table to plot standard exoplanet diagrams, colored by detection technique.</p></li>
 </ol>
 </div>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>When we detect exoplanets (planets orbiting other stars), we most often have several of three direct measurables about those plants:</p>
+<p>When we detect exoplanets (planets orbiting other stars), we often obtain a subset of the following three direct observable properties:</p>
 <ol class="arabic simple">
 <li><p>Their radius (formally, their radius relative to their host star),</p></li>
 <li><p>Their mass, and/or</p></li>
-<li><p>Their orbital separation (aka radius, for circular orbits, or semi-major axis, for elliptical orbits).</p></li>
+<li><p>Their orbital separation (aka radius for circular orbits, or semi-major axis for elliptical orbits).</p></li>
 </ol>
-<p>The reason for this comes down to the <strong>detection methods</strong> used to find and characterize these systems.</p>
+<p>The information available comes down to the <strong>detection methods</strong> used to find and characterize these systems.</p>
 <ol class="arabic simple">
-<li><p><strong>Transit Method</strong>: In this technique, exoplanets are detected by observing the periodic dimming of a star’s light as a planet passes in front of it (transits) from our line of sight. By measuring the decrease in brightness during transit events, astronomers can infer the presence and characteristics of orbiting planets. This method provides relative radius (from the depth of the dip) and orbital separation (inferred from the length of an orbit, i.e., how long between transits).</p></li>
-<li><p><strong>Radial Velocity Method</strong>: This method detects exoplanets by measuring the small periodic shifts in the star’s radial velocity caused by the gravitational pull of an orbiting planet. As the planet orbits the star, it causes the star to wobble slightly, which can be detected through Doppler spectroscopy. This provides an estimate of the mass (from Newton’s laws) and orbital separation (from the perio of the wobbles).</p></li>
+<li><p><strong>Transit Method</strong>: In this technique, exoplanets are detected by observing the periodic dimming of a star’s light as a planet passes in front of it (transits) from our line of sight. By measuring the decrease in brightness during transit events, astronomers can infer the presence and characteristics of orbiting planets. This method provides relative radius (from the depth of the dip) and orbital separation (inferred from the duration of an orbit, or time between transits).</p></li>
+<li><p><strong>Radial Velocity Method</strong>: This method detects exoplanets by measuring the small periodic shifts in the star’s radial velocity caused by the gravitational pull of an orbiting planet. As the planet orbits the star, it causes the star to wobble slightly. This wobble can be detected through Doppler spectroscopy, and it provides an estimate of the mass (from Newton’s laws) and orbital separation (from the period of the wobbles) of the planet.</p></li>
 <li><p><strong>Microlensing</strong>: Exoplanets can be detected through gravitational microlensing, where the gravitational field of a foreground star bends and magnifies the light of a background star as well as any orbiting planets. The presence of an exoplanet around the foreground star can be inferred from the temporary increase in brightness observed during the microlensing event.</p></li>
-<li><p><strong>Transit Timing Variations (TTV)</strong>: TTV detects exoplanets by measuring the variations in the timing of transit events caused by gravitational interactions between multiple planets within a system. These deviations from the expected transit times provide information about the masses and orbits of the interacting planets.</p></li>
+<li><p><strong>Transit Timing Variations (TTV)</strong>: Exoplanets can be inferred through TTVs by measuring the variations in the timing of transit events caused by gravitational interactions between multiple planets within a system. These deviations from the expected transit times provide information about the masses and orbits of the interacting planets.</p></li>
 </ol>
 <p>In addition to these four, there are a number of other methods of detecting planets (such as direct imaging)!</p>
-<p>It is common to plot detected exoplanets in the space of Mass vs. Orbital Separation. Here, we show one such plot, colored by the detection technique used to find the planet (follow-up observations may have been needed to compute mass or separation).</p>
+<p>It is common to plot detected exoplanets in the space of mass vs. orbital separation. Here, we show one such plot, colored by the detection technique used to find the planet (follow-up observations may have been needed to compute mass or separation).</p>
 <p><img alt="" src="../../_images/Mass-separation-plot-for-known-exoplanets-color-coded-according-to-their-detection.png" /></p>
-<p>The x-axis of this figure shows the mass of the planet on a log scale, typically measured in Jupiter masses (where 1 Jupiter mass equals approximately <span class="math notranslate nohighlight">\(1.898 \times 10^{27}\)</span> kg). The y-axis, also on a log scale, represents the planet-star separation distance, often expressed in astronomical units (AU), with 1 AU equivalent to the average distance between the Earth and the Sun (approximately 149.6 million kilometers). Each data point plotted signifies an individual exoplanet.</p>
+<p>The x-axis of this figure shows the mass of the planet on a log scale, typically measured in Jupiter masses (where 1 Jupiter mass equals approximately <span class="math notranslate nohighlight">\(1.898 \times 10^{27}\)</span> kg). The y-axis, also on a log scale, represents the planet-star separation, often expressed in astronomical units (AU), with 1 AU equivalent to the average distance between the Earth and the Sun (approximately 149.6 million kilometers). Each data point plotted signifies an individual exoplanet.</p>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Checkpoint: Why might the blue (transit) points be clustered toward small separation/high mass?</p>
 <ol class="arabic simple">
-<li><p>Because the dip in light is larger when a large (and thus usually more massive) planet passes in front of the star, larger planets produce more detectable transit signals.</p></li>
-<li><p>Because the transit method requires the planet to be coplanar with the star and earth, closer in orbits have a higher chance of passing in front of the star.</p></li>
+<li><p>Because the dip in light is larger when a large (and thus usually more massive) planet passes in front of the star, larger planets produce deeper and more easily detectable transit signals.</p></li>
+<li><p>Because the transit method requires the planet’s orbit to be edge-on relative to the viewer, closer-in orbits have a higher chance of passing in front of the star.</p></li>
 <li><p>To 100% confirm an exoplanet, you (typically) must detect the transit 2-3 times at a regular interval. Most transit-detecting satellites have not observed for more than a year or two, meaning planets with progressively longer years (larger orbital separation) take longer to confirm.</p></li>
 </ol>
 </div>
