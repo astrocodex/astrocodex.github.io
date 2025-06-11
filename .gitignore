@@ -4,3 +4,4 @@
 **/_ext/
 _build/
 **/.ipynb_checkpoints/
+**/_ext/__pycache__
