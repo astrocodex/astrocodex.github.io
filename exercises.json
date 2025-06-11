@@ -4,7 +4,7 @@
         "tags": ["beginner undergraduate"],
         "description": "Use basic python to apply the SB law to stars.",
         "url": "./exercises/cerny2024a/stefan-boltzmann"
-        },
+    },
     {
             "title": "Exoplanet Properties",
             "tags": ["beginner undergraduate"],
@@ -16,18 +16,18 @@
         "tags": ["beginner undergraduate"],
         "description": "Learn how to read in and visualize the contents of a fits file.",
         "url": "./exercises/pasha2024a/astronomical-images"
-},
-    {
-        "title": "HII Regions in M33",
-        "tags": ["intermediate undergraduate"],
-        "description": "Investigate HII regions in an image of M33; determine their sizes and number of OB stars.",
-        "url": "./exercises/pasha2024b/hii-regions"
-},
-    {
-    "title": "Trigonometric Regression",
-    "tags": ["advanced undergraduate"],
-    "description": "Fit Cepheid star pulsations using trigonometric regression models.",
-    "url": "./exercises/bellinger2024a/trig-regression"
+    },
+    {  
+        "title": "Cosmological Parameters",
+        "tags": ["beginner undergraduate"],
+        "description": "Estimate the expansion rate, age, and shape of the universe; practice with Python functions and array operations.",
+        "url": "./exercises/cerny2025a/cosmological-parameters"
+    },
+    {  
+        "title": "Messier Catalog",
+        "tags": ["beginner undergraduate"],
+        "description": "Students use the Messier catalog to practice using for loops and and logic.",
+        "url": "./exercises/asali2025a/messier_cat"
     },
     {
         "title": "Stellar Temperatures from Spectra",
@@ -42,15 +42,33 @@
         "url": "./exercises/granucci2024a/gaia-clusters"
     },
     {
-        "title": "Rogue Planet Habitability",
+        "title": "HII Regions in M33",
         "tags": ["intermediate undergraduate"],
-        "description": "Create a hypothetical galaxy and check whether a rogue planet could remain habitable via flux from nearby supernovae.",
-        "url": "./exercises/yadavalli2024a/SN_Habitability"
+        "description": "Investigate HII regions in an image of M33; determine their sizes and number of OB stars.",
+        "url": "./exercises/pasha2024b/hii-regions"
     },
     {
         "title": "Introduction to Data Parallelization",
         "tags": ["intermediate undergraduate"],
         "description": "Use simple parallelization in Python to decrease runtimes.",
         "url": "./exercises/sunseri2024a/Data_Parallelism_Part_1"
+    },
+    {
+        "title": "Bootstrapping",
+        "tags": ["intermediate undergraduate"],
+        "description": "Learn about bootstrap resampling while fitting the supermassive black hole M-sigma relation.",
+        "url": "./exercises/asali2024a/bootstrapping"
+    },
+    {
+        "title": "Rogue Planet Habitability",
+        "tags": ["intermediate undergraduate"],
+        "description": "Create a hypothetical galaxy and check whether a rogue planet could remain habitable via flux from nearby supernovae.",
+        "url": "./exercises/yadavalli2024a/SN_Habitability"
+    },
+    {
+    "title": "Trigonometric Regression",
+    "tags": ["advanced undergraduate"],
+    "description": "Fit Cepheid star pulsations using trigonometric regression models.",
+    "url": "./exercises/bellinger2024a/trig-regression"
     }
 ]
