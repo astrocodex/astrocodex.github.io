@@ -64,7 +64,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/pasha2024a/astronomical-images';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Stellar Temperatures from Spectra" href="../lester2024a/stellar_spectrum.html" />
+    <link rel="next" title="Exploring Cosmological Parameters with Functions" href="../cerny2025a/cosmological-parameters.html" />
     <link rel="prev" title="Exploring the Diversity of Known Exoplanets" href="../cerny2024b/exoplanet-diversity.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -184,6 +184,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../cerny2024a/stefan-boltzmann.html">Stellar Luminosities from the Stefan-Boltzmann Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cerny2024b/exoplanet-diversity.html">Exploring the Diversity of Known Exoplanets</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Visualizing Astronomical Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerny2025a/cosmological-parameters.html">Exploring Cosmological Parameters with Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asali2025a/messier_cat.html">Analyze the Messier Catalog</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level II</span></p>
 <ul class="nav bd-sidenav">
@@ -191,6 +193,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Gaia Star Clusters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">The Sizes of HII Regions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sunseri2024a/Data_Parallelism_Part_1.html">Introduction to Data Parallelism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asali2024a/bootstrapping.html">Bootstrapping the M-<span class="math notranslate nohighlight">\(\sigma\)</span> relation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level III</span></p>
 <ul class="nav bd-sidenav">
@@ -352,7 +355,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-a-fits-file">Opening a Fits File</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-an-image-opening-function">Writing an Image Opening Function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-image">Visualizing the Image</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-function-for-image-viewing">A function for Image Viewing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-function-for-image-viewing">A Function for Image Viewing</a></li>
 </ul>
             </nav>
         </div>
@@ -383,7 +386,7 @@ document.write(`
 </div>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>Images taken by telescopes (both in space and on the ground) are a crucial element of astronomical research, providing a spatially resolved view of a region (generally at a particular wavelength). These images are predominantly stored in an astronomy-specific file type known as <code class="docutils literal notranslate"><span class="pre">fits</span></code> — flexible image transport system (though tables can also be stored in <code class="docutils literal notranslate"><span class="pre">fits</span></code> files)</p>
+<p>Images taken by telescopes (both in space and on the ground) are a crucial element of astronomical research, providing a spatially resolved view of a region (generally at a particular wavelength). These images are predominantly stored in an astronomy-specific file type known as <code class="docutils literal notranslate"><span class="pre">fits</span></code> — flexible image transport system (though tables can also be stored in <code class="docutils literal notranslate"><span class="pre">fits</span></code> files).</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">astropy.io</span></code> module has a useful submodule for working with <code class="docutils literal notranslate"><span class="pre">fits</span></code> files, which can be imported as</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
 </pre></div>
@@ -393,7 +396,7 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.wcs</span> <span class="kn">import</span> <span class="n">WCS</span>
 </pre></div>
 </div>
-<p>So how do we actually open a <code class="docutils literal notranslate"><span class="pre">fits</span></code> file and retrieve the image and header? We’ll use a pythonic structure known as a <a class="reference external" href="https://realpython.com/python-with-statement/">context manager</a>. The details of context managers aren’t super important right now, but the key point is this: <strong>context managers let us open contexts and close them automatically</strong>. For files, this means we can open a <code class="docutils literal notranslate"><span class="pre">fits</span></code> file, extract what we need, and close the file automatically.</p>
+<p>So how do we actually open a <code class="docutils literal notranslate"><span class="pre">fits</span></code> file and retrieve the image and header? We’ll use a pythonic structure known as a <a class="reference external" href="https://realpython.com/python-with-statement/">context manager</a>. The details of context managers are not important right now, but the key point is this: <strong>context managers let us open contexts and close them automatically</strong>. For files, this means we can open a <code class="docutils literal notranslate"><span class="pre">fits</span></code> file, extract what we need, and close the file automatically.</p>
 </section>
 <section id="opening-a-fits-file">
 <h2>Opening a Fits File<a class="headerlink" href="#opening-a-fits-file" title="Link to this heading">#</a></h2>
@@ -412,12 +415,12 @@ document.write(`
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li><p>Using the <code class="docutils literal notranslate"><span class="pre">M33_halpha.fits</span></code> file provided, use the above snippet in your own code to open the image.</p></li>
+<li><p>Using the <code class="docutils literal notranslate"><span class="pre">M33_halpha.fits</span></code> file provided, input the above snippet in your own code to open the image.</p></li>
 </ol>
 <p>What happened in the snippet?</p>
 <ul class="simple">
-<li><p>First, we said “with fits.open()” to establish it as a context manager, provided the file path, and gave the overall object the name <code class="docutils literal notranslate"><span class="pre">hdu</span></code></p></li>
-<li><p>Next, within the block, we set <code class="docutils literal notranslate"><span class="pre">im</span></code> to be the <code class="docutils literal notranslate"><span class="pre">hdu</span></code> indexed at 0 (0th extension) and used dot-notation to extract the <code class="docutils literal notranslate"><span class="pre">.data</span></code> attribute</p></li>
+<li><p>First, we said “with fits.open()” to establish it as a context manager, provided the file path, and gave the overall object the name <code class="docutils literal notranslate"><span class="pre">hdu</span></code>.</p></li>
+<li><p>Next, within the block, we set <code class="docutils literal notranslate"><span class="pre">im</span></code> to be the <code class="docutils literal notranslate"><span class="pre">hdu</span></code> indexed at 0 (0th extension) and used dot-notation to extract the <code class="docutils literal notranslate"><span class="pre">.data</span></code> attribute.</p></li>
 <li><p>Finally, we set a <code class="docutils literal notranslate"><span class="pre">wcs</span></code> variable to be the <code class="docutils literal notranslate"><span class="pre">astropy</span></code> <code class="docutils literal notranslate"><span class="pre">WCS</span></code> class, given the same extension but the <code class="docutils literal notranslate"><span class="pre">.header</span></code> attribute.</p></li>
 </ul>
 </div>
@@ -432,13 +435,13 @@ document.write(`
     <span class="k">return</span> <span class="n">computation</span>
 </pre></div>
 </div>
-<p>Here we use <code class="docutils literal notranslate"><span class="pre">def</span></code> to define a function (lines within the function are indented), and within the function, we assign inputs names to use when computing things, before returning some final value(s) if required.</p>
+<p>Here we use <code class="docutils literal notranslate"><span class="pre">def</span></code> to define a function (lines within the function are indented), and within the function, we assign inputs names to use for computations, before returning some final value(s) if required.</p>
 <div class="dropdown exercise admonition">
 <p class="admonition-title">Exercise 2</p>
 <div class="docutils container">
 <ol class="arabic simple">
 <li><p>Start by defining a function <code class="docutils literal notranslate"><span class="pre">load_fits</span></code> which has arguments <code class="docutils literal notranslate"><span class="pre">fname</span></code> (<code class="docutils literal notranslate"><span class="pre">str</span></code>), and <code class="docutils literal notranslate"><span class="pre">extension</span></code> (<code class="docutils literal notranslate"><span class="pre">int</span></code>). These are the pieces of information we needed above.</p></li>
-<li><p>Then add these lines above into the function trading out the hard coded elements for the function arguments.</p></li>
+<li><p>Then add these lines above into the function, trading out the hard-coded elements for the function arguments.</p></li>
 <li><p>Finally, <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">im,</span> <span class="pre">wcs</span></code>. As the majority of <code class="docutils literal notranslate"><span class="pre">fits</span></code> image store the image in the 0th extension, you can set the default for that argument to 0.</p></li>
 </ol>
 <div class="admonition warning">
@@ -466,7 +469,7 @@ Don’t forget to document your function!</p>
 </div>
 </section>
 <section id="a-function-for-image-viewing">
-<h2>A function for Image Viewing<a class="headerlink" href="#a-function-for-image-viewing" title="Link to this heading">#</a></h2>
+<h2>A Function for Image Viewing<a class="headerlink" href="#a-function-for-image-viewing" title="Link to this heading">#</a></h2>
 <p>The code to visualize the image above is already a few lines of code, and we <em>often</em> need to plot astronomical images. Let’s now make a function that can streamline some of these lines of code above for us.</p>
 <div class="dropdown exercise admonition">
 <p class="admonition-title">Exercise 4</p>
@@ -486,7 +489,7 @@ Don’t forget to document your function!</p>
 <p>If you haven’t used <code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> yet, here’s a primer.</p>
 <p>When we want to check the <code class="docutils literal notranslate"><span class="pre">type</span></code> of a variable, we can use <code class="docutils literal notranslate"><span class="pre">type(var_name)</span></code> to see its typename. When we want to check or ensure that a variable’s type matches some desired type, we can use <code class="docutils literal notranslate"><span class="pre">isinstance(variable,type)</span></code> to return <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">isinstance('test',str)</span></code> would return true, because the input <code class="docutils literal notranslate"><span class="pre">'test'</span></code> is a string. The names for the built-in types are <code class="docutils literal notranslate"><span class="pre">str</span></code>,<code class="docutils literal notranslate"><span class="pre">bool</span></code>,<code class="docutils literal notranslate"><span class="pre">list</span></code>,<code class="docutils literal notranslate"><span class="pre">dict</span></code>,<code class="docutils literal notranslate"><span class="pre">tuple</span></code>,<code class="docutils literal notranslate"><span class="pre">float</span></code>,<code class="docutils literal notranslate"><span class="pre">int</span></code>, etc. For a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array, its “type” is <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code>.</p>
 <ol class="arabic simple" start="3">
-<li><p>Try out your function to make sure it is working as expected — try inputting both our image array from above, as well as the file name. Try changing the percentiles and figsize and make sure the function responds accordingly.</p></li>
+<li><p>Try out your function to make sure it is working as expected — try inputting our image array from above, as well as the file name. Try changing the percentiles and figsize and make sure the function responds accordingly.</p></li>
 </ol>
 </div>
 </div>
@@ -557,11 +560,11 @@ Don’t forget to document your function!</p>
       </div>
     </a>
     <a class="right-next"
-       href="../lester2024a/stellar_spectrum.html"
+       href="../cerny2025a/cosmological-parameters.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Stellar Temperatures from Spectra</p>
+        <p class="prev-next-title">Exploring Cosmological Parameters with Functions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -585,7 +588,7 @@ Don’t forget to document your function!</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-a-fits-file">Opening a Fits File</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-an-image-opening-function">Writing an Image Opening Function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-image">Visualizing the Image</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-function-for-image-viewing">A function for Image Viewing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-function-for-image-viewing">A Function for Image Viewing</a></li>
 </ul>
   </nav></div>
 
@@ -600,7 +603,7 @@ Don’t forget to document your function!</p>
   <div class="footer-item">
     
 <p class="component-author">
-By The AstroCodEx Collaboration
+By The AstroCodEx Collaboration, Supported by the Yale Rosenkranz Award
 </p>
 
   </div>

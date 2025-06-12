@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Exploring the Diversity of Known Exoplanets &#8212; My sample book</title>
+    <title>Analyze the Messier Catalog &#8212; My sample book</title>
   
   
   
@@ -59,13 +59,9 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/cerny2024b/exoplanet-diversity';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/asali2025a/stripped_messier_cat';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Visualizing Astronomical Images" href="../pasha2024a/astronomical-images.html" />
-    <link rel="prev" title="Stellar Luminosities from the Stefan-Boltzmann Equation" href="../cerny2024a/stefan-boltzmann.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -128,6 +124,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -180,12 +178,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Python Exercises Gallery</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level I</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../cerny2024a/stefan-boltzmann.html">Stellar Luminosities from the Stefan-Boltzmann Equation</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exploring the Diversity of Known Exoplanets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerny2024b/exoplanet-diversity.html">Exploring the Diversity of Known Exoplanets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pasha2024a/astronomical-images.html">Visualizing Astronomical Images</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cerny2025a/cosmological-parameters.html">Exploring Cosmological Parameters with Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../asali2025a/messier_cat.html">Analyze the Messier Catalog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messier_cat.html">Analyze the Messier Catalog</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level II</span></p>
 <ul class="nav bd-sidenav">
@@ -257,7 +255,7 @@
       
       
       
-      <li><a href="../../_sources/exercises/cerny2024b/exoplanet-diversity.ipynb" target="_blank"
+      <li><a href="../../_sources/exercises/asali2025a/stripped_messier_cat.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -267,7 +265,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -341,7 +339,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exploring the Diversity of Known Exoplanets</h1>
+    <h1>Analyze the Messier Catalog</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -351,10 +349,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mass-separation-plot">The Mass-Separation Plot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recreating-another-classic-plot-period-radius-diagram">Recreating Another Classic Plot: Period-Radius Diagram</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Analyze the Messier Catalog</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-the-dataset">Opening the Dataset</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-one-overview-analysis-of-the-messier-catalog">Exercise One: Overview Analysis of the Messier Catalog</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-two-getting-more-practice">Exercise Two: Getting More Practice</a></li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -365,86 +367,59 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="exploring-the-diversity-of-known-exoplanets">
-<h1>Exploring the Diversity of Known Exoplanets<a class="headerlink" href="#exploring-the-diversity-of-known-exoplanets" title="Link to this heading">#</a></h1>
-<div class="author admonition">
-<p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0003-1697-7062">William Cerny</a>, <a class="reference external" href="https://orcid.org/0000-0002-7075-9931">Imad Pasha</a>, <a class="reference external" href="https://orcid.org/0000-0002-8320-2198">Yasmeen Asali</a>, <a class="reference external" href="https://orcid.org/0000-0002-9986-4604">Sebastian Monzon</a> (Yale University)</p>
-<p><em>Description</em>: Using the Stefan-Boltzmann law to infer the properties of stars; practice with basic python and data types.</p>
-<p><em>Intended Audience</em>: Early Undergraduate</p>
-<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">exoplanets</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p>
-<p><em>Requirements</em>: <a class="reference download internal" download="" href="../../_downloads/57ef5323576b2ebe401dabcf2c9b3272/requirements.txt"><span class="xref download myst">requirements.txt</span></a></p>
-<p><em>Last Updated: August 9, 2024</em></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="analyze-the-messier-catalog">
+<h1>Analyze the Messier Catalog<a class="headerlink" href="#analyze-the-messier-catalog" title="Link to this heading">#</a></h1>
+<p>In this assignment, you will practice using logic and loops using a dataset of objects from the <a class="reference external" href="https://en.wikipedia.org/wiki/Messier_object">Messier Catalog</a>. The dataset includes basic information about each object, like it’s type, magnitude, distance, constellation, and the best viewing season. Your tasks will involve reading the data, analyzing it, and using <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, logic, and loops to answer questions about it!</p>
+<section id="opening-the-dataset">
+<h2>Opening the Dataset<a class="headerlink" href="#opening-the-dataset" title="Link to this heading">#</a></h2>
+<p>The data is stored in a <code class="docutils literal notranslate"><span class="pre">.npy</span></code> file, which you can load with <code class="docutils literal notranslate"><span class="pre">np.load()</span></code>. You can download it <a class="reference download internal" download="" href="../../_downloads/212db617785a437ed3773b2ad5ed2ed3/messier_data.npy"><span class="xref download myst">here</span></a> (right click and save as a <code class="docutils literal notranslate"><span class="pre">.npy</span></code> file). You can use the following line of code to open up the file in your code and store it’s contents in a variable called <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/Users/username/Downloads/messier_data.npy&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="learningobjective admonition">
-<p class="admonition-title">Learning Objectives</p>
+<p>Will the above line run on your computer? No! You need to update the PATH to match where the data lives on your computer! You can put the data anywhere on your computer, and specify the absolute PATH in your code like the example above. Alternately, if you put the data in the <strong>same directory</strong> (folder) as the python script you are writing, you can open it like this: <code class="docutils literal notranslate"><span class="pre">np.load(messier_data.npy)</span></code>.</p>
+<p>Each row in the dataset corresponds to a single Messier object, with the following fields:</p>
+<ul class="simple">
+<li><p><strong>Messier</strong>: Name of the Messier object as a string (e.g., <code class="docutils literal notranslate"><span class="pre">'M107'</span></code>, <code class="docutils literal notranslate"><span class="pre">'M108'</span></code>)</p></li>
+<li><p><strong>RA</strong> and <strong>DEC</strong>: the Right Ascension and Declination of the object (coordinates in the sky).</p></li>
+<li><p><strong>Type</strong>: Type of object (e.g., <code class="docutils literal notranslate"><span class="pre">'Gc'</span></code> for Globular Cluster, <code class="docutils literal notranslate"><span class="pre">'Sp'</span></code> for Spiral, <code class="docutils literal notranslate"><span class="pre">'Ba'</span></code> for Barred Spiral)</p></li>
+<li><p><strong>Mag</strong>: Magnitude (brightness) of the object. Magnitudes are a unit-less system, and lower numbers mean brighter objects!</p></li>
+<li><p><strong>Distance</strong>: Distance from Earth in units of light-years</p></li>
+<li><p><strong>Constellation</strong>: The constellation in which the object resides</p></li>
+<li><p><strong>Season</strong>: The best viewing season (spring, summer, autumn, winter)</p></li>
+</ul>
+<p>Here are some tips and reminders for using large 2D datasets:</p>
 <ol class="arabic simple">
-<li><p>Understand the difference between various exoplanet detection methods.</p></li>
-<li><p>Be able to download and open a data file from the NASA Exoplanet Archive into a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dataframe.</p></li>
-<li><p>Filter the table to plot standard exoplanet diagrams, colored by detection technique.</p></li>
+<li><p>You can access each row of the dataset using <strong>indexing</strong>. For instance, <code class="docutils literal notranslate"><span class="pre">data[0]</span></code> will return the first row of the array (aka all of the above column values for a single Messier object).</p></li>
+<li><p>You can access each column of the dataset using <code class="docutils literal notranslate"><span class="pre">data['Messier']</span></code> for example, where now rather than indexing by an integer we are indexing by a column <strong>key</strong> (a column name). This will return a numpy array of all the Messier numbers for all of the objects.</p></li>
 </ol>
-</div>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>When we detect exoplanets (planets orbiting other stars), we often obtain a subset of the following three direct observable properties:</p>
-<ol class="arabic simple">
-<li><p>Their radius (formally, their radius relative to their host star),</p></li>
-<li><p>Their mass, and/or</p></li>
-<li><p>Their orbital separation (aka radius for circular orbits, or semi-major axis for elliptical orbits).</p></li>
-</ol>
-<p>The information available comes down to the <strong>detection methods</strong> used to find and characterize these systems.</p>
-<ol class="arabic simple">
-<li><p><strong>Transit Method</strong>: In this technique, exoplanets are detected by observing the periodic dimming of a star’s light as a planet passes in front of it (transits) from our line of sight. By measuring the decrease in brightness during transit events, astronomers can infer the presence and characteristics of orbiting planets. This method provides relative radius (from the depth of the dip) and orbital separation (inferred from the duration of an orbit, or time between transits).</p></li>
-<li><p><strong>Radial Velocity Method</strong>: This method detects exoplanets by measuring the small periodic shifts in the star’s radial velocity caused by the gravitational pull of an orbiting planet. As the planet orbits the star, it causes the star to wobble slightly. This wobble can be detected through Doppler spectroscopy, and it provides an estimate of the mass (from Newton’s laws) and orbital separation (from the period of the wobbles) of the planet.</p></li>
-<li><p><strong>Microlensing</strong>: Exoplanets can be detected through gravitational microlensing, where the gravitational field of a foreground star bends and magnifies the light of a background star as well as any orbiting planets. The presence of an exoplanet around the foreground star can be inferred from the temporary increase in brightness observed during the microlensing event.</p></li>
-<li><p><strong>Transit Timing Variations (TTV)</strong>: Exoplanets can be inferred through TTVs by measuring the variations in the timing of transit events caused by gravitational interactions between multiple planets within a system. These deviations from the expected transit times provide information about the masses and orbits of the interacting planets.</p></li>
-</ol>
-<p>In addition to these four, there are a number of other methods of detecting planets (such as direct imaging)!</p>
-<p>It is common to plot detected exoplanets in the space of mass vs. orbital separation. Here, we show one such plot, colored by the detection technique used to detect the planet (follow-up observations may have been needed to compute mass or separation).</p>
-<p><img alt="" src="../../_images/Mass-separation-plot-for-known-exoplanets-color-coded-according-to-their-detection.png" /></p>
-<p>The x-axis of this figure shows the mass of the planet on a log scale, typically measured in Jupiter masses (where 1 Jupiter mass equals approximately <span class="math notranslate nohighlight">\(1.898 \times 10^{27}\)</span> kg). The y-axis, also on a log scale, represents the planet-star separation, often expressed in astronomical units (AU), with 1 AU equivalent to the average distance between the Earth and the Sun (approximately 149.6 million kilometers). Each data point plotted signifies an individual exoplanet.</p>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Checkpoint: Why might the blue (transit) points be clustered toward small separation/high mass?</p>
-<ol class="arabic simple">
-<li><p>Because the dip in light is larger when a large (and thus usually more massive) planet passes in front of the star, larger planets produce deeper and more easily detectable transit signals.</p></li>
-<li><p>Because the transit method requires the planet’s orbit to be edge-on relative to the viewer, closer-in orbits have a higher chance of passing in front of the star.</p></li>
-<li><p>To 100% confirm an exoplanet, you (typically) must detect the transit 2-3 times at a regular interval. Most transit-detecting satellites have not observed for more than a year or two, meaning planets with progressively longer years (larger orbital separation) take longer to confirm.</p></li>
-</ol>
-</div>
 </section>
-<section id="the-mass-separation-plot">
-<h2>The Mass-Separation Plot<a class="headerlink" href="#the-mass-separation-plot" title="Link to this heading">#</a></h2>
-<p>In this exercise, we will recreate the above figure using data available in the NASA exoplanet archive.</p>
-<div class="dropdown exercise admonition">
-<p class="admonition-title">Exercise 1</p>
-<div class="docutils container">
-<ol class="arabic simple">
-<li><p>Download the full catalog of known exoplanet properties from the NASA Exoplanet Archive. Navigate to the Data Page of <a class="reference external" href="https://exoplanetarchive.ipac.caltech.edu/">https://exoplanetarchive.ipac.caltech.edu/</a> , then to the <code class="docutils literal notranslate"><span class="pre">Planetary</span> <span class="pre">Systems</span> <span class="pre">Composite</span> <span class="pre">Data</span></code> link. Hit Download Table –&gt; download as csv.</p></li>
-<li><p>Within a Jupyter notebook, load the table you just downloaded into a Pandas dataframe.</p></li>
-</ol>
-</div>
-</div>
-<div class="dropdown exercise admonition">
-<p class="admonition-title">Exercise 2</p>
-<div class="docutils container">
-<ol class="arabic simple">
-<li><p>Using the “np.unique” function in numpy applied to your dataframe, figure out all the possible exoplanet discovery methods report in this table (note: as mentioned above, the four methods shown in the provided figure are not the only possible methods)!</p></li>
-<li><p>Recreate the figure shown above using the same units, axis scaling (logarithmic scale), and labels/legend. To do this, filter your pandas dataframe by each discovery method and use different calls to plt.scatter() to plot them in stylistically distinct ways.</p></li>
-</ol>
-</div>
-</div>
 </section>
-<section id="recreating-another-classic-plot-period-radius-diagram">
-<h2>Recreating Another Classic Plot: Period-Radius Diagram<a class="headerlink" href="#recreating-another-classic-plot-period-radius-diagram" title="Link to this heading">#</a></h2>
-<p>Another classic figure shows the period of detected exoplanets against planet radius. In this exercise, we will create that figure.</p>
-<div class="dropdown exercise admonition">
-<p class="admonition-title">Exercise 3</p>
-<div class="docutils container">
+<section class="tex2jax_ignore mathjax_ignore" id="exercise-one-overview-analysis-of-the-messier-catalog">
+<h1>Exercise One: Overview Analysis of the Messier Catalog<a class="headerlink" href="#exercise-one-overview-analysis-of-the-messier-catalog" title="Link to this heading">#</a></h1>
 <ol class="arabic simple">
-<li><p>Using the full exoplanet dataframe that you downloaded and opened for exercise 1, trying plotting the exoplanet period-radius diagram. This is another classic exoplanet figure! The x-axis typically represents the logarithm of the orbital period of the exoplanets, measured in days. The y-axis represents the logarithm of the radius of the exoplanets, usually measured in units of Earth radii.</p></li>
+<li><p><strong>How many objects are in the dataset?</strong> You can either write a loop to count the number of objects or use a built-in python function.</p></li>
+<li><p><strong>Investigate the brightness of Messier objects:</strong> Recall that magnitude is a measure of brightness, and brighter objects have lower magnitude values!</p>
+<ul class="simple">
+<li><p>Calculate the average magnitude of all the Messier objects.</p></li>
+<li><p>What magnitude is the brightest object in the catalog, and what magnitude is the dimmest?</p></li>
+<li><p>Once you have that, calculate the difference in magnitude between the brightest and the dimmest object.</p></li>
+</ul>
+</li>
+<li><p><strong>How many objects are there in each viewing season</strong> (spring, summer, autumn, winter)? Before looking at the hint, see if you can approach this problem on your own!</p></li>
 </ol>
-</div>
-</div>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercise-two-getting-more-practice">
+<h1>Exercise Two: Getting More Practice<a class="headerlink" href="#exercise-two-getting-more-practice" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Calculate the <strong>average distance</strong> of <strong>spiral galaxies</strong> (Type: <code class="docutils literal notranslate"><span class="pre">'Sp'</span></code>), <strong>globular clusters</strong> (Type: <code class="docutils literal notranslate"><span class="pre">'Gc'</span></code>), and <strong>open clusters</strong> (Type: <code class="docutils literal notranslate"><span class="pre">'Oc'</span></code>). Which type of object is typically farther away? Does this make sense?</p></li>
+<li><p><strong>How many constellations are there in the dataset</strong>, and <strong>how many objects belong to each constellation?</strong></p>
+<ul class="simple">
+<li><p>First, you need to find how many unique constellations exist in the dataset.</p></li>
+<li><p>Then, count how many Messier objects belong to each constellation.</p></li>
+</ul>
+</li>
+<li><p><strong>How many Messier objects are in the northern vs. southern sky?</strong> You could try to do this using the constellation information from the previous problem, but the hemisphere can more easily be determined by the <strong>declination</strong>.</p></li>
+</ol>
 </section>
 
     <script type="text/x-thebe-config">
@@ -460,7 +435,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./exercises/cerny2024b"
+            path: "./exercises/asali2025a"
         },
         predefinedOutput: true
     }
@@ -477,24 +452,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../cerny2024a/stefan-boltzmann.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Stellar Luminosities from the Stefan-Boltzmann Equation</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../pasha2024a/astronomical-images.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Visualizing Astronomical Images</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -511,10 +468,14 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mass-separation-plot">The Mass-Separation Plot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recreating-another-classic-plot-period-radius-diagram">Recreating Another Classic Plot: Period-Radius Diagram</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Analyze the Messier Catalog</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-the-dataset">Opening the Dataset</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-one-overview-analysis-of-the-messier-catalog">Exercise One: Overview Analysis of the Messier Catalog</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-two-getting-more-practice">Exercise Two: Getting More Practice</a></li>
+</ul>
+
   </nav></div>
 
 </div></div>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Exploring the Diversity of Known Exoplanets &#8212; My sample book</title>
+    <title>Exploring Cosmological Parameters with Functions &#8212; My sample book</title>
   
   
   
@@ -61,11 +61,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/cerny2024b/exoplanet-diversity';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/cerny2025a/cosmological-parameters';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Visualizing Astronomical Images" href="../pasha2024a/astronomical-images.html" />
-    <link rel="prev" title="Stellar Luminosities from the Stefan-Boltzmann Equation" href="../cerny2024a/stefan-boltzmann.html" />
+    <link rel="next" title="Analyze the Messier Catalog" href="../asali2025a/messier_cat.html" />
+    <link rel="prev" title="Visualizing Astronomical Images" href="../pasha2024a/astronomical-images.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,9 +182,9 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level I</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../cerny2024a/stefan-boltzmann.html">Stellar Luminosities from the Stefan-Boltzmann Equation</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exploring the Diversity of Known Exoplanets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerny2024b/exoplanet-diversity.html">Exploring the Diversity of Known Exoplanets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pasha2024a/astronomical-images.html">Visualizing Astronomical Images</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cerny2025a/cosmological-parameters.html">Exploring Cosmological Parameters with Functions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exploring Cosmological Parameters with Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../asali2025a/messier_cat.html">Analyze the Messier Catalog</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level II</span></p>
@@ -257,7 +257,7 @@
       
       
       
-      <li><a href="../../_sources/exercises/cerny2024b/exoplanet-diversity.ipynb" target="_blank"
+      <li><a href="../../_sources/exercises/cerny2025a/cosmological-parameters.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -341,7 +341,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exploring the Diversity of Known Exoplanets</h1>
+    <h1>Exploring Cosmological Parameters with Functions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -351,9 +351,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mass-separation-plot">The Mass-Separation Plot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recreating-another-classic-plot-period-radius-diagram">Recreating Another Classic Plot: Period-Radius Diagram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-the-hubble-lemaitre-law">Background: The Hubble-Lemaitre Law</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-the-cosmic-critical-density">Background: The Cosmic Critical Density</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-the-age-of-the-universe">Background: The Age of the Universe</a></li>
 </ul>
             </nav>
         </div>
@@ -365,84 +365,72 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="exploring-the-diversity-of-known-exoplanets">
-<h1>Exploring the Diversity of Known Exoplanets<a class="headerlink" href="#exploring-the-diversity-of-known-exoplanets" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="exploring-cosmological-parameters-with-functions">
+<h1>Exploring Cosmological Parameters with Functions<a class="headerlink" href="#exploring-cosmological-parameters-with-functions" title="Link to this heading">#</a></h1>
 <div class="author admonition">
-<p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0003-1697-7062">William Cerny</a>, <a class="reference external" href="https://orcid.org/0000-0002-7075-9931">Imad Pasha</a>, <a class="reference external" href="https://orcid.org/0000-0002-8320-2198">Yasmeen Asali</a>, <a class="reference external" href="https://orcid.org/0000-0002-9986-4604">Sebastian Monzon</a> (Yale University)</p>
-<p><em>Description</em>: Using the Stefan-Boltzmann law to infer the properties of stars; practice with basic python and data types.</p>
+<p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0003-1697-7062">William Cerny</a>, <a class="reference external" href="https://orcid.org/0000-0002-8320-2198">Yasmeen Asali</a>, <a class="reference external" href="https://orcid.org/0000-0003-0965-605X">Pratik Gandhi</a> (Yale University)</p>
+<p><em>Description</em>: Estimate the expansion rate, age, and shape of the universe; practice with Python functions and array operations.</p>
 <p><em>Intended Audience</em>: Early Undergraduate</p>
-<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">exoplanets</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p>
-<p><em>Requirements</em>: <a class="reference download internal" download="" href="../../_downloads/57ef5323576b2ebe401dabcf2c9b3272/requirements.txt"><span class="xref download myst">requirements.txt</span></a></p>
-<p><em>Last Updated: August 9, 2024</em></p>
+<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">cosmology</span></code>, <code class="docutils literal notranslate"><span class="pre">basic-python</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">functions</span></code>, <code class="docutils literal notranslate"><span class="pre">f-strings</span></code></p>
+<p><em>Requirements</em>: <a class="reference download internal" download="" href="../../_downloads/3a1d41cd1118ed1adfde9f05f67aa5a0/requirements.txt"><span class="xref download myst">requirements.txt</span></a> (optional)</p>
+<p><em>Last Updated: May 9, 2025</em></p>
 </div>
 <div class="learningobjective admonition">
 <p class="admonition-title">Learning Objectives</p>
 <ol class="arabic simple">
-<li><p>Understand the difference between various exoplanet detection methods.</p></li>
-<li><p>Be able to download and open a data file from the NASA Exoplanet Archive into a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dataframe.</p></li>
-<li><p>Filter the table to plot standard exoplanet diagrams, colored by detection technique.</p></li>
+<li><p>Practice developing functions from scratch to solve basic astronomical problems.</p></li>
+<li><p>Understand how to apply functions over array inputs both with loops and with vectorized operations.</p></li>
+<li><p>Be able to document functions properly with type decorators and docstrings.</p></li>
 </ol>
 </div>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>When we detect exoplanets (planets orbiting other stars), we often obtain a subset of the following three direct observable properties:</p>
+<section id="background-the-hubble-lemaitre-law">
+<h2>Background: The Hubble-Lemaitre Law<a class="headerlink" href="#background-the-hubble-lemaitre-law" title="Link to this heading">#</a></h2>
+<p>The Hubble-Lemaitre law (often referred to as just “Hubble’s Law”) describes the relationship between the velocity of a galaxy and its distance from us:</p>
+<div class="math notranslate nohighlight">
+\[
+v = H_0 \times d
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(v\)</span> is is the recession velocity of a galaxy (in km/s), <span class="math notranslate nohighlight">\(H_0\)</span> is the Hubble constant (in km/s/Mpc; assume 70 km/s/Mpc), and <span class="math notranslate nohighlight">\(d\)</span> is the distance of the galaxy (in Mpc).  <span class="math notranslate nohighlight">\(H_0\)</span> is the present-day expansion rate of the universe. In general, we cannot measure direct distances to very distant galaxies, and so we measure the recessional velocity <span class="math notranslate nohighlight">\(v\)</span> and can use that to find <span class="math notranslate nohighlight">\(d\)</span>. The fact that this correlation exists is a consequence of the fact that <em>our universe is expanding</em>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p class="rubric" id="exercise-1-cosmic-distances-with-hubble-s-law">Exercise 1: Cosmic Distances with Hubble’s Law</p>
 <ol class="arabic simple">
-<li><p>Their radius (formally, their radius relative to their host star),</p></li>
-<li><p>Their mass, and/or</p></li>
-<li><p>Their orbital separation (aka radius for circular orbits, or semi-major axis for elliptical orbits).</p></li>
-</ol>
-<p>The information available comes down to the <strong>detection methods</strong> used to find and characterize these systems.</p>
-<ol class="arabic simple">
-<li><p><strong>Transit Method</strong>: In this technique, exoplanets are detected by observing the periodic dimming of a star’s light as a planet passes in front of it (transits) from our line of sight. By measuring the decrease in brightness during transit events, astronomers can infer the presence and characteristics of orbiting planets. This method provides relative radius (from the depth of the dip) and orbital separation (inferred from the duration of an orbit, or time between transits).</p></li>
-<li><p><strong>Radial Velocity Method</strong>: This method detects exoplanets by measuring the small periodic shifts in the star’s radial velocity caused by the gravitational pull of an orbiting planet. As the planet orbits the star, it causes the star to wobble slightly. This wobble can be detected through Doppler spectroscopy, and it provides an estimate of the mass (from Newton’s laws) and orbital separation (from the period of the wobbles) of the planet.</p></li>
-<li><p><strong>Microlensing</strong>: Exoplanets can be detected through gravitational microlensing, where the gravitational field of a foreground star bends and magnifies the light of a background star as well as any orbiting planets. The presence of an exoplanet around the foreground star can be inferred from the temporary increase in brightness observed during the microlensing event.</p></li>
-<li><p><strong>Transit Timing Variations (TTV)</strong>: Exoplanets can be inferred through TTVs by measuring the variations in the timing of transit events caused by gravitational interactions between multiple planets within a system. These deviations from the expected transit times provide information about the masses and orbits of the interacting planets.</p></li>
-</ol>
-<p>In addition to these four, there are a number of other methods of detecting planets (such as direct imaging)!</p>
-<p>It is common to plot detected exoplanets in the space of mass vs. orbital separation. Here, we show one such plot, colored by the detection technique used to detect the planet (follow-up observations may have been needed to compute mass or separation).</p>
-<p><img alt="" src="../../_images/Mass-separation-plot-for-known-exoplanets-color-coded-according-to-their-detection.png" /></p>
-<p>The x-axis of this figure shows the mass of the planet on a log scale, typically measured in Jupiter masses (where 1 Jupiter mass equals approximately <span class="math notranslate nohighlight">\(1.898 \times 10^{27}\)</span> kg). The y-axis, also on a log scale, represents the planet-star separation, often expressed in astronomical units (AU), with 1 AU equivalent to the average distance between the Earth and the Sun (approximately 149.6 million kilometers). Each data point plotted signifies an individual exoplanet.</p>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Checkpoint: Why might the blue (transit) points be clustered toward small separation/high mass?</p>
-<ol class="arabic simple">
-<li><p>Because the dip in light is larger when a large (and thus usually more massive) planet passes in front of the star, larger planets produce deeper and more easily detectable transit signals.</p></li>
-<li><p>Because the transit method requires the planet’s orbit to be edge-on relative to the viewer, closer-in orbits have a higher chance of passing in front of the star.</p></li>
-<li><p>To 100% confirm an exoplanet, you (typically) must detect the transit 2-3 times at a regular interval. Most transit-detecting satellites have not observed for more than a year or two, meaning planets with progressively longer years (larger orbital separation) take longer to confirm.</p></li>
+<li><p>Define a function <code class="docutils literal notranslate"><span class="pre">hubble_distance</span></code> to calculate the distance to a galaxy based on this formula. The function should take one required argument, the recessional velocity in km/s, and should return the distance to the galaxy in Megaparsecs (Mpc).</p></li>
+<li><p>Add the Hubble constant as an optional argument that takes a default value of 70 km/s/Mpc.</p></li>
+<li><p>Add a print statement of the form “Given a recessional velocity of [] and a Hubble constant of [], a galaxy’s distance would be []” (fill in the units here, and use f-strings to handle the values).</p></li>
+<li><p>Verify your code by checking that you recover 20 Mpc as the distance for a galaxy moving at 1400 km/s, assuming the default <span class="math notranslate nohighlight">\(H_0\)</span> value.
+(for reference, 20 Mpc is in the local universe, and space telescopes like JWST can resolve individual stars in galaxies at this distance).</p></li>
+<li><p>Now, create an evenly-spaced array (hint: np.arange or np.linspace is your friend here!) of 20 recessional velocities called <strong>recess_vels</strong> in the range [1000,100000]. Using a loop, evaluate your function over each element. Store the results in a list.</p></li>
+<li><p><em>Without</em> using a loop, evaluate your function over <strong>recess_vels</strong>.</p></li>
+<li><p>The output from 6 just prints everything in a rather sloppy way. Go back and add another optional argument <strong>print_res</strong> that is a boolean defaulting to False. Using an if statement, make it so that the results statement only prints if this variable is set to True.</p></li>
+<li><p>Add type decorators to the inputs. See the Week 4 notes for a reminder if needed!</p></li>
+<li><p>Lastly, add a docstring detailing the purpose of the function, its arguments, and the return type.</p></li>
 </ol>
 </div>
+<p>Questions 5-6 above get at a core concept in Python: <em>vectorization</em>. In Python, it will essentially always be faster to carry out an operation over a vector (array) simultaneously (part 5) as opposed to using a loop (part 4). This might not matter for small datasets but will become increasingly relevant as your dataset grows.</p>
+<p>Now we can make our approach even more sophisticated! We will now build subsequent functions that expand upon the one above. This incremental function-building is a core component of research, since you rarely write a single function that does everything you want.</p>
 </section>
-<section id="the-mass-separation-plot">
-<h2>The Mass-Separation Plot<a class="headerlink" href="#the-mass-separation-plot" title="Link to this heading">#</a></h2>
-<p>In this exercise, we will recreate the above figure using data available in the NASA exoplanet archive.</p>
-<div class="dropdown exercise admonition">
-<p class="admonition-title">Exercise 1</p>
-<div class="docutils container">
-<ol class="arabic simple">
-<li><p>Download the full catalog of known exoplanet properties from the NASA Exoplanet Archive. Navigate to the Data Page of <a class="reference external" href="https://exoplanetarchive.ipac.caltech.edu/">https://exoplanetarchive.ipac.caltech.edu/</a> , then to the <code class="docutils literal notranslate"><span class="pre">Planetary</span> <span class="pre">Systems</span> <span class="pre">Composite</span> <span class="pre">Data</span></code> link. Hit Download Table –&gt; download as csv.</p></li>
-<li><p>Within a Jupyter notebook, load the table you just downloaded into a Pandas dataframe.</p></li>
-</ol>
-</div>
-</div>
-<div class="dropdown exercise admonition">
-<p class="admonition-title">Exercise 2</p>
-<div class="docutils container">
-<ol class="arabic simple">
-<li><p>Using the “np.unique” function in numpy applied to your dataframe, figure out all the possible exoplanet discovery methods report in this table (note: as mentioned above, the four methods shown in the provided figure are not the only possible methods)!</p></li>
-<li><p>Recreate the figure shown above using the same units, axis scaling (logarithmic scale), and labels/legend. To do this, filter your pandas dataframe by each discovery method and use different calls to plt.scatter() to plot them in stylistically distinct ways.</p></li>
-</ol>
-</div>
-</div>
+<section id="background-the-cosmic-critical-density">
+<h2>Background: The Cosmic Critical Density<a class="headerlink" href="#background-the-cosmic-critical-density" title="Link to this heading">#</a></h2>
+<p>The cosmic <em>critical density</em> is the average density of matter and energy needed for the universe to be flat. If the actual density is higher, the universe is “closed” and may eventually collapse; if the density is lower, the universe is “open” and will expand forever.  The density can be calculated from the Hubble Constant via
+<span class="math notranslate nohighlight">\(\rho_c = \frac{3H_0^2}{8\pi G}\)</span></p>
 </section>
-<section id="recreating-another-classic-plot-period-radius-diagram">
-<h2>Recreating Another Classic Plot: Period-Radius Diagram<a class="headerlink" href="#recreating-another-classic-plot-period-radius-diagram" title="Link to this heading">#</a></h2>
-<p>Another classic figure shows the period of detected exoplanets against planet radius. In this exercise, we will create that figure.</p>
-<div class="dropdown exercise admonition">
-<p class="admonition-title">Exercise 3</p>
-<div class="docutils container">
+<section id="background-the-age-of-the-universe">
+<h2>Background: The Age of the Universe<a class="headerlink" href="#background-the-age-of-the-universe" title="Link to this heading">#</a></h2>
+<p>Because the universe has been continuously expanding since the origin of the universe, the present-day expansion rate can be used to approximate the age of the universe. Put explicitly, the age of the universe can be estimated roughly as
+<span class="math notranslate nohighlight">\( t = \frac{1}{H_0}\)</span>
+but you need to be careful about units: you need to first convert <span class="math notranslate nohighlight">\(H_0\)</span> to units of inverse seconds for this to work.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p class="rubric" id="exercise-2-nested-functions">Exercise 2: Nested Functions</p>
+<p>In this exercise you will take galaxy distance and recession velocity data and use it to derive the density, age, and shape of the universe.</p>
 <ol class="arabic simple">
-<li><p>Using the full exoplanet dataframe that you downloaded and opened for exercise 1, trying plotting the exoplanet period-radius diagram. This is another classic exoplanet figure! The x-axis typically represents the logarithm of the orbital period of the exoplanets, measured in days. The y-axis represents the logarithm of the radius of the exoplanets, usually measured in units of Earth radii.</p></li>
+<li><p>Write a function <strong>get_hubble_constant</strong> which takes in an array of galaxy distances in Mpc and an array of recessional velocities in km/s. Compute <span class="math notranslate nohighlight">\(H_0\)</span> for each element and then return a single average. Don’t use loops for anything in this exercise!</p></li>
+<li><p>Write a function <strong>get_critical_density</strong> that computes the critical density according to the above formula, with only a single argument of <span class="math notranslate nohighlight">\(H_0\)</span>. Determine and print the “shape” of the universe (open, closed, flat) by comparing against a model where the Hubble constant is fixed to <span class="math notranslate nohighlight">\(H_0 = 73\)</span> km/s/Mpc (which is realistic, and we think we live in a flat universe).</p></li>
+<li><p>Write a function <strong>get_universe_age</strong> that takes in <span class="math notranslate nohighlight">\(H_0\)</span> in km/s/Mpc and returns the age of the universe in years. Note that you need to include two unit conversions: first, you will need to convert km/s/Mpc to just 1/s. After inverting this, you can then convert the time in seconds to a time in years.</p></li>
+<li><p>Write a function <strong>cosmology_solver</strong> that wraps all of the three functions, i.e., it calculates the critical density, shape, and age of the universe. Specifically, it should take the same inputs as <strong>get_hubble_constant</strong>. Within <strong>cosmology_solver</strong>, you should run each of the functions you created above such that you can figure out the properties of the univese for a given dataset of galaxy distances/recession velocities. Print the critical density.</p></li>
+<li><p>Test your complete cosmology solver with the following data: distances: [45,100,200,400] Mpc and velocities [3400, 7600, 15200, 31800] km/s. What kind of univese do you end up with? Is it older or younger than our <span class="math notranslate nohighlight">\(H_0 = 70\)</span>ish universe?</p></li>
 </ol>
-</div>
 </div>
 </section>
 </section>
@@ -456,16 +444,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "ugali_kernel"
         },
         kernelOptions: {
-            name: "python3",
-            path: "./exercises/cerny2024b"
+            name: "ugali_kernel",
+            path: "./exercises/cerny2025a"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'ugali_kernel'</script>
 
                 </article>
               
@@ -478,20 +466,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../cerny2024a/stefan-boltzmann.html"
+       href="../pasha2024a/astronomical-images.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Stellar Luminosities from the Stefan-Boltzmann Equation</p>
+        <p class="prev-next-title">Visualizing Astronomical Images</p>
       </div>
     </a>
     <a class="right-next"
-       href="../pasha2024a/astronomical-images.html"
+       href="../asali2025a/messier_cat.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Visualizing Astronomical Images</p>
+        <p class="prev-next-title">Analyze the Messier Catalog</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -511,9 +499,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mass-separation-plot">The Mass-Separation Plot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recreating-another-classic-plot-period-radius-diagram">Recreating Another Classic Plot: Period-Radius Diagram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-the-hubble-lemaitre-law">Background: The Hubble-Lemaitre Law</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-the-cosmic-critical-density">Background: The Cosmic Critical Density</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-the-age-of-the-universe">Background: The Age of the Universe</a></li>
 </ul>
   </nav></div>
 
