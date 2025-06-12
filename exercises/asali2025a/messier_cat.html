@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -44,7 +44,7 @@
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -420,7 +420,7 @@ document.write(`
 <h1>Analyze the Messier Catalog<a class="headerlink" href="#analyze-the-messier-catalog" title="Link to this heading">#</a></h1>
 <div class="author admonition">
 <p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0002-8320-2198">Yasmeen Asali</a>, <a class="reference external" href="https://orcid.org/0000-0003-1697-7062">William Cerny</a>, <a class="reference external" href="https://orcid.org/0000-0003-0965-605X">Pratik Gandhi</a> (Yale University)</p>
-<p><em>Description</em>: Students use the Messier catalog to practice using for loops and and logic</p>
+<p><em>Description</em>: Students use the Messier catalog to practice using for loops and and logic.</p>
 <p><em>Intended Audience</em>: Beginner Undergraduate</p>
 <p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">libraries:numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">loops</span></code>, <code class="docutils literal notranslate"><span class="pre">program-flow</span></code>, <code class="docutils literal notranslate"><span class="pre">logic</span></code></p>
 <p><em>Requirements</em>: <a class="reference download internal" download="" href="../../_downloads/3b937131d51a8e081064e8f6c691da65/requirements.txt"><span class="xref download myst">requirements.txt</span></a></p>
@@ -429,14 +429,14 @@ document.write(`
 <div class="learningobjective admonition">
 <p class="admonition-title">Learning Objectives</p>
 <ol class="arabic simple">
-<li><p>Understand the structure of 2D arrays and how to access data</p></li>
-<li><p>Practice using logic to downselect rows from an array and practice using for loops to iterate through objects</p></li>
+<li><p>Understand the structure of 2D arrays and how to access data.</p></li>
+<li><p>Practice using logic to downselect rows from an array and practice using for loops to iterate through objects.</p></li>
 </ol>
 </div>
-<p>In this assignment, you will practice using logic and loops using a dataset of objects from the <a class="reference external" href="https://en.wikipedia.org/wiki/Messier_object">Messier Catalog</a>. The dataset includes basic information about each object, like it’s type, magnitude, distance, constellation, and the best viewing season. Your tasks will involve reading the data, analyzing it, and using <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, logic, and loops to answer questions about it!</p>
+<p>In this assignment, you will practice using logic and loops using a dataset of objects from the <a class="reference external" href="https://en.wikipedia.org/wiki/Messier_object">Messier Catalog</a>. The dataset includes basic information about each object, such as its type, magnitude, distance, constellation, and best viewing season. Your tasks will involve reading in the data, analyzing it, and using <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, logic, and loops to answer questions about it!</p>
 <section id="opening-the-dataset">
 <h2>Opening the Dataset<a class="headerlink" href="#opening-the-dataset" title="Link to this heading">#</a></h2>
-<p>The data is stored in a <code class="docutils literal notranslate"><span class="pre">.npy</span></code> file, which you can load with <code class="docutils literal notranslate"><span class="pre">np.load()</span></code>. You can download it <a class="reference download internal" download="" href="../../_downloads/212db617785a437ed3773b2ad5ed2ed3/messier_data.npy"><span class="xref download myst">here</span></a> (right click and save as a <code class="docutils literal notranslate"><span class="pre">.npy</span></code> file). You can use the following line of code to open up the file in your code and store it’s contents in a variable called <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
+<p>The data is stored in a <code class="docutils literal notranslate"><span class="pre">.npy</span></code> file, which you can load with <code class="docutils literal notranslate"><span class="pre">np.load()</span></code>. You can download it <a class="reference download internal" download="" href="../../_downloads/212db617785a437ed3773b2ad5ed2ed3/messier_data.npy"><span class="xref download myst">here</span></a> (right click and save as a <code class="docutils literal notranslate"><span class="pre">.npy</span></code> file). You can use the following line of code to open up the file in your code and store its contents in a variable called <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/Users/username/Downloads/messier_data.npy&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -445,7 +445,7 @@ document.write(`
 <p>Will the above line run on your computer? No! Do you remember what you need to change about it?</p>
 <div class="dropdown admonition hint">
 <p class="admonition-title">Hint</p>
-<p>You need to update the PATH to match where the data lives on your computer! You can put the data anywhere on your computer, and specify the absolute PATH in your code like the example above. Alternately, if you put the data in the <strong>same directory</strong> (folder) as the python script you are writing, you can open it like this: <code class="docutils literal notranslate"><span class="pre">np.load(messier_data.npy)</span></code>.</p>
+<p>You need to update the PATH to match where the data lives on your computer! You can put the data anywhere on your computer, and specify the absolute PATH in your code as in the example above. Alternatively, if you put the data in the <strong>same directory</strong> (folder) as the python script you are writing, you can open it like this: <code class="docutils literal notranslate"><span class="pre">np.load(messier_data.npy)</span></code>.</p>
 </div>
 </div>
 <p>Each row in the dataset corresponds to a single Messier object, with the following fields:</p>
@@ -453,7 +453,7 @@ document.write(`
 <li><p><strong>Messier</strong>: Name of the Messier object as a string (e.g., <code class="docutils literal notranslate"><span class="pre">'M107'</span></code>, <code class="docutils literal notranslate"><span class="pre">'M108'</span></code>)</p></li>
 <li><p><strong>RA</strong> and <strong>DEC</strong>: the Right Ascension and Declination of the object (coordinates in the sky).</p></li>
 <li><p><strong>Type</strong>: Type of object (e.g., <code class="docutils literal notranslate"><span class="pre">'Gc'</span></code> for Globular Cluster, <code class="docutils literal notranslate"><span class="pre">'Sp'</span></code> for Spiral, <code class="docutils literal notranslate"><span class="pre">'Ba'</span></code> for Barred Spiral)</p></li>
-<li><p><strong>Mag</strong>: Magnitude (brightness) of the object. Magnitudes are a unit-less system, and lower numbers mean brighter objects!</p></li>
+<li><p><strong>Mag</strong>: Magnitude (brightness) of the object. Magnitudes are a unitless system, and lower numbers mean brighter objects.</p></li>
 <li><p><strong>Distance</strong>: Distance from Earth in units of light-years</p></li>
 <li><p><strong>Constellation</strong>: The constellation in which the object resides</p></li>
 <li><p><strong>Season</strong>: The best viewing season (spring, summer, autumn, winter)</p></li>
@@ -470,16 +470,16 @@ document.write(`
 <li><p><strong>Investigate the brightness of Messier objects:</strong> Recall that magnitude is a measure of brightness, and brighter objects have lower magnitude values!</p>
 <ul class="simple">
 <li><p>Calculate the average magnitude of all the Messier objects.</p></li>
-<li><p>What magnitude is the brightest object in the catalog, and what magnitude is the dimmest?</p></li>
-<li><p>Once you have that, calculate the difference in magnitude between the brightest and the dimmest object.</p></li>
+<li><p>What magnitude is the brightest object in the catalog, and what magnitude is the faintest?</p></li>
+<li><p>Once you have that, calculate the difference in magnitude between the brightest and the faintest object.</p></li>
 </ul>
 </li>
 <li><p><strong>How many objects are there in each viewing season</strong> (spring, summer, autumn, winter)? Before looking at the hint, see if you can approach this problem on your own!</p></li>
 </ol>
 <div class="dropdown admonition hint">
 <p class="admonition-title">Hint</p>
-<p>Hint for Problem 3
-You may want to define some variables as “counters” for the number of objects in each season, and then loop through every row of the dataset and add 1 to the corresponding counter if an object is in that season. Recall, you can use the sugar syntax <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+=</span> <span class="pre">1</span></code> to add 1 to an exisiting variable (equivalent to <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">1</span></code>).</p>
+<p>Hint for Problem 3:
+You may want to define some variables as “counters” for the number of objects in each season, and then loop through every row of the dataset and add 1 to the corresponding counter if an object is in that season. Recall that you can use the syntax <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+=</span> <span class="pre">1</span></code> to add 1 to an existing variable (equivalent to <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">1</span></code>).</p>
 </div>
 </div>
 <div class="tip admonition">
@@ -489,9 +489,9 @@ You may want to define some variables as “counters” for the number of object
 </ol>
 <div class="dropdown admonition hint">
 <p class="admonition-title">Hint</p>
-<p>Hint for Problem 1
+<p>Hint for Problem 1:
 You can do this (at least) two ways! First, try using a <strong>condition</strong> to <strong>index</strong> the array. Your condition would be something that is checking the object types, and you can use that condition directly as the index to select only rows in the array where that condition is <code class="docutils literal notranslate"><span class="pre">True</span></code>. Once you have the subset of the array that meets your condition, you can compute the average (as in exercise 1 problem 2).</p>
-<p>Another way you could approach this problem is by using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to iterate over every row, and then using <code class="docutils literal notranslate"><span class="pre">if</span></code> statements to select based on type. How would you compute the average? Try to think creatively about how you can perform math on values (recall exercise 1 problem 3) iteratively in a loop. Maybe you will need to define two variables that you operate on each iteration of the loop, then do something to the two variables at the end after the loop finishes…</p>
+<p>Another way you could approach this problem is by using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to iterate over every row, and then using <code class="docutils literal notranslate"><span class="pre">if</span></code> statements to select based on type. How would you compute the average? Try to think creatively about how you can perform math on values (recall Exercise 1, Problem 3) iteratively in a loop. Maybe you will need to define two variables that you operate on each iteration of the loop, then do something to the two variables at the end after the loop finishes…</p>
 </div>
 <ol class="arabic simple" start="2">
 <li><p><strong>How many constellations are there in the dataset</strong>, and <strong>how many objects belong to each constellation?</strong></p>
@@ -503,9 +503,9 @@ You can do this (at least) two ways! First, try using a <strong>condition</stron
 </ol>
 <div class="dropdown admonition hint">
 <p class="admonition-title">Hint</p>
-<p>Hint for Problem 2
-You can try using a <code class="docutils literal notranslate"><span class="pre">set</span></code> to help find the unique constellations in the dataset. A <code class="docutils literal notranslate"><span class="pre">set</span></code> is a data structure that automatically removes duplicates, so it could be useful for counting how many distinct constellations there are.</p>
-<p>If you feel comfortable, try using a <code class="docutils literal notranslate"><span class="pre">set</span></code> to collect the constellations and a <code class="docutils literal notranslate"><span class="pre">dict</span></code> (dictionary) to count the number of objects in each one (recall exercise 1 problem 3 for counting in loops). Remember, if you’re unsure about how to create or use a set, think about how a list works—sets work similarly but don’t allow duplicate values!</p>
+<p>Hint for Problem 2:
+You can try using a <code class="docutils literal notranslate"><span class="pre">set</span></code> to find the unique constellations in the dataset. A <code class="docutils literal notranslate"><span class="pre">set</span></code> is a data structure that automatically removes duplicates, so it could be useful for counting how many distinct constellations there are.</p>
+<p>If you feel comfortable, try using a <code class="docutils literal notranslate"><span class="pre">set</span></code> to collect the constellations and a <code class="docutils literal notranslate"><span class="pre">dict</span></code> (dictionary) to count the number of objects in each one (recall Exercise 1, Problem 3 for counting in loops). Remember, if you’re unsure about how to create or use a set, think about how a list works—sets work similarly but don’t allow duplicate values!</p>
 </div>
 <ol class="arabic simple" start="3">
 <li><p><strong>How many Messier objects are in the northern vs. southern sky?</strong> You could try to do this using the constellation information from the previous problem, but the hemisphere can more easily be determined by the <strong>declination</strong>.</p></li>
