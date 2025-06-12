@@ -44,5 +44,8 @@ sphinx:
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     html_css_files:
       - "_static/custom.css"
-    
+    html_theme_options:
+      logo:
+        image_light: logo.png
+        image_dark: logo-inv.png
 log_level: debug 
