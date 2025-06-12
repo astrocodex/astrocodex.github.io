@@ -61,7 +61,7 @@
     },
     {
         "title": "Rogue Planet Habitability",
-        "tags": ["advanced undergraduate"],
+        "tags": ["intermediate undergraduate"],
         "description": "Create a hypothetical galaxy and check whether a rogue planet could remain habitable via flux from nearby supernovae.",
         "url": "./exercises/yadavalli2024a/SN_Habitability"
     },
