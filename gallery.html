@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="_static/_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8fb1fe15" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=b75f6b17" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -363,38 +363,52 @@ document.write(`
     .gallery-search {
         margin-bottom: 20px;
     }
+
     .gallery-filters {
         margin-bottom: 20px;
     }
+
     .gallery-grid {
         margin-top: 20px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
     }
+
     .gallery-grid .col {
         padding: 10px;
         flex: 0 1 calc(33.333% - 5px);
         box-sizing: border-box;
     }
+
     .gallery-grid .card {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
         padding: 0px;
-        text-decoration: none; /* Ensure no underline for the link */
-        color: inherit; /* Inherit color to avoid link color */
+        text-decoration: none;
         transition: box-shadow 0.3s ease-in-out;
+        background-color: #ffffff;
+        color: #212529;
     }
+
+    html[data-theme="dark"] .gallery-grid .card {
+        background-color: #1e1e1e !important;
+        color: #f1f1f1 !important;
+        border: 1px solid #444 !important;
+    }
+
     .gallery-grid .card:hover {
-        text-decoration: none; /* Remove hover underline */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a drop shadow on hover */
+        text-decoration: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
+
     .card-body {
         padding: 10px;
-        flex-grow: 1; /* Ensure card body takes available space */
+        flex-grow: 1;
     }
+
     .card-title {
         margin-bottom: 10px;
         font-weight: bold;
@@ -402,6 +416,7 @@ document.write(`
         padding-top: 15px;
         padding-right: 15px;
     }
+
     .card-description {
         padding-left: 15px;
         padding-right: 15px;
@@ -414,32 +429,46 @@ document.write(`
         text-overflow: ellipsis;
         font-size: 0.7em;
     }
+
     .card-footer {
         padding-top: 2px;
         padding-bottom: 2px;
         padding-left: 5px;
-        margin-top: auto; /* Ensure footer is pushed to the bottom */
+        margin-top: auto;
         border-top: 1px solid #ddd;
-        background-color: #f9f9f9;
+        background-color: #f8f9fa;
+        color: inherit;
     }
+
+    html[data-theme="dark"] .gallery-grid .card-footer {
+        background-color: #2c2c2c !important;
+        border-top: 1px solid #444 !important;
+        color: #f1f1f1 !important;
+    }
+
     .card-text {
         margin-left: 5px;
-        padding: 5px 15px; /* Add padding to move tags inward */
+        padding: 5px 15px;
         display: flex;
         flex-wrap: wrap;
-        gap: 3px; /* Small gap between tags */
+        gap: 3px;
     }
+
     .card-text .badge {
         margin: 0px;
         margin-left: 5px;
-        background-color: #737272; /* Set your desired background color */
-        color: white; /* Set your desired text color */
+        background-color: #737272;
+        color: white;
     }
+    html[data-theme="dark"] ::placeholder {
+  color: #cccccc !important;
+  opacity: 1; /* necessary in some browsers */
+}
 </style>
-            <div class="gallery-grid row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 docutils container" id="galleryGrid">
+    <div class="gallery-grid row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 docutils container" id="galleryGrid">
 
             <div class="col">
-                <a href="./exercises/cerny2024a/stefan-boltzmann.html" class="card h-100">
+                <a href="./exercises/cerny2024a/stefan-boltzmann.html" class="card h-100 bg-body text-body border-secondary">
                     <div class="card-body">
                         <p class="card-title">Stefan-Boltzmann Law</p>
                         <p class="card-description">Use basic python to apply the SB law to stars.</p>
@@ -453,7 +482,7 @@ document.write(`
             </div>
             
             <div class="col">
-                <a href="./exercises/cerny2024b/exoplanet-diversity.html" class="card h-100">
+                <a href="./exercises/cerny2024b/exoplanet-diversity.html" class="card h-100 bg-body text-body border-secondary">
                     <div class="card-body">
                         <p class="card-title">Exoplanet Properties</p>
                         <p class="card-description">Explore the properties of exoplanets and detection techniques.</p>
@@ -467,7 +496,7 @@ document.write(`
             </div>
             
             <div class="col">
-                <a href="./exercises/pasha2024a/astronomical-images.html" class="card h-100">
+                <a href="./exercises/pasha2024a/astronomical-images.html" class="card h-100 bg-body text-body border-secondary">
                     <div class="card-body">
                         <p class="card-title">Astronomical Imaging</p>
                         <p class="card-description">Learn how to read in and visualize the contents of a fits file.</p>
@@ -481,7 +510,7 @@ document.write(`
             </div>
             
             <div class="col">
-                <a href="./exercises/cerny2025a/cosmological-parameters.html" class="card h-100">
+                <a href="./exercises/cerny2025a/cosmological-parameters.html" class="card h-100 bg-body text-body border-secondary">
                     <div class="card-body">
                         <p class="card-title">Cosmological Parameters</p>
                         <p class="card-description">Estimate the expansion rate, age, and shape of the universe; practice with Python functions and array operations.</p>
@@ -495,7 +524,7 @@ document.write(`
             </div>
             
             <div class="col">
-                <a href="./exercises/asali2025a/messier_cat.html" class="card h-100">
+                <a href="./exercises/asali2025a/messier_cat.html" class="card h-100 bg-body text-body border-secondary">
                     <div class="card-body">
                         <p class="card-title">Messier Catalog</p>
                         <p class="card-description">Students use the Messier catalog to practice using for loops and and logic.</p>
@@ -509,7 +538,7 @@ document.write(`
             </div>
             
             <div class="col">
-                <a href="./exercises/lester2024a/stellar_spectrum.html" class="card h-100">
+                <a href="./exercises/lester2024a/stellar_spectrum.html" class="card h-100 bg-body text-body border-secondary">
                     <div class="card-body">
                         <p class="card-title">Stellar Temperatures from Spectra</p>
                         <p class="card-description">Apply stellar models to infer temperature.</p>
@@ -523,7 +552,7 @@ document.write(`
             </div>
             
             <div class="col">
-                <a href="./exercises/granucci2024a/gaia-clusters.html" class="card h-100">
+                <a href="./exercises/granucci2024a/gaia-clusters.html" class="card h-100 bg-body text-body border-secondary">
                     <div class="card-body">
                         <p class="card-title">Gaia Star Clusters</p>
                         <p class="card-description">Retrieve Gaia data to visualize and identify star clusters.</p>
@@ -537,7 +566,7 @@ document.write(`
             </div>
             
             <div class="col">
-                <a href="./exercises/pasha2024b/hii-regions.html" class="card h-100">
+                <a href="./exercises/pasha2024b/hii-regions.html" class="card h-100 bg-body text-body border-secondary">
                     <div class="card-body">
                         <p class="card-title">HII Regions in M33</p>
                         <p class="card-description">Investigate HII regions in an image of M33; determine their sizes and number of OB stars.</p>
@@ -551,7 +580,7 @@ document.write(`
             </div>
             
             <div class="col">
-                <a href="./exercises/sunseri2024a/Data_Parallelism_Part_1.html" class="card h-100">
+                <a href="./exercises/sunseri2024a/Data_Parallelism_Part_1.html" class="card h-100 bg-body text-body border-secondary">
                     <div class="card-body">
                         <p class="card-title">Introduction to Data Parallelization</p>
                         <p class="card-description">Use simple parallelization in Python to decrease runtimes.</p>
@@ -565,7 +594,7 @@ document.write(`
             </div>
             
             <div class="col">
-                <a href="./exercises/asali2024a/bootstrapping.html" class="card h-100">
+                <a href="./exercises/asali2024a/bootstrapping.html" class="card h-100 bg-body text-body border-secondary">
                     <div class="card-body">
                         <p class="card-title">Bootstrapping</p>
                         <p class="card-description">Learn about bootstrap resampling while fitting the supermassive black hole M-sigma relation.</p>
@@ -579,7 +608,7 @@ document.write(`
             </div>
             
             <div class="col">
-                <a href="./exercises/yadavalli2024a/SN_Habitability.html" class="card h-100">
+                <a href="./exercises/yadavalli2024a/SN_Habitability.html" class="card h-100 bg-body text-body border-secondary">
                     <div class="card-body">
                         <p class="card-title">Rogue Planet Habitability</p>
                         <p class="card-description">Create a hypothetical galaxy and check whether a rogue planet could remain habitable via flux from nearby supernovae.</p>
@@ -593,7 +622,7 @@ document.write(`
             </div>
             
             <div class="col">
-                <a href="./exercises/bellinger2024a/trig-regression.html" class="card h-100">
+                <a href="./exercises/bellinger2024a/trig-regression.html" class="card h-100 bg-body text-body border-secondary">
                     <div class="card-body">
                         <p class="card-title">Trigonometric Regression</p>
                         <p class="card-description">Fit Cepheid star pulsations using trigonometric regression models.</p>
