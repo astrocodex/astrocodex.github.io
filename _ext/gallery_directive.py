@@ -48,38 +48,52 @@ class GalleryDirective(SphinxDirective):
     .gallery-search {
         margin-bottom: 20px;
     }
+
     .gallery-filters {
         margin-bottom: 20px;
     }
+
     .gallery-grid {
         margin-top: 20px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
     }
+
     .gallery-grid .col {
         padding: 10px;
         flex: 0 1 calc(33.333% - 5px);
         box-sizing: border-box;
     }
+
     .gallery-grid .card {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
         padding: 0px;
-        text-decoration: none; /* Ensure no underline for the link */
-        color: inherit; /* Inherit color to avoid link color */
+        text-decoration: none;
         transition: box-shadow 0.3s ease-in-out;
+        background-color: #ffffff;
+        color: #212529;
     }
+
+    html[data-theme="dark"] .gallery-grid .card {
+        background-color: #1e1e1e !important;
+        color: #f1f1f1 !important;
+        border: 1px solid #444 !important;
+    }
+
     .gallery-grid .card:hover {
-        text-decoration: none; /* Remove hover underline */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a drop shadow on hover */
+        text-decoration: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
+
     .card-body {
         padding: 10px;
-        flex-grow: 1; /* Ensure card body takes available space */
+        flex-grow: 1;
     }
+
     .card-title {
         margin-bottom: 10px;
         font-weight: bold;
@@ -87,6 +101,7 @@ class GalleryDirective(SphinxDirective):
         padding-top: 15px;
         padding-right: 15px;
     }
+
     .card-description {
         padding-left: 15px;
         padding-right: 15px;
@@ -99,31 +114,46 @@ class GalleryDirective(SphinxDirective):
         text-overflow: ellipsis;
         font-size: 0.7em;
     }
+
     .card-footer {
         padding-top: 2px;
         padding-bottom: 2px;
         padding-left: 5px;
-        margin-top: auto; /* Ensure footer is pushed to the bottom */
+        margin-top: auto;
         border-top: 1px solid #ddd;
-        background-color: #f9f9f9;
+        background-color: #f8f9fa;
+        color: inherit;
     }
+
+    html[data-theme="dark"] .gallery-grid .card-footer {
+        background-color: #2c2c2c !important;
+        border-top: 1px solid #444 !important;
+        color: #f1f1f1 !important;
+    }
+
     .card-text {
         margin-left: 5px;
-        padding: 5px 15px; /* Add padding to move tags inward */
+        padding: 5px 15px;
         display: flex;
         flex-wrap: wrap;
-        gap: 3px; /* Small gap between tags */
+        gap: 3px;
     }
+
     .card-text .badge {
         margin: 0px;
         margin-left: 5px;
-        background-color: #737272; /* Set your desired background color */
-        color: white; /* Set your desired text color */
+        background-color: #737272;
+        color: white;
     }
+    html[data-theme="dark"] ::placeholder {
+  color: #cccccc !important;
+  opacity: 1; /* necessary in some browsers */
+}
 </style>
-            """,
+    """,
             format="html",
         )
+
         gallery_node += style_node
 
         # Add gallery grid
@@ -143,14 +173,14 @@ class GalleryDirective(SphinxDirective):
             url = self.resolve_url(exercise["url"])
             card_html = f"""
             <div class="col">
-                <a href="{url}" class="card h-100">
+                <a href="{url}" class="card h-100 bg-body text-body border-secondary">
                     <div class="card-body">
-                        <p class="card-title">{exercise['title']}</p>
-                        <p class="card-description">{exercise.get('description', '')}</p>
+                        <p class="card-title">{exercise["title"]}</p>
+                        <p class="card-description">{exercise.get("description", "")}</p>
                     </div>
                     <div class="card-footer">
                         <div class="card-text">
-                            {''.join(f'<span class="badge">{tag}</span>' for tag in exercise['tags'])}
+                            {"".join(f'<span class="badge">{tag}</span>' for tag in exercise["tags"])}
                         </div>
                     </div>
                 </a>
