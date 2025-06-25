@@ -28,15 +28,15 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=b75f6b17" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8fb1fe15" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -104,8 +104,8 @@
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search..."
-         aria-label="Search..."
+         placeholder="Search this book..."
+         aria-label="Search this book..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -158,7 +158,7 @@
     
     
     <img src="../../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="../../_static/logo-inv.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
   
   
 </a></div>
@@ -175,6 +175,14 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Python Exercises Gallery</a></li>
@@ -244,6 +252,53 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexercises/cerny2025a/cosmological-parameters.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
 
 
 
@@ -369,11 +424,11 @@ document.write(`
 <h1>Exploring Cosmological Parameters with Functions<a class="headerlink" href="#exploring-cosmological-parameters-with-functions" title="Link to this heading">#</a></h1>
 <div class="author admonition">
 <p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0003-1697-7062">William Cerny</a>, <a class="reference external" href="https://orcid.org/0000-0002-8320-2198">Yasmeen Asali</a>, <a class="reference external" href="https://orcid.org/0000-0003-0965-605X">Pratik Gandhi</a> (Yale University)</p>
-<p><em>Description</em>: Estimate the expansion rate, age, and shape of the universe; practice with Python functions and array operations.</p>
+<p><em>Description</em>: Estimate the expansion rate, age, and shape of the universe with Python functions and array operations.</p>
 <p><em>Intended Audience</em>: Early Undergraduate</p>
 <p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">cosmology</span></code>, <code class="docutils literal notranslate"><span class="pre">basic-python</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">functions</span></code>, <code class="docutils literal notranslate"><span class="pre">f-strings</span></code></p>
 <p><em>Requirements</em>: <a class="reference download internal" download="" href="../../_downloads/3a1d41cd1118ed1adfde9f05f67aa5a0/requirements.txt"><span class="xref download myst">requirements.txt</span></a> (optional)</p>
-<p><em>Last Updated: May 9, 2025</em></p>
+<p><em>Last Updated: July 18, 2025</em></p>
 </div>
 <div class="learningobjective admonition">
 <p class="admonition-title">Learning Objectives</p>
@@ -391,21 +446,22 @@ document.write(`
 v = H_0 \times d
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(v\)</span> is is the recession velocity of a galaxy (in km/s), <span class="math notranslate nohighlight">\(H_0\)</span> is the Hubble constant (in km/s/Mpc; assume 70 km/s/Mpc), and <span class="math notranslate nohighlight">\(d\)</span> is the distance of the galaxy (in Mpc).  <span class="math notranslate nohighlight">\(H_0\)</span> is the present-day expansion rate of the universe. In general, we cannot measure direct distances to very distant galaxies, and so we measure the recessional velocity <span class="math notranslate nohighlight">\(v\)</span> and can use that to find <span class="math notranslate nohighlight">\(d\)</span>. The fact that this correlation exists is a consequence of the fact that <em>our universe is expanding</em>.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p class="rubric" id="exercise-1-cosmic-distances-with-hubble-s-law">Exercise 1: Cosmic Distances with Hubble’s Law</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 1</p>
+<div class="docutils container">
 <ol class="arabic simple">
 <li><p>Define a function <code class="docutils literal notranslate"><span class="pre">hubble_distance</span></code> to calculate the distance to a galaxy based on this formula. The function should take one required argument, the recessional velocity in km/s, and should return the distance to the galaxy in Megaparsecs (Mpc).</p></li>
 <li><p>Add the Hubble constant as an optional argument that takes a default value of 70 km/s/Mpc.</p></li>
-<li><p>Add a print statement of the form “Given a recessional velocity of [] and a Hubble constant of [], a galaxy’s distance would be []” (fill in the units here, and use f-strings to handle the values).</p></li>
+<li><p>Add a print statement of the form: <strong>Given a recessional velocity of [] and a Hubble constant of [], a galaxy’s distance would be []</strong> (fill in the units here, and use f-strings to handle the values).</p></li>
 <li><p>Verify your code by checking that you recover 20 Mpc as the distance for a galaxy moving at 1400 km/s, assuming the default <span class="math notranslate nohighlight">\(H_0\)</span> value.
 (for reference, 20 Mpc is in the local universe, and space telescopes like JWST can resolve individual stars in galaxies at this distance).</p></li>
 <li><p>Now, create an evenly-spaced array (hint: np.arange or np.linspace is your friend here!) of 20 recessional velocities called <strong>recess_vels</strong> in the range [1000,100000]. Using a loop, evaluate your function over each element. Store the results in a list.</p></li>
 <li><p><em>Without</em> using a loop, evaluate your function over <strong>recess_vels</strong>.</p></li>
 <li><p>The output from 6 just prints everything in a rather sloppy way. Go back and add another optional argument <strong>print_res</strong> that is a boolean defaulting to False. Using an if statement, make it so that the results statement only prints if this variable is set to True.</p></li>
-<li><p>Add type decorators to the inputs. See the Week 4 notes for a reminder if needed!</p></li>
+<li><p>Add type decorators to the inputs.</p></li>
 <li><p>Lastly, add a docstring detailing the purpose of the function, its arguments, and the return type.</p></li>
 </ol>
+</div>
 </div>
 <p>Questions 5-6 above get at a core concept in Python: <em>vectorization</em>. In Python, it will essentially always be faster to carry out an operation over a vector (array) simultaneously (part 5) as opposed to using a loop (part 4). This might not matter for small datasets but will become increasingly relevant as your dataset grows.</p>
 <p>Now we can make our approach even more sophisticated! We will now build subsequent functions that expand upon the one above. This incremental function-building is a core component of research, since you rarely write a single function that does everything you want.</p>
@@ -418,12 +474,12 @@ v = H_0 \times d
 <section id="background-the-age-of-the-universe">
 <h2>Background: The Age of the Universe<a class="headerlink" href="#background-the-age-of-the-universe" title="Link to this heading">#</a></h2>
 <p>Because the universe has been continuously expanding since the origin of the universe, the present-day expansion rate can be used to approximate the age of the universe. Put explicitly, the age of the universe can be estimated roughly as
-<span class="math notranslate nohighlight">\( t = \frac{1}{H_0}\)</span>
+<span class="math notranslate nohighlight">\( t = \frac{1}{H_0}\)</span>,
 but you need to be careful about units: you need to first convert <span class="math notranslate nohighlight">\(H_0\)</span> to units of inverse seconds for this to work.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p class="rubric" id="exercise-2-nested-functions">Exercise 2: Nested Functions</p>
-<p>In this exercise you will take galaxy distance and recession velocity data and use it to derive the density, age, and shape of the universe.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 2</p>
+<div class="docutils container">
+<p>In this exercise, you will take galaxy distance and recession velocity data and use it to derive the density, age, and shape of the universe.</p>
 <ol class="arabic simple">
 <li><p>Write a function <strong>get_hubble_constant</strong> which takes in an array of galaxy distances in Mpc and an array of recessional velocities in km/s. Compute <span class="math notranslate nohighlight">\(H_0\)</span> for each element and then return a single average. Don’t use loops for anything in this exercise!</p></li>
 <li><p>Write a function <strong>get_critical_density</strong> that computes the critical density according to the above formula, with only a single argument of <span class="math notranslate nohighlight">\(H_0\)</span>. Determine and print the “shape” of the universe (open, closed, flat) by comparing against a model where the Hubble constant is fixed to <span class="math notranslate nohighlight">\(H_0 = 73\)</span> km/s/Mpc (which is realistic, and we think we live in a flat universe).</p></li>
@@ -431,6 +487,7 @@ but you need to be careful about units: you need to first convert <span class="m
 <li><p>Write a function <strong>cosmology_solver</strong> that wraps all of the three functions, i.e., it calculates the critical density, shape, and age of the universe. Specifically, it should take the same inputs as <strong>get_hubble_constant</strong>. Within <strong>cosmology_solver</strong>, you should run each of the functions you created above such that you can figure out the properties of the univese for a given dataset of galaxy distances/recession velocities. Print the critical density.</p></li>
 <li><p>Test your complete cosmology solver with the following data: distances: [45,100,200,400] Mpc and velocities [3400, 7600, 15200, 31800] km/s. What kind of univese do you end up with? Is it older or younger than our <span class="math notranslate nohighlight">\(H_0 = 70\)</span>ish universe?</p></li>
 </ol>
+</div>
 </div>
 </section>
 </section>

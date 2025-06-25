@@ -28,15 +28,15 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=b75f6b17" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8fb1fe15" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -104,8 +104,8 @@
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search..."
-         aria-label="Search..."
+         placeholder="Search this book..."
+         aria-label="Search this book..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -158,7 +158,7 @@
     
     
     <img src="../../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="../../_static/logo-inv.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
   
   
 </a></div>
@@ -175,6 +175,14 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Python Exercises Gallery</a></li>
@@ -244,6 +252,53 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexercises/cerny2024b/exoplanet-diversity.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
 
 
 
@@ -369,11 +424,11 @@ document.write(`
 <h1>Exploring the Diversity of Known Exoplanets<a class="headerlink" href="#exploring-the-diversity-of-known-exoplanets" title="Link to this heading">#</a></h1>
 <div class="author admonition">
 <p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0003-1697-7062">William Cerny</a>, <a class="reference external" href="https://orcid.org/0000-0002-7075-9931">Imad Pasha</a>, <a class="reference external" href="https://orcid.org/0000-0002-8320-2198">Yasmeen Asali</a>, <a class="reference external" href="https://orcid.org/0000-0002-9986-4604">Sebastian Monzon</a> (Yale University)</p>
-<p><em>Description</em>: Using the Stefan-Boltzmann law to infer the properties of stars; practice with basic python and data types.</p>
+<p><em>Description</em>: Learn how to manipulate pandas dataframes to create a plot of exoplanets discovered and their detection method with matplotlib</p>
 <p><em>Intended Audience</em>: Early Undergraduate</p>
-<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">exoplanets</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p>
+<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">exoplanets</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></p>
 <p><em>Requirements</em>: <a class="reference download internal" download="" href="../../_downloads/57ef5323576b2ebe401dabcf2c9b3272/requirements.txt"><span class="xref download myst">requirements.txt</span></a></p>
-<p><em>Last Updated: August 9, 2024</em></p>
+<p><em>Last Updated: July 18, 2025</em></p>
 </div>
 <div class="learningobjective admonition">
 <p class="admonition-title">Learning Objectives</p>
@@ -398,8 +453,8 @@ document.write(`
 <li><p><strong>Microlensing</strong>: Exoplanets can be detected through gravitational microlensing, where the gravitational field of a foreground star bends and magnifies the light of a background star as well as any orbiting planets. The presence of an exoplanet around the foreground star can be inferred from the temporary increase in brightness observed during the microlensing event.</p></li>
 <li><p><strong>Transit Timing Variations (TTV)</strong>: Exoplanets can be inferred through TTVs by measuring the variations in the timing of transit events caused by gravitational interactions between multiple planets within a system. These deviations from the expected transit times provide information about the masses and orbits of the interacting planets.</p></li>
 </ol>
-<p>In addition to these four, there are a number of other methods of detecting planets (such as direct imaging)!</p>
-<p>It is common to plot detected exoplanets in the space of mass vs. orbital separation. Here, we show one such plot, colored by the detection technique used to detect the planet (follow-up observations may have been needed to compute mass or separation).</p>
+<p>In addition to these four, there are a number of other methods of detecting planets (such as direct imaging and astrometry)!</p>
+<p>It is common to plot detected exoplanets in the space of mass vs. orbital separation. Here, we show one such plot from Eberhardt et al. (2022), colored by the detection technique used to detect the planet (follow-up observations may have been needed to compute mass or separation).</p>
 <p><img alt="" src="../../_images/Mass-separation-plot-for-known-exoplanets-color-coded-according-to-their-detection.png" /></p>
 <p>The x-axis of this figure shows the mass of the planet on a log scale, typically measured in Jupiter masses (where 1 Jupiter mass equals approximately <span class="math notranslate nohighlight">\(1.898 \times 10^{27}\)</span> kg). The y-axis, also on a log scale, represents the planet-star separation, often expressed in astronomical units (AU), with 1 AU equivalent to the average distance between the Earth and the Sun (approximately 149.6 million kilometers). Each data point plotted signifies an individual exoplanet.</p>
 <div class="tip dropdown admonition">

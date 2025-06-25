@@ -28,15 +28,15 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=b75f6b17" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8fb1fe15" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -104,8 +104,8 @@
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search..."
-         aria-label="Search..."
+         placeholder="Search this book..."
+         aria-label="Search this book..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -158,7 +158,7 @@
     
     
     <img src="../../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="../../_static/logo-inv.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
   
   
 </a></div>
@@ -175,6 +175,14 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Python Exercises Gallery</a></li>
@@ -244,6 +252,53 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexercises/cerny2024a/stefan-boltzmann.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
 
 
 
@@ -371,11 +426,11 @@ document.write(`
 <h1>Stellar Luminosities from the Stefan-Boltzmann Equation<a class="headerlink" href="#stellar-luminosities-from-the-stefan-boltzmann-equation" title="Link to this heading">#</a></h1>
 <div class="author admonition">
 <p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0003-1697-7062">William Cerny</a>, <a class="reference external" href="https://orcid.org/0000-0002-7075-9931">Imad Pasha</a>, <a class="reference external" href="https://orcid.org/0000-0002-8320-2198">Yasmeen Asali</a>, <a class="reference external" href="https://orcid.org/0000-0002-9986-4604">Sebastian Monzon</a> (Yale University)</p>
-<p><em>Description</em>: Using the Stefan-Boltzmann law to infer the properties of stars; practice with basic python and data types.</p>
+<p><em>Description</em>: Practice with basic python and data types by inferring the properties of stars with the Stefan-Boltzmann law</p>
 <p><em>Intended Audience</em>: Early Undergraduate</p>
 <p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">stefan-boltzmann</span></code>, <code class="docutils literal notranslate"><span class="pre">basic-python</span></code>, <code class="docutils literal notranslate"><span class="pre">lists</span></code></p>
 <p><em>Requirements</em>: <a class="reference download internal" download="" href="../../_downloads/57e4f59736e8e6dd87082081368adb06/requirements.txt"><span class="xref download myst">requirements.txt</span></a> (optional)</p>
-<p><em>Last Updated: August 9, 2024</em></p>
+<p><em>Last Updated: July 18, 2025</em></p>
 </div>
 <div class="learningobjective admonition">
 <p class="admonition-title">Learning Objectives</p>
@@ -388,10 +443,13 @@ document.write(`
 </div>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>Stars, to zeroth order, can be considered spherically-symmetric blackbodies. Under those conditions, their luminosities can be computed via the Stefan-Boltzmann law</p>
-<p>$<span class="math notranslate nohighlight">\( L = 4\pi R^2 \sigma T^4\)</span>$,</p>
+<p>Stars, to zeroth order, can be considered spherically-symmetric blackbodies. Under those conditions, their luminosities can be computed via the Stefan-Boltzmann law:</p>
+<div class="math notranslate nohighlight">
+\[
+L = 4\pi R^2 \sigma T^4
+\]</div>
 <p>where <span class="math notranslate nohighlight">\(R\)</span> is the radius, <span class="math notranslate nohighlight">\(T\)</span> is the effective temperature of the star, and <span class="math notranslate nohighlight">\(\sigma\)</span> is the Stefan-Boltzmann constant, <span class="math notranslate nohighlight">\(\sigma = 5.67 * 10^{-8} \rm \ W/m^{2}/K^{4}\)</span>.</p>
-<p>The goal of this exercise is to implement this in Python, i.e., write a code to calculate the luminosity (<span class="math notranslate nohighlight">\(L\)</span>) of a star according to the formula described above.</p>
+<p>The goal of this exercise is to write a code in Python to calculate the luminosity (<span class="math notranslate nohighlight">\(L\)</span>) of a star according to the formula described above.</p>
 </section>
 <section id="basic-scripting">
 <h2>Basic Scripting<a class="headerlink" href="#basic-scripting" title="Link to this heading">#</a></h2>
@@ -400,11 +458,14 @@ document.write(`
 <p class="admonition-title">Exercise 1</p>
 <div class="docutils container">
 <ol class="arabic simple">
-<li><p>Create a new python script, e.g., <code class="docutils literal notranslate"><span class="pre">SB.py</span></code> and open it in an editor.</p></li>
-<li><p>Within <a class="reference external" href="http://SB.py">SB.py</a>, define a unique variable for each of <span class="math notranslate nohighlight">\(\pi\)</span>, <span class="math notranslate nohighlight">\(\sigma\)</span>, <span class="math notranslate nohighlight">\(R\)</span>, and <span class="math notranslate nohighlight">\(T\)</span>. For now, assume <span class="math notranslate nohighlight">\(\pi = 3.14\)</span>, <span class="math notranslate nohighlight">\(R = 7 * 10^8\)</span> meters and <span class="math notranslate nohighlight">\(T = 5776\)</span> K.  You can assume the units work out (and therefore you can ignore them in Python).</p></li>
+<li><p>Create a new python script (e.g., <code class="docutils literal notranslate"><span class="pre">SB.py</span></code>) and open it in an editor.</p></li>
+<li><p>Within <code class="docutils literal notranslate"><span class="pre">SB.py</span></code>, define a unique variable for each of <span class="math notranslate nohighlight">\(\pi\)</span>, <span class="math notranslate nohighlight">\(\sigma\)</span>, <span class="math notranslate nohighlight">\(R\)</span>, and <span class="math notranslate nohighlight">\(T\)</span>. For now, assume <span class="math notranslate nohighlight">\(\pi = 3.14\)</span>, <span class="math notranslate nohighlight">\(R = 7 * 10^8\)</span> meters and <span class="math notranslate nohighlight">\(T = 5776\)</span> K.  You can assume the units work out (and therefore you can ignore them in your Python code).</p></li>
 <li><p>Using basic mathematical operations, compute the value of <span class="math notranslate nohighlight">\(L\)</span> according to the formula above and using the variables you just defined. Store the result in a new variable.</p></li>
 </ol>
-<p><em>Hint: powers in python are implemented via the <code class="docutils literal notranslate"><span class="pre">**</span></code> operator, e.g., <code class="docutils literal notranslate"><span class="pre">6**2</span> <span class="pre">=</span> <span class="pre">36</span></code></em></p>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Powers in python are implemented via the <code class="docutils literal notranslate"><span class="pre">**</span></code> operator, e.g., <code class="docutils literal notranslate"><span class="pre">6**2</span> <span class="pre">=</span> <span class="pre">36</span></code>.</p>
+</div>
 </div>
 </div>
 <div class="dropdown exercise admonition">
@@ -430,12 +491,12 @@ document.write(`
 <div class="docutils container">
 <ol class="arabic simple">
 <li><p>Use the python built-in <code class="docutils literal notranslate"><span class="pre">input()</span></code> function to allow users (i.e., you) to provide the values in the terminal at runtime. This function will parse the input as the <code class="docutils literal notranslate"><span class="pre">string</span></code> datatype, so you will need to use the <code class="docutils literal notranslate"><span class="pre">int()</span></code> or <code class="docutils literal notranslate"><span class="pre">float()</span></code> functions to turn the inputs into “numbers” that can be plugged into your formula.</p></li>
-<li><p>Implement a comparison to the solar luminosity within your code and store the result a new <code class="docutils literal notranslate"><span class="pre">boolean</span></code> (True/False) variable called <code class="docutils literal notranslate"><span class="pre">is_supersolar</span></code>. Then extend your <code class="docutils literal notranslate"><span class="pre">f-string</span></code> above to print whether the star is (or is not) more luminous than the Sun. The output should look like: <strong>The luminosity of a star with effective temperature [value of T] and radius [value of R] is [value of L]. It is [value of supersolar] that this is more luminous than the Sun.</strong></p></li>
+<li><p>Implement a comparison to the solar luminosity within your code and store the result as a new <code class="docutils literal notranslate"><span class="pre">boolean</span></code> (True/False) variable called <code class="docutils literal notranslate"><span class="pre">is_supersolar</span></code>. Then extend your <code class="docutils literal notranslate"><span class="pre">f-string</span></code> above to print whether the star is (or is not) more luminous than the Sun. The output should look like: <strong>The luminosity of a star with effective temperature [value of T] and radius [value of R] is [value of L]. It is [output of is_supersolar] that this is more luminous than the Sun.</strong></p></li>
 </ol>
 <p>Bonus: If you know how to use an <code class="docutils literal notranslate"><span class="pre">if-statement</span></code>, you could use one to simply adjust the second line of text to something more natural in either case.</p>
 <ol class="arabic simple" start="3">
 <li><p>Run your script, entering the values we used above, and make sure your code works. Try out different input values for <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(R\)</span> to show how the luminosity is affected.</p></li>
-<li><p>For the chosen input temperature <span class="math notranslate nohighlight">\(T\)</span>, what radius <span class="math notranslate nohighlight">\(R\)</span> would be needed to end up with a luminosity <span class="math notranslate nohighlight">\(10	imes\)</span> greater than that of the sun? You can find this with some trial and error.</p></li>
+<li><p>For the chosen input temperature <span class="math notranslate nohighlight">\(T\)</span>, what radius <span class="math notranslate nohighlight">\(R\)</span> would be needed to end up with a luminosity 10 <span class="math notranslate nohighlight">\(times\)</span> greater than that of the Sun? You can find this with some trial and error.</p></li>
 </ol>
 </div>
 </div>
@@ -447,11 +508,11 @@ document.write(`
 <section id="fun-with-units-bonus">
 <h2>Fun with Units  (Bonus)<a class="headerlink" href="#fun-with-units-bonus" title="Link to this heading">#</a></h2>
 <p>In this bonus exercise, we’ll use the <code class="docutils literal notranslate"><span class="pre">astropy</span></code> library to handle units more elegantly. The <code class="docutils literal notranslate"><span class="pre">astropy.units</span></code> module, which we typically import as</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">astropy.units</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span> 
 </pre></div>
 </div>
 <p>is very useful for handling unit conversions. Meanwhile, the <code class="docutils literal notranslate"><span class="pre">astropy.constants</span></code> library, e.g.,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">astropy.constants</span> <span class="k">as</span> <span class="nn">ac</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">astropy.constants</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ac</span> 
 </pre></div>
 </div>
 <p>provides most constants used in physics and astronomy. You can attach units to a value by multiplying:</p>
@@ -484,7 +545,7 @@ document.write(`
 <p class="admonition-title">Exercise 5</p>
 <div class="docutils container">
 <ol class="arabic simple">
-<li><p>Create a new script called star_calcs.py.</p></li>
+<li><p>Create a new script called <code class="docutils literal notranslate"><span class="pre">star_calcs.py</span></code>.</p></li>
 <li><p>Using indexing, figure out: what is the name of the tenth star in this list? Store the <em>index</em> in a variable.</p></li>
 <li><p>Using the stored index, isolate the temperature of the star by accessing the appropriate element of the second list.</p></li>
 <li><p>Repeat step 2 for the radius.</p></li>
