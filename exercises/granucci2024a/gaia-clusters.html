@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Exploring Gaia Star Clusters &#8212; My sample book</title>
+    <title>Gaia Star Clusters &#8212; My sample book</title>
   
   
   
@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -44,7 +44,7 @@
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -64,7 +64,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/granucci2024a/gaia-clusters';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Measuring The Sizes of HII Regions" href="../pasha2024b/hii-regions.html" />
+    <link rel="next" title="The Sizes of HII Regions" href="../pasha2024b/hii-regions.html" />
     <link rel="prev" title="Stellar Temperatures from Spectra" href="../lester2024a/stellar_spectrum.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -190,10 +190,10 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level II</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../lester2024a/stellar_spectrum.html">Stellar Temperatures from Spectra</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exploring Gaia Star Clusters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">Measuring The Sizes of HII Regions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Gaia Star Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">The Sizes of HII Regions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sunseri2024a/Data_Parallelism_Part_1.html">Introduction to Data Parallelism</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../asali2024a/bootstrapping.html">Estimating Uncertainty in the Black Hole Mass–Velocity Dispersion Relation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asali2024a/bootstrapping.html">Bootstrapping the M-<span class="math notranslate nohighlight">\(\sigma\)</span> relation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level III</span></p>
 <ul class="nav bd-sidenav">
@@ -341,7 +341,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exploring Gaia Star Clusters</h1>
+    <h1>Gaia Star Clusters</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -379,23 +379,24 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="exploring-gaia-star-clusters">
-<h1>Exploring Gaia Star Clusters<a class="headerlink" href="#exploring-gaia-star-clusters" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="gaia-star-clusters">
+<h1>Gaia Star Clusters<a class="headerlink" href="#gaia-star-clusters" title="Link to this heading">#</a></h1>
 <div class="author admonition">
 <p class="admonition-title">Nicole Granucci, Kalee Tock, Reed Fu, Daryl Janzen, David Harris, Michael Fitzgerald</p>
 <p><em>Description</em>: Exercises for using code to visually understand star clusters and extract archival data from surveys.</p>
 <p><em>Intended Audience</em>: Beginner to Intermediate Undergraduate</p>
-<p><em>Tags</em>: <code class="docutils literal notranslate"><span class="pre">star-clusters</span></code>, <code class="docutils literal notranslate"><span class="pre">gaia</span></code>, <code class="docutils literal notranslate"><span class="pre">astroquery</span></code></p>
-<p><em>Requirements</em>: <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">astroquery</span></code>, <code class="docutils literal notranslate"><span class="pre">astropy</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> (<a class="reference download internal" download="" href="../../_downloads/624c8a0ef0e534ea6ce5d8b02be07232/requirements.txt"><span class="xref download myst">requirements.txt</span></a>)</p>
+<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">star-clusters</span></code>, <code class="docutils literal notranslate"><span class="pre">gaia</span></code>,<code class="docutils literal notranslate"><span class="pre">astroquery</span></code>,<code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></p>
+<p><em>Requirements</em>: <a class="reference download internal" download="" href="../../_downloads/624c8a0ef0e534ea6ce5d8b02be07232/requirements.txt"><span class="xref download myst">requirements.txt</span></a></p>
 <p><em>Last Updated: July 24, 2024</em></p>
 </div>
 <div class="learningobjective admonition">
 <p class="admonition-title">Learning Objectives</p>
 <ol class="arabic simple">
-<li><p>Query the Gaia Data Release 3 Database, which is a starting point for many investigations in modern astronomy</p></li>
-<li><p>Interrogate the dataset to look for values that are missing, duplicated, or unreasonable. This is an important step not only for astronomical data, but for any large data set</p></li>
-<li><p>Construct a color-magnitude diagram of stars in the starield.</p></li>
-<li><p>Identify cluster members with proper motions.</p></li>
+<li><p><strong>Query</strong> the Gaia Data Release 3 Database, which is a starting point for many investigations in modern astronomy</p></li>
+<li><p><strong>Interrogate</strong> the dataset to look for values that are missing, duplicated, or unreasonable. This is an important step not only for astronomical data, but for any large data set</p></li>
+<li><p><strong>Visualize</strong> data using matplotlib, a common astronomical plotting software.</p></li>
+<li><p><strong>Construct</strong> a color-magnitude diagram of stars in the starield.</p></li>
+<li><p><strong>Identify</strong> cluster members with proper motions.</p></li>
 </ol>
 </div>
 <section id="prerequisites">
@@ -598,7 +599,7 @@ def interactive_display_astropy_table(astropy_table):
 <li><p>Describe the cluster member motion.</p></li>
 <li><p>Describe your reactions to this animation. Did you expect this result or did the result surprise you and why?</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_cluster_dynamic</span><span class="p">(</span><span class="n">_table</span><span class="p">,</span> <span class="n">_cluster_table</span><span class="p">,</span> <span class="n">_field_table</span><span class="p">,</span> <span class="n">_mf</span><span class="p">,</span> <span class="n">_speed</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_cluster_dynamic</span><span class="p">(</span><span class="n">_table</span><span class="p">,</span> <span class="n">_cluster_table</span><span class="p">,</span> <span class="n">_field_table</span><span class="p">,</span> <span class="n">_mf</span><span class="p">,</span> <span class="n">_speed</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Plot the cluster dynamically based on the proper motion.</span>
 
@@ -645,7 +646,7 @@ def interactive_display_astropy_table(astropy_table):
     <span class="n">_delta_dec_field</span> <span class="o">=</span> <span class="n">_field_table</span><span class="p">[</span><span class="s2">&quot;pmdec&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">_pm_factor</span> <span class="o">*</span> <span class="n">_speed</span>
 
     <span class="c1"># Update function for the animation</span>
-    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">_i</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">_i</span><span class="p">):</span>
         <span class="k">nonlocal</span> <span class="n">cluster_ra</span><span class="p">,</span> <span class="n">cluster_dec</span><span class="p">,</span> <span class="n">field_ra</span><span class="p">,</span> <span class="n">field_dec</span><span class="p">,</span> <span class="n">ax</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">_min_plot_ra</span><span class="p">,</span> <span class="n">_max_plot_ra</span><span class="p">)</span>
@@ -746,7 +747,7 @@ def interactive_display_astropy_table(astropy_table):
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Measuring The Sizes of HII Regions</p>
+        <p class="prev-next-title">The Sizes of HII Regions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -44,7 +44,7 @@
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -190,10 +190,10 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level II</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../lester2024a/stellar_spectrum.html">Stellar Temperatures from Spectra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Exploring Gaia Star Clusters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">Measuring The Sizes of HII Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Gaia Star Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">The Sizes of HII Regions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sunseri2024a/Data_Parallelism_Part_1.html">Introduction to Data Parallelism</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../asali2024a/bootstrapping.html">Estimating Uncertainty in the Black Hole Mass–Velocity Dispersion Relation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asali2024a/bootstrapping.html">Bootstrapping the M-<span class="math notranslate nohighlight">\(\sigma\)</span> relation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level III</span></p>
 <ul class="nav bd-sidenav">
@@ -371,19 +371,20 @@ document.write(`
 <h1>Stellar Luminosities from the Stefan-Boltzmann Equation<a class="headerlink" href="#stellar-luminosities-from-the-stefan-boltzmann-equation" title="Link to this heading">#</a></h1>
 <div class="author admonition">
 <p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0003-1697-7062">William Cerny</a>, <a class="reference external" href="https://orcid.org/0000-0002-7075-9931">Imad Pasha</a>, <a class="reference external" href="https://orcid.org/0000-0002-8320-2198">Yasmeen Asali</a>, <a class="reference external" href="https://orcid.org/0000-0002-9986-4604">Sebastian Monzon</a> (Yale University)</p>
-<p><em>Description</em>: Practice with basic python and data types by inferring the properties of stars with the Stefan-Boltzmann law</p>
+<p><em>Description</em>: Practice with basic Python and data types, with bonus astropy exercises, by inferring the properties of stars with the Stefan-Boltzmann Law.</p>
 <p><em>Intended Audience</em>: Early Undergraduate</p>
-<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">stefan-boltzmann</span></code>, <code class="docutils literal notranslate"><span class="pre">basic-python</span></code>, <code class="docutils literal notranslate"><span class="pre">lists</span></code></p>
-<p><em>Requirements</em>: <a class="reference download internal" download="" href="../../_downloads/57e4f59736e8e6dd87082081368adb06/requirements.txt"><span class="xref download myst">requirements.txt</span></a> (optional)</p>
-<p><em>Last Updated: July 18, 2025</em></p>
+<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">astropy-constants</span></code>, <code class="docutils literal notranslate"><span class="pre">astropy-units</span></code>, <code class="docutils literal notranslate"><span class="pre">basic-python</span></code>, <code class="docutils literal notranslate"><span class="pre">f-strings</span></code>,<code class="docutils literal notranslate"><span class="pre">lists</span></code>, <code class="docutils literal notranslate"><span class="pre">stefan-boltzmann</span></code></p>
+<p><em>Requirements</em>: <code class="docutils literal notranslate"><span class="pre">astropy</span></code> (<a class="reference download internal" download="" href="../../_downloads/57e4f59736e8e6dd87082081368adb06/requirements.txt"><span class="xref download myst">requirements.txt</span></a>) (optional)</p>
+<p><em>Last Updated: July 28, 2025</em></p>
 </div>
 <div class="learningobjective admonition">
 <p class="admonition-title">Learning Objectives</p>
 <ol class="arabic simple">
 <li><p>Understand how to perform operations on Python variables to carry out computations.</p></li>
-<li><p>Understand different data types and how to convert between them when needed.</p></li>
-<li><p>Be able to write, save, and run a basic Python script.</p></li>
-<li><p>Enable user input to a script for dynamic calculations.</p></li>
+<li><p>Write, save, and execute Python script with hard-coded and dynamic variables.</p></li>
+<li><p>Apply the Stefan-Boltzmann Law to stellar data, a common exercise in introductory astronomy courses.</p></li>
+<li><p>Use list indexing to set variables as an introduction to working with datasets.</p></li>
+<li><p>Format f-strings with specified significant figures.</p></li>
 </ol>
 </div>
 <section id="introduction">
@@ -453,11 +454,11 @@ L = 4\pi R^2 \sigma T^4
 <section id="fun-with-units-bonus">
 <h2>Fun with Units  (Bonus)<a class="headerlink" href="#fun-with-units-bonus" title="Link to this heading">#</a></h2>
 <p>In this bonus exercise, we’ll use the <code class="docutils literal notranslate"><span class="pre">astropy</span></code> library to handle units more elegantly. The <code class="docutils literal notranslate"><span class="pre">astropy.units</span></code> module, which we typically import as</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">astropy.units</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span> 
 </pre></div>
 </div>
 <p>is very useful for handling unit conversions. Meanwhile, the <code class="docutils literal notranslate"><span class="pre">astropy.constants</span></code> library, e.g.,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">astropy.constants</span> <span class="k">as</span> <span class="nn">ac</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">astropy.constants</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ac</span> 
 </pre></div>
 </div>
 <p>provides most constants used in physics and astronomy. You can attach units to a value by multiplying:</p>

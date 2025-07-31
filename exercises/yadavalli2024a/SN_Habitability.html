@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -44,7 +44,7 @@
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -65,7 +65,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Trigonometric Regression" href="../bellinger2024a/trig-regression.html" />
-    <link rel="prev" title="Estimating Uncertainty in the Black Hole Mass–Velocity Dispersion Relation" href="../asali2024a/bootstrapping.html" />
+    <link rel="prev" title="Bootstrapping the M-\(\sigma\) relation" href="../asali2024a/bootstrapping.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -190,10 +190,10 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level II</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../lester2024a/stellar_spectrum.html">Stellar Temperatures from Spectra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Exploring Gaia Star Clusters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">Measuring The Sizes of HII Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Gaia Star Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">The Sizes of HII Regions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sunseri2024a/Data_Parallelism_Part_1.html">Introduction to Data Parallelism</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../asali2024a/bootstrapping.html">Estimating Uncertainty in the Black Hole Mass–Velocity Dispersion Relation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asali2024a/bootstrapping.html">Bootstrapping the M-<span class="math notranslate nohighlight">\(\sigma\)</span> relation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level III</span></p>
 <ul class="current nav bd-sidenav">
@@ -372,16 +372,17 @@ document.write(`
 <p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0002-0840-6940">S. Karthik Yadavalli</a> (Harvard University)</p>
 <p><em>Description</em>: Investigate whether a rogue planet could receive habitable levels of energy flux from galactic supernovae</p>
 <p><em>Intended Audience</em>: Intermediate to Advanced Undergraduate</p>
-<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">libraries:numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">sampling-positions</span></code>, <code class="docutils literal notranslate"><span class="pre">supernovae</span></code>, <code class="docutils literal notranslate"><span class="pre">habitability</span></code>, <code class="docutils literal notranslate"><span class="pre">planets</span></code></p>
-<p><em>Requirements</em>: <a class="reference download internal" download="" href="../../_downloads/58ef06171353b9fd24a16722c0a7a614/requirements.txt"><span class="xref download myst">requirements.txt</span></a></p>
-<p><em>Last Updated: July 18, 2025</em></p>
+<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">exoplanets</span></code>, <code class="docutils literal notranslate"><span class="pre">functions</span></code>, <code class="docutils literal notranslate"><span class="pre">sampling-positions</span></code>, <code class="docutils literal notranslate"><span class="pre">supernovae</span></code>, <code class="docutils literal notranslate"><span class="pre">habitability</span></code></p>
+<p><em>Requirements</em>: <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> (<a class="reference download internal" download="" href="../../_downloads/58ef06171353b9fd24a16722c0a7a614/requirements.txt"><span class="xref download myst">requirements.txt</span></a>)</p>
+<p><em>Last Updated: July 28, 2025</em></p>
 </div>
 <div class="learningobjective admonition">
 <p class="admonition-title">Learning Objectives</p>
 <ol class="arabic simple">
+<li><p>Test theoretical scenarios through random sampling.</p></li>
+<li><p>Utilize helper functions alongside main functions.</p></li>
 <li><p>Learn how to uniformly sample coordinate locations from a cylindrical coordinate space.</p></li>
-<li><p>Successfully calculate distances in cylindrical coordinates.</p></li>
-<li><p>Be able to calculate flux from luminosity and use it to determine the habitability of a given coordinate, assuming a uniform distribution of SNe explosions.</p></li>
+<li><p>Determine flux from luminosity and use it to determine the habitability of a given coordinate, assuming a uniform distribution of SNe explosion.</p></li>
 </ol>
 </div>
 <section id="introduction">
@@ -402,9 +403,9 @@ document.write(`
 <p>We’ll start by importing some packages we will need.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 </pre></div>
 </div>
 </div>
@@ -417,7 +418,7 @@ document.write(`
 <ol class="arabic simple">
 <li><p>Modify the function below such that it samples randomly radii and heights in the disk, which when paired with the <span class="math notranslate nohighlight">\(\theta\)</span>’s being sampled around will produce many random locations.</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_random_locs</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span> <span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">10000</span><span class="p">)):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_random_locs</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span> <span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">10000</span><span class="p">)):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    This should return a 2d array, where the shape is (N, 3). As in,</span>
 <span class="sd">    there should be N rows, with each row showing one random location. Each row should have 3 columns showing the r, theta, and z value</span>
@@ -482,7 +483,7 @@ document.write(`
 <li><p>Finally, return the variable <code class="docutils literal notranslate"><span class="pre">planet_fluxes</span></code> so we can make a histogram with how much flux each planet receives.</p></li>
 </ol>
 <p>A scaffold for this function is provided below.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_galaxy</span><span class="p">():</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">create_galaxy</span><span class="p">():</span>
     <span class="c1">#step 1</span>
     <span class="n">n_sne_kpc3</span> <span class="o">=</span> <span class="o">...</span> <span class="c1">#The number of supernovae going off per cubic kiloparsec</span>
     
@@ -594,7 +595,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Estimating Uncertainty in the Black Hole Mass–Velocity Dispersion Relation</p>
+        <p class="prev-next-title">Bootstrapping the M-<span class="math notranslate nohighlight">\(\sigma\)</span> relation</p>
       </div>
     </a>
     <a class="right-next"

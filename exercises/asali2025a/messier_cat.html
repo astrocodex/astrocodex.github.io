@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -44,7 +44,7 @@
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -188,10 +188,10 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level II</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../lester2024a/stellar_spectrum.html">Stellar Temperatures from Spectra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Exploring Gaia Star Clusters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">Measuring The Sizes of HII Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Gaia Star Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">The Sizes of HII Regions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sunseri2024a/Data_Parallelism_Part_1.html">Introduction to Data Parallelism</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../asali2024a/bootstrapping.html">Estimating Uncertainty in the Black Hole Mass–Velocity Dispersion Relation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asali2024a/bootstrapping.html">Bootstrapping the M-<span class="math notranslate nohighlight">\(\sigma\)</span> relation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level III</span></p>
 <ul class="nav bd-sidenav">
@@ -365,17 +365,18 @@ document.write(`
 <h1>Analyze the Messier Catalog<a class="headerlink" href="#analyze-the-messier-catalog" title="Link to this heading">#</a></h1>
 <div class="author admonition">
 <p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0002-8320-2198">Yasmeen Asali</a>, <a class="reference external" href="https://orcid.org/0000-0003-1697-7062">William Cerny</a>, <a class="reference external" href="https://orcid.org/0000-0003-0965-605X">Pratik Gandhi</a> (Yale University)</p>
-<p><em>Description</em>: Use the Messier catalog to practice using for loops and and logic</p>
+<p><em>Description</em>: Use the Messier catalog to practice using for loops and logic to examine large datasets.</p>
 <p><em>Intended Audience</em>: Beginner Undergraduate</p>
-<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">libraries:numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">loops</span></code>, <code class="docutils literal notranslate"><span class="pre">program-flow</span></code>, <code class="docutils literal notranslate"><span class="pre">logic</span></code></p>
-<p><em>Requirements</em>: <a class="reference download internal" download="" href="../../_downloads/3b937131d51a8e081064e8f6c691da65/requirements.txt"><span class="xref download myst">requirements.txt</span></a></p>
-<p><em>Last Updated: July 18, 2025</em></p>
+<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">for-loops</span></code>, <code class="docutils literal notranslate"><span class="pre">program-flow</span></code>, <code class="docutils literal notranslate"><span class="pre">logic</span></code></p>
+<p><em>Requirements</em>:  <code class="docutils literal notranslate"><span class="pre">numpy</span></code> (<a class="reference download internal" download="" href="../../_downloads/3b937131d51a8e081064e8f6c691da65/requirements.txt"><span class="xref download myst">requirements.txt</span></a>)</p>
+<p><em>Last Updated: July 28, 2025</em></p>
 </div>
 <div class="learningobjective admonition">
 <p class="admonition-title">Learning Objectives</p>
 <ol class="arabic simple">
-<li><p>Understand the structure of 2D arrays and how to access data.</p></li>
-<li><p>Practice using logic to downselect rows from an array and practice using for loops to iterate through objects.</p></li>
+<li><p>Access data within 2D numpy arrays.</p></li>
+<li><p>Use logic to down-select rows from an array and for loops to iterate through objects, a skill for selecting needed information from a dataset.</p></li>
+<li><p>Practice open data exploration by examining the objects in the Messier Catalog.</p></li>
 </ol>
 </div>
 <p>In this assignment, you will practice using logic and loops using a dataset of objects from the <a class="reference external" href="https://en.wikipedia.org/wiki/Messier_object">Messier Catalog</a>. The dataset includes basic information about each object, such as its type, magnitude, distance, constellation, and best viewing season. Your tasks will involve reading in the data, analyzing it, and using <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, logic, and loops to answer questions about it!</p>

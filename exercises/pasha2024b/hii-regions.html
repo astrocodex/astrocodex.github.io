@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Measuring The Sizes of HII Regions &#8212; My sample book</title>
+    <title>The Sizes of HII Regions &#8212; My sample book</title>
   
   
   
@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -44,7 +44,7 @@
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -65,7 +65,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Introduction to Data Parallelism" href="../sunseri2024a/Data_Parallelism_Part_1.html" />
-    <link rel="prev" title="Exploring Gaia Star Clusters" href="../granucci2024a/gaia-clusters.html" />
+    <link rel="prev" title="Gaia Star Clusters" href="../granucci2024a/gaia-clusters.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -190,10 +190,10 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level II</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../lester2024a/stellar_spectrum.html">Stellar Temperatures from Spectra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Exploring Gaia Star Clusters</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Measuring The Sizes of HII Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Gaia Star Clusters</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Sizes of HII Regions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sunseri2024a/Data_Parallelism_Part_1.html">Introduction to Data Parallelism</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../asali2024a/bootstrapping.html">Estimating Uncertainty in the Black Hole Mass–Velocity Dispersion Relation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asali2024a/bootstrapping.html">Bootstrapping the M-<span class="math notranslate nohighlight">\(\sigma\)</span> relation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level III</span></p>
 <ul class="nav bd-sidenav">
@@ -341,7 +341,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Measuring The Sizes of HII Regions</h1>
+    <h1>The Sizes of HII Regions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -366,24 +366,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="measuring-the-sizes-of-hii-regions">
-<h1>Measuring The Sizes of HII Regions<a class="headerlink" href="#measuring-the-sizes-of-hii-regions" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-sizes-of-hii-regions">
+<h1>The Sizes of HII Regions<a class="headerlink" href="#the-sizes-of-hii-regions" title="Link to this heading">#</a></h1>
 <div class="author admonition">
 <p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0002-7075-9931">Imad Pasha</a>, <a class="reference external" href="https://orcid.org/0000-0002-8320-2198">Yasmeen Asali</a>, <a class="reference external" href="https://orcid.org/0000-0003-1697-7062">William Cerny</a>, <a class="reference external" href="https://orcid.org/0000-0002-9986-4604">Sebastian Monzon</a> (Yale University)</p>
-<p><em>Description</em>: Analyze an <span class="math notranslate nohighlight">\(\mathrm{H}\alpha\)</span> image of the galaxy M33 to measure the physical sizes of HII regions and estimate the number of ionizing OB stars responsible. Along the way, practice image manipulation, function writing, array slicing, and simple astronomical modeling.</p>
+<p><em>Description</em>: Investigate an <span class="math notranslate nohighlight">\(H\alpha\)</span> image of M33 to determine the size of HII regions in the galaxy.</p>
 <p><em>Intended Audience</em>: Beginner to Intermediate Undergraduate</p>
-<p><em>Tags</em>: <code class="docutils literal notranslate"><span class="pre">functions</span></code>, <code class="docutils literal notranslate"><span class="pre">visualization</span></code>, <code class="docutils literal notranslate"><span class="pre">astronomical-images</span></code></p>
-<p><em>Requirements</em>:  <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">astropy</span></code> (<a class="reference download internal" download="" href="../../_downloads/e97e5a2ff15789313d6fff7218a42f90/requirements.txt"><span class="xref download myst">requirements.txt</span></a>)</p>
+<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">library:matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">control-flow:functions</span></code>, <code class="docutils literal notranslate"><span class="pre">visualization</span></code>, <code class="docutils literal notranslate"><span class="pre">astronomical-images</span></code></p>
+<p><em>Requirements</em>: <a class="reference download internal" download="" href="../../_downloads/e97e5a2ff15789313d6fff7218a42f90/requirements.txt"><span class="xref download myst">requirements.txt</span></a></p>
 <p><em>Last Updated: July 23, 2024</em></p>
 </div>
 <div class="learningobjective admonition">
 <p class="admonition-title">Learning Objectives</p>
-<ol class="arabic simple">
-<li><p>Learn how to index and crop 2D image arrays.</p></li>
-<li><p>Understand and apply basic trigonometry to convert angular sizes into physical sizes.</p></li>
-<li><p>Work with FITS images and visualize astronomical data effectively.</p></li>
-<li><p>Use physical models to estimate stellar content from observed emission regions.</p></li>
-</ol>
+<ul class="simple">
+<li><p>Write basic functions in Python.</p></li>
+<li><p>Be able to appropriately scale and view <code class="docutils literal notranslate"><span class="pre">FITS</span></code> images.</p></li>
+<li><p>Write functions to carry out analyses on images.</p></li>
+</ul>
 </div>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
@@ -538,7 +537,7 @@ r_S = \left(\frac{3N^*}{4\pi\alpha n^2}\right)^\frac{1}{3}
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Exploring Gaia Star Clusters</p>
+        <p class="prev-next-title">Gaia Star Clusters</p>
       </div>
     </a>
     <a class="right-next"

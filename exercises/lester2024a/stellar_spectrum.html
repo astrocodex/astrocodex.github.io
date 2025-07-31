@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -44,7 +44,7 @@
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -64,7 +64,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/lester2024a/stellar_spectrum';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Exploring Gaia Star Clusters" href="../granucci2024a/gaia-clusters.html" />
+    <link rel="next" title="Gaia Star Clusters" href="../granucci2024a/gaia-clusters.html" />
     <link rel="prev" title="Analyze the Messier Catalog" href="../asali2025a/messier_cat.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -190,10 +190,10 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level II</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Stellar Temperatures from Spectra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Exploring Gaia Star Clusters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">Measuring The Sizes of HII Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Gaia Star Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">The Sizes of HII Regions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sunseri2024a/Data_Parallelism_Part_1.html">Introduction to Data Parallelism</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../asali2024a/bootstrapping.html">Estimating Uncertainty in the Black Hole Mass–Velocity Dispersion Relation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asali2024a/bootstrapping.html">Bootstrapping the M-<span class="math notranslate nohighlight">\(\sigma\)</span> relation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level III</span></p>
 <ul class="nav bd-sidenav">
@@ -372,20 +372,21 @@ document.write(`
 <h1>Stellar Temperatures from Spectra<a class="headerlink" href="#stellar-temperatures-from-spectra" title="Link to this heading">#</a></h1>
 <div class="author admonition">
 <p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0002-9903-9911">Katie Lester</a> (Mount Holyoke College)</p>
-<p><em>Description</em>: Fit model spectra to observed stellar spectra to estimate stellar temperatures using chi-squared minimization. This multi-part exercise introduces real data, model comparison, and goodness-of-fit metrics.</p>
+<p><em>Description</em>: A series of exercises building the intuition and practice for model comparison with data with <span class="math notranslate nohighlight">\(\chi^2\)</span> minimization, using stellar models and several (real) stellar spectra.</p>
 <p><em>Intended Audience</em>: Beginner to Intermediate Undergraduate</p>
-<p><em>Tags</em>: <code class="docutils literal notranslate"><span class="pre">stellar-spectroscopy</span></code>,<code class="docutils literal notranslate"><span class="pre">model-fitting</span></code>, <code class="docutils literal notranslate"><span class="pre">for-loops</span></code></p>
-<p><em>Requirements</em>: <code class="docutils literal notranslate"><span class="pre">numpy</span></code>,  <code class="docutils literal notranslate"><span class="pre">astropy</span></code>,  <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> (<a class="reference download internal" download="" href="../../_downloads/fb4dcc328fff0aebc7f6912b47180e9a/requirements.txt"><span class="xref download myst">requirements.txt</span></a>)</p>
+<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">stellar-spectroscopy</span></code>,<code class="docutils literal notranslate"><span class="pre">model-fitting</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">for-loops</span></code></p>
+<p><em>Requirements</em>: <a class="reference download internal" download="" href="../../_downloads/fb4dcc328fff0aebc7f6912b47180e9a/requirements.txt"><span class="xref download myst">requirements.txt</span></a></p>
 <p><em>Last Updated: July 23, 2024</em></p>
 </div>
 <div class="learningobjective admonition">
 <p class="admonition-title">Learning Objectives</p>
-<ol class="arabic simple">
-<li><p>Be able to compute a chi-squared statistic to evaluate model fits.</p></li>
-<li><p>Practice writing for loops and using array indexing.</p></li>
-<li><p>Develop skills in visualizing and comparing data.</p></li>
-<li><p>Build physical intuition for how stellar spectra vary with effective temperature.</p></li>
-</ol>
+<ul class="simple">
+<li><p>learn to read in tabular data to Python</p></li>
+<li><p>be able to calculate a chi-squared goodness of fit statistic</p></li>
+<li><p>practice for loops and indexing</p></li>
+<li><p>learn data visualization skills</p></li>
+<li><p>Understand how stellar spectra change with effective temperature &amp; how to quantify how well two datasets match.</p></li>
+</ul>
 </div>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
@@ -407,11 +408,11 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># start by importing useful packages</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">ascii</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">ascii</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.table</span><span class="w"> </span><span class="kn">import</span> <span class="n">Table</span>
 </pre></div>
 </div>
 </div>
@@ -420,7 +421,7 @@ document.write(`
 <p>Run the cell below so we can use this function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_model</span><span class="p">(</span><span class="n">temperature</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_model</span><span class="p">(</span><span class="n">temperature</span><span class="p">):</span>
     <span class="c1"># input = effective temperature</span>
     <span class="n">templist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4000</span><span class="p">,</span> <span class="mi">6000</span><span class="p">,</span> <span class="mi">8000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">]</span>
     <span class="k">if</span> <span class="n">temperature</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">templist</span><span class="p">:</span>
@@ -621,7 +622,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exploring Gaia Star Clusters</p>
+        <p class="prev-next-title">Gaia Star Clusters</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

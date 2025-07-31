@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -44,7 +44,7 @@
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/sunseri2024a/Data_Parallelism_Part_1';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Estimating Uncertainty in the Black Hole Mass–Velocity Dispersion Relation" href="../asali2024a/bootstrapping.html" />
-    <link rel="prev" title="Measuring The Sizes of HII Regions" href="../pasha2024b/hii-regions.html" />
+    <link rel="next" title="Bootstrapping the M-\(\sigma\) relation" href="../asali2024a/bootstrapping.html" />
+    <link rel="prev" title="The Sizes of HII Regions" href="../pasha2024b/hii-regions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -188,10 +188,10 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level II</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../lester2024a/stellar_spectrum.html">Stellar Temperatures from Spectra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Exploring Gaia Star Clusters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">Measuring The Sizes of HII Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Gaia Star Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">The Sizes of HII Regions</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to Data Parallelism</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../asali2024a/bootstrapping.html">Estimating Uncertainty in the Black Hole Mass–Velocity Dispersion Relation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asali2024a/bootstrapping.html">Bootstrapping the M-<span class="math notranslate nohighlight">\(\sigma\)</span> relation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level III</span></p>
 <ul class="nav bd-sidenav">
@@ -367,27 +367,24 @@ document.write(`
 <h1>Introduction to Data Parallelism<a class="headerlink" href="#introduction-to-data-parallelism" title="Link to this heading">#</a></h1>
 <div class="author admonition">
 <p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0003-4274-2662">James Sunseri</a>, <a class="reference external" href="https://orcid.org/0000-0002-1327-1921">Josh Borrow</a>, <a class="reference external" href="https://orcid.org/0000-0002-3839-0230">Kai-Feng Chen</a></p>
-<p><em>Description</em>: Explore how to reduce runtime for data-heavy tasks by implementing parallelization in Python.</p>
+<p><em>Description</em>: A short walkthrough on using parallelization in python</p>
 <p><em>Intended Audience</em>: Intermediate Undergraduate</p>
-<p><em>Tags</em>: <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code>, <code class="docutils literal notranslate"><span class="pre">parallelization</span></code>,<code class="docutils literal notranslate"><span class="pre">parallel-programming</span></code></p>
-<p><em>Requirements</em>: <code class="docutils literal notranslate"><span class="pre">numpy</span></code></p>
+<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">libraries:numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code>, <code class="docutils literal notranslate"><span class="pre">parallelization</span></code>,<code class="docutils literal notranslate"><span class="pre">parallel-programming</span></code></p>
 <p><em>Last Updated: July 23, 2024</em></p>
 </div>
 <div class="learningobjective admonition">
 <p class="admonition-title">Learning Objectives</p>
 <ol class="arabic simple">
-<li><p>Understand the benefits of parallel computing for large-scale data tasks.</p></li>
-<li><p>Learn how to refactor functions for compatibility with <code class="docutils literal notranslate"><span class="pre">map()</span></code> and parallel workflows.</p></li>
-<li><p>Implement simple data parallelism using <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code>.</p></li>
-<li><p>Apply parallel techniques to image-based calculations and visualize the results.</p></li>
+<li><p>Understand how parallelization can improve code runtime</p></li>
+<li><p>Implement basic parallization in Python</p></li>
 </ol>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">concurrent.futures</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">concurrent.futures</span>
 </pre></div>
 </div>
 </div>
@@ -433,7 +430,7 @@ document.write(`
 <p>To use simple parallelization with <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code>, it is important to first understand the concept of the <code class="docutils literal notranslate"><span class="pre">map()</span></code> function. The <code class="docutils literal notranslate"><span class="pre">map()</span></code> function returns a map object of the results after applying the given function to each item of a given iterable (i.e. list, tuple, array, etc…). To use the <code class="docutils literal notranslate"><span class="pre">map()</span></code> function we must first rewrite the operations done in the above <code class="docutils literal notranslate"><span class="pre">for</span></code> loop as a mappable function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">load_data</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    a mappable function to load in the ith image.</span>
 <span class="sd">    </span>
@@ -478,12 +475,12 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> map_parallel.py
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">concurrent.futures</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">concurrent.futures</span>
 
-<span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_data</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    a mappable function to load in the ith image.</span>
 <span class="sd">    </span>
@@ -499,7 +496,7 @@ document.write(`
     
     <span class="k">return</span> <span class="n">image_i</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
 
     <span class="n">max_workers</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1">#this should be however many cores you are able to use</span>
 
@@ -572,7 +569,7 @@ document.write(`
 <p class="admonition-title">Exercise 1</p>
 <div class="docutils container">
 <p>Write your own python script which uses <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code> to run a mock “analysis” pipeline on all 1000 images using the <code class="docutils literal notranslate"><span class="pre">pipeline()</span></code> function written below.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pipeline</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pipeline</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    a mock pipeline analysis function which we wish </span>
 <span class="sd">    to apply to each image in our stack.</span>
@@ -634,7 +631,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Measuring The Sizes of HII Regions</p>
+        <p class="prev-next-title">The Sizes of HII Regions</p>
       </div>
     </a>
     <a class="right-next"
@@ -642,7 +639,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Estimating Uncertainty in the Black Hole Mass–Velocity Dispersion Relation</p>
+        <p class="prev-next-title">Bootstrapping the M-<span class="math notranslate nohighlight">\(\sigma\)</span> relation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
