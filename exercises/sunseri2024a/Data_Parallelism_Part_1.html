@@ -1,13 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Introduction to Data Parallelism &#8212; My sample book</title>
   
   
@@ -28,42 +28,43 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=b75f6b17" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/sunseri2024a/Data_Parallelism_Part_1';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Bootstrapping the M-\(\sigma\) relation" href="../asali2024a/bootstrapping.html" />
-    <link rel="prev" title="The Sizes of HII Regions" href="../pasha2024b/hii-regions.html" />
+    <link rel="next" title="Estimating Uncertainty in the Black Hole Mass–Velocity Dispersion Relation" href="../asali2024a/bootstrapping.html" />
+    <link rel="prev" title="Measuring The Sizes of HII Regions" href="../pasha2024b/hii-regions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -188,10 +189,10 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level II</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../lester2024a/stellar_spectrum.html">Stellar Temperatures from Spectra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Gaia Star Clusters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">The Sizes of HII Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Exploring Gaia Star Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">Measuring The Sizes of HII Regions</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to Data Parallelism</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../asali2024a/bootstrapping.html">Bootstrapping the M-<span class="math notranslate nohighlight">\(\sigma\)</span> relation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asali2024a/bootstrapping.html">Estimating Uncertainty in the Black Hole Mass–Velocity Dispersion Relation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level III</span></p>
 <ul class="nav bd-sidenav">
@@ -363,20 +364,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-data-parallelism">
-<h1>Introduction to Data Parallelism<a class="headerlink" href="#introduction-to-data-parallelism" title="Link to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-data-parallelism">
+<h1>Introduction to Data Parallelism<a class="headerlink" href="#introduction-to-data-parallelism" title="Permalink to this heading">#</a></h1>
 <div class="author admonition">
 <p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0003-4274-2662">James Sunseri</a>, <a class="reference external" href="https://orcid.org/0000-0002-1327-1921">Josh Borrow</a>, <a class="reference external" href="https://orcid.org/0000-0002-3839-0230">Kai-Feng Chen</a></p>
-<p><em>Description</em>: A short walkthrough on using parallelization in python</p>
+<p><em>Description</em>: Explore how to reduce runtime for data-heavy tasks by implementing parallelization in Python.</p>
 <p><em>Intended Audience</em>: Intermediate Undergraduate</p>
-<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">libraries:numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code>, <code class="docutils literal notranslate"><span class="pre">parallelization</span></code>,<code class="docutils literal notranslate"><span class="pre">parallel-programming</span></code></p>
+<p><em>Tags</em>: <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code>, <code class="docutils literal notranslate"><span class="pre">parallelization</span></code>,<code class="docutils literal notranslate"><span class="pre">parallel-programming</span></code></p>
+<p><em>Requirements</em>: <code class="docutils literal notranslate"><span class="pre">numpy</span></code></p>
 <p><em>Last Updated: July 23, 2024</em></p>
 </div>
 <div class="learningobjective admonition">
 <p class="admonition-title">Learning Objectives</p>
 <ol class="arabic simple">
-<li><p>Understand how parallelization can improve code runtime</p></li>
-<li><p>Implement basic parallization in Python</p></li>
+<li><p>Understand the benefits of parallel computing for large-scale data tasks.</p></li>
+<li><p>Learn how to refactor functions for compatibility with <code class="docutils literal notranslate"><span class="pre">map()</span></code> and parallel workflows.</p></li>
+<li><p>Implement simple data parallelism using <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code>.</p></li>
+<li><p>Apply parallel techniques to image-based calculations and visualize the results.</p></li>
 </ol>
 </div>
 <div class="cell docutils container">
@@ -393,16 +397,16 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>This notebook is intended for students who are familiar with the basic principles of scientific programming and are looking to branch into intermediate topics that could be useful for research applications.</p>
 </div>
-<section id="motivation-goals">
-<h2>Motivation &amp; Goals<a class="headerlink" href="#motivation-goals" title="Link to this heading">#</a></h2>
+<div class="section" id="motivation-goals">
+<h2>Motivation &amp; Goals<a class="headerlink" href="#motivation-goals" title="Permalink to this heading">#</a></h2>
 <p>Often in astronomy, we are working with many pieces of data that are similar in format (i.e. photometric images, spectra, simulation snapshots, etc…) and we want to perform operations across all of these data. Those operations could be simply loading in the data into memory from storage, or they could be as complicated as running a full scale photometric reduction pipeline. In this notebook we start addressing various techniques to speed up working with large amounts of data through parallelism schemes.</p>
 <p>The goal of this resource is to show someone how to simply parallelize a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop in the context of working with data. This resource uses <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code>.</p>
 <p>We will be using images of galaxies from <a class="reference external" href="https://zenodo.org/records/3565489#.Y3vFKS-l0eY">Galaxy Zoo</a> for this exercise.</p>
 <p align="center"> 
     <img src="https://thumbnails.zooniverse.org/600x/panoptes-uploads.zooniverse.org/subject_location/520aa31c-6dbe-48de-a281-47ccfbc8f944.jpeg" width="60%" /> 
-</p></section>
-<section id="problem-description">
-<h2>Problem Description<a class="headerlink" href="#problem-description" title="Link to this heading">#</a></h2>
+</p></div>
+<div class="section" id="problem-description">
+<h2>Problem Description<a class="headerlink" href="#problem-description" title="Permalink to this heading">#</a></h2>
 <p>We need to load in 1000 2D photometric images from storage into memory using a simple for loop. We can imagine that the time to load in each image takes ~0.01 seconds. The images are stored in the <code class="docutils literal notranslate"><span class="pre">./images/</span></code> directory and have a <code class="docutils literal notranslate"><span class="pre">.npy</span></code> file format. Each image has shape <code class="docutils literal notranslate"><span class="pre">(424,424)</span></code>. We time how long this takes for reference.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -562,9 +566,9 @@ document.write(`
 </div>
 <p>We can see that when using 4 cores the time taken to load in the data is ~3-4x faster! The reason it is not exactly 4x faster is because one of the processors used in the pool is used to manage the process pool. One can use as many workers in the process pool as they have processors available in their hardware.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">ProcessPoolExecutor</span></code> is an abstract object in the <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code> module that uses a pool of processes to execute function calls asynchronously. <code class="docutils literal notranslate"><span class="pre">ProcessPoolExecutor</span></code> uses the <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> module, which allows it to side-step the Global Interpreter Lock that makes parallelization in python frustratingly overcomplicated but also means that only picklable objects can be executed and returned. It is also possible to use <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code> to do multithreading related tasks with a <code class="docutils literal notranslate"><span class="pre">ThreadPoolExecutor</span></code>, for a review on the difference between these two topics we refer to this article on <a class="reference external" href="https://www.geeksforgeeks.org/difference-between-multithreading-vs-multiprocessing-in-python/">multiprocessing vs. multithreading</a>.</p>
-</section>
-<section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
 <div class="dropdown exercise admonition">
 <p class="admonition-title">Exercise 1</p>
 <div class="docutils container">
@@ -592,8 +596,8 @@ document.write(`
 <p>Use your own <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code> analysis pipeline framework code from the first exercise to make a new analysis pipeline where you compute the median brightness in each color filter. Make a histogram of the median brightness for each filter (R,G,B) across all 1000 images. What do you see in the distributions?</p>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -631,7 +635,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">The Sizes of HII Regions</p>
+        <p class="prev-next-title">Measuring The Sizes of HII Regions</p>
       </div>
     </a>
     <a class="right-next"
@@ -639,7 +643,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bootstrapping the M-<span class="math notranslate nohighlight">\(\sigma\)</span> relation</p>
+        <p class="prev-next-title">Estimating Uncertainty in the Black Hole Mass–Velocity Dispersion Relation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

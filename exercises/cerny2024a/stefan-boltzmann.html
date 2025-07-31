@@ -1,13 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stellar Luminosities from the Stefan-Boltzmann Equation &#8212; My sample book</title>
   
   
@@ -28,37 +28,38 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=b75f6b17" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/cerny2024a/stefan-boltzmann';</script>
@@ -190,10 +191,10 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level II</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../lester2024a/stellar_spectrum.html">Stellar Temperatures from Spectra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Gaia Star Clusters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">The Sizes of HII Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Exploring Gaia Star Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">Measuring The Sizes of HII Regions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sunseri2024a/Data_Parallelism_Part_1.html">Introduction to Data Parallelism</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../asali2024a/bootstrapping.html">Bootstrapping the M-<span class="math notranslate nohighlight">\(\sigma\)</span> relation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asali2024a/bootstrapping.html">Estimating Uncertainty in the Black Hole Mass–Velocity Dispersion Relation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level III</span></p>
 <ul class="nav bd-sidenav">
@@ -367,8 +368,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="stellar-luminosities-from-the-stefan-boltzmann-equation">
-<h1>Stellar Luminosities from the Stefan-Boltzmann Equation<a class="headerlink" href="#stellar-luminosities-from-the-stefan-boltzmann-equation" title="Link to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="stellar-luminosities-from-the-stefan-boltzmann-equation">
+<h1>Stellar Luminosities from the Stefan-Boltzmann Equation<a class="headerlink" href="#stellar-luminosities-from-the-stefan-boltzmann-equation" title="Permalink to this heading">#</a></h1>
 <div class="author admonition">
 <p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0003-1697-7062">William Cerny</a>, <a class="reference external" href="https://orcid.org/0000-0002-7075-9931">Imad Pasha</a>, <a class="reference external" href="https://orcid.org/0000-0002-8320-2198">Yasmeen Asali</a>, <a class="reference external" href="https://orcid.org/0000-0002-9986-4604">Sebastian Monzon</a> (Yale University)</p>
 <p><em>Description</em>: Practice with basic Python and data types, with bonus astropy exercises, by inferring the properties of stars with the Stefan-Boltzmann Law.</p>
@@ -387,8 +388,8 @@ document.write(`
 <li><p>Format f-strings with specified significant figures.</p></li>
 </ol>
 </div>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>Stars, to zeroth order, can be considered spherically-symmetric blackbodies. Under those conditions, their luminosities can be computed via the Stefan-Boltzmann law:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -396,9 +397,9 @@ L = 4\pi R^2 \sigma T^4
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(R\)</span> is the radius, <span class="math notranslate nohighlight">\(T\)</span> is the effective temperature of the star, and <span class="math notranslate nohighlight">\(\sigma\)</span> is the Stefan-Boltzmann constant, <span class="math notranslate nohighlight">\(\sigma = 5.67 * 10^{-8} \rm \ W/m^{2}/K^{4}\)</span>.</p>
 <p>The goal of this exercise is to write a code in Python to calculate the luminosity (<span class="math notranslate nohighlight">\(L\)</span>) of a star according to the formula described above.</p>
-</section>
-<section id="basic-scripting">
-<h2>Basic Scripting<a class="headerlink" href="#basic-scripting" title="Link to this heading">#</a></h2>
+</div>
+<div class="section" id="basic-scripting">
+<h2>Basic Scripting<a class="headerlink" href="#basic-scripting" title="Permalink to this heading">#</a></h2>
 <p>Here we will create a simple script to hold our calculation, using several <code class="docutils literal notranslate"><span class="pre">variables</span></code> to aid in our computation.</p>
 <div class="dropdown exercise admonition">
 <p class="admonition-title">Exercise 1</p>
@@ -428,9 +429,9 @@ L = 4\pi R^2 \sigma T^4
 </ol>
 </div>
 </div>
-</section>
-<section id="dynamic-scripting">
-<h2>Dynamic Scripting<a class="headerlink" href="#dynamic-scripting" title="Link to this heading">#</a></h2>
+</div>
+<div class="section" id="dynamic-scripting">
+<h2>Dynamic Scripting<a class="headerlink" href="#dynamic-scripting" title="Permalink to this heading">#</a></h2>
 <p>Let’s now improve the usability of our code. Instead of hard-coding (i.e., setting) the values of <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(R\)</span> within the script, we will have the script <em>ask</em> for these values from the user when the script is run.</p>
 <div class="dropdown exercise admonition">
 <p class="admonition-title">Exercise 3</p>
@@ -450,9 +451,9 @@ L = 4\pi R^2 \sigma T^4
 <p class="admonition-title">Note</p>
 <p>Having users input values at runtime is not the <em>most</em> common way to take dynamic inputs to code. However, it is very useful for highly “interactive” programs like this one.</p>
 </div>
-</section>
-<section id="fun-with-units-bonus">
-<h2>Fun with Units  (Bonus)<a class="headerlink" href="#fun-with-units-bonus" title="Link to this heading">#</a></h2>
+</div>
+<div class="section" id="fun-with-units-bonus">
+<h2>Fun with Units  (Bonus)<a class="headerlink" href="#fun-with-units-bonus" title="Permalink to this heading">#</a></h2>
 <p>In this bonus exercise, we’ll use the <code class="docutils literal notranslate"><span class="pre">astropy</span></code> library to handle units more elegantly. The <code class="docutils literal notranslate"><span class="pre">astropy.units</span></code> module, which we typically import as</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">astropy.units</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span> 
 </pre></div>
@@ -475,9 +476,9 @@ L = 4\pi R^2 \sigma T^4
 </ol>
 </div>
 </div>
-</section>
-<section id="practice-with-list-indexing">
-<h2>Practice with List Indexing<a class="headerlink" href="#practice-with-list-indexing" title="Link to this heading">#</a></h2>
+</div>
+<div class="section" id="practice-with-list-indexing">
+<h2>Practice with List Indexing<a class="headerlink" href="#practice-with-list-indexing" title="Permalink to this heading">#</a></h2>
 <p>Let’s imagine you have data for bright stars that looks a bit like:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">star_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Sirius&quot;</span><span class="p">,</span> <span class="s2">&quot;Canopus&quot;</span><span class="p">,</span> <span class="s2">&quot;Rigil Kentaurus&quot;</span><span class="p">,</span> <span class="s2">&quot;Arcturus&quot;</span><span class="p">,</span> <span class="s2">&quot;Vega&quot;</span><span class="p">,</span> <span class="s2">&quot;Capella&quot;</span><span class="p">,</span> <span class="s2">&quot;Rigel&quot;</span><span class="p">,</span> <span class="s2">&quot;Procyon&quot;</span><span class="p">,</span> <span class="s2">&quot;Achernar&quot;</span><span class="p">,</span> <span class="s2">&quot;Betelgeuse&quot;</span><span class="p">,</span> <span class="s2">&quot;Acrux&quot;</span><span class="p">,</span> <span class="s2">&quot;Altair&quot;</span><span class="p">,</span> <span class="s2">&quot;Aldebaran&quot;</span><span class="p">,</span> <span class="s2">&quot;Spica&quot;</span><span class="p">,</span> <span class="s2">&quot;Antares&quot;</span><span class="p">,</span> <span class="s2">&quot;Pollux&quot;</span><span class="p">,</span> <span class="s2">&quot;Fomalhaut&quot;</span><span class="p">,</span> <span class="s2">&quot;Deneb&quot;</span><span class="p">,</span> <span class="s2">&quot;Regulus&quot;</span><span class="p">,</span> <span class="s2">&quot;Adhara&quot;</span><span class="p">]</span>
 
@@ -505,8 +506,8 @@ L = 4\pi R^2 \sigma T^4
 </ol>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
