@@ -5,3 +5,4 @@
 _build/
 **/.ipynb_checkpoints/
 _ext/__pycache__/
+_ext/__pycache__/*.pyc
