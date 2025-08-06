@@ -5,6 +5,9 @@ format: jb-book
 root: intro
 
 parts:
+  - caption: Events
+    chapters:
+    - file: hackday
   - caption: Gallery
     chapters:
     - file: gallery
