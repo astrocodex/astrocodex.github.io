@@ -63,4 +63,7 @@ We’ll close the event with a group conversation reflecting on the workshop and
 
 ## Registration 
 
-Please register by **Wednesday, August 13** using this [registration form](https://forms.gle/D198Dt47aFNyNcRR6).
+Please register by **Thursday, August 14** using this [registration form](https://forms.gle/D198Dt47aFNyNcRR6). 
+
+## Questions?
+The AstroCodEx Team can be reached at astrocodex@googlegroups.com.
