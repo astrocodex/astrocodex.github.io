@@ -70,7 +70,10 @@ Exercises submitted to the codex should have
 - A short list of learning objectives for the assignment 
 - Any relevant instructor notes for carrying out the assignment
 
-We are working toward a streamlined and maintainable process for submissions. For the time being, submissions can be sent to imad.pasha@yale.edu. 
+We are working toward a streamlined and maintainable process for submissions. For the time being, submissions can be sent to astrocodex@googlegroups.com.
+
+## Contact
+The AstroCodEx Team can be reached at **astrocodex@googlegroups.com**. 
 
 
 

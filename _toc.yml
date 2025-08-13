@@ -32,3 +32,6 @@ parts:
   - caption: Guides and Walkthroughs
     chapters:
     - file: guides/Debugging_Guide
+  - caption: About
+    chapters:
+    - file: aboutteam
