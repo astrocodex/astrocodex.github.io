@@ -54,7 +54,7 @@ The ```codex``` is organized as a ```juptyer-book``` built with ``myst`` tools. 
 
 Anyone is welcome to use, download, and modify the materials on this site to suit their teaching needs. We ask that *solutions* to the exercises in this repository (whether ours or your own) *not* be distributed publicly. 
 
-**Solutions** to the exercises are stored in a private GitHub repository within the ```astrocodex``` organization. Instructors desiring solutions for any subset of the exercises are encouraged to submit a request to imad.pasha@yale.edu. Solutions will be provided upon reasonable evidence of an instructor role. We ask instructors to use discretion with solutions; as these exercises are designed for use in a classroom setting, their longevity is aided by a lack of solution proliferation.
+**Solutions** to the exercises are stored in a private GitHub repository within the ```astrocodex``` organization. Instructors desiring solutions for any subset of the exercises are encouraged to submit a request to **astrocodex@googlegroups.com**. Solutions will be provided upon reasonable evidence of an instructor role. We ask instructors to use discretion with solutions; as these exercises are designed for use in a classroom setting, their longevity is aided by a lack of solution proliferation.
 
 
 ## Contributing
