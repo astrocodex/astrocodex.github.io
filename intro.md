@@ -75,5 +75,7 @@ We are working toward a streamlined and maintainable process for submissions. Fo
 ## Contact
 The AstroCodEx Team can be reached at **astrocodex@googlegroups.com**. 
 
+## License 
 
+This work is openly licensed via [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). 
 
