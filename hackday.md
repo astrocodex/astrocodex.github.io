@@ -24,25 +24,25 @@ If you’re interested in presenting, please reach out or let us know in the reg
 ## Schedule 
 
 **Day 1** 
-- 09:00 AM: Introduction & Coffee
+- 09:00 AM: Coffee & Introduction
 - 09:30 AM: Hack Planning Session 
 - 10:00 AM: Hack Session I 
-- 12:00 PM: Lunch Break
-- 01:00 PM: Overview of Jupyter + MyST tools
-- 01:30 PM: Short Presentations I
-- 02:00 PM: Hack Session II
+- 12:30 PM: Lunch Break
+- 01:30 PM: Overview of Jupyter + MyST tools
+- 02:00 PM: Short Pedagogy Presentations
+- 02:30 PM: Hack Session II
 - 04:45 PM: Closing Thoughts
 - 05:00 PM: End of Day 1 
 
 **Day 2** 
 - 09:00 AM: Coffee & Settling In
 - 09:15 AM: Hack Session III
-- 11:00 AM: Short Presentations II
+- 11:00 AM: Peer Review Period
 - 12:00 PM: Lunch Break
-- 01:00 PM: Peer Review Period
-- 02:00 PM: Hack Session IV
+- 01:00 PM: Hack Session IV
+- 03:30 PM: Hack Updates
 - 04:00 PM: Group Discussion & Reflections
-- 05:00 PM: End of Day 2
+- 04:30 PM: End of Day 2
 
 ---
 
