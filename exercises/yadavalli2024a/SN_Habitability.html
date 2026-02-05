@@ -65,7 +65,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Trigonometric Regression" href="../bellinger2024a/trig-regression.html" />
-    <link rel="prev" title="Estimating Uncertainty in the Black Hole Mass–Velocity Dispersion Relation" href="../asali2024a/bootstrapping.html" />
+    <link rel="prev" title="Building a leapfrog integrator" href="../rice2025a/leapfrog-integrator.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,11 +175,7 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Events</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../hackday.html">Hack Day 2025</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Python Exercises Gallery</a></li>
 </ul>
@@ -198,19 +194,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">Measuring The Sizes of HII Regions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sunseri2024a/Data_Parallelism_Part_1.html">Introduction to Data Parallelism</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../asali2024a/bootstrapping.html">Estimating Uncertainty in the Black Hole Mass–Velocity Dispersion Relation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rice2025a/leapfrog-integrator.html">Building a leapfrog integrator</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level III</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Rogue Planet Habitability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bellinger2024a/trig-regression.html">Trigonometric Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rice2025b/stellar-obliquities.html">Stellar obliquities in exoplanet systems</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides and Walkthroughs</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../guides/Debugging_Guide.html">Debugging Strategies Resource</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">About</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../aboutteam.html">Meet the AstroCodEx Team</a></li>
 </ul>
 
     </div>
@@ -380,17 +374,16 @@ document.write(`
 <p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0002-0840-6940">S. Karthik Yadavalli</a> (Harvard University)</p>
 <p><em>Description</em>: Investigate whether a rogue planet could receive habitable levels of energy flux from galactic supernovae</p>
 <p><em>Intended Audience</em>: Intermediate to Advanced Undergraduate</p>
-<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">exoplanets</span></code>, <code class="docutils literal notranslate"><span class="pre">functions</span></code>, <code class="docutils literal notranslate"><span class="pre">sampling-positions</span></code>, <code class="docutils literal notranslate"><span class="pre">supernovae</span></code>, <code class="docutils literal notranslate"><span class="pre">habitability</span></code></p>
-<p><em>Requirements</em>: <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> (<a class="reference download internal" download="" href="../../_downloads/58ef06171353b9fd24a16722c0a7a614/requirements.txt"><span class="xref download myst">requirements.txt</span></a>)</p>
-<p><em>Last Updated: July 28, 2025</em></p>
+<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">libraries:numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">sampling-positions</span></code>, <code class="docutils literal notranslate"><span class="pre">supernovae</span></code>, <code class="docutils literal notranslate"><span class="pre">habitability</span></code>, <code class="docutils literal notranslate"><span class="pre">planets</span></code></p>
+<p><em>Requirements</em>: <a class="reference download internal" download="" href="../../_downloads/58ef06171353b9fd24a16722c0a7a614/requirements.txt"><span class="xref download myst">requirements.txt</span></a></p>
+<p><em>Last Updated: July 18, 2025</em></p>
 </div>
 <div class="learningobjective admonition">
 <p class="admonition-title">Learning Objectives</p>
 <ol class="arabic simple">
-<li><p>Test theoretical scenarios through random sampling.</p></li>
-<li><p>Utilize helper functions alongside main functions.</p></li>
 <li><p>Learn how to uniformly sample coordinate locations from a cylindrical coordinate space.</p></li>
-<li><p>Determine flux from luminosity and use it to determine the habitability of a given coordinate, assuming a uniform distribution of SNe explosion.</p></li>
+<li><p>Successfully calculate distances in cylindrical coordinates.</p></li>
+<li><p>Be able to calculate flux from luminosity and use it to determine the habitability of a given coordinate, assuming a uniform distribution of SNe explosions.</p></li>
 </ol>
 </div>
 <section id="introduction">
@@ -598,12 +591,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../asali2024a/bootstrapping.html"
+       href="../rice2025a/leapfrog-integrator.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Estimating Uncertainty in the Black Hole Mass–Velocity Dispersion Relation</p>
+        <p class="prev-next-title">Building a leapfrog integrator</p>
       </div>
     </a>
     <a class="right-next"
@@ -659,7 +652,7 @@ By The AstroCodEx Collaboration, Supported by the Yale Rosenkranz Award
 
   <p class="copyright">
     
-      © Copyright 2025. This work is openly licensed via CC BY-NC-SA 4.0.
+      © Copyright 2023.
       <br/>
     
   </p>

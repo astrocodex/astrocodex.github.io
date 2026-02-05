@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Analyze the Messier Catalog &#8212; My sample book</title>
+    <title>Building a leapfrog integrator &#8212; My sample book</title>
   
   
   
@@ -59,11 +59,13 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/asali2025a/messier_cat';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/rice2025a/leapfrog-integrator';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Stellar Temperatures from Spectra" href="../lester2024a/stellar_spectrum.html" />
-    <link rel="prev" title="Exploring Cosmological Parameters with Functions" href="../cerny2025a/cosmological-parameters.html" />
+    <link rel="next" title="Rogue Planet Habitability" href="../yadavalli2024a/SN_Habitability.html" />
+    <link rel="prev" title="Estimating Uncertainty in the Black Hole Mass–Velocity Dispersion Relation" href="../asali2024a/bootstrapping.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,21 +180,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Python Exercises Gallery</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level I</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../cerny2024a/stefan-boltzmann.html">Stellar Luminosities from the Stefan-Boltzmann Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cerny2024b/exoplanet-diversity.html">Exploring the Diversity of Known Exoplanets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pasha2024a/astronomical-images.html">Visualizing Astronomical Images</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cerny2025a/cosmological-parameters.html">Exploring Cosmological Parameters with Functions</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Analyze the Messier Catalog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asali2025a/messier_cat.html">Analyze the Messier Catalog</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level II</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../lester2024a/stellar_spectrum.html">Stellar Temperatures from Spectra</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../granucci2024a/gaia-clusters.html">Exploring Gaia Star Clusters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">Measuring The Sizes of HII Regions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sunseri2024a/Data_Parallelism_Part_1.html">Introduction to Data Parallelism</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../asali2024a/bootstrapping.html">Estimating Uncertainty in the Black Hole Mass–Velocity Dispersion Relation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rice2025a/leapfrog-integrator.html">Building a leapfrog integrator</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Building a leapfrog integrator</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level III</span></p>
 <ul class="nav bd-sidenav">
@@ -257,7 +259,7 @@
       
       
       
-      <li><a href="../../_sources/exercises/asali2025a/messier_cat.ipynb" target="_blank"
+      <li><a href="../../_sources/exercises/rice2025a/leapfrog-integrator.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -341,7 +343,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Analyze the Messier Catalog</h1>
+    <h1>Building a leapfrog integrator</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -351,7 +353,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-the-dataset">Opening the Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taking-the-first-step-of-your-n-body-integrator">Taking the first step of your N-body integrator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrating-an-orbit">Integrating an orbit</a></li>
 </ul>
             </nav>
         </div>
@@ -363,104 +367,112 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="analyze-the-messier-catalog">
-<h1>Analyze the Messier Catalog<a class="headerlink" href="#analyze-the-messier-catalog" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="building-a-leapfrog-integrator">
+<h1>Building a leapfrog integrator<a class="headerlink" href="#building-a-leapfrog-integrator" title="Link to this heading">#</a></h1>
 <div class="author admonition">
-<p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0002-8320-2198">Yasmeen Asali</a>, <a class="reference external" href="https://orcid.org/0000-0003-1697-7062">William Cerny</a>, <a class="reference external" href="https://orcid.org/0000-0003-0965-605X">Pratik Gandhi</a> (Yale University)</p>
-<p><em>Description</em>: Use the Messier catalog to practice using for loops and and logic</p>
-<p><em>Intended Audience</em>: Beginner Undergraduate</p>
-<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">libraries:numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">loops</span></code>, <code class="docutils literal notranslate"><span class="pre">program-flow</span></code>, <code class="docutils literal notranslate"><span class="pre">logic</span></code></p>
-<p><em>Requirements</em>: <a class="reference download internal" download="" href="../../_downloads/3b937131d51a8e081064e8f6c691da65/requirements.txt"><span class="xref download myst">requirements.txt</span></a></p>
-<p><em>Last Updated: July 18, 2025</em></p>
+<p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0002-7670-670X">Malena Rice</a> (Yale University)</p>
+<p><em>Description</em>: Write a simple N-body integrator in Python using the leapfrog formulation.</p>
+<p><em>Intended Audience</em>: Intermediate undergraduate</p>
+<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">N-body</span> <span class="pre">integration</span></code>,<code class="docutils literal notranslate"><span class="pre">functions</span></code>, <code class="docutils literal notranslate"><span class="pre">modeling</span></code></p>
+<p><em>Requirements</em>: <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></p>
+<p><em>Last Updated: August 22, 2025</em></p>
 </div>
 <div class="learningobjective admonition">
 <p class="admonition-title">Learning Objectives</p>
 <ol class="arabic simple">
-<li><p>Understand the structure of 2D arrays and how to access data.</p></li>
-<li><p>Practice using logic to downselect rows from an array and practice using for loops to iterate through objects.</p></li>
+<li><p>Implement a simple physical model in Python from scratch.</p></li>
+<li><p>Demonstrate the importance of resolution settings in numerical simulations.</p></li>
+<li><p>Visualize the outputs of a model to provide intuition for a system’s behavior.</p></li>
 </ol>
 </div>
-<p>In this assignment, you will practice using logic and loops using a dataset of objects from the <a class="reference external" href="https://en.wikipedia.org/wiki/Messier_object">Messier Catalog</a>. The dataset includes basic information about each object, such as its type, magnitude, distance, constellation, and best viewing season. Your tasks will involve reading in the data, analyzing it, and using <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, logic, and loops to answer questions about it!</p>
-<section id="opening-the-dataset">
-<h2>Opening the Dataset<a class="headerlink" href="#opening-the-dataset" title="Link to this heading">#</a></h2>
-<p>The data is stored in a <code class="docutils literal notranslate"><span class="pre">.npy</span></code> file, which you can load with <code class="docutils literal notranslate"><span class="pre">np.load()</span></code>. You can download it <a class="reference download internal" download="" href="../../_downloads/212db617785a437ed3773b2ad5ed2ed3/messier_data.npy"><span class="xref download myst">here</span></a> (right click and save as a <code class="docutils literal notranslate"><span class="pre">.npy</span></code> file). You can use the following line of code to open up the file in your code and store its contents in a variable called <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/Users/username/Downloads/messier_data.npy&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>Will the above line run on your computer? No! Do you remember what you need to change about it?</p>
-<div class="dropdown admonition hint">
-<p class="admonition-title">Hint</p>
-<p>You need to update the PATH to match where the data lives on your computer! You can put the data anywhere on your computer, and specify the absolute PATH in your code as in the example above. Alternatively, if you put the data in the <strong>same directory</strong> (folder) as the python script you are writing, you can open it like this: <code class="docutils literal notranslate"><span class="pre">np.load(messier_data.npy)</span></code>.</p>
-</div>
-</div>
-<p>Each row in the dataset corresponds to a single Messier object, with the following fields:</p>
-<ul class="simple">
-<li><p><strong>Messier</strong>: Name of the Messier object as a string (e.g., <code class="docutils literal notranslate"><span class="pre">'M107'</span></code>, <code class="docutils literal notranslate"><span class="pre">'M108'</span></code>)</p></li>
-<li><p><strong>RA</strong> and <strong>DEC</strong>: the Right Ascension and Declination of the object (coordinates in the sky)</p></li>
-<li><p><strong>Type</strong>: Type of object (e.g., <code class="docutils literal notranslate"><span class="pre">'Gc'</span></code> for Globular Cluster, <code class="docutils literal notranslate"><span class="pre">'Sp'</span></code> for Spiral, <code class="docutils literal notranslate"><span class="pre">'Ba'</span></code> for Barred Spiral)</p></li>
-<li><p><strong>Mag</strong>: Magnitude (brightness) of the object. Magnitudes are a unitless system, and lower numbers mean brighter objects.</p></li>
-<li><p><strong>Distance</strong>: Distance from Earth in units of light-years</p></li>
-<li><p><strong>Constellation</strong>: The constellation in which the object resides</p></li>
-<li><p><strong>Season</strong>: The best viewing season (spring, summer, autumn, winter)</p></li>
-</ul>
-<p>Here are some tips and reminders for using large 2D datasets:</p>
-<ol class="arabic simple">
-<li><p>You can access each row of the dataset using <strong>indexing</strong>. For instance, <code class="docutils literal notranslate"><span class="pre">data[0]</span></code> will return the first row of the array (aka all of the above column values for a single Messier object).</p></li>
-<li><p>You can access each column of the dataset using <code class="docutils literal notranslate"><span class="pre">data['Messier']</span></code>. For example, rather than indexing by an integer, we are now indexing by a column <strong>key</strong> (a column name). This will return a numpy array of all the Messier numbers for all of the objects.</p></li>
-</ol>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>In this exercise, you will build a Python function that can solve the N-body problem in 2D as a function of time. The acceleration between two bodies in the N-body problem, decomposed into x- and y-components, is given as</p>
+<div class="math notranslate nohighlight">
+\[a_x = \frac{Gm(dx)}{r^3}\]</div>
+<p>$<span class="math notranslate nohighlight">\(a_y = \frac{Gm(dy)}{r^3}\)</span>$.</p>
+</section>
+<section id="taking-the-first-step-of-your-n-body-integrator">
+<h2>Taking the first step of your N-body integrator<a class="headerlink" href="#taking-the-first-step-of-your-n-body-integrator" title="Link to this heading">#</a></h2>
+<p>We will initialize our system with the Sun at coordinate (0,0) and with the Earth at coordinate (0, 1), with distance coordinates given in AU and with the Earth moving in the positive x-direction.</p>
 <div class="dropdown exercise admonition">
 <p class="admonition-title">Exercise 1</p>
 <div class="docutils container">
-<p>We begin with an overview analysis of the Messier Catalog.</p>
 <ol class="arabic simple">
-<li><p><strong>How many objects are in the dataset?</strong> You can either write a loop to count the number of objects or use a built-in python function.</p></li>
-<li><p><strong>Investigate the brightness of Messier objects:</strong> Recall that magnitude is a measure of brightness, and brighter objects have lower magnitude values!</p>
-<ul class="simple">
-<li><p>Calculate the average magnitude of all the Messier objects.</p></li>
-<li><p>What magnitude is the brightest object in the catalog, and what magnitude is the faintest?</p></li>
-<li><p>Once you have that, calculate the difference in magnitude between the brightest and the faintest object.</p></li>
-</ul>
-</li>
-<li><p><strong>How many objects are there in each viewing season</strong> (spring, summer, autumn, winter)? Before looking at the hint, see if you can approach this problem on your own!</p></li>
+<li><p>Initialize a system with the Sun at coordinate (0,0) and with the Earth at coordinate (0, 1), where distance coordinates are given in AU.</p></li>
+<li><p>Calculate the acceleration between the Sun and the Earth at this starting point. Demonstrate that the two masses are accelerated toward each other by gravity, and that there is no x-component to this initial acceleration.</p></li>
 </ol>
-<div class="dropdown admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Hint for Problem 3:
-You may want to define some variables as “counters” for the number of objects in each season, and then loop through every row of the dataset and add 1 to the corresponding counter if an object is in that season. Recall that you can use the syntax <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+=</span> <span class="pre">1</span></code> to add 1 to an existing variable (equivalent to <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">1</span></code>).</p>
 </div>
 </div>
-</div>
+<p>To run our code, we will need to set some initial conditions. To keep the center of mass static in the 2-body problem, we need to conserve momentum between our two bodies:</p>
+<div class="math notranslate nohighlight">
+\[m_1 v_1 + m_2 v_2 = 0\]</div>
 <div class="dropdown exercise admonition">
 <p class="admonition-title">Exercise 2</p>
 <div class="docutils container">
-<p>Let’s get more practice working with the data.</p>
 <ol class="arabic simple">
-<li><p>Calculate the <strong>average distance</strong> of <strong>spiral galaxies</strong> (Type: <code class="docutils literal notranslate"><span class="pre">'Sp'</span></code>), <strong>globular clusters</strong> (Type: <code class="docutils literal notranslate"><span class="pre">'Gc'</span></code>), and <strong>open clusters</strong> (Type: <code class="docutils literal notranslate"><span class="pre">'Oc'</span></code>). Which type of object is typically farther away? Does this make sense?</p></li>
+<li><p>Based on momentum conservation, calculate the velocity of the Sun around the Earth, in km/s, for a typical Earth orbital speed of 29.8 km/s.</p></li>
 </ol>
-<div class="dropdown admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Hint for Problem 1:
-You can do this (at least) two ways! First, try using a <strong>condition</strong> to <strong>index</strong> the array. Your condition would be something that is checking the object types, and you can use that condition directly as the index to select only rows in the array where that condition is <code class="docutils literal notranslate"><span class="pre">True</span></code>. Once you have the subset of the array that meets your condition, you can compute the average (as in exercise 1 problem 2).</p>
-<p>Another way you could approach this problem is by using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to iterate over every row, and then using <code class="docutils literal notranslate"><span class="pre">if</span></code> statements to select based on type. How would you compute the average? Try to think creatively about how you can perform math on values (recall Exercise 1, Problem 3) iteratively in a loop. Maybe you will need to define two variables that you operate on each iteration of the loop, then do something to the two variables at the end after the loop finishes…</p>
 </div>
-<ol class="arabic simple" start="2">
-<li><p><strong>How many constellations are there in the dataset</strong>, and <strong>how many objects belong to each constellation?</strong></p>
-<ul class="simple">
-<li><p>First, you need to find how many unique constellations exist in the dataset.</p></li>
-<li><p>Then, count how many Messier objects belong to each constellation.</p></li>
-</ul>
+</div>
+<p>The general “kick-drift-kick” form of a leapfrog integrator is formulated as follows:</p>
+<div class="math notranslate nohighlight">
+\[v_{i+1/2} = v_i + a_i \frac{\Delta t}{2}\]</div>
+<div class="math notranslate nohighlight">
+\[x_{i+1} = x_i + v_{i + 1/2} \Delta t \]</div>
+<div class="math notranslate nohighlight">
+\[v_{i+1} = v_{i+1/2} + a_{i+1}\frac{\Delta t}{2} \]</div>
+<p>This set of three functions corresponds to one “step” forward in the leapfrog integration routine.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 3</p>
+<div class="docutils container">
+<ol class="arabic">
+<li><p>Implement these lines of code within a for loop in Python as follows:</p>
+<p>for i in range(N): <br></p>
+<blockquote>
+<div><p>first line of code to advance to <span class="math notranslate nohighlight">\(v_{i+1/2}\)</span> <br>
+second line of code to advance to <span class="math notranslate nohighlight">\(x_{i+1}\)</span> <br>
+third line of code to calculate the new acceleration at <span class="math notranslate nohighlight">\(x_{i+1}\)</span> <br>
+fourth line of code to advance to <span class="math notranslate nohighlight">\(v_{i+1}\)</span> <br></p>
+</div></blockquote>
 </li>
+<li><p>To check that your code works, start at the same initial point described in Question 1. Advance your code a single step forward, using a time step of 1 day. Print the position and velocity that you obtain after 1 time step. Is the particle moving in the direction that you expect, given the initial conditions and the acceleration from Question 1?</p></li>
 </ol>
 <div class="dropdown admonition hint">
 <p class="admonition-title">Hint</p>
-<p>Hint for Problem 2:
-You can try using a <code class="docutils literal notranslate"><span class="pre">set</span></code> to find the unique constellations in the dataset. A <code class="docutils literal notranslate"><span class="pre">set</span></code> is a data structure that automatically removes duplicates, so it could be useful for counting how many distinct constellations there are.</p>
-<p>If you feel comfortable, try using a <code class="docutils literal notranslate"><span class="pre">set</span></code> to collect the constellations and a <code class="docutils literal notranslate"><span class="pre">dict</span></code> (dictionary) to count the number of objects in each one (recall Exercise 1, Problem 3 for counting in loops). Remember, if you’re unsure about how to create or use a set, think about how a list works—sets work similarly but don’t allow duplicate values!</p>
+<p>Hint:
+You will need to make sure that your inputs have consistent units.</p>
 </div>
-<ol class="arabic simple" start="3">
-<li><p><strong>How many Messier objects are in the northern vs. southern sky?</strong> You could try to do this using the constellation information from the previous problem, but the hemisphere can more easily be determined by the <strong>declination</strong>.</p></li>
+</div>
+</div>
+</section>
+<section id="integrating-an-orbit">
+<h2>Integrating an orbit<a class="headerlink" href="#integrating-an-orbit" title="Link to this heading">#</a></h2>
+<p>At this point, you have most of the setup for your numerical integration. The last point that you need to implement is a tracker: a way to save your values when you take more than one time step.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 4</p>
+<div class="docutils container">
+<ol class="arabic simple">
+<li><p>Create arrays that will track your positions and velocities at each time step.</p></li>
+</ol>
+</div>
+</div>
+<p>Everything should now be in place to run your leapfrog integrator. In the next exercise, we will run the integrator and visualize its outputs to demonstrate that the integrator is functioning properly.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 5</p>
+<div class="docutils container">
+<ol class="arabic simple">
+<li><p>Integrate your program forward in time 5 years, using 100,000 evenly spaced time steps.</p></li>
+<li><p>Plot how the positions of the Sun and the Earth change over this time.</p></li>
+</ol>
+</div>
+</div>
+<p>Sufficiently high resolution in numerical simulations is critical to ensure that the relevant physical processes are captured. In this final exercise, we will show how our integrator’s outputs depend upon the timestep selected.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 6</p>
+<div class="docutils container">
+<ol class="arabic simple">
+<li><p>Implement the same algorithm, but adjust your time steps so that you only use 50 evenly spaced steps over the course of 5 years. How does your result differ from your previous integration using 100,000 time steps? Why does this result look so different?</p></li>
 </ol>
 </div>
 </div>
@@ -480,7 +492,7 @@ You can try using a <code class="docutils literal notranslate"><span class="pre"
         },
         kernelOptions: {
             name: "python3",
-            path: "./exercises/asali2025a"
+            path: "./exercises/rice2025a"
         },
         predefinedOutput: true
     }
@@ -498,20 +510,20 @@ You can try using a <code class="docutils literal notranslate"><span class="pre"
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../cerny2025a/cosmological-parameters.html"
+       href="../asali2024a/bootstrapping.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Exploring Cosmological Parameters with Functions</p>
+        <p class="prev-next-title">Estimating Uncertainty in the Black Hole Mass–Velocity Dispersion Relation</p>
       </div>
     </a>
     <a class="right-next"
-       href="../lester2024a/stellar_spectrum.html"
+       href="../yadavalli2024a/SN_Habitability.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Stellar Temperatures from Spectra</p>
+        <p class="prev-next-title">Rogue Planet Habitability</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -531,7 +543,9 @@ You can try using a <code class="docutils literal notranslate"><span class="pre"
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-the-dataset">Opening the Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taking-the-first-step-of-your-n-body-integrator">Taking the first step of your N-body integrator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrating-an-orbit">Integrating an orbit</a></li>
 </ul>
   </nav></div>
 

@@ -64,7 +64,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/asali2024a/bootstrapping';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Rogue Planet Habitability" href="../yadavalli2024a/SN_Habitability.html" />
+    <link rel="next" title="Building a leapfrog integrator" href="../rice2025a/leapfrog-integrator.html" />
     <link rel="prev" title="Introduction to Data Parallelism" href="../sunseri2024a/Data_Parallelism_Part_1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -175,11 +175,7 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Events</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../hackday.html">Hack Day 2025</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Python Exercises Gallery</a></li>
 </ul>
@@ -198,19 +194,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">Measuring The Sizes of HII Regions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sunseri2024a/Data_Parallelism_Part_1.html">Introduction to Data Parallelism</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Estimating Uncertainty in the Black Hole Mass–Velocity Dispersion Relation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rice2025a/leapfrog-integrator.html">Building a leapfrog integrator</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level III</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../yadavalli2024a/SN_Habitability.html">Rogue Planet Habitability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bellinger2024a/trig-regression.html">Trigonometric Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rice2025b/stellar-obliquities.html">Stellar obliquities in exoplanet systems</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides and Walkthroughs</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../guides/Debugging_Guide.html">Debugging Strategies Resource</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">About</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../aboutteam.html">Meet the AstroCodEx Team</a></li>
 </ul>
 
     </div>
@@ -502,40 +496,6 @@ document.write(`
 <section id="how-can-we-implement-this-in-python">
 <h3>How can we implement this in Python?<a class="headerlink" href="#how-can-we-implement-this-in-python" title="Link to this heading">#</a></h3>
 <p>There are many ways you can perform linear regression in Python! <code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code> is a function in NumPy used for polynomial regression, which fits a polynomial curve to a set of data points. In the context of linear regression, <code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code> can fit a polynomial of degree 1 (a straight line) to the given data points by minimizing the sum of squared errors between the observed and predicted values. This function returns the coefficients of the polynomial that best fits the data, allowing us to determine the slope and intercept of the regression line.</p>
-<div class="tip admonition">
-<p class="admonition-title">Exercise 1: Fitting the M-<span class="math notranslate nohighlight">\(\sigma\)</span> Relation</p>
-<p>We will apply the concept of linear regression to analyze the M-sigma relation using observational data. We have provided a dataset containing measurements of black hole masses (<code class="docutils literal notranslate"><span class="pre">M_bh</span></code>), velocity dispersions (<code class="docutils literal notranslate"><span class="pre">sigma</span></code>), and their associated uncertainties. Your task is to perform linear regression to fit both the black hole mass as a function of velocity dispersion (<code class="docutils literal notranslate"><span class="pre">M_bh</span></code> vs. <code class="docutils literal notranslate"><span class="pre">sigma</span></code>) and velocity dispersion as a function of black hole mass (<code class="docutils literal notranslate"><span class="pre">sigma</span></code> vs. <code class="docutils literal notranslate"><span class="pre">M_bh</span></code>).</p>
-<ol class="arabic simple">
-<li><p><strong>Prepare the Data</strong>: Inspect the first few rows of the Pandas DataFrame to familiarize yourself with the structure of the data. The M-sigma relation is typically plotted with the black hole masses in <code class="docutils literal notranslate"><span class="pre">log</span></code> form, so you will need to convert your data to logspace before fitting the relation. Add new columns to the DataFrame representing log(M_bh) and the error on log(M_bh).</p></li>
-</ol>
-<div class="dropdown admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Hint: Error Propagation in Logspace
-In order to compute the error on log(M_bh), we will need to propagate the error when taking the logarithm (base 10). The formula that describes this is as follows:
-$<span class="math notranslate nohighlight">\(
-   \sigma_{\log_{10}(x)} = \frac{1}{\ln(10) \cdot x} \cdot \sigma_x
-   \)</span>$
-The above will give you the uncertainty on the logarithm of the black hole mass, and you can store this in the DataFrame.</p>
-</div>
-<ol class="arabic simple" start="2">
-<li><p><strong>Plot the Data</strong>: Create a scatter plot of the log of the black hole mass (log(M_bh)) against velocity dispersion (sigma), with error bars representing the uncertainties in both quantities.</p></li>
-<li><p><strong>Perform Linear Regression</strong>:
-In standard least-squares regression, uncertainties are only applied to the dependent variable (y). This means that if you fit <span class="math notranslate nohighlight">\(M_{\mathrm{bh}}\)</span> as a function of <span class="math notranslate nohighlight">\(\sigma\)</span>, the method only accounts for uncertainties in <span class="math notranslate nohighlight">\(M_{\mathrm{bh}}\)</span>, while ignoring errors in <span class="math notranslate nohighlight">\(\sigma\)</span>. But both <span class="math notranslate nohighlight">\(M_{\mathrm{bh}}\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> have significant measurement uncertainties in our dataset. To explore this limitation, we will fit the relation in both directions. This is not the same as taking the inverse of one fit. Each regression is a different model that incorporates errors on different variables.</p>
-<ul class="simple">
-<li><p>Fit a linear regression model to the data, treating M_bh as the dependent variable (y) and sigma as the independent variable (x) and incorporate the errors on sigma in the fit.</p></li>
-<li><p>Fit another linear regression model, treating sigma as the dependent variable (y) and M_bh as the independent variable (x) and incorporate the errors on M_bh in the fit.</p></li>
-</ul>
-</li>
-</ol>
-<div class="dropdown admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Hint: Incorporating Errors in the Fit
-Look into the <code class="docutils literal notranslate"><span class="pre">weights</span></code> keyword argument for <code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code> to figure out how to incorporate errors.</p>
-</div>
-<ol class="arabic simple" start="4">
-<li><p><strong>Visualize the Results</strong>: Plot the regression lines along with the data points to observe how well they fit the M-sigma relation. Compare the slopes and intercepts of the regression lines for both fits.</p></li>
-</ol>
-</div>
 </section>
 </section>
 <section id="beyond-a-single-best-fit-line-representing-uncertainty-in-our-fit">
@@ -556,34 +516,6 @@ Look into the <code class="docutils literal notranslate"><span class="pre">weigh
 </ol>
 <p>The goal for this next exercise is to use bootstrapping to estimate the uncertainty on our fit for the M-sigma relation!</p>
 <p><img alt="bootstrapping_image" src="../../_images/bootstrap_resampling.png" /></p>
-<div class="tip admonition">
-<p class="admonition-title">Exercise 2: Bootstrap Resampling for our Linear Fit to the M-sigma Relation</p>
-<p>Starting from your linear model fit from Exercise 1:</p>
-<ol class="arabic">
-<li><p><strong>Perform Bootstrap Resampling:</strong> To do this, you will re-fit the data many times after creating subsamples of
-randomly drawn datasets (<strong>with replacement</strong>) from our actual data. In general, you can choose the number of bootstrap samples to generate based on computational resources and desired precision. For this case, you can start by generating ~500 bootstrap samples. For each bootstrap iteration:</p>
-<ul class="simple">
-<li><p>Generate a bootstrap sample from the observed data by randomly sampling with replacement N points from the data where N is the length of the data. Remember: you need to sample x, y, and yerr in some way that preserves the correct ordering (aka you can’t take the black hole mass of one galaxy and the diserpersion of another galaxy!). There is a numpy function that can do this for you, so your first task is to search for this function!</p></li>
-</ul>
-<div class="dropdown admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Hint: Sampling with <code class="docutils literal notranslate"><span class="pre">numpy</span></code>
-If you can’t find it, the function you should use for this step is <code class="docutils literal notranslate"><span class="pre">np.random.choice</span></code>. Look at the documentation to figure out how to implement it.</p>
-</div>
-<ul class="simple">
-<li><p>For each bootstrap sample, fit a linear model to the resampled data using the same procedure as before (first order polynomial with <code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code>).</p></li>
-<li><p>Append the coefficients (slope and intercept) of the linear fit for each bootstrap sample to a container of your choice (probably a list or array).</p></li>
-</ul>
-</li>
-<li><p><strong>Visualize Results:</strong> You should generate some plots to assess our bootstrapping results.</p>
-<ul class="simple">
-<li><p>First, add all 500 lines from your 500 bootstrap fits to your original M-sigma plot. Note: use a low <code class="docutils literal notranslate"><span class="pre">alpha</span></code> for your plots so the lines are semi-transparent! Does this result match your expectations? What can you infer about the magnitude of the uncertainty in the M-<span class="math notranslate nohighlight">\(\sigma\)</span> relation based on this visualization?</p></li>
-<li><p>Plot histograms or density plots of the distributions of slopes and intercepts obtained from the bootstrap resampling. Additionally, overlay the slope and intercept derived from the original linear fit on the same plot for comparison.</p></li>
-</ul>
-</li>
-<li><p><strong>Evaluate and Interpret:</strong> Examine the distribution of slopes and intercepts across the bootstrap samples to assess their variability and uncertainty. How well-constrained is our fit to the M-sigma relation on the basis of this data?</p></li>
-</ol>
-</div>
 </section>
 <section id="orthogonal-distance-regression-and-bootstrapping-together">
 <h2>Orthogonal Distance Regression and Bootstrapping Together<a class="headerlink" href="#orthogonal-distance-regression-and-bootstrapping-together" title="Link to this heading">#</a></h2>
@@ -594,38 +526,6 @@ If you can’t find it, the function you should use for this step is <code class
 </ul>
 <p>But ideally, we would like to account for <strong>both sources of uncertainty at once</strong>: measurement errors in both <span class="math notranslate nohighlight">\(M_{\mathrm{bh}}\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span>, <em>and</em> the sampling error from having only a finite number of galaxies.</p>
 <p>Orthogonal Distance Regression (ODR), also known as <em>total least squares</em>, provides a way to fit a line that accounts for uncertainties in both x and y simultaneously. In Python, this is implemented in the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/odr.html#introduction"><code class="docutils literal notranslate"><span class="pre">scipy.odr</span></code> module</a>. ODR minimizes the <em>perpendicular distance</em> from each data point to the fit line, rather than only the vertical offset, and can be weighted by the uncertainties on both variables.</p>
-<div class="tip admonition">
-<p class="admonition-title">Exercise 3: Putting It All Together</p>
-<p>In this exercise you will combine what you learned in Exercises 1 and 2 by applying ODR together with bootstrapping.</p>
-<ol class="arabic">
-<li><p><strong>Implement ODR for the M–σ Relation:</strong></p>
-<ul class="simple">
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">scipy.odr</span></code> package to fit a straight line to the data.</p></li>
-<li><p>Pass both <span class="math notranslate nohighlight">\(M_{\mathrm{bh}}\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> uncertainties into the fit so that the regression accounts for errors in both variables.</p></li>
-<li><p>Compare the ODR fit visually with your earlier least-squares fits.</p></li>
-</ul>
-<div class="dropdown admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Hint: Starting Values
-ODR requires an initial guess for the slope and intercept. Use the coefficients from your earlier <code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code> result as a good starting point.</p>
-</div>
-</li>
-<li><p><strong>Bootstrap the ODR Fit:</strong></p>
-<ul class="simple">
-<li><p>Perform bootstrap resampling (e.g., 500 iterations) as in Exercise 2, but now apply ODR to each resampled dataset.</p></li>
-<li><p>Collect the slope and intercept values from each bootstrap iteration.</p></li>
-</ul>
-</li>
-<li><p><strong>Visualize and Interpret:</strong></p>
-<ul class="simple">
-<li><p>Overplot the 500 ODR bootstrap fits on your M–σ scatter plot (use a low <code class="docutils literal notranslate"><span class="pre">alpha</span></code> again).</p></li>
-<li><p>Plot histograms of the slope and intercept distributions.</p></li>
-<li><p>Compare the spread of these distributions to the spread you found in Exercise 2 (least-squares bootstraps). Do the uncertainties look more realistic when both x and y errors are included?</p></li>
-</ul>
-</li>
-</ol>
-<p>By the end of this exercise, you will have a more robust estimate of the M–σ relation that incorporates <strong>both measurement errors and sampling variance</strong>, providing a more complete picture of the uncertainties in this fundamental relation.</p>
-</div>
 </section>
 </section>
 
@@ -669,11 +569,11 @@ ODR requires an initial guess for the slope and intercept. Use the coefficients 
       </div>
     </a>
     <a class="right-next"
-       href="../yadavalli2024a/SN_Habitability.html"
+       href="../rice2025a/leapfrog-integrator.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Rogue Planet Habitability</p>
+        <p class="prev-next-title">Building a leapfrog integrator</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -728,7 +628,7 @@ By The AstroCodEx Collaboration, Supported by the Yale Rosenkranz Award
 
   <p class="copyright">
     
-      © Copyright 2025. This work is openly licensed via CC BY-NC-SA 4.0.
+      © Copyright 2023.
       <br/>
     
   </p>

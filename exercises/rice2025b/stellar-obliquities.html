@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Trigonometric Regression &#8212; My sample book</title>
+    <title>Stellar obliquities in exoplanet systems &#8212; My sample book</title>
   
   
   
@@ -61,11 +61,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/bellinger2024a/trig-regression';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/rice2025b/stellar-obliquities';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Stellar obliquities in exoplanet systems" href="../rice2025b/stellar-obliquities.html" />
-    <link rel="prev" title="Rogue Planet Habitability" href="../yadavalli2024a/SN_Habitability.html" />
+    <link rel="next" title="Debugging Strategies Resource" href="../../guides/Debugging_Guide.html" />
+    <link rel="prev" title="Trigonometric Regression" href="../bellinger2024a/trig-regression.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -199,8 +199,8 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level III</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../yadavalli2024a/SN_Habitability.html">Rogue Planet Habitability</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Trigonometric Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rice2025b/stellar-obliquities.html">Stellar obliquities in exoplanet systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bellinger2024a/trig-regression.html">Trigonometric Regression</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Stellar obliquities in exoplanet systems</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides and Walkthroughs</span></p>
 <ul class="nav bd-sidenav">
@@ -259,7 +259,7 @@
       
       
       
-      <li><a href="../../_sources/exercises/bellinger2024a/trig-regression.ipynb" target="_blank"
+      <li><a href="../../_sources/exercises/rice2025b/stellar-obliquities.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -343,7 +343,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Trigonometric Regression</h1>
+    <h1>Stellar obliquities in exoplanet systems</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -354,11 +354,13 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hubble-constant">The Hubble Constant</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-linear-model">3D Linear Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cepheid-lightcurves">Cepheid Lightcurves</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Trigonometric Regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penalized-regressions">Penalized Regressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-and-examining-the-data">Downloading and examining the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-matching-catalogues">Cross-matching catalogues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reproduce-a-classic-stellar-obliquity-figure">Reproduce a classic stellar obliquity figure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-robustness-of-a-trend-to-catalogue-inhomogeneities">Checking robustness of a trend to catalogue inhomogeneities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#considering-different-exoplanet-populations">Considering different exoplanet populations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-binaries">Remove binaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-emerging-trends">Understanding emerging trends</a></li>
 </ul>
             </nav>
         </div>
@@ -370,187 +372,160 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="trigonometric-regression">
-<h1>Trigonometric Regression<a class="headerlink" href="#trigonometric-regression" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="stellar-obliquities-in-exoplanet-systems">
+<h1>Stellar obliquities in exoplanet systems<a class="headerlink" href="#stellar-obliquities-in-exoplanet-systems" title="Link to this heading">#</a></h1>
 <div class="author admonition">
-<p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0003-4456-4863">Earl Bellinger</a> (Yale University)</p>
-<p><em>Description</em>: A series of exercises at the advanced undergraduate level building up the intuition and practice of using trigonometric regression to fit periodically varying data (in this case, classically pulsating Cepheid stars).</p>
-<p><em>Intended Audience</em>: Advanced Undergraduate / Early Graduate</p>
-<p><em>Tags</em>: <code class="docutils literal notranslate"><span class="pre">linear-regression</span></code>, <code class="docutils literal notranslate"><span class="pre">penalized-regression</span></code>, <code class="docutils literal notranslate"><span class="pre">feature-selection</span></code>, <code class="docutils literal notranslate"><span class="pre">machine-learning</span></code>, <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>, <code class="docutils literal notranslate"><span class="pre">Fourier-analysis</span></code>, <code class="docutils literal notranslate"><span class="pre">visualization</span></code>, <code class="docutils literal notranslate"><span class="pre">variable-stars</span></code></p>
-<p><em>Requirements</em>: <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> (<a class="reference download internal" download="" href="../../_downloads/ac143087118e47d2b76c570ce2de2f70/requirements.txt"><span class="xref download myst">requirements.txt</span></a>)</p>
-<p><em>Last Updated: July 23, 2024</em></p>
+<p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0002-7670-670X">Malena Rice</a> (Yale University)</p>
+<p><em>Description</em>: Learn to index pandas dataframes, visualize datasets with asymmetric uncertainties, and cross-match astronomical catalogues.</p>
+<p><em>Intended Audience</em>: Graduate</p>
+<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">exoplanets</span></code>,<code class="docutils literal notranslate"><span class="pre">orbits</span></code>, <code class="docutils literal notranslate"><span class="pre">indexing</span></code></p>
+<p><em>Requirements</em>: <code class="docutils literal notranslate"><span class="pre">astroquery</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">astropy</span></code>, <code class="docutils literal notranslate"><span class="pre">re</span></code></p>
+<p><em>Last Updated: August 22, 2025</em></p>
 </div>
 <div class="learningobjective admonition">
 <p class="admonition-title">Learning Objectives</p>
 <ol class="arabic simple">
-<li><p>Create linear regression models</p></li>
-<li><p>Understand how to use a different basis (in this case, a trigonometric basis)</p></li>
-<li><p>Apply a penalty to the regression model and learn about cross-validation</p></li>
-<li><p>Learn about classically pulsating stars: this will enable you to determine exactly how bright a given pulsating star will be at any given time in the past or future! In addition, these statistical models we are fitting are a compact description of the lightcurve, which then enables us to compare observations of a star with a theoretical simulation. That in turn would enable us to determine things about the star, such as its mass, radius, metallicity, and age.</p></li>
+<li><p>Organize and cross-match information across astronomical datasets</p></li>
+<li><p>Categorize exoplanet systems based on physical properties</p></li>
+<li><p>Reproduce known trends in the stellar obliquity distribution</p></li>
+<li><p>Derive empirical boundaries between classes of exoplanets</p></li>
 </ol>
 </div>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>Classically pulsating stars such as Cepheids and RR Lyrae stars brighten and dim periodically.</p>
-<p>Here is an example of a phased lightcurve obtained by the OGLE project of a Cepheid star in the Large Magellanic Cloud:</p>
-<p>In this series of exercises, we will use linear regression to fit a <strong>trigonometric model</strong> to this phased lightcurve.</p>
-<p>Lastly, we will use penalized regression for feature selection.</p>
-<div class="dropdown admonition">
-<p class="admonition-title">Review of Ordinary Linear Regression</p>
-<ul class="simple">
-<li><p><strong>Objective</strong>: Predict a dependent variable <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> based on independent variables <span class="math notranslate nohighlight">\(X\)</span>.</p></li>
-<li><p><strong>Model</strong>: <span class="math notranslate nohighlight">\(\begin{align*}
-  \mathbf{y} &amp;= \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \ldots + \beta_m X_m + \epsilon= \boldsymbol\beta \mathbf{X} + \epsilon \\
-\end{align*}\)</span></p></li>
-</ul>
-<p>where <span class="math notranslate nohighlight">\(\beta_0\)</span> is the intercept, <span class="math notranslate nohighlight">\(\beta_1\)</span> a coefficient, and <span class="math notranslate nohighlight">\(\epsilon\)</span> an error term.</p>
-<ul class="simple">
-<li><p><strong>Loss</strong>: <span class="math notranslate nohighlight">\(\arg\min_{\boldsymbol\beta}||\mathbf{y} - \boldsymbol{\beta} \mathbf{X}||_2\)</span></p></li>
-<li><p><strong>Solution</strong>: <span class="math notranslate nohighlight">\(\boldsymbol{\hat\beta} = (\mathbf{X}^\mathrm{T}\mathbf{X})^{-1}\mathbf{X}^\mathrm{T}\mathbf{y}\)</span>  (Thanks, Gauss!)</p></li>
-</ul>
-<p><strong>See also</strong>: <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html">https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html</a></p>
-</div>
+<p>The stellar obliquity of a planetary system is defined as the tilt of the net orbital angular momentum vector of the planets’ orbits relative to the spin axis of the host star. For exoplanets, this is typically approximated by the angle between a planet’s orbital orientation and the stellar spin: an angle that can be measured for transiting exoplanets by obtaining radial velocity observations across the planet’s transit.</p>
+<p>These observations trace the Rossiter-McLaughlin effect as the planet transits across the red- or blue-shifted component of the spinning host star, blocking out preferentially bluer or redder light to induce small deviations in the measured radial velocity. A schematic of this effect, drawn from Gaudi et al. 2010 and adapted by the WASP planets team, is shown below.</p>
+<p><img alt="" src="../../_images/rmeffect.jpg" /></p>
 </section>
-<section id="the-hubble-constant">
-<h2>The Hubble Constant<a class="headerlink" href="#the-hubble-constant" title="Link to this heading">#</a></h2>
-<p>In this exercise we will use linear regression to derive <span class="math notranslate nohighlight">\(H_0\)</span>. Below is the 1929 data from Edwin Hubble of Cepheid-host galaxies, which made him conclude that the Universe is expanding:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">distances</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.21</span><span class="p">,</span> <span class="mf">0.26</span><span class="p">,</span> <span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.45</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span> <span class="c1"># Mpc</span>
-<span class="n">velocities</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">130</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">185</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">270</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">800</span><span class="p">])</span> <span class="c1"># km/s</span>
-</pre></div>
-</div>
+<section id="downloading-and-examining-the-data">
+<h2>Downloading and examining the data<a class="headerlink" href="#downloading-and-examining-the-data" title="Link to this heading">#</a></h2>
+<p>To begin examining our stellar obliquities, we will first need to obtain the appropriate datasets. We will begin from two complementary sources: (1) the NASA Exoplanet Archive, which catalogues a broad range of exoplanet system properties, and (2) the TEPCat catalogue, which includes a table tracking all stellar obliquity measurements from the community.</p>
 <div class="dropdown exercise admonition">
 <p class="admonition-title">Exercise 1</p>
 <div class="docutils container">
 <ol class="arabic simple">
-<li><p>Make a plot of velocity vs. distance</p></li>
-<li><p>Obtain and plot the best fit line using ordinary linear regression (<strong>hint</strong>: use <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>)</p></li>
-<li><p>What Hubble constant does one find from these data? What does this imply about the age of the Universe, and how does this compare to modern values?</p></li>
+<li><p>Download the Planetary Systems Composite Parameters dataset from the NASA Exoplanet Archive.</p></li>
+<li><p>Navigate to the TEPcat catalogue and download the .csv file available for orbital obliquities.</p></li>
+<li><p>Open each file as a pandas dataframe and print the columns. What information is provided in each? How do the naming conventions differ?</p></li>
 </ol>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Hint 1:
+You can use astroquery to directly download data from the NASA Exoplanet Archive in Python. The appropriate package can be downloaded as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can include some starter code in this format</span>
+<span class="kn">from</span> <span class="nn">astroquery.ipac.nexsci.nasa_exoplanet_archive</span> <span class="kn">import</span> <span class="n">NasaExoplanetArchive</span>
+</pre></div>
+</div>
+</div>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Hint 2:
+Some datasets are most easily opened as astropy tables and then converted to pandas after the fact.</p>
+</div>
 </div>
 </div>
 </section>
-<section id="d-linear-model">
-<h2>3D Linear Model<a class="headerlink" href="#d-linear-model" title="Link to this heading">#</a></h2>
-<p>In this exercise, we will practice generating data from a linear model (with noise) and visualizing it. We’ll then use the <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> library to fit a linear model to the data.</p>
+<section id="cross-matching-catalogues">
+<h2>Cross-matching catalogues<a class="headerlink" href="#cross-matching-catalogues" title="Link to this heading">#</a></h2>
+<p>You’ll notice that the planets are not listed with the same naming conventions: in the TEPCat catalogue, underscores are used in the planet/star names (a mix is included), while the NASA Exoplanet Archive uses spaces and separately lists planets and stars. The TEPCat catalogue also lists <i>all</i> measurements obtained, meaning that there are multiple entires for each object.</p>
+<p>We’d like to ultimately produce just one table that can be drawn from with all of the relevant information about a system, so that we can visualize information to contextualize each system. This exercise is designed to step us through that process.</p>
 <div class="dropdown exercise admonition">
 <p class="admonition-title">Exercise 2</p>
 <div class="docutils container">
-<p>Generate random data according to the linear model</p>
-<div class="math notranslate nohighlight">
-\[
-y = 5 + 3x_1 + 2x_2 + \epsilon
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> are uniform random variables, and <span class="math notranslate nohighlight">\(\epsilon\)</span> is a normal random variable.</p>
 <ol class="arabic simple">
-<li><p>Generate 100 data points according to this model.</p></li>
-<li><p>Plot <span class="math notranslate nohighlight">\(y\)</span> vs <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(y\)</span> vs <span class="math notranslate nohighlight">\(x_2\)</span>.</p></li>
-<li><p>Make a 3D plot of these three variables. Visualize the data as points and the model as a plane.
-<strong>Extra credit</strong>: use ipywidgets to control the orientation of the 3D plot.</p></li>
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> to fit a linear model to your data.</p></li>
-<li><p>Add the plane of best fit to your 3D plot.</p></li>
+<li><p>Filter the TEPCat catalogue to include only systems where Pflag=’y’. This is the ‘preferred’ flag in TEPcat and should leave you with just one measurement per planet. Verify that this is the case by checking whether the number of remaining rows matches the unique set of system names present in TEPCat. If these <i>do not</i> match, then update your filtered list so that all systems with reliable measurements are included.</p></li>
+<li><p>Use the regex module in Python to convert all system names in TEPCat to match the convention of planet names in the NASA Exoplanet Archive.</p></li>
+<li><p>Merge the two files based on the updated names. Demonstrate that you end up with the same number of rows present at the end of Step 1 of this exercise (that is, all planets with measurements in TEPCat should also be present in the NASA Exoplanet Archive).</p></li>
 </ol>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Hint 1:
+You may need to revisit some papers to judge whether a system is considered to have a “reliable” measurement.</p>
+</div>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Hint 2:
+When a letter is not provided for a planet in TEPCat, the measurement is for the ‘b’ planet.</p>
+</div>
 </div>
 </div>
 </section>
-<section id="cepheid-lightcurves">
-<h2>Cepheid Lightcurves<a class="headerlink" href="#cepheid-lightcurves" title="Link to this heading">#</a></h2>
-<p>We can now use the techniques we’ve practiced thus far to begin an investigation of the light curves (magnitude vs. time) of classically pulsating Cepheid stars.</p>
+<section id="reproduce-a-classic-stellar-obliquity-figure">
+<h2>Reproduce a classic stellar obliquity figure<a class="headerlink" href="#reproduce-a-classic-stellar-obliquity-figure" title="Link to this heading">#</a></h2>
+<p>You should now have all of the columns needed to make basic diagnostic figures related to the stellar obliquity distribution. One well-known trend in the stellar obliquity distribution is that hot Jupiters around hot stars are often spin-orbit misaligned (<span class="math notranslate nohighlight">\(\lambda&gt;&gt;0\)</span> deg), while hot Jupiters around cooler stars are typically spin-orbit aligned (<span class="math notranslate nohighlight">\(\lambda\approx0\)</span> deg; Winn et al. 2010, Schlaufman 2010). In the next exercise, we will show that this is the case. Note that, to derive physical meaning from spin-orbit distributions, we are typically most interested in the deviation of <span class="math notranslate nohighlight">\(\lambda\)</span> from zero degrees (alignment), so that we will focus on <span class="math notranslate nohighlight">\(|\lambda|\)</span>.</p>
 <div class="dropdown exercise admonition">
 <p class="admonition-title">Exercise 3</p>
 <div class="docutils container">
 <ol class="arabic simple">
-<li><p>Download Cepheid data from the OGLE database: <a class="reference external" href="https://ogledb.astrouw.edu.pl/~ogle/OCVS/data/I/12/OGLE-LMC-CEP-0012.dat">https://ogledb.astrouw.edu.pl/~ogle/OCVS/data/I/12/OGLE-LMC-CEP-0012.dat</a>. (Backup/local link <a class="reference download internal" download="" href="../../_downloads/2994c5fc4502ee073107de3d893555d6/OGLE-LMC-CEP-0012.dat"><span class="xref download myst">here</span></a>)</p></li>
-<li><p>Plot magnitude vs. time (with appropriate errorbars).</p></li>
-<li><p>Plot magnitude vs. phase (with appropriate errorbars) by phasing the times according to the pulsation period of 2.6601839 days.</p></li>
+<li><p>Plot the stellar effective temperature vs. the absolute value of the spin-orbit angle (<span class="math notranslate nohighlight">\(|\lambda|\)</span>) for all hot Jupiters within your sample. Use stellar effective temperatures from the NASA Exoplanet Archive, and include asymmetric uncertainties on the y-axis. Define hot Jupiters here as planets with <span class="math notranslate nohighlight">\(0.3M_J \leq M \leq 13 M_J\)</span> and <span class="math notranslate nohighlight">\(a/R_*&lt;10\)</span>.</p></li>
+<li><p>Describe the observed distribution. At roughly what stellar effective temperature do you begin to see a higher rate of spin-orbit misaligned hot Jupiters?</p></li>
 </ol>
-<p>You should get something like this:</p>
-<p><img alt="" src="../../_images/OGLE-LMC-CEP-0012_1.png" /></p>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Hint 1:
+To filter ‘hot Jupiters’, you will need to calculate <span class="math notranslate nohighlight">\(a/R_*\)</span> from other values provided by the NASA Exoplanet Archive. In some cases, it may be necessary to convert from orbital period to semimajor axis using Kepler’s laws. We use <span class="math notranslate nohighlight">\(a/R_*\)</span> rather than orbital period to define our hot Jupiters, since star-planet interactions may play an important role in shaping the stellar obliquity distribution.</p>
+</div>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Hint 2:
+Uncertainties will need to be flipped for negative values of <span class="math notranslate nohighlight">\(\lambda\)</span> when taking the absolute value.</p>
+</div>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Hint 3:
+You may have many overlapping data points in your figure. To see the distribution more clearly, it can be helpful to include some opacity value smaller than 1 for the visualized data points.</p>
+</div>
 </div>
 </div>
 </section>
-<section id="id1">
-<h2>Trigonometric Regression<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>Finally, we can apply trigonometric (a.k.a. sinusoidal) regression to investigate the relevant parameters of our Cepheids. A short review of the technique can be found in the dropdown.</p>
+<section id="checking-robustness-of-a-trend-to-catalogue-inhomogeneities">
+<h2>Checking robustness of a trend to catalogue inhomogeneities<a class="headerlink" href="#checking-robustness-of-a-trend-to-catalogue-inhomogeneities" title="Link to this heading">#</a></h2>
+<p>Oftentimes, we will find that multiple values are reported for a certain parameter when describing a given system. Ideally, your results should not depend on which of these values are chosen, unless there is good reason to believe that one parameter set is more reliable than others. For example, a given study may uniformly derive parameters across a sample — offering a more apples-to-apples comparison than heterogeneous measurements drawn from compiled catalogues. Alternatively, a measurement may have been made with a methodology that is more precise and prone to fewer systematic biases than others, such that it may be considered more ‘reliable’.</p>
+<p>Because we are working with compiled catalogues that are not homogenous, we should verify that the observed trend is present irrespective of what value we choose for the stellar effective temperature.</p>
 <div class="dropdown exercise admonition">
 <p class="admonition-title">Exercise 4</p>
 <div class="docutils container">
 <ol class="arabic simple">
-<li><p>Fit a trigonometric linear regression model to the Cepheid observations</p></li>
-<li><p>Plot the fitted model with the data</p></li>
-<li><p>Use an ipython widget to adjust the number of parameters in the fit (and to update the plot)</p></li>
+<li><p>Create a two-panel figure in which the top panel is the same as your figure from Exercise 3, and the lower panel is the same figure but with stellar effective temperature drawn from the TEPCat reported values.</p></li>
+<li><p>Repeat the exercise of checking at which temperature you begin to see a higher rate of spin-orbit misaligned hot Jupiters. Is this value roughly constant across both panels?</p></li>
 </ol>
 </div>
 </div>
-<div class="dropdown admonition">
-<p class="admonition-title">Review of Trigonometric Regression</p>
-<p>When dealing with periodic data, we can change our basis to</p>
-<div class="math notranslate nohighlight">
-\[
-    y(t) = y_0 + \sum_k^{k_{\max}} S_k \sin(k\omega t) + C_k \cos(k\omega t)
-\]</div>
-<p>where</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(y\)</span> is our (observed) timeseries</p></li>
-<li><p><span class="math notranslate nohighlight">\(y_0\)</span> is a mean value</p></li>
-<li><p><span class="math notranslate nohighlight">\(t\)</span> are the time points at which we have data</p></li>
-<li><p><span class="math notranslate nohighlight">\(\omega\)</span> is the main frequency of variability (assumed here to be known)</p></li>
-<li><p><span class="math notranslate nohighlight">\(k\geq 1\)</span> tells us how many terms are in our fit</p></li>
-<li><p>and we fit for the amplitudes <span class="math notranslate nohighlight">\(S,C\)</span>.</p></li>
-</ul>
-<p>Note that if <span class="math notranslate nohighlight">\(\omega\)</span> is known, then <span class="math notranslate nohighlight">\(y\)</span> is <strong>linear</strong> in <span class="math notranslate nohighlight">\(\mathbf{S, C}\)</span>.</p>
-</div>
 </section>
-<section id="penalized-regressions">
-<h2>Penalized Regressions<a class="headerlink" href="#penalized-regressions" title="Link to this heading">#</a></h2>
-<p>It can be beneficial to regularize / penalize the fitting process. Here we will use two common methods: LASSO (L1) and Ridge (L2) regularization, and we’ll use cross-validation to determine the best penalty to choose. (For a review on cross-validation, see <a class="reference external" href="https://scikit-learn.org/stable/modules/cross_validation.html">https://scikit-learn.org/stable/modules/cross_validation.html</a>)</p>
+<section id="considering-different-exoplanet-populations">
+<h2>Considering different exoplanet populations<a class="headerlink" href="#considering-different-exoplanet-populations" title="Link to this heading">#</a></h2>
+<p>While, historically, spin-orbit measurements have been primarily confined to hot Jupiter systems, increasingly they have been obtained for warm Jupiters as well as lower-mass/smaller exoplanets. While these populations are smaller, they so far have <i>not</i> been observed to follow the same trends observed for hot Jupiters. Here we will visualize what those other distributions look like.</p>
 <div class="dropdown exercise admonition">
 <p class="admonition-title">Exercise 5</p>
 <div class="docutils container">
 <ol class="arabic simple">
-<li><p>Use a penalized regression model to fit the Cepheid data</p></li>
-<li><p>Use an ipython widget to adjust the penalty (and to update the plot)</p></li>
-<li><p>Use cross-validation to determine the optimal penalty (and plot it)</p></li>
+<li><p>Create a three-panel figure in which the top panel is the same as your figure from Exercise 3, the middle panel is the same but with warm Jupiters (<span class="math notranslate nohighlight">\(0.3M_J \leq M \leq 13 M_J\)</span> and <span class="math notranslate nohighlight">\(a/R_*&gt;10\)</span>), and the bottom panel shows the spin-orbit distribution for all lower-mass planets (<span class="math notranslate nohighlight">\(M&lt;0.3M_J\)</span>). Describe similarities and differences between each population.</p></li>
 </ol>
 </div>
 </div>
-<div class="dropdown admonition">
-<p class="admonition-title">Review of Penalized Regression: LASSO (L1 Regularization)</p>
-<p><em>a.k.a. least absolute shrinkage and selection operator</em></p>
-<ul class="simple">
-<li><p><strong>Objective</strong>: Eliminate less important features</p></li>
-<li><p><strong>Model</strong>: Add a penalty term <span class="math notranslate nohighlight">\(\alpha \sum_{i=1}^{n} |\beta_i|\)</span> to the loss function</p></li>
-</ul>
-<p>Higher <span class="math notranslate nohighlight">\(\alpha\)</span> → more penalty → more coefficients set to zero</p>
-<ul class="simple">
-<li><p><strong>Loss</strong>: <span class="math notranslate nohighlight">\(\arg\min_{\boldsymbol\beta}||\mathbf{y} - \boldsymbol{\beta} \mathbf{X}||_2 + \alpha \sum_{i=1}^{n} |\beta_i|\)</span></p></li>
-<li><p><strong>Solution</strong>: No closed form! Need to search.</p></li>
-</ul>
-<p>Takehome message: <strong>LASSO</strong> completely eliminates some features.</p>
-<p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html">https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html</a></p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Review of Penalized Regression: Ridge (L2 Regularization)</p>
-<p><em>a.k.a. Tikhonov regularization</em></p>
-<ul class="simple">
-<li><p><strong>Objective</strong>: Minimize the impact of less important features</p></li>
-<li><p><strong>Model</strong>: Add a penalty term <span class="math notranslate nohighlight">\(\alpha \sum_{i=1}^{n} \beta_i^2\)</span> to the loss function</p></li>
-<li><p><strong>Loss</strong>: <span class="math notranslate nohighlight">\(\arg\min_{\boldsymbol\beta}||\mathbf{y} - \boldsymbol{\beta} \mathbf{X}||_2 + \alpha \sum_{i=1}^{n} \beta_i^2\)</span></p></li>
-</ul>
-<p>where <span class="math notranslate nohighlight">\(\alpha\)</span> is a regularization penalty. Higher <span class="math notranslate nohighlight">\(\alpha\)</span> → more penalty → smaller coefficients</p>
-<ul class="simple">
-<li><p><strong>Solution</strong>: <span class="math notranslate nohighlight">\(\boldsymbol{\hat\beta} = (\mathbf{X}^\mathrm{T}\mathbf{X} + \alpha \mathbf{I})^{-1}\mathbf{X}^\mathrm{T}\mathbf{y}\)</span></p></li>
-</ul>
-<p>where <span class="math notranslate nohighlight">\(\mathbf{I}\)</span> is the identity matrix.</p>
-<p>Takehome message: <strong>Ridge</strong> reduces the magnitude of coefficients, but doesn’t set them to zero.</p>
-<p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html">https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html</a></p>
-</div>
+</section>
+<section id="remove-binaries">
+<h2>Remove binaries<a class="headerlink" href="#remove-binaries" title="Link to this heading">#</a></h2>
+<p>When a binary companion is present, a quite broad range of physical mechanisms — for example, von Zeipel-Lidov-Kozai oscillations induced by the binary perturber; disk nodal precession; and secular resonance crosings — can produce spin-orbit misalignments, whereas the set of misalignment mechanisms is substantially more limited in single-star systems. As a result, considering only single-star systems can help to gain physical intuition into what the primary mechanisms are that sculpt at least some sub-populations of the stellar obliquity distribution.</p>
+<p>The NASA Exoplanet Archive includes a column, ‘sy_snum’, that lists whether a system has a known binary star companion. While this is not necessarily complete (some binary companions can be quite faint and tricky to find), we can remove at least the listed binaries to show how the sample changes. Note that there are other places to vet for binaries — for example, using the Gaia astrometric catalogue — but, for simplicity, we will consider only the NASA Exoplanet Archive here.</p>
 <div class="dropdown exercise admonition">
 <p class="admonition-title">Exercise 6</p>
 <div class="docutils container">
 <ol class="arabic simple">
-<li><p>Download the lightcurves of more Cepheids</p></li>
-<li><p>Fit penalized regression models to them</p></li>
-<li><p>Peform exploratory data analysis to find the relationships between the period, amplitudes, etc.</p></li>
+<li><p>Remove all listed binary or multi-star systems (those with sy_snum&gt;1) listed in the NASA Exoplanet and describe how the trends change.</p></li>
+<li><p>Shift the limits of where you place the borders of each planetary population. What empirical limits most naturally divide the planets into distinct groups?</p></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="understanding-emerging-trends">
+<h2>Understanding emerging trends<a class="headerlink" href="#understanding-emerging-trends" title="Link to this heading">#</a></h2>
+<p>A second observed trend that has recently emerged is that warm Jupiters in single-star systems are preferentially spin-orbit aligned (Rice et al. 2022; Wang et al. 2024). As such, another useful figure to show is how stellar obliquity varies with star-planet separation. We can use this to empirically define what is considered a “warm Jupiter”.</p>
+<div class="dropdown exercise admonition">
+<p class="admonition-title">Exercise 7</p>
+<div class="docutils container">
+<ol class="arabic simple">
+<li><p>Re-make the same 3-panel figure as in Exercise 6, but with the orbital separation (<span class="math notranslate nohighlight">\(a/R_*\)</span>) on the x-axis, rather than the stellar effective temperature. At what cutoff of <span class="math notranslate nohighlight">\(a/R_*\)</span> do planets stop showing a high rate of spin-orbit misalignment?</p></li>
 </ol>
 </div>
 </div>
@@ -570,7 +545,7 @@ y = 5 + 3x_1 + 2x_2 + \epsilon
         },
         kernelOptions: {
             name: "python3",
-            path: "./exercises/bellinger2024a"
+            path: "./exercises/rice2025b"
         },
         predefinedOutput: true
     }
@@ -588,20 +563,20 @@ y = 5 + 3x_1 + 2x_2 + \epsilon
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../yadavalli2024a/SN_Habitability.html"
+       href="../bellinger2024a/trig-regression.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Rogue Planet Habitability</p>
+        <p class="prev-next-title">Trigonometric Regression</p>
       </div>
     </a>
     <a class="right-next"
-       href="../rice2025b/stellar-obliquities.html"
+       href="../../guides/Debugging_Guide.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Stellar obliquities in exoplanet systems</p>
+        <p class="prev-next-title">Debugging Strategies Resource</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -622,11 +597,13 @@ y = 5 + 3x_1 + 2x_2 + \epsilon
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hubble-constant">The Hubble Constant</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-linear-model">3D Linear Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cepheid-lightcurves">Cepheid Lightcurves</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Trigonometric Regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penalized-regressions">Penalized Regressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-and-examining-the-data">Downloading and examining the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-matching-catalogues">Cross-matching catalogues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reproduce-a-classic-stellar-obliquity-figure">Reproduce a classic stellar obliquity figure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-robustness-of-a-trend-to-catalogue-inhomogeneities">Checking robustness of a trend to catalogue inhomogeneities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#considering-different-exoplanet-populations">Considering different exoplanet populations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-binaries">Remove binaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-emerging-trends">Understanding emerging trends</a></li>
 </ul>
   </nav></div>
 

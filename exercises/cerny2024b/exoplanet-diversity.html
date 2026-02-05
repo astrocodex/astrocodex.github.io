@@ -175,11 +175,7 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Events</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../hackday.html">Hack Day 2025</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Python Exercises Gallery</a></li>
 </ul>
@@ -198,19 +194,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../pasha2024b/hii-regions.html">Measuring The Sizes of HII Regions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sunseri2024a/Data_Parallelism_Part_1.html">Introduction to Data Parallelism</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../asali2024a/bootstrapping.html">Estimating Uncertainty in the Black Hole Mass–Velocity Dispersion Relation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rice2025a/leapfrog-integrator.html">Building a leapfrog integrator</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Level III</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../yadavalli2024a/SN_Habitability.html">Rogue Planet Habitability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bellinger2024a/trig-regression.html">Trigonometric Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rice2025b/stellar-obliquities.html">Stellar obliquities in exoplanet systems</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides and Walkthroughs</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../guides/Debugging_Guide.html">Debugging Strategies Resource</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">About</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../aboutteam.html">Meet the AstroCodEx Team</a></li>
 </ul>
 
     </div>
@@ -377,53 +371,51 @@ document.write(`
 <h1>Exploring the Diversity of Known Exoplanets<a class="headerlink" href="#exploring-the-diversity-of-known-exoplanets" title="Link to this heading">#</a></h1>
 <div class="author admonition">
 <p class="admonition-title"><a class="reference external" href="https://orcid.org/0000-0003-1697-7062">William Cerny</a>, <a class="reference external" href="https://orcid.org/0000-0002-7075-9931">Imad Pasha</a>, <a class="reference external" href="https://orcid.org/0000-0002-8320-2198">Yasmeen Asali</a>, <a class="reference external" href="https://orcid.org/0000-0002-9986-4604">Sebastian Monzon</a> (Yale University)</p>
-<p><em>Description</em>: Learn how to manipulate pandas dataframes to recreate a classic demographics plot of discovered exoplanets, their associated detection method, and characteristics with matplotlib.</p>
+<p><em>Description</em>: Learn how to manipulate pandas dataframes to create a plot of exoplanets discovered and their detection method with matplotlib</p>
 <p><em>Intended Audience</em>: Early Undergraduate</p>
-<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">exoplanets</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">visualization</span></code></p>
-<p><em>Requirements</em>: <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> (<a class="reference download internal" download="" href="../../_downloads/57ef5323576b2ebe401dabcf2c9b3272/requirements.txt"><span class="xref download myst">requirements.txt</span></a>)</p>
-<p><em>Last Updated: August 21, 2025</em></p>
+<p><em>tags</em>: <code class="docutils literal notranslate"><span class="pre">exoplanets</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></p>
+<p><em>Requirements</em>: <a class="reference download internal" download="" href="../../_downloads/57ef5323576b2ebe401dabcf2c9b3272/requirements.txt"><span class="xref download myst">requirements.txt</span></a></p>
+<p><em>Last Updated: July 18, 2025</em></p>
 </div>
 <div class="learningobjective admonition">
 <p class="admonition-title">Learning Objectives</p>
 <ol class="arabic simple">
-<li><p>Download and open a csv file into a pandas dataframe.</p></li>
-<li><p>Set matplotlib axis based on pandas dataframe columns.</p></li>
-<li><p>Customize matplotlib plots to distinctly represent different types of data on one plot.</p></li>
-<li><p>Identify exoplanet detection methods and what types of planets the methods are biased towards.</p></li>
-<li><p>Recreate plots used in exoplanet literature.</p></li>
+<li><p>Understand the difference between various exoplanet detection methods.</p></li>
+<li><p>Be able to download and open a data file from the NASA Exoplanet Archive into a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dataframe.</p></li>
+<li><p>Filter the table to plot standard exoplanet diagrams, colored by detection technique.</p></li>
 </ol>
 </div>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>When we detect exoplanets (planets orbiting other stars), we often obtain a subset of the following three direct observable properties:</p>
 <ol class="arabic simple">
-<li><p>Their radius (formally, their radius relative to their host star’s radius),</p></li>
+<li><p>Their radius (formally, their radius relative to their host star),</p></li>
 <li><p>Their mass, and/or</p></li>
-<li><p>Their orbital separation (aka orbital radius for circular orbits, or semi-major axis for elliptical orbits).</p></li>
+<li><p>Their orbital separation (aka radius for circular orbits, or semi-major axis for elliptical orbits).</p></li>
 </ol>
 <p>The information available comes down to the <strong>detection methods</strong> used to find and characterize these systems.</p>
 <ol class="arabic simple">
 <li><p><strong>Transit Method</strong>: In this technique, exoplanets are detected by observing the periodic dimming of a star’s light as a planet passes in front of it (transits) from our line of sight. By measuring the decrease in brightness during transit events, astronomers can infer the presence and characteristics of orbiting planets. This method provides relative radius (from the depth of the dip) and orbital separation (inferred from the duration of an orbit, or time between transits).</p></li>
 <li><p><strong>Radial Velocity Method</strong>: This method detects exoplanets by measuring the small periodic shifts in the star’s radial velocity caused by the gravitational pull of an orbiting planet. As the planet orbits the star, it causes the star to wobble slightly. This wobble can be detected through Doppler spectroscopy, and it provides an estimate of the mass (from Newton’s laws) and orbital separation (from the period of the wobbles) of the planet.</p></li>
 <li><p><strong>Microlensing</strong>: Exoplanets can be detected through gravitational microlensing, where the gravitational field of a foreground star bends and magnifies the light of a background star as well as any orbiting planets. The presence of an exoplanet around the foreground star can be inferred from the temporary increase in brightness observed during the microlensing event.</p></li>
-<li><p><strong>Direct Imaging</strong>: Exoplanets can be directly observed by observing the light of the planet itself – typically in the infrared (self-luminous, young planets), though surveys are increasingly moving toward the optical as well (probing reflected light from the host star). In direct imaging, the starlight is suppressed to capture light directly from the neighboring planet(s).</p></li>
+<li><p><strong>Transit Timing Variations (TTV)</strong>: Exoplanets can be inferred through TTVs by measuring the variations in the timing of transit events caused by gravitational interactions between multiple planets within a system. These deviations from the expected transit times provide information about the masses and orbits of the interacting planets.</p></li>
 </ol>
-<p>In addition to these four, there are a number of other methods of detecting planets (such as astrometry and pulsar timing)!</p>
-<p>It is common to plot detected exoplanets in the space of mass vs. orbital separation. Here, we show one such plot, colored by the technique used to initially detect the planet (follow-up observations may have been needed to compute mass or separation).</p>
-<p><img alt="" src="../../_images/current_planets_8-21-2025.png" /></p>
-<p>The x-axis represents the planet-star separation, often expressed in astronomical units (AU), with 1 AU equivalent to the average distance between the Earth and the Sun (approximately 149.6 million kilometers). The y-axis of this figure, also on a log scale, shows the mass of the planet, reported in Jupiter masses (where 1 Jupiter mass equals approximately <span class="math notranslate nohighlight">\(1.898 \times 10^{27}\)</span> kg). Each data point plotted signifies an individual exoplanet.</p>
+<p>In addition to these four, there are a number of other methods of detecting planets (such as direct imaging and astrometry)!</p>
+<p>It is common to plot detected exoplanets in the space of mass vs. orbital separation. Here, we show one such plot from Eberhardt et al. (2022), colored by the detection technique used to detect the planet (follow-up observations may have been needed to compute mass or separation).</p>
+<p><img alt="" src="../../_images/Mass-separation-plot-for-known-exoplanets-color-coded-according-to-their-detection.png" /></p>
+<p>The x-axis of this figure shows the mass of the planet on a log scale, typically measured in Jupiter masses (where 1 Jupiter mass equals approximately <span class="math notranslate nohighlight">\(1.898 \times 10^{27}\)</span> kg). The y-axis, also on a log scale, represents the planet-star separation, often expressed in astronomical units (AU), with 1 AU equivalent to the average distance between the Earth and the Sun (approximately 149.6 million kilometers). Each data point plotted signifies an individual exoplanet.</p>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Checkpoint: Why might the blue (transit) points be clustered toward small separation/high mass?</p>
 <ol class="arabic simple">
 <li><p>Because the dip in light is larger when a large (and thus usually more massive) planet passes in front of the star, larger planets produce deeper and more easily detectable transit signals.</p></li>
 <li><p>Because the transit method requires the planet’s orbit to be edge-on relative to the viewer, closer-in orbits have a higher chance of passing in front of the star.</p></li>
-<li><p>To confirm an exoplanet, you (typically) must detect the transit 2-3 times at a regular interval. Most transit-detecting satellites have not observed for more than a year or two, meaning planets with longer years (larger orbital separation) take longer to confirm.</p></li>
+<li><p>To 100% confirm an exoplanet, you (typically) must detect the transit 2-3 times at a regular interval. Most transit-detecting satellites have not observed for more than a year or two, meaning planets with progressively longer years (larger orbital separation) take longer to confirm.</p></li>
 </ol>
 </div>
 </section>
 <section id="the-mass-separation-plot">
 <h2>The Mass-Separation Plot<a class="headerlink" href="#the-mass-separation-plot" title="Link to this heading">#</a></h2>
-<p>New planets are being discovered on a regular basis, and they continue to be added to the NASA Exoplanet Archive. In this exercise, we will recreate and update the above figure using this dataset.</p>
+<p>In this exercise, we will recreate the above figure using data available in the NASA exoplanet archive.</p>
 <div class="dropdown exercise admonition">
 <p class="admonition-title">Exercise 1</p>
 <div class="docutils container">
@@ -548,7 +540,7 @@ By The AstroCodEx Collaboration, Supported by the Yale Rosenkranz Award
 
   <p class="copyright">
     
-      © Copyright 2025. This work is openly licensed via CC BY-NC-SA 4.0.
+      © Copyright 2023.
       <br/>
     
   </p>
