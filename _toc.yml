@@ -8,6 +8,7 @@ parts:
   - caption: Events
     chapters:
     - file: hackday
+    - file: hackday2024
   - caption: Gallery
     chapters:
     - file: gallery
