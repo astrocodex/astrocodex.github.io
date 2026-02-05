@@ -22,10 +22,12 @@ parts:
     - file: exercises/pasha2024b/hii-regions
     - file: exercises/sunseri2024a/Data_Parallelism_Part_1
     - file: exercises/asali2024a/bootstrapping
+    - file: exercises/rice2025a/leapfrog-integrator
   - caption: Level III
     chapters:
     - file: exercises/yadavalli2024a/SN_Habitability
     - file: exercises/bellinger2024a/trig-regression
+    - file: exercises/rice2025b/stellar-obliquities
   - caption: Guides and Walkthroughs
     chapters:
     - file: guides/Debugging_Guide
