@@ -5,10 +5,9 @@ format: jb-book
 root: intro
 
 parts:
-  - caption: Events
+  - caption: About
     chapters:
-    - file: hackday
-    - file: hackday2024
+    - file: aboutteam
   - caption: Gallery
     chapters:
     - file: gallery
@@ -35,6 +34,7 @@ parts:
   - caption: Guides and Walkthroughs
     chapters:
     - file: guides/Debugging_Guide
-  - caption: About
+  - caption: Events
     chapters:
-    - file: aboutteam
+    - file: hackday
+    - file: hackday2024
