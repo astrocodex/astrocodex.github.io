@@ -62,7 +62,7 @@ Anyone is welcome to use, download, and modify the materials on this site to sui
 The ```astrocodex``` is open-source, and we encourage contributions. If you have an exercise or set of exercises you think would fit well into the codex, you can create a submission following our submission guidelines. 
 
 Exercises submitted to the codex should have 
-- an author / contributer list with associated ORCIDs, 
+- an author / contributor list with associated ORCIDs, 
 - A short (one-line) description of the contents
 - A set of tags 
 - A `requirements.txt` file with a list of any packages needed to complete the exercises,
@@ -70,7 +70,7 @@ Exercises submitted to the codex should have
 - A short list of learning objectives for the assignment 
 - Any relevant instructor notes for carrying out the assignment
 
-We are working toward a streamlined and maintainable process for submissions. For the time being, submissions can be sent to astrocodex@googlegroups.com.
+We are working toward a streamlined and maintainable process for ingesting submissions. For the time being, submissions can be sent to astrocodex@googlegroups.com.
 
 ## Contact
 The AstroCodEx Team can be reached at **astrocodex@googlegroups.com**. 
