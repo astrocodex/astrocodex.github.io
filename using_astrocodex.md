@@ -21,14 +21,14 @@ Solutions to individual exercises in the repository may be granted upon request,
 solutions to the full solution set may be granted upon joining the AstroCodEx Peer 
 Review Community. See the Solutions section below for more details. 
 
-# Searching for Exercises
+## Searching for Exercises
 
 We organize the exercises in the AstroCodEx along several axes to make it easy for instructors to find examples relevant to their needs. The tags and intended audience categories discussed below are searchable and filterable on the site.
 
-## Tags 
+### Tags 
 Codex exercises are tagged with associated keywords, which are organized into several general categories, each of which has more specific options within. The core general categories are astronomy, programming, data analysis, and libraries. Within each category there are 10-20 tags to choose from. 
 
-## Intended Audience 
+### Intended Audience 
 
 We also assign each exercise an intended audience, from either “Early Undergraduate”, “Intermediate Undergraduate”, “Advanced Undergraduate”, and “Graduate”. These are, if relevant, assigned independently for the coding level and astronomical background assumed by the assignment. We note that these categories are inherently limited, given significant variance in when and how people learn astronomy and coding. Because the primary intended use of these exercises is within formal courses, we felt that some general pinning to academic progression may be useful for users. For context, these categories generally assume a standard astronomy major curriculum track in terms of astronomy content, and they assume that students begin learning to code in “Early Undergraduate”, with Intermediate Undergraduate corresponding to 1-2 years of coding experience, and so on. Instructors should adjust the level they are searching for if their course does not meet these general assumptions. 
 
