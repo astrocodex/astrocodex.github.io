@@ -5,9 +5,8 @@ The astrocodex is organized as a jupyter-book built with myst tools. This allows
 exercises to be rendered as webpages with rich text annotation (such as tips and warnings) 
 which can also be rendered directly within jupyter notebooks with the jupyterlab myst 
 plugin. To install the jupyterlab myst plugin, run pip install jupyterlab_myst in your 
-terminal. Any exercise can be downloaded as a  jupyter notebook by selecting the .ipynb 
-option from the Download icon on each exercise page. Required external datasets are linked 
-from the respective exercise. All required Python packages are listed on each exercise 
+terminal. Any exercise can be downloaded as a jupyter notebook by selecting the .ipynb 
+option from the Download icon at the top right of each exercise page. Required external datasets are linked from the respective exercise. All required Python packages are listed on each exercise 
 page. 
 
 Materials on the site—including both jupyter notebooks and external datasets—can be copied 
@@ -38,15 +37,15 @@ The astrocodex is open-source, and we encourage contributions. If you have an ex
 Every contribution to AstroCodEx is reviewed by one AstroCodEx maintainer (assigned as the “editor”) and undergoes a peer review by at least one other person (assigned as the “reviewer”). This review assesses clarity of the activity instructions, the appropriateness of the assignment's level, and whether the activity is appropriate to be included in the AstroCodEx. Any concerns regarding the assignment's content or structure will be communicated to the contributors for revision before it is uploaded to AstroCodEx. During the peer review process, maintainers will also proofread and edit the assignment for grammatical and typological errors, and may add elements to match the styles used on the site. Contributors can expect to hear back from maintainers about acceptance of their contributions within 2-4 weeks, with potentially longer wait times following events such as Hack Days. 
 
 The exercise submission form requires the following inputs: 
-- An author / contributor list with associated ORCIDs,
-- A short (one-line) description of the contents, 
-- The intended audience (Early Undergraduate, Intermediate Undergraduate, Advanced Undergraduate, Graduate) ,
-- A set of tags highlighting Python or Astronomy concepts covered,
-- A requirements.txt file with a list of any packages needed to complete the exercises,
-- Any images or external data files needed,
+- A 1-3 sentence description of the exercise,
 - A list of learning objectives for the assignment,
-- Any relevant instructor notes for carrying out the assignment,
-- Solutions for the submitted exercise.
+- The intended audience (Early Undergraduate, Intermediate Undergraduate, Advanced Undergraduate, Graduate),
+- A set of tags highlighting Python or Astronomy concepts covered,
+- A formatted exercise .ipynb file
+- A requirements.txt file with a list of any packages needed to complete the exercises,
+- Solutions for the submitted exercise
+- Any images or external data files needed,
+- Any relevant instructor notes associated with the assignment.
 
 For external data files over 50 MB, a publicly available link should be provided to the data. Following the peer review process, the
 files will be uploaded to Zenodo for long-term accessibility. 
@@ -59,7 +58,7 @@ The [AstroCodEx Team](aboutteam.md) includes maintainers who are responsible for
 
 Solutions to AstroCodEx exercises are not publicly distributed in order to preserve their effectiveness in classroom and instructional settings. Individual solutions are available upon request via the [Solution Request Form](https://forms.gle/ifcFPnBciaWW7n3k7). Access is granted by the AstroCodEx maintainers on a case-by-case basis. Generally, faculty and instructors of record should expect to be granted solution access, while teaching assistants or other instructors may be asked for additional context or verification. 
 
-Members of the AstroCodEx Peer Review Community will be granted access to the full solution set. Members of the Peer Review Community agree to review up to 3 repository submissions per year, and membership is renewed on an annual basis. In general, we seek peer reviewers who have a masters degree in physics/astrophysics and who have contributed at least one exercise to the repository. 
+Members of the [AstroCodEx Peer Review Community](join.md) will be granted access to the full solution set. Members of the Peer Review Community agree to review up to 3 repository submissions per year, and membership is renewed on an annual basis. In general, we seek peer reviewers who have a masters degree in physics/astrophysics and who have contributed at least one exercise to the repository. 
 
 Users who are granted access to solutions agree not to share, distribute, or post solutions publicly. This includes sharing with students, uploading to public repositories, or redistributing in any form outside of the approved instructional context. We also request that solutions not be submitted to AI tools or platforms. We ask instructors to use discretion in handling solutions. As these exercises are designed for reuse across courses and institutions, limiting the circulation of solutions helps to maintain their long-term value. 
 
