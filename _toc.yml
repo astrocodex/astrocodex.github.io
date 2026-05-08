@@ -7,8 +7,10 @@ root: intro
 parts:
   - caption: About
     chapters:
-    - file: aboutteam
+    - file: intro
     - file: using_astrocodex
+    - file: join
+    - file: aboutteam
   - caption: Gallery
     chapters:
     - file: gallery
