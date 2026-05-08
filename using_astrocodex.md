@@ -32,7 +32,7 @@ Codex exercises are tagged with associated keywords, which are organized into se
 
 We also assign each exercise an intended audience, from either “Early Undergraduate”, “Intermediate Undergraduate”, “Advanced Undergraduate”, and “Graduate”. These are, if relevant, assigned independently for the coding level and astronomical background assumed by the assignment. We note that these categories are inherently limited, given significant variance in when and how people learn astronomy and coding. Because the primary intended use of these exercises is within formal courses, we felt that some general pinning to academic progression may be useful for users. For context, these categories generally assume a standard astronomy major curriculum track in terms of astronomy content, and they assume that students begin learning to code in “Early Undergraduate”, with Intermediate Undergraduate corresponding to 1-2 years of coding experience, and so on. Instructors should adjust the level they are searching for if their course does not meet these general assumptions. 
 
-# Submitting New Exercises
+## Submitting New Exercises
 
 The astrocodex is open-source, and we encourage contributions. If you have an exercise that you think would fit well into the codex, you may submit it through the AstroCodEx Submission and Modification Form. All submissions should be formatted with the provided template, which will ensure proper rendering and formatting on the website using MyST Markdown. 
 Every contribution to AstroCodEx is reviewed by one AstroCodEx maintainer (assigned as the “editor”) and undergoes a peer review by at least one other person (assigned as the “reviewer”). This review assesses clarity of the activity instructions, the appropriateness of the assignment's level, and whether the activity is appropriate to be included in the AstroCodEx. Any concerns regarding the assignment's content or structure will be communicated to the contributors for revision before it is uploaded to AstroCodEx. During the peer review process, maintainers will also proofread and edit the assignment for grammatical and typological errors, and may add elements to match the styles used on the site. Contributors can expect to hear back from maintainers about acceptance of their contributions within 2-4 weeks, with potentially longer wait times following events such as Hack Days. 
@@ -51,11 +51,11 @@ The exercise submission form requires the following inputs:
 For external data files over 50 MB, a publicly available link should be provided to the data. Following the peer review process, the
 files will be uploaded to Zenodo for long-term accessibility. 
 
-# Maintenance
+## Maintenance
 
 The AstroCodEx Team (see About) includes maintainers who are responsible for maintenance of the AstroCodEx page and submissions. Maintainers will update the AstroCodEx website for readability and accessibility. Given that Python packages may lose compatibility with newer versions, maintainers will periodically verify that assignments can still be completed using the provided requirements.txt files. Minor adjustments may be made automatically by the maintainers for the purpose of supporting version compatibility over time. If major adjustments are necessary, maintainers will reach out to the assignment author(s) to make changes. To modify your assignment yourself, see the AstroCodEx Submission and Modification Form and relevant Modification Policy. Maintainers will review and update modified assignments within 2-4 weeks. 
 
-# Solutions 
+## Solutions 
 
 Solutions to AstroCodEx exercises are not publicly distributed in order to preserve their effectiveness in classroom and instructional settings. Individual solutions are available upon request via a Solution Request Form. Access is granted by the AstroCodEx maintainers on a case-by-case basis. Generally, faculty and instructors of record should expect to be granted solution access, while teaching assistants or other instructors may be asked for additional context or verification. 
 
@@ -63,7 +63,7 @@ Members of the AstroCodEx Peer Review Community will be granted access to the fu
 
 Users who are granted access to solutions agree not to share, distribute, or post solutions publicly. This includes sharing with students, uploading to public repositories, or redistributing in any form outside of the approved instructional context. We also request that solutions not be submitted to AI tools or platforms. We ask instructors to use discretion in handling solutions. As these exercises are designed for reuse across courses and institutions, limiting the circulation of solutions helps to maintain their long-term value. 
 
-# AI Policy
+## AI Policy
 
 AstroCodEx is intended to be a community-driven collection of exercises developed by instructors and researchers with domain expertise. These exercises are designed to reflect authentic scientific workflows, including working with real and often complex datasets. 
 
