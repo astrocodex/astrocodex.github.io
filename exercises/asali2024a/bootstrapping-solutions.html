@@ -178,6 +178,7 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../aboutteam.html">Meet the AstroCodEx Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../using_astrocodex.html">Using the AstroCodEx</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
 <ul class="nav bd-sidenav">
@@ -745,11 +746,12 @@ ODR requires an initial guess for the slope and intercept. Use the coefficients 
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_fit</span><span class="p">,</span> <span class="n">a</span><span class="o">*</span><span class="n">x_fit</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
 
 <span class="c1"># Original best-fit line</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_fit</span><span class="p">,</span> <span class="n">a1</span><span class="o">*</span><span class="n">x_fit</span> <span class="o">+</span> <span class="n">b1</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;OLS best fit (y|x)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_fit</span><span class="p">,</span> <span class="n">a1</span><span class="o">*</span><span class="n">x_fit</span> <span class="o">+</span> <span class="n">b1</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Best Fit (y|x)&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Velocity Dispersion [km/s]&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\log_</span><span class="si">{10}</span><span class="s1"> M_{\rm BH}\ [M_\odot]$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;fig.pdf&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="c1"># Histograms of slope/intercept</span>
@@ -773,7 +775,7 @@ Slope  median = 0.0106  (-0.0015, +0.0013)
 Interc median = 5.8425  (-0.3653, +0.4275)
 </pre></div>
 </div>
-<img alt="../../_images/7e18509d97f766c70643b7cdf86d74906231a309989136e07374d0d26f40ef8a.png" src="../../_images/7e18509d97f766c70643b7cdf86d74906231a309989136e07374d0d26f40ef8a.png" />
+<img alt="../../_images/991203b279de28efed72c86131beefb9c64a52d94cf1699b58614b73a6380d76.png" src="../../_images/991203b279de28efed72c86131beefb9c64a52d94cf1699b58614b73a6380d76.png" />
 <img alt="../../_images/bc2825bfba8d01f9dfc68f43b5e49739c851467d99564ea3f8221a6ed1ab0c0e.png" src="../../_images/bc2825bfba8d01f9dfc68f43b5e49739c851467d99564ea3f8221a6ed1ab0c0e.png" />
 </div>
 </div>
