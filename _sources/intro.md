@@ -48,30 +48,6 @@ We currently sort exercises by the core programming skill that they target. Thes
 - Model Fitting (e.g., chi-squared, linear least squares, MCMC methods) 
 - Numerical Methods (Runge-Kutta / N-body solver, fluids) 
 
-## Usage 
-
-The ```codex``` is organized as a ```juptyer-book``` built with ``myst`` tools. This allows for exercises to be rendered as webpages with rich text annotation (such as tips and warnings) which can also be rendered directly within ```jupyter``` notebooks. Any exercise can be downloaded as a notebook in one click from the page. Each exercise links directly to any needed external dataset. The admonitions used throughout can be rendered directly within `jupyter-lab` by using the `jupyterlab myst` plugin, which is pip-installable. But one could also simply extract the questions into a more bare-bones format.
-
-Anyone is welcome to use, download, and modify the materials on this site to suit their teaching needs. We ask that *solutions* to the exercises in this repository (whether ours or your own) *not* be distributed publicly. 
-
-**Solutions** to the exercises are stored in a private GitHub repository within the ```astrocodex``` organization. Instructors desiring solutions for any subset of the exercises are encouraged to submit a request to **astrocodex@googlegroups.com**. Solutions will be provided upon reasonable evidence of an instructor role. We ask instructors to use discretion with solutions; as these exercises are designed for use in a classroom setting, their longevity is aided by a lack of solution proliferation.
-
-
-## Contributing
-
-The ```astrocodex``` is open-source, and we encourage contributions. If you have an exercise or set of exercises you think would fit well into the codex, you can create a submission following our submission guidelines. 
-
-Exercises submitted to the codex should have 
-- an author / contributor list with associated ORCIDs, 
-- A short (one-line) description of the contents
-- A set of tags 
-- A `requirements.txt` file with a list of any packages needed to complete the exercises,
-- Any images or external data files needed, 
-- A short list of learning objectives for the assignment 
-- Any relevant instructor notes for carrying out the assignment
-
-We are working toward a streamlined and maintainable process for ingesting submissions. For the time being, submissions can be sent to astrocodex@googlegroups.com.
-
 ## Contact
 The AstroCodEx Team can be reached at **astrocodex@googlegroups.com**. 
 
