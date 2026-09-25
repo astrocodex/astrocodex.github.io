@@ -11,7 +11,7 @@ Malena Rice is an Assistant Professor in the Yale University Department of Astro
 
 ## Yasmeen Asali 
 ![yasmeen bio](aboutimages/yasmeenbio.png) \
-Yasmeen Asali is a Ph.D. candidate in the Astronomy Department at Yale Univeristy working with the SAGA Survey. She works with Professor Marla Geha on characterizing star formation in satellite galaxies around Milky Way analogs. She is passionate about mentoring, pedagogy, and public education, serving as a McDougal Graduate Teaching Fellow at the Poorvu Center for Teaching and Learning. 
+Yasmeen Asali is a postdoctoral scholar at the University of California, Berkeley working on the UVEX Mission. She earned her Ph.D. in 2026 from Yale University working on characterizing star formation in satellite galaxies around Milky Way analogs using the SAGA Survey. She is passionate about mentoring, pedagogy, and public education, and served as a McDougal Graduate Teaching Fellow at the Poorvu Center for Teaching and Learning for four years at Yale. . 
 
 ## Kendra Nguyen 
 ![kendra bio](aboutimages/kendrabio.png) \
